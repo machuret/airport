@@ -1760,3 +1760,49 @@ input, select, textarea, button {
     gap: var(--space-6);
   }
 }
+
+/* ============================================================
+   22. UTILITY CLASSES (added in template rebuild)
+   ============================================================ */
+
+/* Liable party card inner text — used in airport-hub template */
+.card__title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-navy-800);
+  margin-bottom: var(--space-1);
+  line-height: var(--leading-snug);
+}
+
+.card__body {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* Section label centered variant */
+.section__label--center {
+  justify-content: center;
+}
+.section__label--center::before { display: none; }
+
+/* Display size override utility */
+.t-display-sm-override { font-size: var(--text-display-sm); }
+
+/* Pill row — flex wrap row for pills */
+.pill-row {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+/* Featured airports divider block */
+.featured-divider {
+  margin-top: var(--space-12);
+  border-top: 1px solid var(--alpha-white-10);
+  padding-top: var(--space-12);
+}
+
+/* Spaced list — adds top margin to detail lists */
+.aoh-detail-list--spaced { margin-top: var(--space-5); }

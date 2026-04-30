@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- @@include('../partials/head.html', {
+    "page_title":       "{{accident_name}} at US Airports | Legal Help | Free Consultation",
+    "meta_description": "{{accident_name}} at airports across the US. Find out who is liable, what evidence to preserve, and what your case may be worth. Free consultation — no fees unless you win.",
+    "canonical_url":    "https://airportaccidents.com/{{accident_slug}}/",
+    "og_title":         "{{accident_name}} at US Airports | Free Legal Help",
+    "og_description":   "{{description_short}} Find out who is liable and get a free case review.",
+    "og_image":         "https://airportaccidents.com/assets/img/og-accident.jpg",
+    "page_type":        "accident"
+  }) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{accident_name}} at US Airports | Legal Help | Free Consultation</title>
+<meta name="description" content="{{accident_name}} at airports across the US. Find out who is liable, what evidence to preserve, and what your case may be worth. Free consultation — no fees unless you win.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://airportaccidents.com/{{accident_slug}}/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AirportAccidents.com">
+<meta property="og:url" content="https://airportaccidents.com/{{accident_slug}}/">
+<meta property="og:title" content="{{accident_name}} at US Airports | Free Legal Help">
+<meta property="og:description" content="{{accident_name}} at US airports. Find out who is liable and get a free case review.">
+<meta property="og:image" content="https://airportaccidents.com/assets/img/og-accident.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{accident_name}} at US Airports | Free Legal Help">
+<meta name="twitter:description" content="{{accident_name}} — who is liable, what to do, free case review.">
+<meta name="twitter:image" content="https://airportaccidents.com/assets/img/og-accident.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/css/global.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{accident_name}} at US Airports",
+  "url": "https://airportaccidents.com/{{accident_slug}}/",
+  "description": "{{accident_name}} at US airports — who is liable, evidence to preserve, and free legal consultation.",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",             "item": "https://airportaccidents.com/" },
+      { "@type": "ListItem", "position": 2, "name": "{{accident_name}}", "item": "https://airportaccidents.com/{{accident_slug}}/" }
+    ]
+  }
+}
+</script>
+<style>
+/* ── Accident hub page-specific styles only ─────────────────── */
+
+/* Legal detail two-column grid */
+.aoh-legal__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); margin-top: var(--space-12); }
+
+/* Detail block */
+.aoh-detail-block { margin-bottom: var(--space-8); }
+.aoh-detail-block h3 { font-size: var(--text-base); font-weight: var(--weight-bold); color: var(--color-navy-800); margin-bottom: var(--space-3); padding-bottom: var(--space-2); border-bottom: 1px solid var(--alpha-navy-border); }
+
+.aoh-detail-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); }
+.aoh-detail-list li { display: flex; align-items: flex-start; gap: var(--space-2); font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--leading-relaxed); }
+.aoh-detail-list li::before { content: '→'; color: var(--color-gold-400); font-size: var(--text-sm); flex-shrink: 0; margin-top: 1px; }
+
+/* Zones grid */
+.aoh-zones__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); margin-top: var(--space-8); }
+
+.aoh-zone__tag    { font-size: var(--text-2xs); font-weight: var(--weight-bold); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-gold-400); margin-bottom: var(--space-1); }
+.aoh-zone__title  { font-size: var(--text-base); font-weight: var(--weight-bold); color: var(--color-navy-800); margin-bottom: var(--space-1); }
+.aoh-zone__desc   { font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--leading-relaxed); }
+
+/* Companies grid */
+.aoh-companies__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: var(--space-2); margin-top: var(--space-8); }
+
+.aoh-company-pill { display: flex; align-items: center; padding: var(--space-2) var(--space-3); background: var(--color-cream-100); border: 1px solid var(--alpha-navy-border); border-radius: var(--radius-md); font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--color-text-base); gap: var(--space-2); }
+.aoh-company-pill::before { content: ''; width: 6px; height: 6px; border-radius: var(--radius-pill); background: var(--color-gold-400); flex-shrink: 0; }
+
+.aoh-category-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-5); }
+.aoh-category-tag  { font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--color-navy-800); background: var(--color-cream-200); border: 1px solid var(--alpha-navy-border); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); }
+
+/* Airport links grid */
+.aoh-airports__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-3); margin-top: var(--space-10); }
+
+/* Defense vs counter two-column */
+.aoh-defense__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); }
+
+@media (max-width: 960px) {
+  .aoh-legal__grid   { grid-template-columns: 1fr; }
+  .aoh-defense__grid { grid-template-columns: 1fr; }
+  .aoh-zones__grid   { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="AirportAccidents.com home">Airport<span>Accidents</span>.com</a>
+    <div class="nav__links" id="nav-menu" role="menubar">
+      <a href="/#accident-types" class="nav__link" role="menuitem">All Accidents</a>
+      <a href="/#airports"       class="nav__link" role="menuitem">Find Your Airport</a>
+      <a href="tel:18005550199"  class="nav__link nav__link--cta" role="menuitem">Free Consultation</a>
+    </div>
+    <button class="nav__toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation menu">
+      <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb" role="navigation" aria-label="Breadcrumb">
+  <div class="breadcrumb__inner">
+    <a href="/" class="breadcrumb__link">Home</a>
+    <span class="breadcrumb__sep" aria-hidden="true">›</span>
+    <span class="breadcrumb__current" aria-current="page">{{accident_name}}</span>
+  </div>
+</div>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Accident type hero">
+    <div class="hero__bg-grid" aria-hidden="true"></div>
+    <div class="hero__bg-glow" aria-hidden="true"></div>
+    <div class="hero__inner hero__inner--split">
+      <div>
+        <div class="pill-row">
+          <span class="pill pill--danger">{{danger_label}} Danger</span>
+          <span class="pill pill--warning">{{frequency_label}}</span>
+        </div>
+        <div class="hero__eyebrow">{{category_label}} — US Airport Accident Law</div>
+        <h1 class="hero__title"><em>{{accident_name}}</em><br>at US Airports</h1>
+        <p class="hero__sub">{{description}} Find out who is liable, how to preserve your evidence, and what your case may be worth — at any of the 522 US airports we cover.</p>
+
+        <div class="hero__factbox">
+          <div class="hero__fact"><div class="hero__fact-label">Severity</div><div class="hero__fact-value hero__fact-value--gold">{{severity_score}}/10</div></div>
+          <div class="hero__fact"><div class="hero__fact-label">Settlement range</div><div class="hero__fact-value">{{average_settlement_range}}</div></div>
+          <div class="hero__fact"><div class="hero__fact-label">Statute of limitations</div><div class="hero__fact-value">{{sol_short}}</div></div>
+        </div>
+
+        <div class="hero__actions">
+          <a href="#lead-form" class="btn btn--primary btn--lg">Get Free Case Review →</a>
+          <a href="#airports"  class="btn btn--ghost">Find Your Airport</a>
+        </div>
+      </div>
+
+      <!-- Lead form -->
+      <div class="form-card" id="lead-form">
+        <div class="form-card__bar" aria-hidden="true"></div>
+        <h2 class="form-card__title">Free {{accident_name}} Review</h2>
+        <p class="form-card__sub">Tell us your airport and what happened. An attorney reviews your case within 24 hours.</p>
+        <form class="lead-form" novalidate data-airport="" data-accident-type="{{accident_slug}}">
+          <div data-role="fields">
+            <div class="form__group">
+              <label class="form__label" for="aoh-airport">Which airport?</label>
+              <div class="form__select-wrap">
+                <select class="form__select" id="aoh-airport" name="airport" data-role="airport-select">
+                  <option value="">Select airport...</option>
+                  <optgroup label="Major Hubs">
+                    <option value="hartsfield-jackson-atlanta-international">Atlanta (ATL)</option>
+                    <option value="ohare-international">Chicago (ORD)</option>
+                    <option value="los-angeles-international">Los Angeles (LAX)</option>
+                    <option value="dallas-fort-worth-international">Dallas (DFW)</option>
+                    <option value="denver-international">Denver (DEN)</option>
+                    <option value="john-f-kennedy-international">New York (JFK)</option>
+                    <option value="san-francisco-international">San Francisco (SFO)</option>
+                    <option value="seattle-tacoma-international">Seattle (SEA)</option>
+                    <option value="orlando-international">Orlando (MCO)</option>
+                    <option value="miami-international">Miami (MIA)</option>
+                  </optgroup>
+                  <option value="other">My airport isn't listed...</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="aoh-timeframe">When did it happen?</label>
+              <div class="form__select-wrap">
+                <select class="form__select" id="aoh-timeframe" name="timeframe">
+                  <option value="">Approximate timeframe</option>
+                  <option value="0-7">Within the last week</option>
+                  <option value="7-30">1 to 4 weeks ago</option>
+                  <option value="30-90">1 to 3 months ago</option>
+                  <option value="90-365">3 to 12 months ago</option>
+                  <option value="365+">More than a year ago</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="aoh-description">Brief description</label>
+              <textarea class="form__textarea" id="aoh-description" name="description" rows="3" placeholder="Describe what happened..."></textarea>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="aoh-phone">Your phone number</label>
+              <input class="form__input" id="aoh-phone" name="phone" type="tel" placeholder="(555) 000-0000" autocomplete="tel" data-role="phone" required aria-describedby="aoh-phone-hint">
+              <span class="form__hint" id="aoh-phone-hint">We will call or text within 24 hours.</span>
+            </div>
+            <button class="form__submit" type="submit" data-role="submit">Review My Case →</button>
+            <p class="form__disclaimer">Free. Confidential. No fees unless we win.</p>
+          </div>
+          <div data-role="success" class="form__success" style="display:none;" aria-live="polite">
+            <div class="form__success-icon" aria-hidden="true">✓</div>
+            <h3 class="form__success-title">Case Review Submitted</h3>
+            <p class="form__success-text">An attorney will review your case and contact you within 24 hours.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip" role="complementary" aria-label="Trust indicators">
+    <div class="trust-strip__inner">
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>No fees unless you win</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>24-hour case review</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>Evidence preserved immediately</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>All liable parties pursued</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>{{federal_note}}</div>
+    </div>
+  </div>
+
+  <!-- LEGAL GUIDE -->
+  <section class="section section--white" aria-labelledby="legal-heading">
+    <div class="container">
+      <div class="section__label">Know your rights</div>
+      <h2 class="section__title" id="legal-heading">{{accident_name}} — Legal Guide</h2>
+      <div class="aoh-legal__grid">
+        <div>
+          <div class="aoh-detail-block">
+            <h3>Who Is Liable</h3>
+            <ul class="aoh-detail-list">{{primary_liable_html}}</ul>
+          </div>
+          <div class="aoh-detail-block">
+            <h3>Secondary Liable Parties</h3>
+            <ul class="aoh-detail-list">{{secondary_liable_html}}</ul>
+          </div>
+          <div class="aoh-detail-block">
+            <h3>What You Can Recover</h3>
+            <ul class="aoh-detail-list">{{compensable_damages_html}}</ul>
+          </div>
+        </div>
+        <div>
+          {{ftca_alert}}
+          {{montreal_alert}}
+          <div class="aoh-detail-block">
+            <h3>Common Injuries</h3>
+            <ul class="aoh-detail-list">{{common_injuries_html}}</ul>
+          </div>
+          <div class="aoh-detail-block">
+            <h3>Key Evidence to Preserve</h3>
+            <ul class="aoh-detail-list">{{key_evidence_html}}</ul>
+          </div>
+          <div class="warning-box" role="note">
+            <div class="warning-box__title">Evidence Urgency: {{evidence_preservation_urgency_upper}}</div>
+            <p class="warning-box__text">{{evidence_notes}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE IT HAPPENS -->
+  <section class="section section--cream2" aria-labelledby="zones-heading">
+    <div class="container">
+      <div class="section__label">Where in the airport</div>
+      <h2 class="section__title" id="zones-heading">Highest-Risk Zones for {{accident_name}}</h2>
+      <p class="section__sub">{{accident_name}} incidents don't happen everywhere equally. These are the specific areas where this type of accident is most common across US airports.</p>
+      <div class="aoh-zones__grid" role="list">
+        {{primary_zones_html}}
+        {{secondary_zones_html}}
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANIES INVOLVED -->
+  <section class="section section--white" aria-labelledby="companies-heading">
+    <div class="container">
+      <div class="section__label">Who operates in this zone</div>
+      <h2 class="section__title" id="companies-heading">Companies That May Be Liable in Your Case</h2>
+      <p class="section__sub">These are the specific companies and operators most commonly involved in {{accident_name}} cases at US airports. Your case may involve one or more of them.</p>
+      <div class="aoh-companies__grid" role="list">{{companies_html}}</div>
+      <div class="aoh-category-tags" aria-label="Business categories involved">{{categories_html}}</div>
+    </div>
+  </section>
+
+  <!-- AIRPORT LIST -->
+  <section class="section section--navy" id="airports" aria-labelledby="airports-heading">
+    <div class="container">
+      <div class="section__label">Find your specific airport</div>
+      <h2 class="section__title" id="airports-heading">{{accident_name}} at Major US Airports</h2>
+      <p class="section__sub">Click your airport to get a dedicated page with the specific liable parties, evidence requirements, and local legal deadlines for that location.</p>
+      <div class="aoh-airports__grid" role="list">{{airport_links_html}}</div>
+    </div>
+  </section>
+
+  <!-- DEFENSES & COUNTER -->
+  <section class="section section--white" aria-labelledby="defense-heading">
+    <div class="container">
+      <div class="aoh-defense__grid">
+        <div>
+          <div class="section__label">What they will argue</div>
+          <h2 class="section__title" id="defense-heading" class="t-display-sm-override">Defense Strategies Used Against You</h2>
+          <ul class="aoh-detail-list aoh-detail-list--spaced">{{defenses_html}}</ul>
+        </div>
+        <div>
+          <div class="section__label">How we fight back</div>
+          <h2 class="section__title" class="t-display-sm-override">How We Counter Each Defense</h2>
+          <ul class="aoh-detail-list aoh-detail-list--spaced">{{counter_html}}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta cta--cream" aria-labelledby="cta-heading">
+    <div class="cta__inner">
+      <div class="section__label" class="section__label--center">Free consultation — no fees unless you win</div>
+      <h2 class="cta__title" id="cta-heading">Suffered a <em>{{accident_name}}</em><br>at an Airport?</h2>
+      <p class="cta__sub">Don't wait. Evidence disappears and legal deadlines are strict. Get a free case review from attorneys who specialize in this exact type of airport accident.</p>
+      <a href="tel:18005550199" class="cta__phone" aria-label="Call 1-800-555-0199">1-800-555-0199</a>
+      <span class="cta__phone-label">Free consultation — available 24/7</span>
+      <div class="cta__actions">
+        <a href="#lead-form" class="btn btn--primary btn--lg">Start My Free Case Review →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo footer__logo" aria-label="AirportAccidents.com">Airport<span>Accidents</span>.com</a>
+        <p class="footer__tagline">Expert attorneys for {{accident_name}} and 24 other airport accident types across all 522 US airports.</p>
+        <a href="tel:18005550199" class="footer__phone" aria-label="Call 1-800-555-0199">1-800-555-0199</a>
+      </div>
+      <nav class="footer__col" aria-label="Other accident types">
+        <h3 class="footer__col-title">Other Accident Types</h3>
+        <a href="/slip-and-fall/">Slip &amp; Fall</a>
+        <a href="/jet-bridge-boarding/">Jet Bridge</a>
+        <a href="/shuttle-bus-ground-transportation/">Shuttle Bus</a>
+        <a href="/assault-security-failure/">Assault &amp; Security</a>
+        <a href="/tarmac-airside/">Tarmac Accidents</a>
+        <a href="/#accident-types">All 25 types →</a>
+      </nav>
+      <nav class="footer__col" aria-label="Top airports">
+        <h3 class="footer__col-title">Top Airports</h3>
+        <a href="/hartsfield-jackson-atlanta-international/">Atlanta (ATL)</a>
+        <a href="/los-angeles-international/">Los Angeles (LAX)</a>
+        <a href="/ohare-international/">Chicago (ORD)</a>
+        <a href="/john-f-kennedy-international/">New York (JFK)</a>
+        <a href="/miami-international/">Miami (MIA)</a>
+        <a href="/#airports">All 522 airports →</a>
+      </nav>
+      <nav class="footer__col" aria-label="Legal pages">
+        <h3 class="footer__col-title">Legal</h3>
+        <a href="/about/">About Us</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/disclaimer/">Legal Disclaimer</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__legal">&copy; 2025 AirportAccidents.com. Informational purposes only. Not legal advice. Attorney advertising. Results vary.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-bar" id="sticky-bar" role="complementary" aria-label="Contact prompt">
+  <p class="sticky-bar__text"><strong>Suffered a {{accident_name}}?</strong> Free case review — no fees unless you win.</p>
+  <a href="#lead-form" class="sticky-bar__btn">Get Help Now</a>
+</div>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

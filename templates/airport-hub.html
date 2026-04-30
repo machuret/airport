@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- @@include('../partials/head.html', {
+    "page_title":    "{{airport_name}} Accident Attorneys | {{city}}, {{state}} | Free Consultation",
+    "meta_description": "Injured at {{airport_name}} in {{city}}, {{state}}? Free legal consultation for slip and falls, jet bridge injuries, baggage claim accidents and more. No fees unless you win.",
+    "canonical_url": "https://airportaccidents.com/{{airport_slug}}/",
+    "og_title":      "{{airport_name}} Accident Attorneys | Free Consultation",
+    "og_description":"Injured at {{airport_name}}? Expert airport accident attorneys covering all 25 accident types. Free case review within 24 hours.",
+    "og_image":      "https://airportaccidents.com/assets/img/og-airport.jpg",
+    "page_type":     "airport"
+  }) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{airport_name}} Accident Attorneys | {{city}}, {{state}} | Free Consultation</title>
+<meta name="description" content="Injured at {{airport_name}} in {{city}}, {{state}}? Free legal consultation for slip and falls, jet bridge injuries, baggage claim accidents and more. No fees unless you win.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://airportaccidents.com/{{airport_slug}}/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AirportAccidents.com">
+<meta property="og:url" content="https://airportaccidents.com/{{airport_slug}}/">
+<meta property="og:title" content="{{airport_name}} Accident Attorneys | Free Consultation">
+<meta property="og:description" content="Injured at {{airport_name}}? Expert airport accident attorneys covering all 25 accident types. Free case review within 24 hours.">
+<meta property="og:image" content="https://airportaccidents.com/assets/img/og-airport.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{airport_name}} Accident Attorneys | Free Consultation">
+<meta name="twitter:description" content="Injured at {{airport_name}}? Free case review — no fees unless you win.">
+<meta name="twitter:image" content="https://airportaccidents.com/assets/img/og-airport.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/css/global.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{airport_name}} Accident Attorneys",
+  "url": "https://airportaccidents.com/{{airport_slug}}/",
+  "description": "Injured at {{airport_name}} in {{city}}, {{state}}? Free legal consultation for all airport accident types.",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",        "item": "https://airportaccidents.com/" },
+      { "@type": "ListItem", "position": 2, "name": "{{state}}",   "item": "https://airportaccidents.com/state/{{state_code_lower}}/" },
+      { "@type": "ListItem", "position": 3, "name": "{{airport_name}}", "item": "https://airportaccidents.com/{{airport_slug}}/" }
+    ]
+  }
+}
+</script>
+<style>
+/* ── Airport hub page-specific styles only ──────────────────── */
+
+/* Accident grid for this page */
+.ah-accidents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1px;
+  background: var(--alpha-navy-border);
+  border: 1px solid var(--alpha-navy-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: var(--space-10);
+}
+
+.ah-accident-card {
+  background: #fff;
+  padding: var(--space-5) var(--space-4);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: background 0.15s;
+  position: relative;
+}
+
+.ah-accident-card:hover,
+.ah-accident-card:focus-visible { background: var(--color-cream-100); }
+
+.ah-accident-card__icon  { font-size: 20px; line-height: 1; }
+.ah-accident-card__name  { font-size: var(--text-sm); font-weight: var(--weight-bold); color: var(--color-navy-800); line-height: var(--leading-snug); }
+.ah-accident-card__value { font-size: var(--text-2xs); color: var(--color-text-muted); }
+.ah-accident-card__arrow { position: absolute; right: var(--space-3); top: 50%; transform: translateY(-50%); color: var(--color-gold-400); font-size: var(--text-base); opacity: 0; transition: opacity 0.15s; }
+.ah-accident-card:hover .ah-accident-card__arrow { opacity: 1; }
+
+/* About / liability section */
+.ah-about__grid  { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: start; }
+.ah-about__stats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-8); }
+
+.ah-about p { font-size: var(--text-base); color: var(--color-text-muted); line-height: var(--leading-loose); margin-bottom: var(--space-4); }
+.ah-about p strong { color: var(--color-text-base); font-weight: var(--weight-bold); }
+
+/* Liable party cards */
+.ah-liable__list { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-2); }
+
+/* Evidence grid */
+.ah-evidence__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-10); }
+
+/* Nearby airports */
+.ah-nearby__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-3); margin-top: var(--space-8); }
+
+@media (max-width: 960px) {
+  .ah-about__grid   { grid-template-columns: 1fr; gap: var(--space-10); }
+  .ah-evidence__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+  .ah-evidence__grid { grid-template-columns: 1fr; }
+  .ah-about__stats  { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="AirportAccidents.com home">Airport<span>Accidents</span>.com</a>
+    <div class="nav__links" id="nav-menu" role="menubar">
+      <a href="/" class="nav__link" role="menuitem">Home</a>
+      <a href="/state/{{state_code_lower}}/" class="nav__link" role="menuitem">{{state}} Airports</a>
+      <a href="tel:18005550199" class="nav__link nav__link--cta" role="menuitem">Free Consultation</a>
+    </div>
+    <button class="nav__toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation menu">
+      <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb" role="navigation" aria-label="Breadcrumb">
+  <div class="breadcrumb__inner">
+    <a href="/" class="breadcrumb__link">Home</a>
+    <span class="breadcrumb__sep" aria-hidden="true">›</span>
+    <a href="/state/{{state_code_lower}}/" class="breadcrumb__link">{{state}}</a>
+    <span class="breadcrumb__sep" aria-hidden="true">›</span>
+    <span class="breadcrumb__current" aria-current="page">{{airport_name}}</span>
+  </div>
+</div>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Airport hero">
+    <div class="hero__bg-grid" aria-hidden="true"></div>
+    <div class="hero__bg-glow" aria-hidden="true"></div>
+    <div class="hero__inner hero__inner--split">
+      <div>
+        <div class="hero__code-badge">{{iata_code}} · {{faa_code}}</div>
+        <div class="hero__eyebrow">{{city}}, {{state}} — Airport Accident Attorneys</div>
+        <h1 class="hero__title">Injured at<br><em>{{airport_name}}?</em></h1>
+        <p class="hero__sub">Airport accidents at {{airport_name}} happen more often than you think — and the airport, airlines, and contractors are often legally responsible. Get a free case review from attorneys who specialize in {{city}} airport injuries.</p>
+        <div class="hero__meta">
+          <div class="hero__meta-item"><div class="hero__meta-dot" aria-hidden="true"></div>{{city}}, {{state}}</div>
+          <div class="hero__meta-item"><div class="hero__meta-dot" aria-hidden="true"></div>{{airport_type_label}}</div>
+          <div class="hero__meta-item"><div class="hero__meta-dot" aria-hidden="true"></div>25 accident types covered</div>
+          <div class="hero__meta-item"><div class="hero__meta-dot" aria-hidden="true"></div>No fees unless you win</div>
+        </div>
+        <div class="hero__actions">
+          <a href="#lead-form" class="btn btn--primary btn--lg">Get Free Case Review →</a>
+          <a href="#accidents" class="btn btn--ghost">See All Accident Types</a>
+        </div>
+      </div>
+
+      <!-- Lead form -->
+      <div class="form-card" id="lead-form">
+        <div class="form-card__bar" aria-hidden="true"></div>
+        <h2 class="form-card__title">Free {{iata_code}} Accident Review</h2>
+        <p class="form-card__sub">Tell us what happened at {{airport_name}}. A lawyer reviews your case within 24 hours.</p>
+        <form class="lead-form" novalidate data-airport="{{airport_slug}}" data-accident-type="">
+          <div data-role="fields">
+            <div class="form__group">
+              <label class="form__label" for="ah-accident">Type of accident</label>
+              <div class="form__select-wrap">
+                <select class="form__select" id="ah-accident" name="accident_type">
+                  <option value="">What happened to you?</option>
+                  <option value="slip-and-fall">Slip &amp; Fall</option>
+                  <option value="jet-bridge-boarding">Jet Bridge / Boarding Ramp Fall</option>
+                  <option value="baggage-claim">Baggage Claim Injury</option>
+                  <option value="vehicle-accidents">Vehicle or Baggage Cart Hit Me</option>
+                  <option value="security-checkpoint">TSA / Security Checkpoint Injury</option>
+                  <option value="escalator-elevator">Escalator or Elevator Accident</option>
+                  <option value="shuttle-bus-ground-transportation">Shuttle Bus or Ground Transport</option>
+                  <option value="food-court-restaurant">Food Poisoning / Restaurant Injury</option>
+                  <option value="assault-security-failure">Assault / Security Failure</option>
+                  <option value="disabled-passenger-assistance">Wheelchair / Disabled Passenger</option>
+                  <option value="parking-lot-curbside">Parking Lot or Curbside</option>
+                  <option value="worker-accidents">Airport Worker Injury</option>
+                  <option value="other">Other type of injury</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="ah-timeframe">When did it happen?</label>
+              <div class="form__select-wrap">
+                <select class="form__select" id="ah-timeframe" name="timeframe">
+                  <option value="">Approximate timeframe</option>
+                  <option value="0-7">Within the last week</option>
+                  <option value="7-30">1 to 4 weeks ago</option>
+                  <option value="30-90">1 to 3 months ago</option>
+                  <option value="90-365">3 to 12 months ago</option>
+                  <option value="365+">More than a year ago</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="ah-description">Brief description</label>
+              <textarea class="form__textarea" id="ah-description" name="description" rows="3" placeholder="Briefly describe what happened at {{airport_name}}..."></textarea>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="ah-phone">Your phone number</label>
+              <input class="form__input" id="ah-phone" name="phone" type="tel" placeholder="(555) 000-0000" autocomplete="tel" data-role="phone" required aria-describedby="ah-phone-hint">
+              <span class="form__hint" id="ah-phone-hint">We will call or text within 24 hours.</span>
+            </div>
+            <button class="form__submit" type="submit" data-role="submit">Review My {{iata_code}} Case →</button>
+            <p class="form__disclaimer">Free. Confidential. No fees unless we win.</p>
+          </div>
+          <div data-role="success" class="form__success" style="display:none;" aria-live="polite">
+            <div class="form__success-icon" aria-hidden="true">✓</div>
+            <h3 class="form__success-title">Case Review Submitted</h3>
+            <p class="form__success-text">An attorney will review your {{iata_code}} case and contact you within 24 hours.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip" role="complementary" aria-label="Trust indicators">
+    <div class="trust-strip__inner">
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>No fees unless you win</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>Case reviewed within 24 hours</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>Evidence preserved immediately</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>All liable parties identified</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>Federal &amp; state law expertise</div>
+    </div>
+  </div>
+
+  <!-- ACCIDENT TYPES -->
+  <section class="section section--white" id="accidents" aria-labelledby="accidents-heading">
+    <div class="container">
+      <div class="section__label">Choose your case type</div>
+      <h2 class="section__title" id="accidents-heading">25 Types of Accidents at {{airport_name}}</h2>
+      <p class="section__sub">Click the type of accident that matches what happened to you. Each page includes who is liable, what evidence to preserve, and what your claim may be worth at {{airport_name}} specifically.</p>
+
+      <div class="ah-accidents-grid" role="list">
+        <a href="/{{airport_slug}}/slip-and-fall/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🚶</div><div class="ah-accident-card__name">Slip &amp; Fall</div><span class="badge badge--very-common">Very Common</span><div class="ah-accident-card__value">Up to $500K+</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/jet-bridge-boarding/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">✈️</div><div class="ah-accident-card__name">Jet Bridge &amp; Boarding</div><span class="badge badge--moderate">Severity 9/10</span><div class="ah-accident-card__value">Up to $1M+</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/baggage-claim/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🧳</div><div class="ah-accident-card__name">Baggage Claim</div><span class="badge badge--very-common">Very Common</span><div class="ah-accident-card__value">Up to $200K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/vehicle-accidents/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🚗</div><div class="ah-accident-card__name">Vehicle &amp; Baggage Cart</div><span class="badge badge--common">Common</span><div class="ah-accident-card__value">Up to $750K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/security-checkpoint/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🛂</div><div class="ah-accident-card__name">TSA Checkpoint</div><span class="badge badge--moderate">FTCA Applies</span><div class="ah-accident-card__value">Up to $150K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/escalator-elevator/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">⬆️</div><div class="ah-accident-card__name">Escalator &amp; Elevator</div><span class="badge badge--common">Common</span><div class="ah-accident-card__value">Up to $500K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/food-court-restaurant/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">☕</div><div class="ah-accident-card__name">Restaurant &amp; Food Court</div><span class="badge badge--very-common">Very Common</span><div class="ah-accident-card__value">Up to $250K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/shuttle-bus-ground-transportation/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🚌</div><div class="ah-accident-card__name">Shuttle Bus &amp; Tram</div><span class="badge badge--common">Common</span><div class="ah-accident-card__value">Up to $500K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/parking-lot-curbside/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🅿️</div><div class="ah-accident-card__name">Parking Lot</div><span class="badge badge--very-common">Very Common</span><div class="ah-accident-card__value">Up to $300K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/assault-security-failure/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">⚠️</div><div class="ah-accident-card__name">Assault &amp; Security</div><span class="badge badge--moderate">Severity 9/10</span><div class="ah-accident-card__value">Up to $2M+</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/disabled-passenger-assistance/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">♿</div><div class="ah-accident-card__name">Disabled Passenger</div><span class="badge badge--moderate">ACAA Rights</span><div class="ah-accident-card__value">Up to $500K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/construction-zone/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🚧</div><div class="ah-accident-card__name">Construction Zone</div><span class="badge badge--moderate">Common at Hubs</span><div class="ah-accident-card__value">Up to $1M+</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/boarding-stairs-ramps/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🪜</div><div class="ah-accident-card__name">Boarding Stairs</div><span class="badge badge--moderate">Regional Risk</span><div class="ah-accident-card__value">Up to $750K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/worker-accidents/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">👷</div><div class="ah-accident-card__name">Worker Injuries</div><span class="badge badge--very-common">Very Common</span><div class="ah-accident-card__value">Up to $1M+</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/tarmac-airside/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🛩️</div><div class="ah-accident-card__name">Tarmac &amp; Airside</div><span class="badge badge--rare">Severity 10/10</span><div class="ah-accident-card__value">Up to $5M+</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/luggage-cart-conveyor/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🛒</div><div class="ah-accident-card__name">Luggage Cart</div><span class="badge badge--common">Common</span><div class="ah-accident-card__value">Up to $200K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/international-travel-claims/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🌐</div><div class="ah-accident-card__name">International Claims</div><span class="badge badge--moderate">Montreal Convention</span><div class="ah-accident-card__value">Up to $500K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/toxic-exposure/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">☣️</div><div class="ah-accident-card__name">Toxic Exposure / PFAS</div><span class="badge badge--rare">Mass Tort</span><div class="ah-accident-card__value">Up to $5M+</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/lost-delayed-luggage/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">📦</div><div class="ah-accident-card__name">Lost &amp; Delayed Luggage</div><span class="badge badge--very-common">Very Common</span><div class="ah-accident-card__value">Up to $50K+</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/rental-car-accidents/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🚙</div><div class="ah-accident-card__name">Rental Car</div><span class="badge badge--common">Common</span><div class="ah-accident-card__value">Up to $500K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/medical-emergency-negligence/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🏥</div><div class="ah-accident-card__name">Medical Emergency</div><span class="badge badge--moderate">Wrongful Death</span><div class="ah-accident-card__value">Up to $5M+</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/child-unaccompanied-minor/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">👶</div><div class="ah-accident-card__name">Unaccompanied Minor</div><span class="badge badge--rare">Tolled to Age 18</span><div class="ah-accident-card__value">Up to $500K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/slip-fall-wet-weather/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🌧️</div><div class="ah-accident-card__name">Wet Weather Falls</div><span class="badge badge--seasonal">Seasonal</span><div class="ah-accident-card__value">Up to $750K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/airline-delay-cancellation-injury/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">⏳</div><div class="ah-accident-card__name">Delay / Cancellation</div><span class="badge badge--common">DOT Rules Apply</span><div class="ah-accident-card__value">Up to $100K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+        <a href="/{{airport_slug}}/retail-shop-injuries/" class="ah-accident-card" role="listitem"><div class="ah-accident-card__icon" aria-hidden="true">🏪</div><div class="ah-accident-card__name">Retail Shop Injuries</div><span class="badge badge--common">Common</span><div class="ah-accident-card__value">Up to $150K</div><span class="ah-accident-card__arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IS LIABLE -->
+  <section class="section section--cream2" aria-labelledby="liable-heading">
+    <div class="container">
+      <div class="ah-about__grid">
+        <div class="ah-about">
+          <div class="section__label">Who is responsible</div>
+          <h2 class="section__title" id="liable-heading">Who Can Be Sued for an Accident at {{airport_name}}</h2>
+          <p>Accidents at {{airport_name}} involve multiple parties — and determining who is actually liable is one of the most important steps in any airport injury case. The airport, the airlines, and dozens of contractors all share different zones of responsibility.</p>
+          <p>In most cases, <strong>more than one party is liable</strong>. A slip and fall near a Starbucks at {{airport_name}} may involve the cleaning contractor, HMSHost, and the airport authority — all at once. We identify all of them.</p>
+          <p>Federal law adds another layer: TSA injuries require the Federal Tort Claims Act, and injuries on international flights may be governed by the Montreal Convention — both with strict deadlines different from standard personal injury claims.</p>
+          <div class="ah-about__stats">
+            <div class="stat-card"><div class="stat-card__num">25</div><div class="stat-card__label">accident types covered</div></div>
+            <div class="stat-card"><div class="stat-card__num">$0</div><div class="stat-card__label">upfront cost</div></div>
+            <div class="stat-card"><div class="stat-card__num">24h</div><div class="stat-card__label">case review time</div></div>
+            <div class="stat-card"><div class="stat-card__num">72h</div><div class="stat-card__label">CCTV overwrite window</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="section__label">Primary liable parties</div>
+          <h3 class="section__title" class="t-heading-lg">Who we pursue at {{airport_name}}</h3>
+          <div class="ah-liable__list">
+            <div class="card card--bordered-left"><h4 class="card__title">{{airport_operator}} (Airport Authority)</h4><p class="card__body">Responsible for common areas, maintenance, security standards, and the overall facility at {{airport_name}}. Often a public entity requiring Notice of Claim.</p></div>
+            <div class="card card--bordered-left"><h4 class="card__title">Airlines Operating at {{iata_code}}</h4><p class="card__body">Liable for jet bridge conditions, boarding equipment, baggage handling, gate areas, and passenger assistance failures at their gates.</p></div>
+            <div class="card card--bordered-left"><h4 class="card__title">Ground Handling Companies</h4><p class="card__body">Menzies Aviation, Swissport, dnata handle baggage and ramp operations at {{airport_name}} — they carry their own liability policies.</p></div>
+            <div class="card card--bordered-left"><h4 class="card__title">Food &amp; Retail Operators</h4><p class="card__body">HMSHost, SSP America, Paradies Lagardere, and Hudson Group operate most food and retail at {{airport_name}} and are liable for their leased areas.</p></div>
+            <div class="card card--bordered-left"><h4 class="card__title">TSA / Federal Government</h4><p class="card__body">Checkpoint injuries involve the federal government. Claims must be filed under the Federal Tort Claims Act before any lawsuit can proceed.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE -->
+  <section class="section section--navy" aria-labelledby="evidence-heading">
+    <div class="container">
+      <div class="section__label">Act fast</div>
+      <h2 class="section__title" id="evidence-heading">Evidence at {{airport_name}} Disappears Quickly</h2>
+      <p class="section__sub">CCTV footage at {{airport_name}} is typically overwritten within 24–72 hours. Maintenance logs, vehicle GPS data, and cleaning records can vanish just as fast. We send preservation demand letters immediately.</p>
+      <div class="ah-evidence__grid" role="list">
+        <div class="evidence-card" role="listitem"><div class="evidence-card__urgency evidence-card__urgency--critical">⚠ Critical — 24–72 hours</div><h3 class="evidence-card__name">CCTV Footage</h3><p class="evidence-card__note">{{airport_name}} has cameras throughout the terminal, curbside, and baggage areas. All are overwritten on rolling loops.</p></div>
+        <div class="evidence-card" role="listitem"><div class="evidence-card__urgency evidence-card__urgency--critical">⚠ Critical — 72 hours</div><h3 class="evidence-card__name">Vehicle GPS &amp; Telematics</h3><p class="evidence-card__note">Ground vehicle data from baggage tugs, carts, and shuttles is stored briefly before overwrite. Proves speed and location of impact.</p></div>
+        <div class="evidence-card" role="listitem"><div class="evidence-card__urgency evidence-card__urgency--high">↑ High — 1 week</div><h3 class="evidence-card__name">Cleaning &amp; Inspection Logs</h3><p class="evidence-card__note">Cleaning schedules and inspection records show whether the hazard was known and ignored before your accident.</p></div>
+        <div class="evidence-card" role="listitem"><div class="evidence-card__urgency evidence-card__urgency--high">↑ High — 1 week</div><h3 class="evidence-card__name">Maintenance Records</h3><p class="evidence-card__note">Escalator, elevator, jet bridge, and equipment maintenance logs establish whether deferred repairs contributed to your injury.</p></div>
+        <div class="evidence-card" role="listitem"><div class="evidence-card__urgency evidence-card__urgency--high">↑ High — varies</div><h3 class="evidence-card__name">Incident Report</h3><p class="evidence-card__note">If you reported the incident at {{airport_name}}, request the incident report number immediately — it is your formal record.</p></div>
+        <div class="evidence-card" role="listitem"><div class="evidence-card__urgency evidence-card__urgency--moderate">→ Preserve now</div><h3 class="evidence-card__name">Your Medical Records</h3><p class="evidence-card__note">Seek treatment immediately and document everything. A gap in treatment is the most common defense used by airport insurers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEARBY AIRPORTS -->
+  <section class="section section--white" aria-labelledby="nearby-heading">
+    <div class="container">
+      <div class="section__label">Also in {{state}}</div>
+      <h2 class="section__title" id="nearby-heading">Other {{state}} Airports We Cover</h2>
+      <p class="section__sub">We handle airport accident cases across all of {{state}}. Find the airport where your injury occurred.</p>
+      <div class="ah-nearby__grid" id="nearby-airports" role="list">
+        {{nearby_airports_html}}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta cta--dark" aria-labelledby="cta-heading">
+    <div class="cta__bg-grid" aria-hidden="true"></div>
+    <div class="cta__inner">
+      <div class="section__label" class="section__label--center">Free consultation — no fees unless you win</div>
+      <h2 class="cta__title" id="cta-heading">Injured at <em>{{airport_name}}?</em><br>Your Case May Be Worth More Than You Think.</h2>
+      <p class="cta__sub">Airport injury settlements regularly reach six and seven figures — but only if you act before evidence is overwritten and legal deadlines expire.</p>
+      <a href="tel:18005550199" class="cta__phone" aria-label="Call 1-800-555-0199">1-800-555-0199</a>
+      <span class="cta__phone-label">Free consultation — available 24/7</span>
+      <div class="cta__actions">
+        <a href="#lead-form" class="btn btn--primary btn--lg">Start My Free {{iata_code}} Case Review →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo footer__logo" aria-label="AirportAccidents.com">Airport<span>Accidents</span>.com</a>
+        <p class="footer__tagline">Expert airport accident attorneys covering {{airport_name}} and all 522 US commercial airports.</p>
+        <a href="tel:18005550199" class="footer__phone" aria-label="Call 1-800-555-0199">1-800-555-0199</a>
+      </div>
+      <nav class="footer__col" aria-label="Airport accident types">
+        <h3 class="footer__col-title">{{iata_code}} Accidents</h3>
+        <a href="/{{airport_slug}}/slip-and-fall/">Slip &amp; Fall</a>
+        <a href="/{{airport_slug}}/jet-bridge-boarding/">Jet Bridge</a>
+        <a href="/{{airport_slug}}/baggage-claim/">Baggage Claim</a>
+        <a href="/{{airport_slug}}/shuttle-bus-ground-transportation/">Shuttle Bus</a>
+        <a href="/{{airport_slug}}/assault-security-failure/">Assault &amp; Security</a>
+        <a href="/{{airport_slug}}/tarmac-airside/">Tarmac Accidents</a>
+      </nav>
+      <nav class="footer__col" aria-label="Other airports">
+        <h3 class="footer__col-title">Top Airports</h3>
+        <a href="/hartsfield-jackson-atlanta-international/">Atlanta (ATL)</a>
+        <a href="/los-angeles-international/">Los Angeles (LAX)</a>
+        <a href="/ohare-international/">Chicago (ORD)</a>
+        <a href="/john-f-kennedy-international/">New York (JFK)</a>
+        <a href="/miami-international/">Miami (MIA)</a>
+        <a href="/#airports">All 522 airports →</a>
+      </nav>
+      <nav class="footer__col" aria-label="Legal pages">
+        <h3 class="footer__col-title">Legal</h3>
+        <a href="/about/">About Us</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/disclaimer/">Legal Disclaimer</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__legal">&copy; 2025 AirportAccidents.com. Informational purposes only. Not legal advice. Attorney advertising. Results vary.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-bar" id="sticky-bar" role="complementary" aria-label="Contact prompt">
+  <p class="sticky-bar__text"><strong>Injured at {{airport_name}}?</strong> Free case review — no fees unless you win.</p>
+  <a href="#lead-form" class="sticky-bar__btn">Get Help Now</a>
+</div>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
