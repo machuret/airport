@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- @@include('../partials/head.html') -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{state}} Airport Accident Attorneys | {{airport_count}} Airports | Free Consultation</title>
+<meta name="description" content="Injured at an airport in {{state}}? Free legal consultation for all {{airport_count}} {{state}} airports. Slip and falls, jet bridge injuries, baggage claim accidents and more. No fees unless you win.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://airportaccidents.com/state/{{state_code_lower}}/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AirportAccidents.com">
+<meta property="og:url" content="https://airportaccidents.com/state/{{state_code_lower}}/">
+<meta property="og:title" content="{{state}} Airport Accident Attorneys | Free Consultation">
+<meta property="og:description" content="Injured at an airport in {{state}}? Free legal consultation covering all {{airport_count}} {{state}} airports. No fees unless you win.">
+<meta property="og:image" content="https://airportaccidents.com/assets/img/og-state.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{state}} Airport Accident Attorneys | Free Consultation">
+<meta name="twitter:description" content="Injured at a {{state}} airport? Free case review — no fees unless you win.">
+<meta name="twitter:image" content="https://airportaccidents.com/assets/img/og-state.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/css/global.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{state}} Airport Accident Attorneys",
+  "url": "https://airportaccidents.com/state/{{state_code_lower}}/",
+  "description": "Free legal consultations for airport injury victims at all {{airport_count}} airports in {{state}}.",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",       "item": "https://airportaccidents.com/" },
+      { "@type": "ListItem", "position": 2, "name": "{{state}}", "item": "https://airportaccidents.com/state/{{state_code_lower}}/" }
+    ]
+  }
+}
+</script>
+<style>
+/* ── State hub page-specific styles only ────────────────────── */
+
+/* Hero layout — single column, wider */
+.sh-hero__inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-16);
+  align-items: start;
+  padding: var(--space-10) 0 var(--space-20);
+}
+
+/* State badge */
+.sh-state-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.sh-state-code {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-black);
+  color: var(--color-gold-300);
+  background: var(--alpha-gold-light);
+  border: 1px solid var(--alpha-gold-mid);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  letter-spacing: var(--tracking-wider);
+  line-height: 1;
+}
+
+/* Legal facts bar */
+.sh-legal-bar {
+  background: var(--alpha-white-6);
+  border: 1px solid var(--alpha-white-10);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.sh-legal-fact__label {
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--alpha-white-40);
+  margin-bottom: var(--space-1);
+}
+
+.sh-legal-fact__value {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: #fff;
+  line-height: var(--leading-snug);
+}
+
+.sh-legal-fact__value--warn { color: #FCD34D; }
+
+/* Airport count stats */
+.sh-airport-stats {
+  display: flex;
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.sh-airport-stat__num {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-gold-300);
+  line-height: 1;
+}
+
+.sh-airport-stat__label {
+  font-size: var(--text-xs);
+  color: var(--alpha-white-50);
+  letter-spacing: var(--tracking-wide);
+  margin-top: var(--space-1);
+}
+
+/* Airport type section divider */
+.sh-type-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.sh-type-divider__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.sh-type-divider__line {
+  flex: 1;
+  height: 1px;
+  background: var(--alpha-navy-border);
+}
+
+/* Airport card grid */
+.sh-airports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-10);
+}
+
+/* Airport card */
+.sh-airport-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: #fff;
+  border: 1px solid var(--alpha-navy-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  position: relative;
+}
+
+.sh-airport-card:hover,
+.sh-airport-card:focus-visible {
+  border-color: var(--color-gold-400);
+  box-shadow: 0 4px 16px var(--alpha-gold-subtle);
+  transform: translateY(-1px);
+}
+
+.sh-airport-card__code {
+  font-size: var(--text-base);
+  font-weight: var(--weight-black);
+  color: var(--color-gold-400);
+  background: var(--alpha-gold-light);
+  border: 1px solid rgba(200,150,42,0.2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  letter-spacing: var(--tracking-wide);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 52px;
+  text-align: center;
+}
+
+.sh-airport-card--large .sh-airport-card__code {
+  background: var(--color-gold-400);
+  color: #fff;
+  border-color: var(--color-gold-400);
+}
+
+.sh-airport-card__info { min-width: 0; flex: 1; }
+
+.sh-airport-card__name {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-navy-800);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: var(--leading-snug);
+}
+
+.sh-airport-card__city {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.sh-airport-card__type {
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.type--large  { background: #FEF3C7; color: #92400E; }
+.type--medium { background: #E0F2FE; color: #075985; }
+.type--small  { background: #D1FAE5; color: #065F46; }
+.type--non    { background: var(--color-cream-200); color: var(--color-text-muted); }
+
+.sh-airport-card__arrow {
+  color: var(--color-gold-400);
+  font-size: var(--text-lg);
+  opacity: 0;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+
+.sh-airport-card:hover .sh-airport-card__arrow { opacity: 1; }
+
+/* Accident types grid — compact version for state page */
+.sh-accidents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+}
+
+.sh-accident-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-3);
+  background: #fff;
+  border: 1px solid var(--alpha-navy-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-navy-800);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.sh-accident-pill:hover,
+.sh-accident-pill:focus-visible {
+  background: var(--color-cream-200);
+  border-color: var(--color-gold-400);
+}
+
+.sh-accident-pill__icon { font-size: 16px; line-height: 1; flex-shrink: 0; }
+.sh-accident-pill__name { line-height: var(--leading-snug); }
+
+/* State law box */
+.sh-law-box {
+  background: var(--color-navy-800);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.sh-law-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold-400), var(--color-gold-300));
+}
+
+.sh-law-box__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-6);
+  color: #fff;
+}
+
+.sh-law-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.sh-law-item {
+  background: var(--alpha-white-6);
+  border: 1px solid var(--alpha-white-10);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.sh-law-item__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--alpha-white-40);
+  margin-bottom: var(--space-2);
+}
+
+.sh-law-item__value {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: #fff;
+  margin-bottom: var(--space-1);
+}
+
+.sh-law-item__note {
+  font-size: var(--text-sm);
+  color: var(--alpha-white-55);
+  line-height: var(--leading-relaxed);
+}
+
+.sh-law-item--warn .sh-law-item__value { color: #FCD34D; }
+.sh-law-item--danger .sh-law-item__value { color: #FCA5A5; }
+
+/* Other states nav */
+.sh-states-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+}
+
+@media (max-width: 960px) {
+  .sh-hero__inner  { grid-template-columns: 1fr; gap: var(--space-10); }
+  .sh-legal-bar    { grid-template-columns: 1fr 1fr; }
+  .sh-law-grid     { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 680px) {
+  .sh-legal-bar    { grid-template-columns: 1fr; }
+  .sh-airports-grid { grid-template-columns: 1fr; }
+  .sh-airport-stat__num { font-size: var(--text-2xl); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="AirportAccidents.com home">Airport<span>Accidents</span>.com</a>
+    <div class="nav__links" id="nav-menu" role="menubar">
+      <a href="/#accident-types" class="nav__link" role="menuitem">Accident Types</a>
+      <a href="/#airports"       class="nav__link" role="menuitem">All States</a>
+      <a href="tel:18005550199"  class="nav__link nav__link--cta" role="menuitem">Free Consultation</a>
+    </div>
+    <button class="nav__toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation menu">
+      <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb" role="navigation" aria-label="Breadcrumb">
+  <div class="breadcrumb__inner">
+    <a href="/" class="breadcrumb__link">Home</a>
+    <span class="breadcrumb__sep" aria-hidden="true">›</span>
+    <span class="breadcrumb__current" aria-current="page">{{state}} Airports</span>
+  </div>
+</div>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="State hero">
+    <div class="hero__bg-grid" aria-hidden="true"></div>
+    <div class="hero__bg-glow" aria-hidden="true"></div>
+
+    <div class="sh-hero__inner">
+      <div>
+        <div class="sh-state-badge">
+          <span class="sh-state-code" aria-label="{{state}} — {{state_code}}">{{state_code}}</span>
+          <div class="hero__eyebrow">Airport Accident Attorneys</div>
+        </div>
+
+        <h1 class="hero__title">{{state}}<br>Airport <em>Accidents</em></h1>
+        <p class="hero__sub">Injured at any of {{state}}'s {{airport_count}} commercial airports? Airport accident law is complex — multiple federal agencies, airlines, and contractors share liability. We identify all of them and fight for maximum compensation.</p>
+
+        <!-- State legal facts bar -->
+        <div class="sh-legal-bar" role="complementary" aria-label="{{state}} legal deadlines">
+          <div class="sh-legal-fact">
+            <div class="sh-legal-fact__label">Statute of limitations</div>
+            <div class="sh-legal-fact__value sh-legal-fact__value--warn">{{sol}}</div>
+          </div>
+          <div class="sh-legal-fact">
+            <div class="sh-legal-fact__label">Notice of claim deadline</div>
+            <div class="sh-legal-fact__value">{{notice_deadline}}</div>
+          </div>
+          <div class="sh-legal-fact">
+            <div class="sh-legal-fact__label">Primary operator</div>
+            <div class="sh-legal-fact__value">{{gov_entity}}</div>
+          </div>
+        </div>
+
+        <!-- Airport count stats -->
+        <div class="sh-airport-stats">
+          <div>
+            <div class="sh-airport-stat__num">{{airport_count}}</div>
+            <div class="sh-airport-stat__label">total airports</div>
+          </div>
+          <div>
+            <div class="sh-airport-stat__num">{{large_hub_count}}</div>
+            <div class="sh-airport-stat__label">major hubs</div>
+          </div>
+          <div>
+            <div class="sh-airport-stat__num">{{medium_hub_count}}</div>
+            <div class="sh-airport-stat__label">medium hubs</div>
+          </div>
+          <div>
+            <div class="sh-airport-stat__num">{{regional_count}}</div>
+            <div class="sh-airport-stat__label">regional airports</div>
+          </div>
+        </div>
+
+        <div class="hero__actions">
+          <a href="#lead-form" class="btn btn--primary btn--lg">Get Free Case Review →</a>
+          <a href="#airports"  class="btn btn--ghost">See All {{state_code}} Airports</a>
+        </div>
+      </div>
+
+      <!-- Lead form -->
+      <div class="form-card" id="lead-form">
+        <div class="form-card__bar" aria-hidden="true"></div>
+        <h2 class="form-card__title">Free {{state_code}} Airport Case Review</h2>
+        <p class="form-card__sub">Tell us which airport and what happened. A lawyer reviews your case within 24 hours.</p>
+        <form class="lead-form" novalidate data-airport="" data-accident-type="">
+          <div data-role="fields">
+            <div class="form__group">
+              <label class="form__label" for="sh-airport">Which {{state}} airport?</label>
+              <div class="form__select-wrap">
+                <select class="form__select" id="sh-airport" name="airport" data-role="airport-select">
+                  <option value="">Select airport...</option>
+                  {{state_airport_options_html}}
+                  <option value="other">My airport isn't listed...</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="sh-accident">Type of accident</label>
+              <div class="form__select-wrap">
+                <select class="form__select" id="sh-accident" name="accident_type">
+                  <option value="">What happened to you?</option>
+                  <option value="slip-and-fall">Slip &amp; Fall (wet floor, uneven surface)</option>
+                  <option value="jet-bridge-boarding">Jet Bridge / Boarding Ramp Fall</option>
+                  <option value="baggage-claim">Baggage Claim Injury</option>
+                  <option value="vehicle-accidents">Vehicle or Baggage Cart Hit Me</option>
+                  <option value="security-checkpoint">TSA / Security Checkpoint Injury</option>
+                  <option value="escalator-elevator">Escalator or Elevator Accident</option>
+                  <option value="shuttle-bus-ground-transportation">Shuttle Bus or Ground Transport</option>
+                  <option value="food-court-restaurant">Food Poisoning / Restaurant Injury</option>
+                  <option value="assault-security-failure">Assault / Security Failure</option>
+                  <option value="disabled-passenger-assistance">Wheelchair / Disabled Passenger</option>
+                  <option value="parking-lot-curbside">Parking Lot or Curbside</option>
+                  <option value="worker-accidents">Airport Worker Injury</option>
+                  <option value="other">Other type of injury</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="sh-timeframe">When did it happen?</label>
+              <div class="form__select-wrap">
+                <select class="form__select" id="sh-timeframe" name="timeframe">
+                  <option value="">Approximate timeframe</option>
+                  <option value="0-7">Within the last week</option>
+                  <option value="7-30">1 to 4 weeks ago</option>
+                  <option value="30-90">1 to 3 months ago</option>
+                  <option value="90-365">3 to 12 months ago</option>
+                  <option value="365+">More than a year ago</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="sh-phone">Your phone number</label>
+              <input class="form__input" id="sh-phone" name="phone" type="tel" placeholder="(555) 000-0000" autocomplete="tel" data-role="phone" required aria-describedby="sh-phone-hint">
+              <span class="form__hint" id="sh-phone-hint">We will call or text within 24 hours.</span>
+            </div>
+            <button class="form__submit" type="submit" data-role="submit">Review My {{state_code}} Case →</button>
+            <p class="form__disclaimer">Free. Confidential. No fees unless we win.</p>
+          </div>
+          <div data-role="success" class="form__success" style="display:none;" aria-live="polite">
+            <div class="form__success-icon" aria-hidden="true">✓</div>
+            <h3 class="form__success-title">Case Review Submitted</h3>
+            <p class="form__success-text">An attorney will review your {{state}} airport case and contact you within 24 hours.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip" role="complementary" aria-label="Trust indicators">
+    <div class="trust-strip__inner">
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>No fees unless you win</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>Case reviewed within 24 hours</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>All {{airport_count}} {{state}} airports covered</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>Evidence preserved immediately</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>{{state}} law specialists</div>
+    </div>
+  </div>
+
+  <!-- ALL AIRPORTS IN STATE -->
+  <section class="section section--white" id="airports" aria-labelledby="airports-heading">
+    <div class="container">
+      <div class="section__label">{{airport_count}} airports covered</div>
+      <h2 class="section__title" id="airports-heading">Every Airport in {{state}}</h2>
+      <p class="section__sub">Click your airport for a dedicated page showing who is liable, what evidence to preserve, and all 25 accident types specific to that location.</p>
+
+      <!-- Large hubs -->
+      {{#if large_hub_count}}
+      <div style="margin-top: var(--space-10);">
+        <div class="sh-type-divider">
+          <span class="sh-type-divider__label">Major Hubs</span>
+          <div class="sh-type-divider__line" aria-hidden="true"></div>
+          <span class="type--large" class="type-count-badge">{{large_hub_count}} airports</span>
+        </div>
+        <div class="sh-airports-grid" role="list">
+          {{large_hubs_html}}
+        </div>
+      </div>
+      {{/if}}
+
+      <!-- Medium hubs -->
+      {{#if medium_hub_count}}
+      <div style="margin-top: var(--space-8);">
+        <div class="sh-type-divider">
+          <span class="sh-type-divider__label">Medium Hubs</span>
+          <div class="sh-type-divider__line" aria-hidden="true"></div>
+          <span class="type--medium" class="type-count-badge">{{medium_hub_count}} airports</span>
+        </div>
+        <div class="sh-airports-grid" role="list">
+          {{medium_hubs_html}}
+        </div>
+      </div>
+      {{/if}}
+
+      <!-- Small hubs -->
+      {{#if small_hub_count}}
+      <div style="margin-top: var(--space-8);">
+        <div class="sh-type-divider">
+          <span class="sh-type-divider__label">Small Hubs</span>
+          <div class="sh-type-divider__line" aria-hidden="true"></div>
+          <span class="type--small" class="type-count-badge">{{small_hub_count}} airports</span>
+        </div>
+        <div class="sh-airports-grid" role="list">
+          {{small_hubs_html}}
+        </div>
+      </div>
+      {{/if}}
+
+      <!-- Regional / non-hub -->
+      {{#if regional_count}}
+      <div style="margin-top: var(--space-8);">
+        <div class="sh-type-divider">
+          <span class="sh-type-divider__label">Regional Airports</span>
+          <div class="sh-type-divider__line" aria-hidden="true"></div>
+          <span class="type--non" class="type-count-badge">{{regional_count}} airports</span>
+        </div>
+        <div class="sh-airports-grid" role="list">
+          {{regional_hubs_html}}
+        </div>
+      </div>
+      {{/if}}
+
+    </div>
+  </section>
+
+  <!-- STATE LAW & DEADLINES -->
+  <section class="section section--cream2" aria-labelledby="law-heading">
+    <div class="container">
+      <div class="layout-2col">
+
+        <div>
+          <div class="section__label">{{state}} specific law</div>
+          <h2 class="section__title" id="law-heading">Critical Legal Deadlines in {{state}}</h2>
+          <p class="section__sub">Airport accident law in {{state}} has deadlines that differ from standard personal injury claims. Missing any of these bars your case permanently.</p>
+
+          <div class="sh-law-box" style="margin-top: var(--space-8);" role="complementary" aria-label="{{state}} legal deadlines">
+            <h3 class="sh-law-box__title">{{state}} Airport Accident Law at a Glance</h3>
+            <div class="sh-law-grid">
+              <div class="sh-law-item sh-law-item--warn">
+                <div class="sh-law-item__label">Statute of Limitations</div>
+                <div class="sh-law-item__value">{{sol}}</div>
+                <p class="sh-law-item__note">Personal injury claims against private parties in {{state}}. Clock starts at date of injury.</p>
+              </div>
+              <div class="sh-law-item sh-law-item--danger">
+                <div class="sh-law-item__label">Notice of Claim (Gov. Airports)</div>
+                <div class="sh-law-item__value">{{notice_deadline}}</div>
+                <p class="sh-law-item__note">Claims against government-operated airports in {{state}} require earlier written notice before filing suit.</p>
+              </div>
+              <div class="sh-law-item">
+                <div class="sh-law-item__label">TSA / Federal Claims</div>
+                <div class="sh-law-item__value">2 years (FTCA)</div>
+                <p class="sh-law-item__note">Federal Tort Claims Act applies to all TSA checkpoint injuries regardless of state — requires administrative filing first.</p>
+              </div>
+              <div class="sh-law-item">
+                <div class="sh-law-item__label">International Flight Claims</div>
+                <div class="sh-law-item__value">2 years (Montreal)</div>
+                <p class="sh-law-item__note">Montreal Convention governs all international flight injuries — 2-year hard deadline with no exceptions.</p>
+              </div>
+              <div class="sh-law-item">
+                <div class="sh-law-item__label">Primary Airport Operator</div>
+                <div class="sh-law-item__value" style="font-size: var(--text-sm);">{{gov_entity}}</div>
+                <p class="sh-law-item__note">Government entity that operates most major airports in {{state}} — may require Notice of Claim before filing.</p>
+              </div>
+              <div class="sh-law-item">
+                <div class="sh-law-item__label">CCTV Overwrite Window</div>
+                <div class="sh-law-item__value">24–72 hours</div>
+                <p class="sh-law-item__note">Evidence disappears fast at every {{state}} airport regardless of legal deadlines — act immediately.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section__label">Why it's complex</div>
+          <h2 class="section__title" style="font-size: var(--text-display-sm);">{{state}} Airports Have Multiple Liable Parties</h2>
+
+          <div class="stack-sm">
+            <div class="card card--bordered-left">
+              <h3 class="card__title">Airport Authority</h3>
+              <p class="card__body">{{gov_entity}} is typically the property owner and bears liability for common areas, maintenance failures, and security standards across {{state}} airports.</p>
+            </div>
+            <div class="card card--bordered-left">
+              <h3 class="card__title">Airlines Operating in {{state}}</h3>
+              <p class="card__body">All major US carriers operating in {{state}} bear liability for jet bridge conditions, gate areas, boarding equipment, and passenger assistance at their gates.</p>
+            </div>
+            <div class="card card--bordered-left">
+              <h3 class="card__title">Ground Handling Contractors</h3>
+              <p class="card__body">Swissport, Menzies Aviation, and dnata operate baggage and ramp services at {{state}} airports — each carries their own liability policy separate from the airlines.</p>
+            </div>
+            <div class="card card--bordered-left">
+              <h3 class="card__title">Food &amp; Retail Operators</h3>
+              <p class="card__body">HMSHost, SSP America, Paradies Lagardere, and Hudson Group are the actual liable parties for most restaurant and retail injuries — not the brand names they operate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL 25 ACCIDENT TYPES -->
+  <section class="section section--white" aria-labelledby="accidents-heading">
+    <div class="container">
+      <div class="section__label">Any type of airport injury</div>
+      <h2 class="section__title" id="accidents-heading">25 Accident Types at {{state}} Airports</h2>
+      <p class="section__sub">Every type of airport injury has a specific legal path, different liable parties, and different evidence requirements. Find yours below.</p>
+
+      <div class="sh-accidents-grid" role="list">
+        <a href="/slip-and-fall/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🚶</span><span class="sh-accident-pill__name">Slip &amp; Fall</span></a>
+        <a href="/jet-bridge-boarding/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">✈️</span><span class="sh-accident-pill__name">Jet Bridge &amp; Boarding</span></a>
+        <a href="/baggage-claim/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🧳</span><span class="sh-accident-pill__name">Baggage Claim</span></a>
+        <a href="/vehicle-accidents/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🚗</span><span class="sh-accident-pill__name">Vehicle &amp; Baggage Cart</span></a>
+        <a href="/security-checkpoint/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🛂</span><span class="sh-accident-pill__name">TSA / Security Checkpoint</span></a>
+        <a href="/escalator-elevator/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">⬆️</span><span class="sh-accident-pill__name">Escalator &amp; Elevator</span></a>
+        <a href="/food-court-restaurant/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">☕</span><span class="sh-accident-pill__name">Restaurant &amp; Food Court</span></a>
+        <a href="/shuttle-bus-ground-transportation/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🚌</span><span class="sh-accident-pill__name">Shuttle Bus &amp; Tram</span></a>
+        <a href="/parking-lot-curbside/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🅿️</span><span class="sh-accident-pill__name">Parking Lot &amp; Curbside</span></a>
+        <a href="/assault-security-failure/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">⚠️</span><span class="sh-accident-pill__name">Assault &amp; Security</span></a>
+        <a href="/disabled-passenger-assistance/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">♿</span><span class="sh-accident-pill__name">Disabled Passenger</span></a>
+        <a href="/construction-zone/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🚧</span><span class="sh-accident-pill__name">Construction Zone</span></a>
+        <a href="/boarding-stairs-ramps/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🪜</span><span class="sh-accident-pill__name">Boarding Stairs</span></a>
+        <a href="/worker-accidents/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">👷</span><span class="sh-accident-pill__name">Worker Injuries</span></a>
+        <a href="/tarmac-airside/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🛩️</span><span class="sh-accident-pill__name">Tarmac &amp; Airside</span></a>
+        <a href="/luggage-cart-conveyor/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🛒</span><span class="sh-accident-pill__name">Luggage Cart</span></a>
+        <a href="/international-travel-claims/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🌐</span><span class="sh-accident-pill__name">International Claims</span></a>
+        <a href="/toxic-exposure/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">☣️</span><span class="sh-accident-pill__name">Toxic Exposure / PFAS</span></a>
+        <a href="/lost-delayed-luggage/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">📦</span><span class="sh-accident-pill__name">Lost &amp; Delayed Luggage</span></a>
+        <a href="/rental-car-accidents/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🚙</span><span class="sh-accident-pill__name">Rental Car Facility</span></a>
+        <a href="/medical-emergency-negligence/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🏥</span><span class="sh-accident-pill__name">Medical Emergency</span></a>
+        <a href="/child-unaccompanied-minor/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">👶</span><span class="sh-accident-pill__name">Unaccompanied Minor</span></a>
+        <a href="/slip-fall-wet-weather/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🌧️</span><span class="sh-accident-pill__name">Wet Weather Falls</span></a>
+        <a href="/airline-delay-cancellation-injury/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">⏳</span><span class="sh-accident-pill__name">Delay / Cancellation</span></a>
+        <a href="/retail-shop-injuries/" class="sh-accident-pill" role="listitem"><span class="sh-accident-pill__icon" aria-hidden="true">🏪</span><span class="sh-accident-pill__name">Retail Shop Injuries</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER STATES -->
+  <section class="section section--navy" aria-labelledby="states-heading">
+    <div class="container">
+      <div class="section__label">Nationwide coverage</div>
+      <h2 class="section__title" id="states-heading">We Cover All 50 States</h2>
+      <p class="section__sub">Airport accident cases across every US state, territory, and the District of Columbia.</p>
+      <div class="sh-states-grid" role="list" aria-label="All states">
+        <a href="/state/ak/" class="state-pill" role="listitem">AK<small>Alaska</small></a>
+        <a href="/state/al/" class="state-pill" role="listitem">AL<small>Alabama</small></a>
+        <a href="/state/ar/" class="state-pill" role="listitem">AR<small>Arkansas</small></a>
+        <a href="/state/az/" class="state-pill" role="listitem">AZ<small>Arizona</small></a>
+        <a href="/state/ca/" class="state-pill" role="listitem">CA<small>California</small></a>
+        <a href="/state/co/" class="state-pill" role="listitem">CO<small>Colorado</small></a>
+        <a href="/state/ct/" class="state-pill" role="listitem">CT<small>Connecticut</small></a>
+        <a href="/state/fl/" class="state-pill" role="listitem">FL<small>Florida</small></a>
+        <a href="/state/ga/" class="state-pill" role="listitem">GA<small>Georgia</small></a>
+        <a href="/state/gu/" class="state-pill" role="listitem">GU<small>Guam</small></a>
+        <a href="/state/hi/" class="state-pill" role="listitem">HI<small>Hawaii</small></a>
+        <a href="/state/ia/" class="state-pill" role="listitem">IA<small>Iowa</small></a>
+        <a href="/state/id/" class="state-pill" role="listitem">ID<small>Idaho</small></a>
+        <a href="/state/il/" class="state-pill" role="listitem">IL<small>Illinois</small></a>
+        <a href="/state/in/" class="state-pill" role="listitem">IN<small>Indiana</small></a>
+        <a href="/state/ks/" class="state-pill" role="listitem">KS<small>Kansas</small></a>
+        <a href="/state/ky/" class="state-pill" role="listitem">KY<small>Kentucky</small></a>
+        <a href="/state/la/" class="state-pill" role="listitem">LA<small>Louisiana</small></a>
+        <a href="/state/ma/" class="state-pill" role="listitem">MA<small>Mass.</small></a>
+        <a href="/state/md/" class="state-pill" role="listitem">MD<small>Maryland</small></a>
+        <a href="/state/me/" class="state-pill" role="listitem">ME<small>Maine</small></a>
+        <a href="/state/mi/" class="state-pill" role="listitem">MI<small>Michigan</small></a>
+        <a href="/state/mn/" class="state-pill" role="listitem">MN<small>Minnesota</small></a>
+        <a href="/state/mo/" class="state-pill" role="listitem">MO<small>Missouri</small></a>
+        <a href="/state/ms/" class="state-pill" role="listitem">MS<small>Mississippi</small></a>
+        <a href="/state/mt/" class="state-pill" role="listitem">MT<small>Montana</small></a>
+        <a href="/state/nc/" class="state-pill" role="listitem">NC<small>N. Carolina</small></a>
+        <a href="/state/nd/" class="state-pill" role="listitem">ND<small>N. Dakota</small></a>
+        <a href="/state/ne/" class="state-pill" role="listitem">NE<small>Nebraska</small></a>
+        <a href="/state/nh/" class="state-pill" role="listitem">NH<small>N. Hampshire</small></a>
+        <a href="/state/nj/" class="state-pill" role="listitem">NJ<small>New Jersey</small></a>
+        <a href="/state/nm/" class="state-pill" role="listitem">NM<small>New Mexico</small></a>
+        <a href="/state/nv/" class="state-pill" role="listitem">NV<small>Nevada</small></a>
+        <a href="/state/ny/" class="state-pill" role="listitem">NY<small>New York</small></a>
+        <a href="/state/oh/" class="state-pill" role="listitem">OH<small>Ohio</small></a>
+        <a href="/state/ok/" class="state-pill" role="listitem">OK<small>Oklahoma</small></a>
+        <a href="/state/or/" class="state-pill" role="listitem">OR<small>Oregon</small></a>
+        <a href="/state/pa/" class="state-pill" role="listitem">PA<small>Pennsylvania</small></a>
+        <a href="/state/pr/" class="state-pill" role="listitem">PR<small>Puerto Rico</small></a>
+        <a href="/state/ri/" class="state-pill" role="listitem">RI<small>Rhode Island</small></a>
+        <a href="/state/sc/" class="state-pill" role="listitem">SC<small>S. Carolina</small></a>
+        <a href="/state/sd/" class="state-pill" role="listitem">SD<small>S. Dakota</small></a>
+        <a href="/state/tn/" class="state-pill" role="listitem">TN<small>Tennessee</small></a>
+        <a href="/state/tx/" class="state-pill" role="listitem">TX<small>Texas</small></a>
+        <a href="/state/ut/" class="state-pill" role="listitem">UT<small>Utah</small></a>
+        <a href="/state/va/" class="state-pill" role="listitem">VA<small>Virginia</small></a>
+        <a href="/state/vi/" class="state-pill" role="listitem">VI<small>US Virgin Is.</small></a>
+        <a href="/state/vt/" class="state-pill" role="listitem">VT<small>Vermont</small></a>
+        <a href="/state/wa/" class="state-pill" role="listitem">WA<small>Washington</small></a>
+        <a href="/state/wi/" class="state-pill" role="listitem">WI<small>Wisconsin</small></a>
+        <a href="/state/wv/" class="state-pill" role="listitem">WV<small>W. Virginia</small></a>
+        <a href="/state/wy/" class="state-pill" role="listitem">WY<small>Wyoming</small></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta cta--dark" aria-labelledby="cta-heading">
+    <div class="cta__bg-grid" aria-hidden="true"></div>
+    <div class="cta__inner">
+      <div class="section__label section__label--center">Free consultation — no fees unless you win</div>
+      <h2 class="cta__title" id="cta-heading">Injured at a<br><em>{{state}} Airport?</em></h2>
+      <p class="cta__sub">Don't wait. The statute of limitations in {{state}} is {{sol}} — and evidence at airport is overwritten within 72 hours. Act now.</p>
+      <a href="tel:18005550199" class="cta__phone" aria-label="Call 1-800-555-0199">1-800-555-0199</a>
+      <span class="cta__phone-label">Free consultation — available 24/7</span>
+      <div class="cta__actions">
+        <a href="#lead-form" class="btn btn--primary btn--lg">Start My Free {{state_code}} Case Review →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo footer__logo" aria-label="AirportAccidents.com">Airport<span>Accidents</span>.com</a>
+        <p class="footer__tagline">Expert airport accident attorneys covering all {{airport_count}} airports in {{state}} and every other US state.</p>
+        <a href="tel:18005550199" class="footer__phone" aria-label="Call 1-800-555-0199">1-800-555-0199</a>
+      </div>
+      <nav class="footer__col" aria-label="{{state}} airports">
+        <h3 class="footer__col-title">{{state}} Airports</h3>
+        {{footer_airports_html}}
+        <a href="#airports">All {{airport_count}} airports →</a>
+      </nav>
+      <nav class="footer__col" aria-label="Accident types">
+        <h3 class="footer__col-title">Accident Types</h3>
+        <a href="/slip-and-fall/">Slip &amp; Fall</a>
+        <a href="/jet-bridge-boarding/">Jet Bridge</a>
+        <a href="/baggage-claim/">Baggage Claim</a>
+        <a href="/shuttle-bus-ground-transportation/">Shuttle Bus</a>
+        <a href="/assault-security-failure/">Assault &amp; Security</a>
+        <a href="/#accident-types">All 25 types →</a>
+      </nav>
+      <nav class="footer__col" aria-label="Legal pages">
+        <h3 class="footer__col-title">Legal</h3>
+        <a href="/about/">About Us</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/disclaimer/">Legal Disclaimer</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__legal">&copy; 2025 AirportAccidents.com. Informational purposes only. Not legal advice. Attorney advertising. Results vary based on individual circumstances.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-bar" id="sticky-bar" role="complementary" aria-label="Contact prompt">
+  <p class="sticky-bar__text"><strong>Injured at a {{state}} airport?</strong> Free case review — no fees unless you win.</p>
+  <a href="#lead-form" class="sticky-bar__btn">Get Help Now</a>
+</div>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
