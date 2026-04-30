@@ -1,0 +1,34 @@
+<!-- ============================================================
+  PARTIAL: nav.html
+  Variables required:
+    {{state_code}}    — lowercase state code for contextual link (e.g. "ca")
+    {{state_name}}    — state name for label (e.g. "California")
+    {{nav_context}}   — "airport" | "accident" | "state" | "home"
+                        controls which contextual link shows
+  ============================================================ -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav__logo" aria-label="AirportAccidents.com — Home">
+    Airport<span>Accidents</span>.com
+  </a>
+
+  <ul class="nav__links" role="list">
+    <li>
+      <a href="/#accident-types" class="nav__link">Accident Types</a>
+    </li>
+    <li>
+      <a href="/#airports" class="nav__link">Find Your Airport</a>
+    </li>
+    {{#if state_code}}
+    <li>
+      <a href="/state/{{state_code}}/" class="nav__link">{{state_name}} Airports</a>
+    </li>
+    {{/if}}
+    <li>
+      <a href="tel:18005550199" class="nav__link nav__cta" aria-label="Call for free consultation">
+        Free Consultation
+      </a>
+    </li>
+  </ul>
+</nav>
