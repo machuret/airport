@@ -1,0 +1,523 @@
+airport_name,city,state,state_code,faa_code,iata_code,type,slug,hub_page_url,accident_base_url
+Hartsfield-Jackson Atlanta International Airport,Atlanta,Georgia,GA,KATL,ATL,large_hub,hartsfield-jackson-atlanta-international,https://airportaccidents.com/hartsfield-jackson-atlanta-international/,https://airportaccidents.com/hartsfield-jackson-atlanta-international/
+O'Hare International Airport,Chicago,Illinois,IL,KORD,ORD,large_hub,ohare-international,https://airportaccidents.com/ohare-international/,https://airportaccidents.com/ohare-international/
+Los Angeles International Airport,Los Angeles,California,CA,KLAX,LAX,large_hub,los-angeles-international,https://airportaccidents.com/los-angeles-international/,https://airportaccidents.com/los-angeles-international/
+Dallas/Fort Worth International Airport,Dallas,Texas,TX,KDFW,DFW,large_hub,dallas-fort-worth-international,https://airportaccidents.com/dallas-fort-worth-international/,https://airportaccidents.com/dallas-fort-worth-international/
+Denver International Airport,Denver,Colorado,CO,KDEN,DEN,large_hub,denver-international,https://airportaccidents.com/denver-international/,https://airportaccidents.com/denver-international/
+John F. Kennedy International Airport,New York,New York,NY,KJFK,JFK,large_hub,john-f-kennedy-international,https://airportaccidents.com/john-f-kennedy-international/,https://airportaccidents.com/john-f-kennedy-international/
+San Francisco International Airport,San Francisco,California,CA,KSFO,SFO,large_hub,san-francisco-international,https://airportaccidents.com/san-francisco-international/,https://airportaccidents.com/san-francisco-international/
+Seattle-Tacoma International Airport,Seattle,Washington,WA,KSEA,SEA,large_hub,seattle-tacoma-international,https://airportaccidents.com/seattle-tacoma-international/,https://airportaccidents.com/seattle-tacoma-international/
+Harry Reid International Airport,Las Vegas,Nevada,NV,KLAS,LAS,large_hub,harry-reid-international,https://airportaccidents.com/harry-reid-international/,https://airportaccidents.com/harry-reid-international/
+Orlando International Airport,Orlando,Florida,FL,KMCO,MCO,large_hub,orlando-international,https://airportaccidents.com/orlando-international/,https://airportaccidents.com/orlando-international/
+Miami International Airport,Miami,Florida,FL,KMIA,MIA,large_hub,miami-international,https://airportaccidents.com/miami-international/,https://airportaccidents.com/miami-international/
+George Bush Intercontinental Airport,Houston,Texas,TX,KIAH,IAH,large_hub,george-bush-intercontinental,https://airportaccidents.com/george-bush-intercontinental/,https://airportaccidents.com/george-bush-intercontinental/
+Phoenix Sky Harbor International Airport,Phoenix,Arizona,AZ,KPHX,PHX,large_hub,phoenix-sky-harbor-international,https://airportaccidents.com/phoenix-sky-harbor-international/,https://airportaccidents.com/phoenix-sky-harbor-international/
+Charlotte Douglas International Airport,Charlotte,North Carolina,NC,KCLT,CLT,large_hub,charlotte-douglas-international,https://airportaccidents.com/charlotte-douglas-international/,https://airportaccidents.com/charlotte-douglas-international/
+Newark Liberty International Airport,Newark,New Jersey,NJ,KEWR,EWR,large_hub,newark-liberty-international,https://airportaccidents.com/newark-liberty-international/,https://airportaccidents.com/newark-liberty-international/
+Minneapolis-Saint Paul International Airport,Minneapolis,Minnesota,MN,KMSP,MSP,large_hub,minneapolis-saint-paul-international,https://airportaccidents.com/minneapolis-saint-paul-international/,https://airportaccidents.com/minneapolis-saint-paul-international/
+Detroit Metropolitan Wayne County Airport,Detroit,Michigan,MI,KDTW,DTW,large_hub,detroit-metropolitan-wayne-county,https://airportaccidents.com/detroit-metropolitan-wayne-county/,https://airportaccidents.com/detroit-metropolitan-wayne-county/
+Philadelphia International Airport,Philadelphia,Pennsylvania,PA,KPHL,PHL,large_hub,philadelphia-international,https://airportaccidents.com/philadelphia-international/,https://airportaccidents.com/philadelphia-international/
+Logan International Airport,Boston,Massachusetts,MA,KBOS,BOS,large_hub,logan-international,https://airportaccidents.com/logan-international/,https://airportaccidents.com/logan-international/
+LaGuardia Airport,New York,New York,NY,KLGA,LGA,large_hub,laguardia,https://airportaccidents.com/laguardia/,https://airportaccidents.com/laguardia/
+Baltimore/Washington International Thurgood Marshall Airport,Baltimore,Maryland,MD,KBWI,BWI,large_hub,baltimore-washington-international,https://airportaccidents.com/baltimore-washington-international/,https://airportaccidents.com/baltimore-washington-international/
+Washington Dulles International Airport,Dulles,Virginia,VA,KIAD,IAD,large_hub,washington-dulles-international,https://airportaccidents.com/washington-dulles-international/,https://airportaccidents.com/washington-dulles-international/
+Ronald Reagan Washington National Airport,Arlington,Virginia,VA,KDCA,DCA,large_hub,ronald-reagan-washington-national,https://airportaccidents.com/ronald-reagan-washington-national/,https://airportaccidents.com/ronald-reagan-washington-national/
+Salt Lake City International Airport,Salt Lake City,Utah,UT,KSLC,SLC,large_hub,salt-lake-city-international,https://airportaccidents.com/salt-lake-city-international/,https://airportaccidents.com/salt-lake-city-international/
+San Diego International Airport,San Diego,California,CA,KSAN,SAN,large_hub,san-diego-international,https://airportaccidents.com/san-diego-international/,https://airportaccidents.com/san-diego-international/
+Tampa International Airport,Tampa,Florida,FL,KTPA,TPA,large_hub,tampa-international,https://airportaccidents.com/tampa-international/,https://airportaccidents.com/tampa-international/
+Portland International Airport,Portland,Oregon,OR,KPDX,PDX,large_hub,portland-international,https://airportaccidents.com/portland-international/,https://airportaccidents.com/portland-international/
+Chicago Midway International Airport,Chicago,Illinois,IL,KMDW,MDW,large_hub,chicago-midway-international,https://airportaccidents.com/chicago-midway-international/,https://airportaccidents.com/chicago-midway-international/
+Fort Lauderdale-Hollywood International Airport,Fort Lauderdale,Florida,FL,KFLL,FLL,large_hub,fort-lauderdale-hollywood-international,https://airportaccidents.com/fort-lauderdale-hollywood-international/,https://airportaccidents.com/fort-lauderdale-hollywood-international/
+Daniel K. Inouye International Airport,Honolulu,Hawaii,HI,PHNL,HNL,large_hub,daniel-k-inouye-international,https://airportaccidents.com/daniel-k-inouye-international/,https://airportaccidents.com/daniel-k-inouye-international/
+Austin-Bergstrom International Airport,Austin,Texas,TX,KAUS,AUS,large_hub,austin-bergstrom-international,https://airportaccidents.com/austin-bergstrom-international/,https://airportaccidents.com/austin-bergstrom-international/
+Nashville International Airport,Nashville,Tennessee,TN,KBNA,BNA,large_hub,nashville-international,https://airportaccidents.com/nashville-international/,https://airportaccidents.com/nashville-international/
+Kansas City International Airport,Kansas City,Missouri,MO,KMCI,MCI,large_hub,kansas-city-international,https://airportaccidents.com/kansas-city-international/,https://airportaccidents.com/kansas-city-international/
+San Jose International Airport,San Jose,California,CA,KSJC,SJC,large_hub,san-jose-international,https://airportaccidents.com/san-jose-international/,https://airportaccidents.com/san-jose-international/
+Raleigh-Durham International Airport,Raleigh,North Carolina,NC,KRDU,RDU,large_hub,raleigh-durham-international,https://airportaccidents.com/raleigh-durham-international/,https://airportaccidents.com/raleigh-durham-international/
+St. Louis Lambert International Airport,St. Louis,Missouri,MO,KSTL,STL,large_hub,st-louis-lambert-international,https://airportaccidents.com/st-louis-lambert-international/,https://airportaccidents.com/st-louis-lambert-international/
+Cleveland Hopkins International Airport,Cleveland,Ohio,OH,KCLE,CLE,large_hub,cleveland-hopkins-international,https://airportaccidents.com/cleveland-hopkins-international/,https://airportaccidents.com/cleveland-hopkins-international/
+Pittsburgh International Airport,Pittsburgh,Pennsylvania,PA,KPIT,PIT,large_hub,pittsburgh-international,https://airportaccidents.com/pittsburgh-international/,https://airportaccidents.com/pittsburgh-international/
+Indianapolis International Airport,Indianapolis,Indiana,IN,KIND,IND,large_hub,indianapolis-international,https://airportaccidents.com/indianapolis-international/,https://airportaccidents.com/indianapolis-international/
+Cincinnati/Northern Kentucky International Airport,Cincinnati,Ohio,OH,KCVG,CVG,large_hub,cincinnati-northern-kentucky-international,https://airportaccidents.com/cincinnati-northern-kentucky-international/,https://airportaccidents.com/cincinnati-northern-kentucky-international/
+San Antonio International Airport,San Antonio,Texas,TX,KSAT,SAT,large_hub,san-antonio-international,https://airportaccidents.com/san-antonio-international/,https://airportaccidents.com/san-antonio-international/
+William P. Hobby Airport,Houston,Texas,TX,KHOU,HOU,large_hub,william-p-hobby,https://airportaccidents.com/william-p-hobby/,https://airportaccidents.com/william-p-hobby/
+Dallas Love Field,Dallas,Texas,TX,KDAL,DAL,large_hub,dallas-love-field,https://airportaccidents.com/dallas-love-field/,https://airportaccidents.com/dallas-love-field/
+General Mitchell International Airport,Milwaukee,Wisconsin,WI,KMKE,MKE,large_hub,general-mitchell-international,https://airportaccidents.com/general-mitchell-international/,https://airportaccidents.com/general-mitchell-international/
+Ted Stevens Anchorage International Airport,Anchorage,Alaska,AK,PANC,ANC,large_hub,ted-stevens-anchorage-international,https://airportaccidents.com/ted-stevens-anchorage-international/,https://airportaccidents.com/ted-stevens-anchorage-international/
+Luis Munoz Marin International Airport,San Juan,Puerto Rico,PR,TJSJ,SJU,large_hub,luis-munoz-marin-international,https://airportaccidents.com/luis-munoz-marin-international/,https://airportaccidents.com/luis-munoz-marin-international/
+Memphis International Airport,Memphis,Tennessee,TN,KMEM,MEM,large_hub,memphis-international,https://airportaccidents.com/memphis-international/,https://airportaccidents.com/memphis-international/
+Columbus John Glenn International Airport,Columbus,Ohio,OH,KCMH,CMH,large_hub,columbus-john-glenn-international,https://airportaccidents.com/columbus-john-glenn-international/,https://airportaccidents.com/columbus-john-glenn-international/
+Birmingham-Shuttlesworth International Airport,Birmingham,Alabama,AL,KBHM,BHM,large_hub,birmingham-shuttlesworth-international,https://airportaccidents.com/birmingham-shuttlesworth-international/,https://airportaccidents.com/birmingham-shuttlesworth-international/
+Louis Armstrong New Orleans International Airport,New Orleans,Louisiana,LA,KMSY,MSY,large_hub,louis-armstrong-new-orleans-international,https://airportaccidents.com/louis-armstrong-new-orleans-international/,https://airportaccidents.com/louis-armstrong-new-orleans-international/
+Jacksonville International Airport,Jacksonville,Florida,FL,KJAX,JAX,large_hub,jacksonville-international,https://airportaccidents.com/jacksonville-international/,https://airportaccidents.com/jacksonville-international/
+John Wayne Airport,Santa Ana,California,CA,KSNA,SNA,medium_hub,john-wayne,https://airportaccidents.com/john-wayne/,https://airportaccidents.com/john-wayne/
+Ontario International Airport,Ontario,California,CA,KONT,ONT,medium_hub,ontario-international,https://airportaccidents.com/ontario-international/,https://airportaccidents.com/ontario-international/
+Long Beach Airport,Long Beach,California,CA,KLGB,LGB,medium_hub,long-beach,https://airportaccidents.com/long-beach/,https://airportaccidents.com/long-beach/
+Hollywood Burbank Airport,Burbank,California,CA,KBUR,BUR,medium_hub,hollywood-burbank,https://airportaccidents.com/hollywood-burbank/,https://airportaccidents.com/hollywood-burbank/
+Sacramento International Airport,Sacramento,California,CA,KSMF,SMF,medium_hub,sacramento-international,https://airportaccidents.com/sacramento-international/,https://airportaccidents.com/sacramento-international/
+Oakland International Airport,Oakland,California,CA,KOAK,OAK,medium_hub,oakland-international,https://airportaccidents.com/oakland-international/,https://airportaccidents.com/oakland-international/
+Reno-Tahoe International Airport,Reno,Nevada,NV,KRNO,RNO,medium_hub,reno-tahoe-international,https://airportaccidents.com/reno-tahoe-international/,https://airportaccidents.com/reno-tahoe-international/
+Tucson International Airport,Tucson,Arizona,AZ,KTUS,TUS,medium_hub,tucson-international,https://airportaccidents.com/tucson-international/,https://airportaccidents.com/tucson-international/
+Albuquerque International Sunport,Albuquerque,New Mexico,NM,KABQ,ABQ,medium_hub,albuquerque-international-sunport,https://airportaccidents.com/albuquerque-international-sunport/,https://airportaccidents.com/albuquerque-international-sunport/
+El Paso International Airport,El Paso,Texas,TX,KELP,ELP,medium_hub,el-paso-international,https://airportaccidents.com/el-paso-international/,https://airportaccidents.com/el-paso-international/
+Southwest Florida International Airport,Fort Myers,Florida,FL,KRSW,RSW,medium_hub,southwest-florida-international,https://airportaccidents.com/southwest-florida-international/,https://airportaccidents.com/southwest-florida-international/
+Palm Beach International Airport,West Palm Beach,Florida,FL,KPBI,PBI,medium_hub,palm-beach-international,https://airportaccidents.com/palm-beach-international/,https://airportaccidents.com/palm-beach-international/
+Savannah/Hilton Head International Airport,Savannah,Georgia,GA,KSAV,SAV,medium_hub,savannah-hilton-head-international,https://airportaccidents.com/savannah-hilton-head-international/,https://airportaccidents.com/savannah-hilton-head-international/
+Charleston International Airport,Charleston,South Carolina,SC,KCHS,CHS,medium_hub,charleston-international,https://airportaccidents.com/charleston-international/,https://airportaccidents.com/charleston-international/
+Richmond International Airport,Richmond,Virginia,VA,KRIC,RIC,medium_hub,richmond-international,https://airportaccidents.com/richmond-international/,https://airportaccidents.com/richmond-international/
+Norfolk International Airport,Norfolk,Virginia,VA,KORF,ORF,medium_hub,norfolk-international,https://airportaccidents.com/norfolk-international/,https://airportaccidents.com/norfolk-international/
+Buffalo Niagara International Airport,Buffalo,New York,NY,KBUF,BUF,medium_hub,buffalo-niagara-international,https://airportaccidents.com/buffalo-niagara-international/,https://airportaccidents.com/buffalo-niagara-international/
+Providence T.F. Green International Airport,Providence,Rhode Island,RI,KPVD,PVD,medium_hub,providence-tf-green-international,https://airportaccidents.com/providence-tf-green-international/,https://airportaccidents.com/providence-tf-green-international/
+Bradley International Airport,Windsor Locks,Connecticut,CT,KBDL,BDL,medium_hub,bradley-international,https://airportaccidents.com/bradley-international/,https://airportaccidents.com/bradley-international/
+Spokane International Airport,Spokane,Washington,WA,KGEG,GEG,medium_hub,spokane-international,https://airportaccidents.com/spokane-international/,https://airportaccidents.com/spokane-international/
+Boise Airport,Boise,Idaho,ID,KBOI,BOI,medium_hub,boise-airport,https://airportaccidents.com/boise-airport/,https://airportaccidents.com/boise-airport/
+Colorado Springs Airport,Colorado Springs,Colorado,CO,KCOS,COS,medium_hub,colorado-springs,https://airportaccidents.com/colorado-springs/,https://airportaccidents.com/colorado-springs/
+Grand Junction Regional Airport,Grand Junction,Colorado,CO,KGJT,GJT,medium_hub,grand-junction-regional,https://airportaccidents.com/grand-junction-regional/,https://airportaccidents.com/grand-junction-regional/
+Kahului Airport,Kahului,Hawaii,HI,PHOG,OGG,medium_hub,kahului,https://airportaccidents.com/kahului/,https://airportaccidents.com/kahului/
+Ellison Onizuka Kona International Airport,Kona,Hawaii,HI,PHKO,KOA,medium_hub,ellison-onizuka-kona-international,https://airportaccidents.com/ellison-onizuka-kona-international/,https://airportaccidents.com/ellison-onizuka-kona-international/
+Lihue Airport,Lihue,Hawaii,HI,PHLI,LIH,medium_hub,lihue,https://airportaccidents.com/lihue/,https://airportaccidents.com/lihue/
+Fairbanks International Airport,Fairbanks,Alaska,AK,PAFB,FAI,medium_hub,fairbanks-international,https://airportaccidents.com/fairbanks-international/,https://airportaccidents.com/fairbanks-international/
+Tulsa International Airport,Tulsa,Oklahoma,OK,KTUL,TUL,medium_hub,tulsa-international,https://airportaccidents.com/tulsa-international/,https://airportaccidents.com/tulsa-international/
+Will Rogers World Airport,Oklahoma City,Oklahoma,OK,KOKC,OKC,medium_hub,will-rogers-world,https://airportaccidents.com/will-rogers-world/,https://airportaccidents.com/will-rogers-world/
+Des Moines International Airport,Des Moines,Iowa,IA,KDSM,DSM,medium_hub,des-moines-international,https://airportaccidents.com/des-moines-international/,https://airportaccidents.com/des-moines-international/
+Omaha Eppley Airfield,Omaha,Nebraska,NE,KOMA,OMA,medium_hub,omaha-eppley-airfield,https://airportaccidents.com/omaha-eppley-airfield/,https://airportaccidents.com/omaha-eppley-airfield/
+McGhee Tyson Airport,Knoxville,Tennessee,TN,KTYS,TYS,medium_hub,mcghee-tyson,https://airportaccidents.com/mcghee-tyson/,https://airportaccidents.com/mcghee-tyson/
+Louisville Muhammad Ali International Airport,Louisville,Kentucky,KY,KSDF,SDF,medium_hub,louisville-muhammad-ali-international,https://airportaccidents.com/louisville-muhammad-ali-international/,https://airportaccidents.com/louisville-muhammad-ali-international/
+Gerald R. Ford International Airport,Grand Rapids,Michigan,MI,KGRR,GRR,medium_hub,gerald-r-ford-international,https://airportaccidents.com/gerald-r-ford-international/,https://airportaccidents.com/gerald-r-ford-international/
+Madison Dane County Regional Airport,Madison,Wisconsin,WI,KMSN,MSN,medium_hub,madison-dane-county-regional,https://airportaccidents.com/madison-dane-county-regional/,https://airportaccidents.com/madison-dane-county-regional/
+Antonio B. Won Pat International Airport,Hagatna,Guam,GU,PGUM,GUM,medium_hub,antonio-b-won-pat-international,https://airportaccidents.com/antonio-b-won-pat-international/,https://airportaccidents.com/antonio-b-won-pat-international/
+Little Rock Clinton National Airport,Little Rock,Arkansas,AR,KLIT,LIT,medium_hub,little-rock-clinton-national,https://airportaccidents.com/little-rock-clinton-national/,https://airportaccidents.com/little-rock-clinton-national/
+Palm Springs International Airport,Palm Springs,California,CA,KPSP,PSP,small_hub,palm-springs-international,https://airportaccidents.com/palm-springs-international/,https://airportaccidents.com/palm-springs-international/
+Fresno Yosemite International Airport,Fresno,California,CA,KFAT,FAT,small_hub,fresno-yosemite-international,https://airportaccidents.com/fresno-yosemite-international/,https://airportaccidents.com/fresno-yosemite-international/
+Santa Barbara Airport,Santa Barbara,California,CA,KSBA,SBA,small_hub,santa-barbara,https://airportaccidents.com/santa-barbara/,https://airportaccidents.com/santa-barbara/
+Monterey Regional Airport,Monterey,California,CA,KMRY,MRY,small_hub,monterey-regional,https://airportaccidents.com/monterey-regional/,https://airportaccidents.com/monterey-regional/
+Lubbock Preston Smith International Airport,Lubbock,Texas,TX,KLBB,LBB,small_hub,lubbock-preston-smith-international,https://airportaccidents.com/lubbock-preston-smith-international/,https://airportaccidents.com/lubbock-preston-smith-international/
+Amarillo Rick Husband International Airport,Amarillo,Texas,TX,KAMA,AMA,small_hub,amarillo-rick-husband-international,https://airportaccidents.com/amarillo-rick-husband-international/,https://airportaccidents.com/amarillo-rick-husband-international/
+Midland International Air and Space Port,Midland,Texas,TX,KMAF,MAF,small_hub,midland-international,https://airportaccidents.com/midland-international/,https://airportaccidents.com/midland-international/
+Corpus Christi International Airport,Corpus Christi,Texas,TX,KCRP,CRP,small_hub,corpus-christi-international,https://airportaccidents.com/corpus-christi-international/,https://airportaccidents.com/corpus-christi-international/
+Harlingen Valley International Airport,Harlingen,Texas,TX,KHRL,HRL,small_hub,harlingen-valley-international,https://airportaccidents.com/harlingen-valley-international/,https://airportaccidents.com/harlingen-valley-international/
+McAllen Miller International Airport,McAllen,Texas,TX,KMFE,MFE,small_hub,mcallen-miller-international,https://airportaccidents.com/mcallen-miller-international/,https://airportaccidents.com/mcallen-miller-international/
+Abilene Regional Airport,Abilene,Texas,TX,KABI,ABI,small_hub,abilene-regional,https://airportaccidents.com/abilene-regional/,https://airportaccidents.com/abilene-regional/
+Pensacola International Airport,Pensacola,Florida,FL,KPNS,PNS,small_hub,pensacola-international,https://airportaccidents.com/pensacola-international/,https://airportaccidents.com/pensacola-international/
+Tallahassee International Airport,Tallahassee,Florida,FL,KTLH,TLH,small_hub,tallahassee-international,https://airportaccidents.com/tallahassee-international/,https://airportaccidents.com/tallahassee-international/
+Sarasota Bradenton International Airport,Sarasota,Florida,FL,KSRQ,SRQ,small_hub,sarasota-bradenton-international,https://airportaccidents.com/sarasota-bradenton-international/,https://airportaccidents.com/sarasota-bradenton-international/
+Daytona Beach International Airport,Daytona Beach,Florida,FL,KDAB,DAB,small_hub,daytona-beach-international,https://airportaccidents.com/daytona-beach-international/,https://airportaccidents.com/daytona-beach-international/
+Myrtle Beach International Airport,Myrtle Beach,South Carolina,SC,KMYR,MYR,small_hub,myrtle-beach-international,https://airportaccidents.com/myrtle-beach-international/,https://airportaccidents.com/myrtle-beach-international/
+Greenville-Spartanburg International Airport,Greenville,South Carolina,SC,KGSP,GSP,small_hub,greenville-spartanburg-international,https://airportaccidents.com/greenville-spartanburg-international/,https://airportaccidents.com/greenville-spartanburg-international/
+Piedmont Triad International Airport,Greensboro,North Carolina,NC,KGSO,GSO,small_hub,piedmont-triad-international,https://airportaccidents.com/piedmont-triad-international/,https://airportaccidents.com/piedmont-triad-international/
+Asheville Regional Airport,Asheville,North Carolina,NC,KAVL,AVL,small_hub,asheville-regional,https://airportaccidents.com/asheville-regional/,https://airportaccidents.com/asheville-regional/
+Wilmington International Airport,Wilmington,North Carolina,NC,KILM,ILM,small_hub,wilmington-international,https://airportaccidents.com/wilmington-international/,https://airportaccidents.com/wilmington-international/
+Roanoke-Blacksburg Regional Airport,Roanoke,Virginia,VA,KROA,ROA,small_hub,roanoke-blacksburg-regional,https://airportaccidents.com/roanoke-blacksburg-regional/,https://airportaccidents.com/roanoke-blacksburg-regional/
+Atlantic City International Airport,Atlantic City,New Jersey,NJ,KACY,ACY,small_hub,atlantic-city-international,https://airportaccidents.com/atlantic-city-international/,https://airportaccidents.com/atlantic-city-international/
+Albany International Airport,Albany,New York,NY,KALB,ALB,small_hub,albany-international,https://airportaccidents.com/albany-international/,https://airportaccidents.com/albany-international/
+Greater Rochester International Airport,Rochester,New York,NY,KROC,ROC,small_hub,greater-rochester-international,https://airportaccidents.com/greater-rochester-international/,https://airportaccidents.com/greater-rochester-international/
+Syracuse Hancock International Airport,Syracuse,New York,NY,KSYR,SYR,small_hub,syracuse-hancock-international,https://airportaccidents.com/syracuse-hancock-international/,https://airportaccidents.com/syracuse-hancock-international/
+Long Island MacArthur Airport,Islip,New York,NY,KISP,ISP,small_hub,long-island-macarthur,https://airportaccidents.com/long-island-macarthur/,https://airportaccidents.com/long-island-macarthur/
+Burlington International Airport,Burlington,Vermont,VT,KBTV,BTV,small_hub,burlington-international,https://airportaccidents.com/burlington-international/,https://airportaccidents.com/burlington-international/
+Manchester-Boston Regional Airport,Manchester,New Hampshire,NH,KMHT,MHT,small_hub,manchester-boston-regional,https://airportaccidents.com/manchester-boston-regional/,https://airportaccidents.com/manchester-boston-regional/
+Portland International Jetport,Portland,Maine,ME,KPWM,PWM,small_hub,portland-international-jetport,https://airportaccidents.com/portland-international-jetport/,https://airportaccidents.com/portland-international-jetport/
+Akron-Canton Airport,Akron,Ohio,OH,KCAK,CAK,small_hub,akron-canton,https://airportaccidents.com/akron-canton/,https://airportaccidents.com/akron-canton/
+Dayton International Airport,Dayton,Ohio,OH,KDAY,DAY,small_hub,dayton-international,https://airportaccidents.com/dayton-international/,https://airportaccidents.com/dayton-international/
+Fort Wayne International Airport,Fort Wayne,Indiana,IN,KFWA,FWA,small_hub,fort-wayne-international,https://airportaccidents.com/fort-wayne-international/,https://airportaccidents.com/fort-wayne-international/
+South Bend International Airport,South Bend,Indiana,IN,KSBN,SBN,small_hub,south-bend-international,https://airportaccidents.com/south-bend-international/,https://airportaccidents.com/south-bend-international/
+Evansville Regional Airport,Evansville,Indiana,IN,KEVV,EVV,small_hub,evansville-regional,https://airportaccidents.com/evansville-regional/,https://airportaccidents.com/evansville-regional/
+Blue Grass Airport,Lexington,Kentucky,KY,KLEX,LEX,small_hub,blue-grass,https://airportaccidents.com/blue-grass/,https://airportaccidents.com/blue-grass/
+Chattanooga Metropolitan Airport,Chattanooga,Tennessee,TN,KCHA,CHA,small_hub,chattanooga-metropolitan,https://airportaccidents.com/chattanooga-metropolitan/,https://airportaccidents.com/chattanooga-metropolitan/
+Huntsville International Airport,Huntsville,Alabama,AL,KHSV,HSV,small_hub,huntsville-international,https://airportaccidents.com/huntsville-international/,https://airportaccidents.com/huntsville-international/
+Mobile Regional Airport,Mobile,Alabama,AL,KMOB,MOB,small_hub,mobile-regional,https://airportaccidents.com/mobile-regional/,https://airportaccidents.com/mobile-regional/
+Jackson-Medgar Wiley Evers International Airport,Jackson,Mississippi,MS,KJAN,JAN,small_hub,jackson-medgar-wiley-evers-international,https://airportaccidents.com/jackson-medgar-wiley-evers-international/,https://airportaccidents.com/jackson-medgar-wiley-evers-international/
+Gulfport-Biloxi International Airport,Gulfport,Mississippi,MS,KGPT,GPT,small_hub,gulfport-biloxi-international,https://airportaccidents.com/gulfport-biloxi-international/,https://airportaccidents.com/gulfport-biloxi-international/
+Northwest Arkansas National Airport,Bentonville,Arkansas,AR,KXNA,XNA,small_hub,northwest-arkansas-national,https://airportaccidents.com/northwest-arkansas-national/,https://airportaccidents.com/northwest-arkansas-national/
+Wichita Dwight D. Eisenhower National Airport,Wichita,Kansas,KS,KICT,ICT,small_hub,wichita-dwight-d-eisenhower-national,https://airportaccidents.com/wichita-dwight-d-eisenhower-national/,https://airportaccidents.com/wichita-dwight-d-eisenhower-national/
+Sioux Falls Regional Airport,Sioux Falls,South Dakota,SD,KFSD,FSD,small_hub,sioux-falls-regional,https://airportaccidents.com/sioux-falls-regional/,https://airportaccidents.com/sioux-falls-regional/
+Rapid City Regional Airport,Rapid City,South Dakota,SD,KRAP,RAP,small_hub,rapid-city-regional,https://airportaccidents.com/rapid-city-regional/,https://airportaccidents.com/rapid-city-regional/
+Fargo Hector International Airport,Fargo,North Dakota,ND,KFAR,FAR,small_hub,fargo-hector-international,https://airportaccidents.com/fargo-hector-international/,https://airportaccidents.com/fargo-hector-international/
+Billings Logan International Airport,Billings,Montana,MT,KBIL,BIL,small_hub,billings-logan-international,https://airportaccidents.com/billings-logan-international/,https://airportaccidents.com/billings-logan-international/
+Missoula Montana Airport,Missoula,Montana,MT,KMSO,MSO,small_hub,missoula-montana,https://airportaccidents.com/missoula-montana/,https://airportaccidents.com/missoula-montana/
+Bozeman Yellowstone International Airport,Bozeman,Montana,MT,KBZN,BZN,small_hub,bozeman-yellowstone-international,https://airportaccidents.com/bozeman-yellowstone-international/,https://airportaccidents.com/bozeman-yellowstone-international/
+Jackson Hole Airport,Jackson,Wyoming,WY,KJAC,JAC,small_hub,jackson-hole,https://airportaccidents.com/jackson-hole/,https://airportaccidents.com/jackson-hole/
+Eugene Airport,Eugene,Oregon,OR,KEUG,EUG,small_hub,eugene,https://airportaccidents.com/eugene/,https://airportaccidents.com/eugene/
+Medford Rogue Valley International Airport,Medford,Oregon,OR,KMFR,MFR,small_hub,medford-rogue-valley-international,https://airportaccidents.com/medford-rogue-valley-international/,https://airportaccidents.com/medford-rogue-valley-international/
+Juneau International Airport,Juneau,Alaska,AK,PAJN,JNU,small_hub,juneau-international,https://airportaccidents.com/juneau-international/,https://airportaccidents.com/juneau-international/
+Hilo International Airport,Hilo,Hawaii,HI,PHTO,ITO,small_hub,hilo-international,https://airportaccidents.com/hilo-international/,https://airportaccidents.com/hilo-international/
+Rafael Hernandez Airport,Aguadilla,Puerto Rico,PR,TJBQ,BQN,small_hub,rafael-hernandez,https://airportaccidents.com/rafael-hernandez/,https://airportaccidents.com/rafael-hernandez/
+Cyril E. King Airport,Charlotte Amalie,U.S. Virgin Islands,VI,TIST,STT,small_hub,cyril-e-king,https://airportaccidents.com/cyril-e-king/,https://airportaccidents.com/cyril-e-king/
+Flint Bishop International Airport,Flint,Michigan,MI,KFNT,FNT,small_hub,flint-bishop-international,https://airportaccidents.com/flint-bishop-international/,https://airportaccidents.com/flint-bishop-international/
+Lansing Capital Region International Airport,Lansing,Michigan,MI,KLAN,LAN,small_hub,lansing-capital-region-international,https://airportaccidents.com/lansing-capital-region-international/,https://airportaccidents.com/lansing-capital-region-international/
+Kalamazoo/Battle Creek International Airport,Kalamazoo,Michigan,MI,KAZO,AZO,small_hub,kalamazoo-battle-creek-international,https://airportaccidents.com/kalamazoo-battle-creek-international/,https://airportaccidents.com/kalamazoo-battle-creek-international/
+Traverse City Cherry Capital Airport,Traverse City,Michigan,MI,KTVC,TVC,small_hub,traverse-city-cherry-capital,https://airportaccidents.com/traverse-city-cherry-capital/,https://airportaccidents.com/traverse-city-cherry-capital/
+Duluth International Airport,Duluth,Minnesota,MN,KDLH,DLH,small_hub,duluth-international,https://airportaccidents.com/duluth-international/,https://airportaccidents.com/duluth-international/
+Cedar Rapids Eastern Iowa Airport,Cedar Rapids,Iowa,IA,KCID,CID,small_hub,cedar-rapids-eastern-iowa,https://airportaccidents.com/cedar-rapids-eastern-iowa/,https://airportaccidents.com/cedar-rapids-eastern-iowa/
+Quad Cities International Airport,Moline,Illinois,IL,KMLI,MLI,small_hub,quad-cities-international,https://airportaccidents.com/quad-cities-international/,https://airportaccidents.com/quad-cities-international/
+Peoria International Airport,Peoria,Illinois,IL,KPIA,PIA,small_hub,peoria-international,https://airportaccidents.com/peoria-international/,https://airportaccidents.com/peoria-international/
+Green Bay Austin Straubel International Airport,Green Bay,Wisconsin,WI,KGRB,GRB,small_hub,green-bay-austin-straubel-international,https://airportaccidents.com/green-bay-austin-straubel-international/,https://airportaccidents.com/green-bay-austin-straubel-international/
+Appleton International Airport,Appleton,Wisconsin,WI,KATW,ATW,small_hub,appleton-international,https://airportaccidents.com/appleton-international/,https://airportaccidents.com/appleton-international/
+Springfield-Branson National Airport,Springfield,Missouri,MO,KSGF,SGF,small_hub,springfield-branson-national,https://airportaccidents.com/springfield-branson-national/,https://airportaccidents.com/springfield-branson-national/
+Baton Rouge Metropolitan Airport,Baton Rouge,Louisiana,LA,KBTR,BTR,small_hub,baton-rouge-metropolitan,https://airportaccidents.com/baton-rouge-metropolitan/,https://airportaccidents.com/baton-rouge-metropolitan/
+Lafayette Regional Airport,Lafayette,Louisiana,LA,KLFT,LFT,small_hub,lafayette-regional,https://airportaccidents.com/lafayette-regional/,https://airportaccidents.com/lafayette-regional/
+Lehigh Valley International Airport,Allentown,Pennsylvania,PA,KABE,ABE,small_hub,lehigh-valley-international,https://airportaccidents.com/lehigh-valley-international/,https://airportaccidents.com/lehigh-valley-international/
+Harrisburg International Airport,Harrisburg,Pennsylvania,PA,KMDT,MDT,small_hub,harrisburg-international,https://airportaccidents.com/harrisburg-international/,https://airportaccidents.com/harrisburg-international/
+Redding Municipal Airport,Redding,California,CA,KRDD,RDD,non_hub,redding-municipal,https://airportaccidents.com/redding-municipal/,https://airportaccidents.com/redding-municipal/
+Chico Municipal Airport,Chico,California,CA,KCIC,CIC,non_hub,chico-municipal,https://airportaccidents.com/chico-municipal/,https://airportaccidents.com/chico-municipal/
+Stockton Metropolitan Airport,Stockton,California,CA,KSCK,SCK,non_hub,stockton-metropolitan,https://airportaccidents.com/stockton-metropolitan/,https://airportaccidents.com/stockton-metropolitan/
+Modesto City-County Airport,Modesto,California,CA,KMOD,MOD,non_hub,modesto-city-county,https://airportaccidents.com/modesto-city-county/,https://airportaccidents.com/modesto-city-county/
+Bakersfield Meadows Field Airport,Bakersfield,California,CA,KBFL,BFL,non_hub,bakersfield-meadows-field,https://airportaccidents.com/bakersfield-meadows-field/,https://airportaccidents.com/bakersfield-meadows-field/
+San Luis Obispo County Regional Airport,San Luis Obispo,California,CA,KSBP,SBP,non_hub,san-luis-obispo-county-regional,https://airportaccidents.com/san-luis-obispo-county-regional/,https://airportaccidents.com/san-luis-obispo-county-regional/
+Visalia Municipal Airport,Visalia,California,CA,KVIS,VIS,non_hub,visalia-municipal,https://airportaccidents.com/visalia-municipal/,https://airportaccidents.com/visalia-municipal/
+Crescent City Del Norte County Airport,Crescent City,California,CA,KCEC,CEC,non_hub,crescent-city-del-norte-county,https://airportaccidents.com/crescent-city-del-norte-county/,https://airportaccidents.com/crescent-city-del-norte-county/
+Arcata-Eureka Airport,Arcata,California,CA,KARC,ACV,non_hub,arcata-eureka,https://airportaccidents.com/arcata-eureka/,https://airportaccidents.com/arcata-eureka/
+Santa Rosa Sonoma County Airport,Santa Rosa,California,CA,KSTS,STS,non_hub,santa-rosa-sonoma-county,https://airportaccidents.com/santa-rosa-sonoma-county/,https://airportaccidents.com/santa-rosa-sonoma-county/
+Napa County Airport,Napa,California,CA,KAPC,APC,non_hub,napa-county,https://airportaccidents.com/napa-county/,https://airportaccidents.com/napa-county/
+Camarillo Airport,Camarillo,California,CA,KCMA,CMA,non_hub,camarillo,https://airportaccidents.com/camarillo/,https://airportaccidents.com/camarillo/
+El Centro Regional Medical Center Airport,El Centro,California,CA,KECN,ECN,non_hub,el-centro,https://airportaccidents.com/el-centro/,https://airportaccidents.com/el-centro/
+Imperial County Airport,Imperial,California,CA,KIPL,IPL,non_hub,imperial-county,https://airportaccidents.com/imperial-county/,https://airportaccidents.com/imperial-county/
+Apple Valley Airport,Apple Valley,California,CA,KAPV,APV,non_hub,apple-valley,https://airportaccidents.com/apple-valley/,https://airportaccidents.com/apple-valley/
+Waco Regional Airport,Waco,Texas,TX,KACT,ACT,non_hub,waco-regional,https://airportaccidents.com/waco-regional/,https://airportaccidents.com/waco-regional/
+Tyler Pounds Regional Airport,Tyler,Texas,TX,KTYR,TYR,non_hub,tyler-pounds-regional,https://airportaccidents.com/tyler-pounds-regional/,https://airportaccidents.com/tyler-pounds-regional/
+Beaumont Municipal Airport,Beaumont,Texas,TX,KBPT,BPT,non_hub,beaumont-municipal,https://airportaccidents.com/beaumont-municipal/,https://airportaccidents.com/beaumont-municipal/
+Killeen-Fort Hood Regional Airport,Killeen,Texas,TX,KGRK,GRK,non_hub,killeen-fort-hood-regional,https://airportaccidents.com/killeen-fort-hood-regional/,https://airportaccidents.com/killeen-fort-hood-regional/
+Laredo International Airport,Laredo,Texas,TX,KLRD,LRD,non_hub,laredo-international,https://airportaccidents.com/laredo-international/,https://airportaccidents.com/laredo-international/
+Del Rio International Airport,Del Rio,Texas,TX,KDRT,DRT,non_hub,del-rio-international,https://airportaccidents.com/del-rio-international/,https://airportaccidents.com/del-rio-international/
+San Angelo Regional Airport,San Angelo,Texas,TX,KSJT,SJT,non_hub,san-angelo-regional,https://airportaccidents.com/san-angelo-regional/,https://airportaccidents.com/san-angelo-regional/
+Longview East Texas Regional Airport,Longview,Texas,TX,KGGG,GGG,non_hub,longview-east-texas-regional,https://airportaccidents.com/longview-east-texas-regional/,https://airportaccidents.com/longview-east-texas-regional/
+College Station Easterwood Airport,College Station,Texas,TX,KCLL,CLL,non_hub,college-station-easterwood,https://airportaccidents.com/college-station-easterwood/,https://airportaccidents.com/college-station-easterwood/
+Texarkana Regional Airport,Texarkana,Texas,TX,KTXK,TXK,non_hub,texarkana-regional,https://airportaccidents.com/texarkana-regional/,https://airportaccidents.com/texarkana-regional/
+Victoria Regional Airport,Victoria,Texas,TX,KVCT,VCT,non_hub,victoria-regional,https://airportaccidents.com/victoria-regional/,https://airportaccidents.com/victoria-regional/
+Brownsville South Padre Island International Airport,Brownsville,Texas,TX,KBRO,BRO,non_hub,brownsville-south-padre-island-international,https://airportaccidents.com/brownsville-south-padre-island-international/,https://airportaccidents.com/brownsville-south-padre-island-international/
+Gainesville Regional Airport,Gainesville,Florida,FL,KGNV,GNV,non_hub,gainesville-regional,https://airportaccidents.com/gainesville-regional/,https://airportaccidents.com/gainesville-regional/
+Key West International Airport,Key West,Florida,FL,KEYW,EYW,non_hub,key-west-international,https://airportaccidents.com/key-west-international/,https://airportaccidents.com/key-west-international/
+Punta Gorda Airport,Punta Gorda,Florida,FL,KPGD,PGD,non_hub,punta-gorda,https://airportaccidents.com/punta-gorda/,https://airportaccidents.com/punta-gorda/
+Ocala International Airport,Ocala,Florida,FL,KOCF,OCF,non_hub,ocala-international,https://airportaccidents.com/ocala-international/,https://airportaccidents.com/ocala-international/
+Panama City Northwest Florida Beaches International Airport,Panama City,Florida,FL,KECP,ECP,non_hub,panama-city-northwest-florida-beaches-international,https://airportaccidents.com/panama-city-northwest-florida-beaches-international/,https://airportaccidents.com/panama-city-northwest-florida-beaches-international/
+Destin-Fort Walton Beach Airport,Destin,Florida,FL,KDTS,DTS,non_hub,destin-fort-walton-beach,https://airportaccidents.com/destin-fort-walton-beach/,https://airportaccidents.com/destin-fort-walton-beach/
+Melbourne Orlando International Airport,Melbourne,Florida,FL,KMLB,MLB,non_hub,melbourne-orlando-international,https://airportaccidents.com/melbourne-orlando-international/,https://airportaccidents.com/melbourne-orlando-international/
+St. Pete-Clearwater International Airport,St. Petersburg,Florida,FL,KPIE,PIE,non_hub,st-pete-clearwater-international,https://airportaccidents.com/st-pete-clearwater-international/,https://airportaccidents.com/st-pete-clearwater-international/
+Lakeland Linder International Airport,Lakeland,Florida,FL,KLAL,LAL,non_hub,lakeland-linder-international,https://airportaccidents.com/lakeland-linder-international/,https://airportaccidents.com/lakeland-linder-international/
+Vero Beach Regional Airport,Vero Beach,Florida,FL,KVRB,VRB,non_hub,vero-beach-regional,https://airportaccidents.com/vero-beach-regional/,https://airportaccidents.com/vero-beach-regional/
+Tallahassee Regional Airport,Tallahassee,Florida,FL,KTLH,TLH,non_hub,tallahassee-regional,https://airportaccidents.com/tallahassee-regional/,https://airportaccidents.com/tallahassee-regional/
+Fort Pierce St. Lucie County International Airport,Fort Pierce,Florida,FL,KFPR,FPR,non_hub,fort-pierce-st-lucie-county-international,https://airportaccidents.com/fort-pierce-st-lucie-county-international/,https://airportaccidents.com/fort-pierce-st-lucie-county-international/
+Naples Municipal Airport,Naples,Florida,FL,KAPF,APF,non_hub,naples-municipal,https://airportaccidents.com/naples-municipal/,https://airportaccidents.com/naples-municipal/
+Marathon Airport,Marathon,Florida,FL,KMTH,MTH,non_hub,marathon,https://airportaccidents.com/marathon/,https://airportaccidents.com/marathon/
+Kissimmee Gateway Airport,Kissimmee,Florida,FL,KISM,ISM,non_hub,kissimmee-gateway,https://airportaccidents.com/kissimmee-gateway/,https://airportaccidents.com/kissimmee-gateway/
+Augusta Regional Airport,Augusta,Georgia,GA,KAGS,AGS,non_hub,augusta-regional,https://airportaccidents.com/augusta-regional/,https://airportaccidents.com/augusta-regional/
+Valdosta Regional Airport,Valdosta,Georgia,GA,KVLD,VLD,non_hub,valdosta-regional,https://airportaccidents.com/valdosta-regional/,https://airportaccidents.com/valdosta-regional/
+Athens Ben Epps Airport,Athens,Georgia,GA,KAHN,AHN,non_hub,athens-ben-epps,https://airportaccidents.com/athens-ben-epps/,https://airportaccidents.com/athens-ben-epps/
+Brunswick Golden Isles Airport,Brunswick,Georgia,GA,KBQK,BQK,non_hub,brunswick-golden-isles,https://airportaccidents.com/brunswick-golden-isles/,https://airportaccidents.com/brunswick-golden-isles/
+Columbus Airport,Columbus,Georgia,GA,KCSG,CSG,non_hub,columbus-georgia,https://airportaccidents.com/columbus-georgia/,https://airportaccidents.com/columbus-georgia/
+Rome Richard B. Russell Regional Airport,Rome,Georgia,GA,KRMG,RMG,non_hub,rome-richard-b-russell-regional,https://airportaccidents.com/rome-richard-b-russell-regional/,https://airportaccidents.com/rome-richard-b-russell-regional/
+Gainesville Lee Gilmer Memorial Airport,Gainesville,Georgia,GA,KGVL,GVL,non_hub,gainesville-lee-gilmer-memorial,https://airportaccidents.com/gainesville-lee-gilmer-memorial/,https://airportaccidents.com/gainesville-lee-gilmer-memorial/
+Dothan Regional Airport,Dothan,Alabama,AL,KDHN,DHN,non_hub,dothan-regional,https://airportaccidents.com/dothan-regional/,https://airportaccidents.com/dothan-regional/
+Montgomery Regional Airport,Montgomery,Alabama,AL,KMGM,MGM,non_hub,montgomery-regional,https://airportaccidents.com/montgomery-regional/,https://airportaccidents.com/montgomery-regional/
+Muscle Shoals Northwest Alabama Regional Airport,Muscle Shoals,Alabama,AL,KMSL,MSL,non_hub,muscle-shoals-northwest-alabama-regional,https://airportaccidents.com/muscle-shoals-northwest-alabama-regional/,https://airportaccidents.com/muscle-shoals-northwest-alabama-regional/
+Anniston Regional Airport,Anniston,Alabama,AL,KANB,ANB,non_hub,anniston-regional,https://airportaccidents.com/anniston-regional/,https://airportaccidents.com/anniston-regional/
+Tupelo Regional Airport,Tupelo,Mississippi,MS,KTUP,TUP,non_hub,tupelo-regional,https://airportaccidents.com/tupelo-regional/,https://airportaccidents.com/tupelo-regional/
+Meridian Regional Airport,Meridian,Mississippi,MS,KMEI,MEI,non_hub,meridian-regional,https://airportaccidents.com/meridian-regional/,https://airportaccidents.com/meridian-regional/
+Hattiesburg-Laurel Regional Airport,Hattiesburg,Mississippi,MS,KPIB,PIB,non_hub,hattiesburg-laurel-regional,https://airportaccidents.com/hattiesburg-laurel-regional/,https://airportaccidents.com/hattiesburg-laurel-regional/
+Florence Regional Airport,Florence,South Carolina,SC,KFLO,FLO,non_hub,florence-regional,https://airportaccidents.com/florence-regional/,https://airportaccidents.com/florence-regional/
+Hilton Head Airport,Hilton Head Island,South Carolina,SC,KHXD,HXD,non_hub,hilton-head,https://airportaccidents.com/hilton-head/,https://airportaccidents.com/hilton-head/
+Columbia Metropolitan Airport,Columbia,South Carolina,SC,KCAE,CAE,non_hub,columbia-metropolitan,https://airportaccidents.com/columbia-metropolitan/,https://airportaccidents.com/columbia-metropolitan/
+Concord-Padgett Regional Airport,Concord,North Carolina,NC,KJQF,JQF,non_hub,concord-padgett-regional,https://airportaccidents.com/concord-padgett-regional/,https://airportaccidents.com/concord-padgett-regional/
+Fayetteville Regional Airport,Fayetteville,North Carolina,NC,KFAY,FAY,non_hub,fayetteville-regional,https://airportaccidents.com/fayetteville-regional/,https://airportaccidents.com/fayetteville-regional/
+Jacksonville Albert J. Ellis Airport,Jacksonville,North Carolina,NC,KOAJ,OAJ,non_hub,jacksonville-albert-j-ellis,https://airportaccidents.com/jacksonville-albert-j-ellis/,https://airportaccidents.com/jacksonville-albert-j-ellis/
+New Bern Coastal Carolina Regional Airport,New Bern,North Carolina,NC,KEWN,EWN,non_hub,new-bern-coastal-carolina-regional,https://airportaccidents.com/new-bern-coastal-carolina-regional/,https://airportaccidents.com/new-bern-coastal-carolina-regional/
+Pitt-Greenville Airport,Greenville,North Carolina,NC,KPGV,PGV,non_hub,pitt-greenville,https://airportaccidents.com/pitt-greenville/,https://airportaccidents.com/pitt-greenville/
+Kinston Regional Jetport,Kinston,North Carolina,NC,KISO,ISO,non_hub,kinston-regional-jetport,https://airportaccidents.com/kinston-regional-jetport/,https://airportaccidents.com/kinston-regional-jetport/
+Tri-Cities Regional Airport,Kingsport,Tennessee,TN,KTRI,TRI,non_hub,tri-cities-regional,https://airportaccidents.com/tri-cities-regional/,https://airportaccidents.com/tri-cities-regional/
+Jackson McKellar-Sipes Regional Airport,Jackson,Tennessee,TN,KMKL,MKL,non_hub,jackson-mckellar-sipes-regional,https://airportaccidents.com/jackson-mckellar-sipes-regional/,https://airportaccidents.com/jackson-mckellar-sipes-regional/
+Dyersburg Regional Airport,Dyersburg,Tennessee,TN,KDYR,DYR,non_hub,dyersburg-regional,https://airportaccidents.com/dyersburg-regional/,https://airportaccidents.com/dyersburg-regional/
+Shreveport Regional Airport,Shreveport,Louisiana,LA,KSHV,SHV,non_hub,shreveport-regional,https://airportaccidents.com/shreveport-regional/,https://airportaccidents.com/shreveport-regional/
+Monroe Regional Airport,Monroe,Louisiana,LA,KMLU,MLU,non_hub,monroe-regional,https://airportaccidents.com/monroe-regional/,https://airportaccidents.com/monroe-regional/
+Lake Charles Regional Airport,Lake Charles,Louisiana,LA,KLCH,LCH,non_hub,lake-charles-regional,https://airportaccidents.com/lake-charles-regional/,https://airportaccidents.com/lake-charles-regional/
+Alexandria International Airport,Alexandria,Louisiana,LA,KAEX,AEX,non_hub,alexandria-international,https://airportaccidents.com/alexandria-international/,https://airportaccidents.com/alexandria-international/
+Hot Springs Memorial Field Airport,Hot Springs,Arkansas,AR,KHOT,HOT,non_hub,hot-springs-memorial-field,https://airportaccidents.com/hot-springs-memorial-field/,https://airportaccidents.com/hot-springs-memorial-field/
+Fort Smith Regional Airport,Fort Smith,Arkansas,AR,KFSM,FSM,non_hub,fort-smith-regional,https://airportaccidents.com/fort-smith-regional/,https://airportaccidents.com/fort-smith-regional/
+Jonesboro Municipal Airport,Jonesboro,Arkansas,AR,KJBR,JBR,non_hub,jonesboro-municipal,https://airportaccidents.com/jonesboro-municipal/,https://airportaccidents.com/jonesboro-municipal/
+Lynchburg Regional Airport,Lynchburg,Virginia,VA,KLYH,LYH,non_hub,lynchburg-regional,https://airportaccidents.com/lynchburg-regional/,https://airportaccidents.com/lynchburg-regional/
+Charlottesville-Albemarle Airport,Charlottesville,Virginia,VA,KCHO,CHO,non_hub,charlottesville-albemarle,https://airportaccidents.com/charlottesville-albemarle/,https://airportaccidents.com/charlottesville-albemarle/
+Shenandoah Valley Regional Airport,Weyers Cave,Virginia,VA,KSHD,SHD,non_hub,shenandoah-valley-regional,https://airportaccidents.com/shenandoah-valley-regional/,https://airportaccidents.com/shenandoah-valley-regional/
+Salisbury Ocean City Regional Airport,Salisbury,Maryland,MD,KSBY,SBY,non_hub,salisbury-ocean-city-regional,https://airportaccidents.com/salisbury-ocean-city-regional/,https://airportaccidents.com/salisbury-ocean-city-regional/
+Hagerstown Regional Airport,Hagerstown,Maryland,MD,KHGR,HGR,non_hub,hagerstown-regional,https://airportaccidents.com/hagerstown-regional/,https://airportaccidents.com/hagerstown-regional/
+Trenton Mercer Airport,Trenton,New Jersey,NJ,KTTN,TTN,non_hub,trenton-mercer,https://airportaccidents.com/trenton-mercer/,https://airportaccidents.com/trenton-mercer/
+Cape May Airport,Cape May,New Jersey,NJ,KWWD,WWD,non_hub,cape-may,https://airportaccidents.com/cape-may/,https://airportaccidents.com/cape-may/
+Westchester County Airport,White Plains,New York,NY,KHPN,HPN,non_hub,westchester-county,https://airportaccidents.com/westchester-county/,https://airportaccidents.com/westchester-county/
+Stewart International Airport,Newburgh,New York,NY,KSWF,SWF,non_hub,stewart-international,https://airportaccidents.com/stewart-international/,https://airportaccidents.com/stewart-international/
+Ithaca Tompkins Regional Airport,Ithaca,New York,NY,KITH,ITH,non_hub,ithaca-tompkins-regional,https://airportaccidents.com/ithaca-tompkins-regional/,https://airportaccidents.com/ithaca-tompkins-regional/
+Elmira Corning Regional Airport,Elmira,New York,NY,KELM,ELM,non_hub,elmira-corning-regional,https://airportaccidents.com/elmira-corning-regional/,https://airportaccidents.com/elmira-corning-regional/
+Binghamton Airport,Binghamton,New York,NY,KBGM,BGM,non_hub,binghamton,https://airportaccidents.com/binghamton/,https://airportaccidents.com/binghamton/
+Glens Falls Airport,Glens Falls,New York,NY,KGFL,GFL,non_hub,glens-falls,https://airportaccidents.com/glens-falls/,https://airportaccidents.com/glens-falls/
+Ogdensburg International Airport,Ogdensburg,New York,NY,KOGS,OGS,non_hub,ogdensburg-international,https://airportaccidents.com/ogdensburg-international/,https://airportaccidents.com/ogdensburg-international/
+Plattsburgh International Airport,Plattsburgh,New York,NY,KPBG,PBG,non_hub,plattsburgh-international,https://airportaccidents.com/plattsburgh-international/,https://airportaccidents.com/plattsburgh-international/
+Watertown International Airport,Watertown,New York,NY,KART,ART,non_hub,watertown-international,https://airportaccidents.com/watertown-international/,https://airportaccidents.com/watertown-international/
+Saranac Lake Adirondack Regional Airport,Saranac Lake,New York,NY,KSLK,SLK,non_hub,saranac-lake-adirondack-regional,https://airportaccidents.com/saranac-lake-adirondack-regional/,https://airportaccidents.com/saranac-lake-adirondack-regional/
+Oneida County Airport,Utica,New York,NY,KUCA,UCA,non_hub,oneida-county,https://airportaccidents.com/oneida-county/,https://airportaccidents.com/oneida-county/
+Harrisburg International Airport,Harrisburg,Pennsylvania,PA,KMDT,MDT,non_hub,harrisburg-international-pa,https://airportaccidents.com/harrisburg-international-pa/,https://airportaccidents.com/harrisburg-international-pa/
+Erie International Airport,Erie,Pennsylvania,PA,KERI,ERI,non_hub,erie-international,https://airportaccidents.com/erie-international/,https://airportaccidents.com/erie-international/
+Wilkes-Barre Scranton International Airport,Scranton,Pennsylvania,PA,KAVP,AVP,non_hub,wilkes-barre-scranton-international,https://airportaccidents.com/wilkes-barre-scranton-international/,https://airportaccidents.com/wilkes-barre-scranton-international/
+Altoona-Blair County Airport,Altoona,Pennsylvania,PA,KAOO,AOO,non_hub,altoona-blair-county,https://airportaccidents.com/altoona-blair-county/,https://airportaccidents.com/altoona-blair-county/
+University Park Airport,State College,Pennsylvania,PA,KUNV,SCE,non_hub,university-park,https://airportaccidents.com/university-park/,https://airportaccidents.com/university-park/
+Johnstown-Cambria County Airport,Johnstown,Pennsylvania,PA,KJST,JST,non_hub,johnstown-cambria-county,https://airportaccidents.com/johnstown-cambria-county/,https://airportaccidents.com/johnstown-cambria-county/
+DuBois Regional Airport,DuBois,Pennsylvania,PA,KDUJ,DUJ,non_hub,dubois-regional,https://airportaccidents.com/dubois-regional/,https://airportaccidents.com/dubois-regional/
+Reading Regional Airport,Reading,Pennsylvania,PA,KRDG,RDG,non_hub,reading-regional,https://airportaccidents.com/reading-regional/,https://airportaccidents.com/reading-regional/
+Worcester Regional Airport,Worcester,Massachusetts,MA,KORH,ORH,non_hub,worcester-regional,https://airportaccidents.com/worcester-regional/,https://airportaccidents.com/worcester-regional/
+Cape Cod Gateway Airport,Hyannis,Massachusetts,MA,KHYA,HYA,non_hub,cape-cod-gateway,https://airportaccidents.com/cape-cod-gateway/,https://airportaccidents.com/cape-cod-gateway/
+Martha's Vineyard Airport,Martha's Vineyard,Massachusetts,MA,KMVY,MVY,non_hub,marthas-vineyard,https://airportaccidents.com/marthas-vineyard/,https://airportaccidents.com/marthas-vineyard/
+Nantucket Memorial Airport,Nantucket,Massachusetts,MA,KACK,ACK,non_hub,nantucket-memorial,https://airportaccidents.com/nantucket-memorial/,https://airportaccidents.com/nantucket-memorial/
+New Bedford Regional Airport,New Bedford,Massachusetts,MA,KEWB,EWB,non_hub,new-bedford-regional,https://airportaccidents.com/new-bedford-regional/,https://airportaccidents.com/new-bedford-regional/
+Groton-New London Airport,Groton,Connecticut,CT,KGON,GON,non_hub,groton-new-london,https://airportaccidents.com/groton-new-london/,https://airportaccidents.com/groton-new-london/
+Tweed New Haven Airport,New Haven,Connecticut,CT,KHVN,HVN,non_hub,tweed-new-haven,https://airportaccidents.com/tweed-new-haven/,https://airportaccidents.com/tweed-new-haven/
+Danbury Municipal Airport,Danbury,Connecticut,CT,KDXR,DXR,non_hub,danbury-municipal,https://airportaccidents.com/danbury-municipal/,https://airportaccidents.com/danbury-municipal/
+Providence North Central State Airport,Smithfield,Rhode Island,RI,KSFZ,SFZ,non_hub,providence-north-central-state,https://airportaccidents.com/providence-north-central-state/,https://airportaccidents.com/providence-north-central-state/
+Lebanon Municipal Airport,Lebanon,New Hampshire,NH,KLEB,LEB,non_hub,lebanon-municipal,https://airportaccidents.com/lebanon-municipal/,https://airportaccidents.com/lebanon-municipal/
+Laconia Municipal Airport,Laconia,New Hampshire,NH,KLCI,LCI,non_hub,laconia-municipal,https://airportaccidents.com/laconia-municipal/,https://airportaccidents.com/laconia-municipal/
+Bangor International Airport,Bangor,Maine,ME,KBGR,BGR,non_hub,bangor-international,https://airportaccidents.com/bangor-international/,https://airportaccidents.com/bangor-international/
+Bar Harbor Airport,Bar Harbor,Maine,ME,KBHB,BHB,non_hub,bar-harbor,https://airportaccidents.com/bar-harbor/,https://airportaccidents.com/bar-harbor/
+Presque Isle International Airport,Presque Isle,Maine,ME,KPQI,PQI,non_hub,presque-isle-international,https://airportaccidents.com/presque-isle-international/,https://airportaccidents.com/presque-isle-international/
+Rutland Southern Vermont Regional Airport,Rutland,Vermont,VT,KRUT,RUT,non_hub,rutland-southern-vermont-regional,https://airportaccidents.com/rutland-southern-vermont-regional/,https://airportaccidents.com/rutland-southern-vermont-regional/
+Toledo Express Airport,Toledo,Ohio,OH,KTOL,TOL,non_hub,toledo-express,https://airportaccidents.com/toledo-express/,https://airportaccidents.com/toledo-express/
+Youngstown-Warren Regional Airport,Youngstown,Ohio,OH,KHZX,YNG,non_hub,youngstown-warren-regional,https://airportaccidents.com/youngstown-warren-regional/,https://airportaccidents.com/youngstown-warren-regional/
+Zanesville Municipal Airport,Zanesville,Ohio,OH,KZZV,ZZV,non_hub,zanesville-municipal,https://airportaccidents.com/zanesville-municipal/,https://airportaccidents.com/zanesville-municipal/
+Mansfield Lahm Regional Airport,Mansfield,Ohio,OH,KMFD,MFD,non_hub,mansfield-lahm-regional,https://airportaccidents.com/mansfield-lahm-regional/,https://airportaccidents.com/mansfield-lahm-regional/
+Portage County Airport,Ravenna,Ohio,OH,KPOV,POV,non_hub,portage-county,https://airportaccidents.com/portage-county/,https://airportaccidents.com/portage-county/
+Capital City Airport,Frankfort,Kentucky,KY,KFFT,FFT,non_hub,capital-city-frankfort,https://airportaccidents.com/capital-city-frankfort/,https://airportaccidents.com/capital-city-frankfort/
+Owensboro-Daviess County Regional Airport,Owensboro,Kentucky,KY,KOWB,OWB,non_hub,owensboro-daviess-county-regional,https://airportaccidents.com/owensboro-daviess-county-regional/,https://airportaccidents.com/owensboro-daviess-county-regional/
+Bowling Green Warren County Regional Airport,Bowling Green,Kentucky,KY,KBWG,BWG,non_hub,bowling-green-warren-county-regional,https://airportaccidents.com/bowling-green-warren-county-regional/,https://airportaccidents.com/bowling-green-warren-county-regional/
+Decatur Airport,Decatur,Illinois,IL,KDEC,DEC,non_hub,decatur,https://airportaccidents.com/decatur/,https://airportaccidents.com/decatur/
+Capital Airport Springfield,Springfield,Illinois,IL,KSPI,SPI,non_hub,capital-airport-springfield,https://airportaccidents.com/capital-airport-springfield/,https://airportaccidents.com/capital-airport-springfield/
+Southern Illinois Airport,Carbondale,Illinois,IL,KMWA,MWA,non_hub,southern-illinois,https://airportaccidents.com/southern-illinois/,https://airportaccidents.com/southern-illinois/
+Bloomington-Normal Airport,Bloomington,Illinois,IL,KBMI,BMI,non_hub,bloomington-normal,https://airportaccidents.com/bloomington-normal/,https://airportaccidents.com/bloomington-normal/
+Joplin Regional Airport,Joplin,Missouri,MO,KJLN,JLN,non_hub,joplin-regional,https://airportaccidents.com/joplin-regional/,https://airportaccidents.com/joplin-regional/
+Columbia Regional Airport,Columbia,Missouri,MO,KCOU,COU,non_hub,columbia-regional,https://airportaccidents.com/columbia-regional/,https://airportaccidents.com/columbia-regional/
+Cape Girardeau Regional Airport,Cape Girardeau,Missouri,MO,KCGI,CGI,non_hub,cape-girardeau-regional,https://airportaccidents.com/cape-girardeau-regional/,https://airportaccidents.com/cape-girardeau-regional/
+Kirksville Regional Airport,Kirksville,Missouri,MO,KIRK,IRK,non_hub,kirksville-regional,https://airportaccidents.com/kirksville-regional/,https://airportaccidents.com/kirksville-regional/
+Fort Wayne Baer Field Airport,Fort Wayne,Indiana,IN,KFWA,FWA,non_hub,fort-wayne-baer-field,https://airportaccidents.com/fort-wayne-baer-field/,https://airportaccidents.com/fort-wayne-baer-field/
+Terre Haute Regional Airport,Terre Haute,Indiana,IN,KHUF,HUF,non_hub,terre-haute-regional,https://airportaccidents.com/terre-haute-regional/,https://airportaccidents.com/terre-haute-regional/
+Muncie Delaware County Airport,Muncie,Indiana,IN,KMIE,MIE,non_hub,muncie-delaware-county,https://airportaccidents.com/muncie-delaware-county/,https://airportaccidents.com/muncie-delaware-county/
+Grand Forks International Airport,Grand Forks,North Dakota,ND,KGFK,GFK,non_hub,grand-forks-international,https://airportaccidents.com/grand-forks-international/,https://airportaccidents.com/grand-forks-international/
+Bismarck Airport,Bismarck,North Dakota,ND,KBIS,BIS,non_hub,bismarck,https://airportaccidents.com/bismarck/,https://airportaccidents.com/bismarck/
+Minot International Airport,Minot,North Dakota,ND,KMOT,MOT,non_hub,minot-international,https://airportaccidents.com/minot-international/,https://airportaccidents.com/minot-international/
+Williston Basin International Airport,Williston,North Dakota,ND,KXWA,XWA,non_hub,williston-basin-international,https://airportaccidents.com/williston-basin-international/,https://airportaccidents.com/williston-basin-international/
+Lincoln Airport,Lincoln,Nebraska,NE,KLNK,LNK,non_hub,lincoln-airport,https://airportaccidents.com/lincoln-airport/,https://airportaccidents.com/lincoln-airport/
+Kearney Regional Airport,Kearney,Nebraska,NE,KEAR,EAR,non_hub,kearney-regional,https://airportaccidents.com/kearney-regional/,https://airportaccidents.com/kearney-regional/
+Norfolk Regional Airport,Norfolk,Nebraska,NE,KOFK,OFK,non_hub,norfolk-regional-ne,https://airportaccidents.com/norfolk-regional-ne/,https://airportaccidents.com/norfolk-regional-ne/
+Manhattan Regional Airport,Manhattan,Kansas,KS,KMHK,MHK,non_hub,manhattan-regional,https://airportaccidents.com/manhattan-regional/,https://airportaccidents.com/manhattan-regional/
+Salina Regional Airport,Salina,Kansas,KS,KSLN,SLN,non_hub,salina-regional,https://airportaccidents.com/salina-regional/,https://airportaccidents.com/salina-regional/
+Garden City Regional Airport,Garden City,Kansas,KS,KGCK,GCK,non_hub,garden-city-regional,https://airportaccidents.com/garden-city-regional/,https://airportaccidents.com/garden-city-regional/
+Dodge City Regional Airport,Dodge City,Kansas,KS,KDDC,DDC,non_hub,dodge-city-regional,https://airportaccidents.com/dodge-city-regional/,https://airportaccidents.com/dodge-city-regional/
+Hays Regional Airport,Hays,Kansas,KS,KHYS,HYS,non_hub,hays-regional,https://airportaccidents.com/hays-regional/,https://airportaccidents.com/hays-regional/
+Rochester International Airport,Rochester,Minnesota,MN,KRST,RST,non_hub,rochester-international-mn,https://airportaccidents.com/rochester-international-mn/,https://airportaccidents.com/rochester-international-mn/
+St. Cloud Regional Airport,St. Cloud,Minnesota,MN,KSTC,STC,non_hub,st-cloud-regional,https://airportaccidents.com/st-cloud-regional/,https://airportaccidents.com/st-cloud-regional/
+Bemidji Regional Airport,Bemidji,Minnesota,MN,KBJI,BJI,non_hub,bemidji-regional,https://airportaccidents.com/bemidji-regional/,https://airportaccidents.com/bemidji-regional/
+International Falls Airport,International Falls,Minnesota,MN,KINL,INL,non_hub,international-falls,https://airportaccidents.com/international-falls/,https://airportaccidents.com/international-falls/
+Brainerd Lakes Regional Airport,Brainerd,Minnesota,MN,KBRD,BRD,non_hub,brainerd-lakes-regional,https://airportaccidents.com/brainerd-lakes-regional/,https://airportaccidents.com/brainerd-lakes-regional/
+Hibbing Chisholm-Hibbing Airport,Hibbing,Minnesota,MN,KHIB,HIB,non_hub,hibbing-chisholm-hibbing,https://airportaccidents.com/hibbing-chisholm-hibbing/,https://airportaccidents.com/hibbing-chisholm-hibbing/
+Sioux City Gateway Airport,Sioux City,Iowa,IA,KSUX,SUX,non_hub,sioux-city-gateway,https://airportaccidents.com/sioux-city-gateway/,https://airportaccidents.com/sioux-city-gateway/
+Dubuque Regional Airport,Dubuque,Iowa,IA,KDBQ,DBQ,non_hub,dubuque-regional,https://airportaccidents.com/dubuque-regional/,https://airportaccidents.com/dubuque-regional/
+Waterloo Regional Airport,Waterloo,Iowa,IA,KALO,ALO,non_hub,waterloo-regional,https://airportaccidents.com/waterloo-regional/,https://airportaccidents.com/waterloo-regional/
+Mason City Municipal Airport,Mason City,Iowa,IA,KMCW,MCW,non_hub,mason-city-municipal,https://airportaccidents.com/mason-city-municipal/,https://airportaccidents.com/mason-city-municipal/
+Fort Dodge Regional Airport,Fort Dodge,Iowa,IA,KFOD,FOD,non_hub,fort-dodge-regional,https://airportaccidents.com/fort-dodge-regional/,https://airportaccidents.com/fort-dodge-regional/
+La Crosse Regional Airport,La Crosse,Wisconsin,WI,KLSE,LSE,non_hub,la-crosse-regional,https://airportaccidents.com/la-crosse-regional/,https://airportaccidents.com/la-crosse-regional/
+Rhinelander-Oneida County Airport,Rhinelander,Wisconsin,WI,KRHI,RHI,non_hub,rhinelander-oneida-county,https://airportaccidents.com/rhinelander-oneida-county/,https://airportaccidents.com/rhinelander-oneida-county/
+Wausau Downtown Airport,Wausau,Wisconsin,WI,KAUW,AUW,non_hub,wausau-downtown,https://airportaccidents.com/wausau-downtown/,https://airportaccidents.com/wausau-downtown/
+Marquette County Airport,Marquette,Michigan,MI,KSAW,SAW,non_hub,marquette-county,https://airportaccidents.com/marquette-county/,https://airportaccidents.com/marquette-county/
+Sault Ste. Marie Airport,Sault Ste. Marie,Michigan,MI,KCIU,CIU,non_hub,sault-ste-marie,https://airportaccidents.com/sault-ste-marie/,https://airportaccidents.com/sault-ste-marie/
+Alpena County Regional Airport,Alpena,Michigan,MI,KAPN,APN,non_hub,alpena-county-regional,https://airportaccidents.com/alpena-county-regional/,https://airportaccidents.com/alpena-county-regional/
+Pellston Regional Airport,Pellston,Michigan,MI,KPLN,PLN,non_hub,pellston-regional,https://airportaccidents.com/pellston-regional/,https://airportaccidents.com/pellston-regional/
+Iron Mountain Kingsford Airport,Iron Mountain,Michigan,MI,KIMT,IMT,non_hub,iron-mountain-kingsford,https://airportaccidents.com/iron-mountain-kingsford/,https://airportaccidents.com/iron-mountain-kingsford/
+Helena Regional Airport,Helena,Montana,MT,KHLN,HLN,non_hub,helena-regional,https://airportaccidents.com/helena-regional/,https://airportaccidents.com/helena-regional/
+Great Falls International Airport,Great Falls,Montana,MT,KGTF,GTF,non_hub,great-falls-international,https://airportaccidents.com/great-falls-international/,https://airportaccidents.com/great-falls-international/
+Glacier Park International Airport,Kalispell,Montana,MT,KFCA,FCA,non_hub,glacier-park-international,https://airportaccidents.com/glacier-park-international/,https://airportaccidents.com/glacier-park-international/
+Havre City-County Airport,Havre,Montana,MT,KHVR,HVR,non_hub,havre-city-county,https://airportaccidents.com/havre-city-county/,https://airportaccidents.com/havre-city-county/
+Miles City Airport,Miles City,Montana,MT,KMLS,MLS,non_hub,miles-city,https://airportaccidents.com/miles-city/,https://airportaccidents.com/miles-city/
+Casper Natrona County International Airport,Casper,Wyoming,WY,KCPR,CPR,non_hub,casper-natrona-county-international,https://airportaccidents.com/casper-natrona-county-international/,https://airportaccidents.com/casper-natrona-county-international/
+Cheyenne Regional Airport,Cheyenne,Wyoming,WY,KCYS,CYS,non_hub,cheyenne-regional,https://airportaccidents.com/cheyenne-regional/,https://airportaccidents.com/cheyenne-regional/
+Laramie Regional Airport,Laramie,Wyoming,WY,KLAR,LAR,non_hub,laramie-regional,https://airportaccidents.com/laramie-regional/,https://airportaccidents.com/laramie-regional/
+Rock Springs Sweetwater County Airport,Rock Springs,Wyoming,WY,KRKS,RKS,non_hub,rock-springs-sweetwater-county,https://airportaccidents.com/rock-springs-sweetwater-county/,https://airportaccidents.com/rock-springs-sweetwater-county/
+Gillette Campbell County Airport,Gillette,Wyoming,WY,KGCC,GCC,non_hub,gillette-campbell-county,https://airportaccidents.com/gillette-campbell-county/,https://airportaccidents.com/gillette-campbell-county/
+Riverton Regional Airport,Riverton,Wyoming,WY,KRIW,RIW,non_hub,riverton-regional,https://airportaccidents.com/riverton-regional/,https://airportaccidents.com/riverton-regional/
+Idaho Falls Regional Airport,Idaho Falls,Idaho,ID,KIDA,IDA,non_hub,idaho-falls-regional,https://airportaccidents.com/idaho-falls-regional/,https://airportaccidents.com/idaho-falls-regional/
+Pocatello Regional Airport,Pocatello,Idaho,ID,KPIH,PIH,non_hub,pocatello-regional,https://airportaccidents.com/pocatello-regional/,https://airportaccidents.com/pocatello-regional/
+Twin Falls Magic Valley Regional Airport,Twin Falls,Idaho,ID,KTWF,TWF,non_hub,twin-falls-magic-valley-regional,https://airportaccidents.com/twin-falls-magic-valley-regional/,https://airportaccidents.com/twin-falls-magic-valley-regional/
+Sun Valley Friedman Memorial Airport,Hailey,Idaho,ID,KSUN,SUN,non_hub,sun-valley-friedman-memorial,https://airportaccidents.com/sun-valley-friedman-memorial/,https://airportaccidents.com/sun-valley-friedman-memorial/
+Lewiston-Nez Perce County Airport,Lewiston,Idaho,ID,KLWS,LWS,non_hub,lewiston-nez-perce-county,https://airportaccidents.com/lewiston-nez-perce-county/,https://airportaccidents.com/lewiston-nez-perce-county/
+Provo Municipal Airport,Provo,Utah,UT,KPVU,PVU,non_hub,provo-municipal,https://airportaccidents.com/provo-municipal/,https://airportaccidents.com/provo-municipal/
+St. George Regional Airport,St. George,Utah,UT,KSGU,SGU,non_hub,st-george-regional,https://airportaccidents.com/st-george-regional/,https://airportaccidents.com/st-george-regional/
+Ogden-Hinckley Airport,Ogden,Utah,UT,KOGD,OGD,non_hub,ogden-hinckley,https://airportaccidents.com/ogden-hinckley/,https://airportaccidents.com/ogden-hinckley/
+Vernal Regional Airport,Vernal,Utah,UT,KVEL,VEL,non_hub,vernal-regional,https://airportaccidents.com/vernal-regional/,https://airportaccidents.com/vernal-regional/
+Moab Canyonlands Field Airport,Moab,Utah,UT,KCNY,CNY,non_hub,moab-canyonlands-field,https://airportaccidents.com/moab-canyonlands-field/,https://airportaccidents.com/moab-canyonlands-field/
+Cedar City Regional Airport,Cedar City,Utah,UT,KCDC,CDC,non_hub,cedar-city-regional,https://airportaccidents.com/cedar-city-regional/,https://airportaccidents.com/cedar-city-regional/
+Aspen Pitkin County Airport,Aspen,Colorado,CO,KASE,ASE,non_hub,aspen-pitkin-county,https://airportaccidents.com/aspen-pitkin-county/,https://airportaccidents.com/aspen-pitkin-county/
+Eagle County Regional Airport,Eagle,Colorado,CO,KEGE,EGE,non_hub,eagle-county-regional,https://airportaccidents.com/eagle-county-regional/,https://airportaccidents.com/eagle-county-regional/
+Durango La Plata County Airport,Durango,Colorado,CO,KDRO,DRO,non_hub,durango-la-plata-county,https://airportaccidents.com/durango-la-plata-county/,https://airportaccidents.com/durango-la-plata-county/
+Pueblo Memorial Airport,Pueblo,Colorado,CO,KPUB,PUB,non_hub,pueblo-memorial,https://airportaccidents.com/pueblo-memorial/,https://airportaccidents.com/pueblo-memorial/
+Montrose Regional Airport,Montrose,Colorado,CO,KMTJ,MTJ,non_hub,montrose-regional,https://airportaccidents.com/montrose-regional/,https://airportaccidents.com/montrose-regional/
+Gunnison-Crested Butte Regional Airport,Gunnison,Colorado,CO,KGUC,GUC,non_hub,gunnison-crested-butte-regional,https://airportaccidents.com/gunnison-crested-butte-regional/,https://airportaccidents.com/gunnison-crested-butte-regional/
+Albuquerque Double Eagle II Airport,Albuquerque,New Mexico,NM,KAEG,AEG,non_hub,albuquerque-double-eagle-ii,https://airportaccidents.com/albuquerque-double-eagle-ii/,https://airportaccidents.com/albuquerque-double-eagle-ii/
+Santa Fe Municipal Airport,Santa Fe,New Mexico,NM,KSAF,SAF,non_hub,santa-fe-municipal,https://airportaccidents.com/santa-fe-municipal/,https://airportaccidents.com/santa-fe-municipal/
+Roswell International Air Center,Roswell,New Mexico,NM,KROW,ROW,non_hub,roswell-international-air-center,https://airportaccidents.com/roswell-international-air-center/,https://airportaccidents.com/roswell-international-air-center/
+Farmington Four Corners Regional Airport,Farmington,New Mexico,NM,KFMN,FMN,non_hub,farmington-four-corners-regional,https://airportaccidents.com/farmington-four-corners-regional/,https://airportaccidents.com/farmington-four-corners-regional/
+Gallup Municipal Airport,Gallup,New Mexico,NM,KGUP,GUP,non_hub,gallup-municipal,https://airportaccidents.com/gallup-municipal/,https://airportaccidents.com/gallup-municipal/
+Clovis Municipal Airport,Clovis,New Mexico,NM,KCVS,CVS,non_hub,clovis-municipal,https://airportaccidents.com/clovis-municipal/,https://airportaccidents.com/clovis-municipal/
+Carlsbad Cavern City Air Terminal,Carlsbad,New Mexico,NM,KCNM,CNM,non_hub,carlsbad-cavern-city-air-terminal,https://airportaccidents.com/carlsbad-cavern-city-air-terminal/,https://airportaccidents.com/carlsbad-cavern-city-air-terminal/
+Silver City Grant County Airport,Silver City,New Mexico,NM,KSVC,SVC,non_hub,silver-city-grant-county,https://airportaccidents.com/silver-city-grant-county/,https://airportaccidents.com/silver-city-grant-county/
+Flagstaff Pulliam Airport,Flagstaff,Arizona,AZ,KFLG,FLG,non_hub,flagstaff-pulliam,https://airportaccidents.com/flagstaff-pulliam/,https://airportaccidents.com/flagstaff-pulliam/
+Yuma International Airport,Yuma,Arizona,AZ,KNYL,YUM,non_hub,yuma-international,https://airportaccidents.com/yuma-international/,https://airportaccidents.com/yuma-international/
+Prescott Regional Airport,Prescott,Arizona,AZ,KPRC,PRC,non_hub,prescott-regional,https://airportaccidents.com/prescott-regional/,https://airportaccidents.com/prescott-regional/
+Show Low Regional Airport,Show Low,Arizona,AZ,KSOW,SOW,non_hub,show-low-regional,https://airportaccidents.com/show-low-regional/,https://airportaccidents.com/show-low-regional/
+Lake Havasu City Airport,Lake Havasu City,Arizona,AZ,KHII,HII,non_hub,lake-havasu-city,https://airportaccidents.com/lake-havasu-city/,https://airportaccidents.com/lake-havasu-city/
+Kingman Airport,Kingman,Arizona,AZ,KIGM,IGM,non_hub,kingman,https://airportaccidents.com/kingman/,https://airportaccidents.com/kingman/
+Page Municipal Airport,Page,Arizona,AZ,KPGA,PGA,non_hub,page-municipal,https://airportaccidents.com/page-municipal/,https://airportaccidents.com/page-municipal/
+Elko Regional Airport,Elko,Nevada,NV,KEKO,EKO,non_hub,elko-regional,https://airportaccidents.com/elko-regional/,https://airportaccidents.com/elko-regional/
+Laughlin Bullhead International Airport,Bullhead City,Arizona,AZ,KIFP,IFP,non_hub,laughlin-bullhead-international,https://airportaccidents.com/laughlin-bullhead-international/,https://airportaccidents.com/laughlin-bullhead-international/
+Bellingham International Airport,Bellingham,Washington,WA,KBLI,BLI,non_hub,bellingham-international,https://airportaccidents.com/bellingham-international/,https://airportaccidents.com/bellingham-international/
+Yakima Air Terminal,Yakima,Washington,WA,KYKM,YKM,non_hub,yakima-air-terminal,https://airportaccidents.com/yakima-air-terminal/,https://airportaccidents.com/yakima-air-terminal/
+Tri-Cities Airport,Pasco,Washington,WA,KPSC,PSC,non_hub,tri-cities-washington,https://airportaccidents.com/tri-cities-washington/,https://airportaccidents.com/tri-cities-washington/
+Walla Walla Regional Airport,Walla Walla,Washington,WA,KALW,ALW,non_hub,walla-walla-regional,https://airportaccidents.com/walla-walla-regional/,https://airportaccidents.com/walla-walla-regional/
+Wenatchee Pangborn Memorial Airport,Wenatchee,Washington,WA,KEAT,EAT,non_hub,wenatchee-pangborn-memorial,https://airportaccidents.com/wenatchee-pangborn-memorial/,https://airportaccidents.com/wenatchee-pangborn-memorial/
+Friday Harbor Airport,Friday Harbor,Washington,WA,KFHR,FHR,non_hub,friday-harbor,https://airportaccidents.com/friday-harbor/,https://airportaccidents.com/friday-harbor/
+Redmond Municipal Airport,Redmond,Oregon,OR,KRDM,RDM,non_hub,redmond-municipal,https://airportaccidents.com/redmond-municipal/,https://airportaccidents.com/redmond-municipal/
+Klamath Falls Airport,Klamath Falls,Oregon,OR,KLMT,LMT,non_hub,klamath-falls,https://airportaccidents.com/klamath-falls/,https://airportaccidents.com/klamath-falls/
+Pendleton Airport,Pendleton,Oregon,OR,KPDT,PDT,non_hub,pendleton,https://airportaccidents.com/pendleton/,https://airportaccidents.com/pendleton/
+North Bend Municipal Airport,North Bend,Oregon,OR,KOTH,OTH,non_hub,north-bend-municipal,https://airportaccidents.com/north-bend-municipal/,https://airportaccidents.com/north-bend-municipal/
+Astoria Regional Airport,Astoria,Oregon,OR,KAST,AST,non_hub,astoria-regional,https://airportaccidents.com/astoria-regional/,https://airportaccidents.com/astoria-regional/
+LaGrande Union County Airport,La Grande,Oregon,OR,KLGD,LGD,non_hub,la-grande-union-county,https://airportaccidents.com/la-grande-union-county/,https://airportaccidents.com/la-grande-union-county/
+Ketchikan International Airport,Ketchikan,Alaska,AK,PAKT,KTN,non_hub,ketchikan-international,https://airportaccidents.com/ketchikan-international/,https://airportaccidents.com/ketchikan-international/
+Sitka Rocky Gutierrez Airport,Sitka,Alaska,AK,PASI,SIT,non_hub,sitka-rocky-gutierrez,https://airportaccidents.com/sitka-rocky-gutierrez/,https://airportaccidents.com/sitka-rocky-gutierrez/
+Kodiak Airport,Kodiak,Alaska,AK,PADQ,ADQ,non_hub,kodiak,https://airportaccidents.com/kodiak/,https://airportaccidents.com/kodiak/
+Nome Airport,Nome,Alaska,AK,PAOM,OME,non_hub,nome,https://airportaccidents.com/nome/,https://airportaccidents.com/nome/
+Bethel Airport,Bethel,Alaska,AK,PABE,BET,non_hub,bethel,https://airportaccidents.com/bethel/,https://airportaccidents.com/bethel/
+Kotzebue Ralph Wien Memorial Airport,Kotzebue,Alaska,AK,PAOT,OTZ,non_hub,kotzebue-ralph-wien-memorial,https://airportaccidents.com/kotzebue-ralph-wien-memorial/,https://airportaccidents.com/kotzebue-ralph-wien-memorial/
+Utqiagvik Wiley Post-Will Rogers Memorial Airport,Utqiagvik,Alaska,AK,PABR,BRW,non_hub,utqiagvik-wiley-post-will-rogers-memorial,https://airportaccidents.com/utqiagvik-wiley-post-will-rogers-memorial/,https://airportaccidents.com/utqiagvik-wiley-post-will-rogers-memorial/
+Kenai Municipal Airport,Kenai,Alaska,AK,PAEN,ENA,non_hub,kenai-municipal,https://airportaccidents.com/kenai-municipal/,https://airportaccidents.com/kenai-municipal/
+Valdez Airport,Valdez,Alaska,AK,PAVD,VDZ,non_hub,valdez,https://airportaccidents.com/valdez/,https://airportaccidents.com/valdez/
+Wrangell Airport,Wrangell,Alaska,AK,PAWG,WRG,non_hub,wrangell,https://airportaccidents.com/wrangell/,https://airportaccidents.com/wrangell/
+Petersburg James A. Johnson Airport,Petersburg,Alaska,AK,PAPG,PSG,non_hub,petersburg-james-a-johnson,https://airportaccidents.com/petersburg-james-a-johnson/,https://airportaccidents.com/petersburg-james-a-johnson/
+Yakutat Airport,Yakutat,Alaska,AK,PAYA,YAK,non_hub,yakutat,https://airportaccidents.com/yakutat/,https://airportaccidents.com/yakutat/
+Cordova Merle K. Smith Airport,Cordova,Alaska,AK,PACV,CDV,non_hub,cordova-merle-k-smith,https://airportaccidents.com/cordova-merle-k-smith/,https://airportaccidents.com/cordova-merle-k-smith/
+Dillingham Airport,Dillingham,Alaska,AK,PADL,DLG,non_hub,dillingham,https://airportaccidents.com/dillingham/,https://airportaccidents.com/dillingham/
+King Salmon Airport,King Salmon,Alaska,AK,PAKN,AKN,non_hub,king-salmon,https://airportaccidents.com/king-salmon/,https://airportaccidents.com/king-salmon/
+Homer Airport,Homer,Alaska,AK,PAHO,HOM,non_hub,homer,https://airportaccidents.com/homer/,https://airportaccidents.com/homer/
+Soldotna Airport,Soldotna,Alaska,AK,PASX,SXQ,non_hub,soldotna,https://airportaccidents.com/soldotna/,https://airportaccidents.com/soldotna/
+Unalaska Airport,Unalaska,Alaska,AK,PADU,DUT,non_hub,unalaska,https://airportaccidents.com/unalaska/,https://airportaccidents.com/unalaska/
+Molokai Airport,Kaunakakai,Hawaii,HI,PHMK,MKK,non_hub,molokai,https://airportaccidents.com/molokai/,https://airportaccidents.com/molokai/
+Lanai Airport,Lanai City,Hawaii,HI,PHNY,LNY,non_hub,lanai,https://airportaccidents.com/lanai/,https://airportaccidents.com/lanai/
+Kapalua Airport,Lahaina,Hawaii,HI,PHJH,JHM,non_hub,kapalua,https://airportaccidents.com/kapalua/,https://airportaccidents.com/kapalua/
+Waimea-Kohala Airport,Kamuela,Hawaii,HI,PHMU,MUE,non_hub,waimea-kohala,https://airportaccidents.com/waimea-kohala/,https://airportaccidents.com/waimea-kohala/
+Mercedita Airport,Ponce,Puerto Rico,PR,TJPS,PSE,non_hub,mercedita,https://airportaccidents.com/mercedita/,https://airportaccidents.com/mercedita/
+Henry E. Rohlsen Airport,Christiansted,U.S. Virgin Islands,VI,TISX,STX,non_hub,henry-e-rohlsen,https://airportaccidents.com/henry-e-rohlsen/,https://airportaccidents.com/henry-e-rohlsen/
+Lewistown Municipal Airport,Lewistown,Illinois,IL,KLWV,LWV,non_hub,lewistown-municipal,https://airportaccidents.com/lewistown-municipal/,https://airportaccidents.com/lewistown-municipal/
+MidAmerica St. Louis Airport,Belleville,Illinois,IL,KBLV,BLV,non_hub,midamerica-st-louis,https://airportaccidents.com/midamerica-st-louis/,https://airportaccidents.com/midamerica-st-louis/
+Greater Rockford Airport,Rockford,Illinois,IL,KRFD,RFD,non_hub,greater-rockford,https://airportaccidents.com/greater-rockford/,https://airportaccidents.com/greater-rockford/
+Galesburg Municipal Airport,Galesburg,Illinois,IL,KGBG,GBG,non_hub,galesburg-municipal,https://airportaccidents.com/galesburg-municipal/,https://airportaccidents.com/galesburg-municipal/
+Quincy Regional Airport,Quincy,Illinois,IL,KUIN,UIN,non_hub,quincy-regional,https://airportaccidents.com/quincy-regional/,https://airportaccidents.com/quincy-regional/
+Champaign Willard Airport,Champaign,Illinois,IL,KCMI,CMI,non_hub,champaign-willard,https://airportaccidents.com/champaign-willard/,https://airportaccidents.com/champaign-willard/
+Kahului Airport Maui,Kahului,Hawaii,HI,PHOG,OGG,large_hub,kahului-maui,https://airportaccidents.com/kahului-maui/,https://airportaccidents.com/kahului-maui/
+Bob Hope Airport,Burbank,California,CA,KBUR,BUR,medium_hub,bob-hope,https://airportaccidents.com/bob-hope/,https://airportaccidents.com/bob-hope/
+Nashville Berry Field Airport,Nashville,Tennessee,TN,KBNA,BNA,large_hub,nashville-berry-field,https://airportaccidents.com/nashville-berry-field/,https://airportaccidents.com/nashville-berry-field/
+Spokane International,Spokane,Washington,WA,KGEG,GEG,medium_hub,spokane,https://airportaccidents.com/spokane/,https://airportaccidents.com/spokane/
+Lawton Fort Sill Regional Airport,Lawton,Oklahoma,OK,KLAW,LAW,non_hub,lawton-fort-sill-regional,https://airportaccidents.com/lawton-fort-sill-regional/,https://airportaccidents.com/lawton-fort-sill-regional/
+Enid Woodring Regional Airport,Enid,Oklahoma,OK,KENID,WDG,non_hub,enid-woodring-regional,https://airportaccidents.com/enid-woodring-regional/,https://airportaccidents.com/enid-woodring-regional/
+Stillwater Regional Airport,Stillwater,Oklahoma,OK,KSWO,SWO,non_hub,stillwater-regional,https://airportaccidents.com/stillwater-regional/,https://airportaccidents.com/stillwater-regional/
+Ponca City Regional Airport,Ponca City,Oklahoma,OK,KPNC,PNC,non_hub,ponca-city-regional,https://airportaccidents.com/ponca-city-regional/,https://airportaccidents.com/ponca-city-regional/
+Bartlesville Municipal Airport,Bartlesville,Oklahoma,OK,KBVO,BVO,non_hub,bartlesville-municipal,https://airportaccidents.com/bartlesville-municipal/,https://airportaccidents.com/bartlesville-municipal/
+Liberal Mid-America Regional Airport,Liberal,Kansas,KS,KLBL,LBL,non_hub,liberal-mid-america-regional,https://airportaccidents.com/liberal-mid-america-regional/,https://airportaccidents.com/liberal-mid-america-regional/
+Pueblo Memorial Airport Colorado,Pueblo,Colorado,CO,KPUB,PUB,non_hub,pueblo-memorial-colorado,https://airportaccidents.com/pueblo-memorial-colorado/,https://airportaccidents.com/pueblo-memorial-colorado/
+Scottsbluff Western Nebraska Regional Airport,Scottsbluff,Nebraska,NE,KBFF,BFF,non_hub,scottsbluff-western-nebraska-regional,https://airportaccidents.com/scottsbluff-western-nebraska-regional/,https://airportaccidents.com/scottsbluff-western-nebraska-regional/
+North Platte Regional Airport,North Platte,Nebraska,NE,KLBF,LBF,non_hub,north-platte-regional,https://airportaccidents.com/north-platte-regional/,https://airportaccidents.com/north-platte-regional/
+Chadron Municipal Airport,Chadron,Nebraska,NE,KCDR,CDR,non_hub,chadron-municipal,https://airportaccidents.com/chadron-municipal/,https://airportaccidents.com/chadron-municipal/
+Grand Island Central Nebraska Regional Airport,Grand Island,Nebraska,NE,KGRI,GRI,non_hub,grand-island-central-nebraska-regional,https://airportaccidents.com/grand-island-central-nebraska-regional/,https://airportaccidents.com/grand-island-central-nebraska-regional/
+Pierre Regional Airport,Pierre,South Dakota,SD,KPIR,PIR,non_hub,pierre-regional,https://airportaccidents.com/pierre-regional/,https://airportaccidents.com/pierre-regional/
+Watertown Regional Airport,Watertown,South Dakota,SD,KATY,ATY,non_hub,watertown-regional-sd,https://airportaccidents.com/watertown-regional-sd/,https://airportaccidents.com/watertown-regional-sd/
+Aberdeen Regional Airport,Aberdeen,South Dakota,SD,KABR,ABR,non_hub,aberdeen-regional,https://airportaccidents.com/aberdeen-regional/,https://airportaccidents.com/aberdeen-regional/
+Huron Regional Airport,Huron,South Dakota,SD,KHON,HON,non_hub,huron-regional,https://airportaccidents.com/huron-regional/,https://airportaccidents.com/huron-regional/
+Dickinson Theodore Roosevelt Regional Airport,Dickinson,North Dakota,ND,KDIK,DIK,non_hub,dickinson-theodore-roosevelt-regional,https://airportaccidents.com/dickinson-theodore-roosevelt-regional/,https://airportaccidents.com/dickinson-theodore-roosevelt-regional/
+Jamestown Regional Airport,Jamestown,North Dakota,ND,KJMS,JMS,non_hub,jamestown-regional,https://airportaccidents.com/jamestown-regional/,https://airportaccidents.com/jamestown-regional/
+Devils Lake Regional Airport,Devils Lake,North Dakota,ND,KDVL,DVL,non_hub,devils-lake-regional,https://airportaccidents.com/devils-lake-regional/,https://airportaccidents.com/devils-lake-regional/
+Jonesboro Municipal Airport AR,Jonesboro,Arkansas,AR,KJBR,JBR,non_hub,jonesboro-municipal-ar,https://airportaccidents.com/jonesboro-municipal-ar/,https://airportaccidents.com/jonesboro-municipal-ar/
+Fayetteville Drake Field Airport,Fayetteville,Arkansas,AR,KFYV,FYV,non_hub,fayetteville-drake-field,https://airportaccidents.com/fayetteville-drake-field/,https://airportaccidents.com/fayetteville-drake-field/
+Pine Bluff Airport,Pine Bluff,Arkansas,AR,KPBF,PBF,non_hub,pine-bluff,https://airportaccidents.com/pine-bluff/,https://airportaccidents.com/pine-bluff/
+Texarkana Regional Airport TX,Texarkana,Arkansas,AR,KTXK,TXK,non_hub,texarkana-regional-tx,https://airportaccidents.com/texarkana-regional-tx/,https://airportaccidents.com/texarkana-regional-tx/
+Natchez Adams County Airport,Natchez,Mississippi,MS,KHEZ,HEZ,non_hub,natchez-adams-county,https://airportaccidents.com/natchez-adams-county/,https://airportaccidents.com/natchez-adams-county/
+Greenville Mid-Delta Regional Airport,Greenville,Mississippi,MS,KGWW,GWW,non_hub,greenville-mid-delta-regional,https://airportaccidents.com/greenville-mid-delta-regional/,https://airportaccidents.com/greenville-mid-delta-regional/
+Starkville Golden Triangle Regional Airport,Columbus,Mississippi,MS,KGTR,GTR,non_hub,starkville-golden-triangle-regional,https://airportaccidents.com/starkville-golden-triangle-regional/,https://airportaccidents.com/starkville-golden-triangle-regional/
+Tuskegee Sharpe Field Airport,Tuskegee,Alabama,AL,KTGI,TGI,non_hub,tuskegee-sharpe-field,https://airportaccidents.com/tuskegee-sharpe-field/,https://airportaccidents.com/tuskegee-sharpe-field/
+Gadsden Municipal Airport,Gadsden,Alabama,AL,KGAD,GAD,non_hub,gadsden-municipal,https://airportaccidents.com/gadsden-municipal/,https://airportaccidents.com/gadsden-municipal/
+Tuscaloosa Regional Airport,Tuscaloosa,Alabama,AL,KTCL,TCL,non_hub,tuscaloosa-regional,https://airportaccidents.com/tuscaloosa-regional/,https://airportaccidents.com/tuscaloosa-regional/
+Decatur Pryor Field Regional Airport,Decatur,Alabama,AL,KDCU,DCU,non_hub,decatur-pryor-field-regional,https://airportaccidents.com/decatur-pryor-field-regional/,https://airportaccidents.com/decatur-pryor-field-regional/
+Macon Middle Georgia Regional Airport,Macon,Georgia,GA,KMCN,MCN,non_hub,macon-middle-georgia-regional,https://airportaccidents.com/macon-middle-georgia-regional/,https://airportaccidents.com/macon-middle-georgia-regional/
+Albany Southwest Georgia Regional Airport,Albany,Georgia,GA,KABY,ABY,non_hub,albany-southwest-georgia-regional,https://airportaccidents.com/albany-southwest-georgia-regional/,https://airportaccidents.com/albany-southwest-georgia-regional/
+Moultrie Spence Airport,Moultrie,Georgia,GA,KMUL,MUL,non_hub,moultrie-spence,https://airportaccidents.com/moultrie-spence/,https://airportaccidents.com/moultrie-spence/
+Jesup Wayne County Airport,Jesup,Georgia,GA,KJES,JES,non_hub,jesup-wayne-county,https://airportaccidents.com/jesup-wayne-county/,https://airportaccidents.com/jesup-wayne-county/
+Waycross Ware County Airport,Waycross,Georgia,GA,KAYS,AYS,non_hub,waycross-ware-county,https://airportaccidents.com/waycross-ware-county/,https://airportaccidents.com/waycross-ware-county/
+Milledgeville Baldwin County Airport,Milledgeville,Georgia,GA,KMLJ,MLJ,non_hub,milledgeville-baldwin-county,https://airportaccidents.com/milledgeville-baldwin-county/,https://airportaccidents.com/milledgeville-baldwin-county/
+Statesboro Bulloch County Airport,Statesboro,Georgia,GA,KTBR,TBR,non_hub,statesboro-bulloch-county,https://airportaccidents.com/statesboro-bulloch-county/,https://airportaccidents.com/statesboro-bulloch-county/
+Tifton Henry Tift Myers Airport,Tifton,Georgia,GA,KTMA,TMA,non_hub,tifton-henry-tift-myers,https://airportaccidents.com/tifton-henry-tift-myers/,https://airportaccidents.com/tifton-henry-tift-myers/
+Ocala International Airport FL,Ocala,Florida,FL,KOCF,OCF,non_hub,ocala-international-fl,https://airportaccidents.com/ocala-international-fl/,https://airportaccidents.com/ocala-international-fl/
+Palatka Kay Larkin Airport,Palatka,Florida,FL,KPKL,PKL,non_hub,palatka-kay-larkin,https://airportaccidents.com/palatka-kay-larkin/,https://airportaccidents.com/palatka-kay-larkin/
+Sebring Regional Airport,Sebring,Florida,FL,KSEB,SEB,non_hub,sebring-regional,https://airportaccidents.com/sebring-regional/,https://airportaccidents.com/sebring-regional/
+Arcadia DeSoto County Airport,Arcadia,Florida,FL,KZPH,ZPH,non_hub,arcadia-desoto-county,https://airportaccidents.com/arcadia-desoto-county/,https://airportaccidents.com/arcadia-desoto-county/
+Brooksville Tampa Bay Regional Airport,Brooksville,Florida,FL,KBKV,BKV,non_hub,brooksville-tampa-bay-regional,https://airportaccidents.com/brooksville-tampa-bay-regional/,https://airportaccidents.com/brooksville-tampa-bay-regional/
+Zephyrhills Municipal Airport,Zephyrhills,Florida,FL,KZPH,ZPH,non_hub,zephyrhills-municipal,https://airportaccidents.com/zephyrhills-municipal/,https://airportaccidents.com/zephyrhills-municipal/
+Leesburg International Airport,Leesburg,Florida,FL,KLEE,LEE,non_hub,leesburg-international,https://airportaccidents.com/leesburg-international/,https://airportaccidents.com/leesburg-international/
+Sanford Orlando International Airport,Sanford,Florida,FL,KSFB,SFB,non_hub,sanford-orlando-international,https://airportaccidents.com/sanford-orlando-international/,https://airportaccidents.com/sanford-orlando-international/
+Titusville Space Coast Regional Airport,Titusville,Florida,FL,KTIX,TIX,non_hub,titusville-space-coast-regional,https://airportaccidents.com/titusville-space-coast-regional/,https://airportaccidents.com/titusville-space-coast-regional/
+Stuart Witham Field Airport,Stuart,Florida,FL,KSUA,SUA,non_hub,stuart-witham-field,https://airportaccidents.com/stuart-witham-field/,https://airportaccidents.com/stuart-witham-field/
+Boca Raton Airport,Boca Raton,Florida,FL,KBCT,BCT,non_hub,boca-raton,https://airportaccidents.com/boca-raton/,https://airportaccidents.com/boca-raton/
+Opa-locka Executive Airport,Miami,Florida,FL,KOPF,OPF,non_hub,opa-locka-executive,https://airportaccidents.com/opa-locka-executive/,https://airportaccidents.com/opa-locka-executive/
+Homestead General Aviation Airport,Homestead,Florida,FL,KHST,HST,non_hub,homestead-general-aviation,https://airportaccidents.com/homestead-general-aviation/,https://airportaccidents.com/homestead-general-aviation/
+Immokalee Regional Airport,Immokalee,Florida,FL,KIMM,IMM,non_hub,immokalee-regional,https://airportaccidents.com/immokalee-regional/,https://airportaccidents.com/immokalee-regional/
+Okeechobee County Airport,Okeechobee,Florida,FL,KOBE,OBE,non_hub,okeechobee-county,https://airportaccidents.com/okeechobee-county/,https://airportaccidents.com/okeechobee-county/
+Crestview Bob Sikes Airport,Crestview,Florida,FL,KCEW,CEW,non_hub,crestview-bob-sikes,https://airportaccidents.com/crestview-bob-sikes/,https://airportaccidents.com/crestview-bob-sikes/
+Marianna Jackson County Airport,Marianna,Florida,FL,KMAI,MAI,non_hub,marianna-jackson-county,https://airportaccidents.com/marianna-jackson-county/,https://airportaccidents.com/marianna-jackson-county/
+Cross City Airport,Cross City,Florida,FL,KCTY,CTY,non_hub,cross-city,https://airportaccidents.com/cross-city/,https://airportaccidents.com/cross-city/
+Williston Municipal Airport,Williston,Florida,FL,KWIG,WIG,non_hub,williston-municipal,https://airportaccidents.com/williston-municipal/,https://airportaccidents.com/williston-municipal/
+Fernandina Beach Municipal Airport,Fernandina Beach,Florida,FL,KFHB,FHB,non_hub,fernandina-beach-municipal,https://airportaccidents.com/fernandina-beach-municipal/,https://airportaccidents.com/fernandina-beach-municipal/
+Allentown Bethlehem Easton International Airport,Allentown,Pennsylvania,PA,KABE,ABE,small_hub,allentown-bethlehem-easton-international,https://airportaccidents.com/allentown-bethlehem-easton-international/,https://airportaccidents.com/allentown-bethlehem-easton-international/
+Scranton Wilkes-Barre Airport,Avoca,Pennsylvania,PA,KAVP,AVP,non_hub,scranton-wilkes-barre,https://airportaccidents.com/scranton-wilkes-barre/,https://airportaccidents.com/scranton-wilkes-barre/
+Bradford Regional Airport,Bradford,Pennsylvania,PA,KBFD,BFD,non_hub,bradford-regional,https://airportaccidents.com/bradford-regional/,https://airportaccidents.com/bradford-regional/
+Franklin County Regional Airport,Chambersburg,Pennsylvania,PA,KCXY,CXY,non_hub,franklin-county-regional,https://airportaccidents.com/franklin-county-regional/,https://airportaccidents.com/franklin-county-regional/
+Hazleton Municipal Airport,Hazleton,Pennsylvania,PA,KHZL,HZL,non_hub,hazleton-municipal,https://airportaccidents.com/hazleton-municipal/,https://airportaccidents.com/hazleton-municipal/
+Stroudsburg Pocono Mountains Municipal Airport,Stroudsburg,Pennsylvania,PA,NESQ,ESQ,non_hub,stroudsburg-pocono-mountains-municipal,https://airportaccidents.com/stroudsburg-pocono-mountains-municipal/,https://airportaccidents.com/stroudsburg-pocono-mountains-municipal/
+Teterboro Airport,Teterboro,New Jersey,NJ,KTEB,TEB,non_hub,teterboro,https://airportaccidents.com/teterboro/,https://airportaccidents.com/teterboro/
+Morristown Municipal Airport,Morristown,New Jersey,NJ,KMMU,MMU,non_hub,morristown-municipal,https://airportaccidents.com/morristown-municipal/,https://airportaccidents.com/morristown-municipal/
+Princeton Airport,Princeton,New Jersey,NJ,KVAY,VAY,non_hub,princeton,https://airportaccidents.com/princeton/,https://airportaccidents.com/princeton/
+Block Island State Airport,New Shoreham,Rhode Island,RI,KBID,BID,non_hub,block-island-state,https://airportaccidents.com/block-island-state/,https://airportaccidents.com/block-island-state/
+Westerly State Airport,Westerly,Rhode Island,RI,KWST,WST,non_hub,westerly-state,https://airportaccidents.com/westerly-state/,https://airportaccidents.com/westerly-state/
+Newport State Airport,Newport,Rhode Island,RI,KUUU,UUU,non_hub,newport-state,https://airportaccidents.com/newport-state/,https://airportaccidents.com/newport-state/
+Fitchburg Municipal Airport,Fitchburg,Massachusetts,MA,KFIT,FIT,non_hub,fitchburg-municipal,https://airportaccidents.com/fitchburg-municipal/,https://airportaccidents.com/fitchburg-municipal/
+Lawrence Municipal Airport,Lawrence,Massachusetts,MA,KLWM,LWM,non_hub,lawrence-municipal,https://airportaccidents.com/lawrence-municipal/,https://airportaccidents.com/lawrence-municipal/
+Norwood Memorial Airport,Norwood,Massachusetts,MA,KOWD,OWD,non_hub,norwood-memorial,https://airportaccidents.com/norwood-memorial/,https://airportaccidents.com/norwood-memorial/
+Barnstable Municipal Airport,Hyannis,Massachusetts,MA,KHYA,HYA,non_hub,barnstable-municipal,https://airportaccidents.com/barnstable-municipal/,https://airportaccidents.com/barnstable-municipal/
+Provincetown Municipal Airport,Provincetown,Massachusetts,MA,KPVC,PVC,non_hub,provincetown-municipal,https://airportaccidents.com/provincetown-municipal/,https://airportaccidents.com/provincetown-municipal/
+Stowe Mountain Airport,Morrisville,Vermont,VT,KMVL,MVL,non_hub,stowe-mountain,https://airportaccidents.com/stowe-mountain/,https://airportaccidents.com/stowe-mountain/
+Newport State Airport VT,Newport,Vermont,VT,KEFK,EFK,non_hub,newport-state-vt,https://airportaccidents.com/newport-state-vt/,https://airportaccidents.com/newport-state-vt/
+Berlin Municipal Airport,Berlin,New Hampshire,NH,KBML,BML,non_hub,berlin-municipal,https://airportaccidents.com/berlin-municipal/,https://airportaccidents.com/berlin-municipal/
+Skyhaven Airport,Rochester,New Hampshire,NH,KDAW,DAW,non_hub,skyhaven,https://airportaccidents.com/skyhaven/,https://airportaccidents.com/skyhaven/
+Concord Municipal Airport,Concord,New Hampshire,NH,KCON,CON,non_hub,concord-municipal-nh,https://airportaccidents.com/concord-municipal-nh/,https://airportaccidents.com/concord-municipal-nh/
+Augusta State Airport,Augusta,Maine,ME,KAUG,AUG,non_hub,augusta-state,https://airportaccidents.com/augusta-state/,https://airportaccidents.com/augusta-state/
+Knox County Regional Airport,Rockland,Maine,ME,KRKD,RKD,non_hub,knox-county-regional,https://airportaccidents.com/knox-county-regional/,https://airportaccidents.com/knox-county-regional/
+Houlton International Airport,Houlton,Maine,ME,KHUL,HUL,non_hub,houlton-international,https://airportaccidents.com/houlton-international/,https://airportaccidents.com/houlton-international/
+Millinocket Municipal Airport,Millinocket,Maine,ME,KMLT,MLT,non_hub,millinocket-municipal,https://airportaccidents.com/millinocket-municipal/,https://airportaccidents.com/millinocket-municipal/
+Aroostook County Regional Airport,Presque Isle,Maine,ME,KPQI,PQI,non_hub,aroostook-county-regional,https://airportaccidents.com/aroostook-county-regional/,https://airportaccidents.com/aroostook-county-regional/
+Massena International Airport,Massena,New York,NY,KMSS,MSS,non_hub,massena-international,https://airportaccidents.com/massena-international/,https://airportaccidents.com/massena-international/
+Jamestown Chautauqua County Airport,Jamestown,New York,NY,KJHW,JHW,non_hub,jamestown-chautauqua-county,https://airportaccidents.com/jamestown-chautauqua-county/,https://airportaccidents.com/jamestown-chautauqua-county/
+Dunkirk Airport,Dunkirk,New York,NY,KDKK,DKK,non_hub,dunkirk,https://airportaccidents.com/dunkirk/,https://airportaccidents.com/dunkirk/
+Genesee County Airport,Batavia,New York,NY,KGVQ,GVQ,non_hub,genesee-county,https://airportaccidents.com/genesee-county/,https://airportaccidents.com/genesee-county/
+Oswego County Airport,Oswego,New York,NY,KFZY,FZY,non_hub,oswego-county,https://airportaccidents.com/oswego-county/,https://airportaccidents.com/oswego-county/
+Niagara Falls International Airport,Niagara Falls,New York,NY,KIAG,IAG,non_hub,niagara-falls-international,https://airportaccidents.com/niagara-falls-international/,https://airportaccidents.com/niagara-falls-international/
+Pullman Moscow Regional Airport,Pullman,Washington,WA,KPUW,PUW,non_hub,pullman-moscow-regional,https://airportaccidents.com/pullman-moscow-regional/,https://airportaccidents.com/pullman-moscow-regional/
+Grant County International Airport,Moses Lake,Washington,WA,KMWH,MWH,non_hub,grant-county-international,https://airportaccidents.com/grant-county-international/,https://airportaccidents.com/grant-county-international/
+Ellensburg Bowers Field Airport,Ellensburg,Washington,WA,KELN,ELN,non_hub,ellensburg-bowers-field,https://airportaccidents.com/ellensburg-bowers-field/,https://airportaccidents.com/ellensburg-bowers-field/
+Port Angeles William R. Fairchild International Airport,Port Angeles,Washington,WA,KCLM,CLM,non_hub,port-angeles-william-r-fairchild-international,https://airportaccidents.com/port-angeles-william-r-fairchild-international/,https://airportaccidents.com/port-angeles-william-r-fairchild-international/
+Olympia Regional Airport,Olympia,Washington,WA,KOLM,OLM,non_hub,olympia-regional,https://airportaccidents.com/olympia-regional/,https://airportaccidents.com/olympia-regional/
+Hoquiam Bowerman Airport,Hoquiam,Washington,WA,KHQM,HQM,non_hub,hoquiam-bowerman,https://airportaccidents.com/hoquiam-bowerman/,https://airportaccidents.com/hoquiam-bowerman/
+Kelso Longview Airport,Kelso,Washington,WA,KKLS,KLS,non_hub,kelso-longview,https://airportaccidents.com/kelso-longview/,https://airportaccidents.com/kelso-longview/
+Skagit Regional Airport,Burlington,Washington,WA,KBVS,BVS,non_hub,skagit-regional,https://airportaccidents.com/skagit-regional/,https://airportaccidents.com/skagit-regional/
+Kennewick Tri-Cities Airport,Kennewick,Washington,WA,KPSC,PSC,non_hub,kennewick-tri-cities,https://airportaccidents.com/kennewick-tri-cities/,https://airportaccidents.com/kennewick-tri-cities/
+Roseburg Regional Airport,Roseburg,Oregon,OR,KRBG,RBG,non_hub,roseburg-regional,https://airportaccidents.com/roseburg-regional/,https://airportaccidents.com/roseburg-regional/
+Newport Municipal Airport,Newport,Oregon,OR,KONP,ONP,non_hub,newport-municipal-or,https://airportaccidents.com/newport-municipal-or/,https://airportaccidents.com/newport-municipal-or/
+McMinnville Municipal Airport,McMinnville,Oregon,OR,KMMV,MMV,non_hub,mcminnville-municipal,https://airportaccidents.com/mcminnville-municipal/,https://airportaccidents.com/mcminnville-municipal/
+Salem McNary Field Airport,Salem,Oregon,OR,KSLE,SLE,non_hub,salem-mcnary-field,https://airportaccidents.com/salem-mcnary-field/,https://airportaccidents.com/salem-mcnary-field/
+Burns Municipal Airport,Burns,Oregon,OR,KBNO,BNO,non_hub,burns-municipal,https://airportaccidents.com/burns-municipal/,https://airportaccidents.com/burns-municipal/
+Ontario Municipal Airport OR,Ontario,Oregon,OR,KONO,ONO,non_hub,ontario-municipal-or,https://airportaccidents.com/ontario-municipal-or/,https://airportaccidents.com/ontario-municipal-or/
+Baker City Municipal Airport,Baker City,Oregon,OR,KBKE,BKE,non_hub,baker-city-municipal,https://airportaccidents.com/baker-city-municipal/,https://airportaccidents.com/baker-city-municipal/
+Coos Bay Southwest Oregon Regional Airport,Coos Bay,Oregon,OR,KOTH,OTH,non_hub,coos-bay-southwest-oregon-regional,https://airportaccidents.com/coos-bay-southwest-oregon-regional/,https://airportaccidents.com/coos-bay-southwest-oregon-regional/
