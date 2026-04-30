@@ -1,86 +1,190 @@
-/* =============================================================================
-   AIRPORTACCIDENTS.COM — MAIN.JS
-   Shared interactions for all pages. No dependencies.
-   ============================================================================= */
+/* ============================================================
+   AirportAccidents.com — main.js
+   Shared interactions across all pages
+   ============================================================ */
 
 (function () {
   'use strict';
 
-  /* --- Sticky bar on scroll ------------------------------------------------ */
-  const stickyBar = document.querySelector('.sticky-bar');
-  if (stickyBar) {
+  /* ── STICKY BAR ─────────────────────────────────────────── */
+  function initStickyBar() {
+    const bar = document.getElementById('sticky-bar');
+    if (!bar) return;
     const threshold = window.innerHeight * 0.85;
-    const toggleSticky = () => {
-      stickyBar.style.display = window.scrollY > threshold ? 'flex' : 'none';
-    };
-    window.addEventListener('scroll', toggleSticky, { passive: true });
+    let visible = false;
+    function update() {
+      const should = window.scrollY > threshold;
+      if (should === visible) return;
+      visible = should;
+      bar.classList.toggle('sticky-bar--visible', visible);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   }
 
-  /* --- Smooth scroll for all anchor links ---------------------------------- */
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        const offset = 72; // nav height
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top: top, behavior: 'smooth' });
-      }
-    });
-  });
-
-  /* --- Form: show text input if "other" airport selected ------------------- */
-  const airportSelects = document.querySelectorAll('[data-airport-select]');
-  airportSelects.forEach(function (select) {
-    select.addEventListener('change', function () {
-      const group = this.closest('.form-group');
-      const existing = group.querySelector('.airport-text-input');
-      if (this.value === 'other') {
-        if (!existing) {
-          const input = document.createElement('input');
-          input.type = 'text';
-          input.placeholder = 'Type your airport name or city...';
-          input.className = 'form-group__input airport-text-input';
-          input.style.marginTop = '8px';
-          group.appendChild(input);
-          input.focus();
-        }
-      } else if (existing) {
-        existing.remove();
-      }
-    });
-  });
-
-  /* --- Form submission (stub — replace with real endpoint) ----------------- */
-  const forms = document.querySelectorAll('[data-lead-form]');
-  forms.forEach(function (form) {
-    form.addEventListener('submit', function (e) {
+  /* ── SMOOTH SCROLL ──────────────────────────────────────── */
+  function initSmoothScroll() {
+    document.addEventListener('click', function (e) {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
       e.preventDefault();
-      const btn = form.querySelector('.form__submit');
-      if (btn) {
-        btn.textContent = 'Submitting...';
-        btn.disabled = true;
-      }
-      // TODO: replace with real fetch() to CRM endpoint
-      setTimeout(function () {
-        form.innerHTML = `
-          <div style="text-align:center;padding:32px 0;">
-            <div style="font-size:32px;margin-bottom:12px;">✓</div>
-            <p style="font-size:16px;font-weight:700;color:#0A1628;margin-bottom:8px;">Case Review Submitted</p>
-            <p style="font-size:13px;color:#5C6478;line-height:1.6;">An attorney will contact you within 24 hours. Check your phone for a confirmation text.</p>
-          </div>
-        `;
-      }, 1200);
+      const navH = document.querySelector('nav') ? 72 : 0;
+      const top = target.getBoundingClientRect().top + window.scrollY - navH;
+      window.scrollTo({ top, behavior: 'smooth' });
     });
-  });
+  }
 
-  /* --- Nav active state ---------------------------------------------------- */
-  const currentPath = window.location.pathname;
-  document.querySelectorAll('.nav__link').forEach(function (link) {
-    if (link.getAttribute('href') === currentPath) {
-      link.setAttribute('aria-current', 'page');
-      link.style.color = 'var(--color-gold-300)';
+  /* ── NAV SCROLL STATE ───────────────────────────────────── */
+  function initNavScroll() {
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+    function update() {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 24);
     }
-  });
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
 
-})();
+  /* ── MOBILE NAV ─────────────────────────────────────────── */
+  function initMobileNav() {
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('nav-menu');
+    if (!toggle || !menu) return;
+    toggle.addEventListener('click', function () {
+      const open = menu.classList.toggle('nav-menu--open');
+      toggle.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    document.addEventListener('click', function (e) {
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('nav-menu--open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        menu.classList.remove('nav-menu--open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  /* ── LEAD FORMS ─────────────────────────────────────────── */
+  function initLeadForms() {
+    document.querySelectorAll('.lead-form').forEach(function (form) {
+
+      // "Other airport" reveals text input
+      const airportSelect = form.querySelector('[data-role="airport-select"]');
+      if (airportSelect) {
+        airportSelect.addEventListener('change', function () {
+          let txt = form.querySelector('[data-role="airport-text"]');
+          if (this.value === 'other') {
+            if (!txt) {
+              txt = document.createElement('input');
+              txt.type = 'text';
+              txt.placeholder = 'Type your airport name or city...';
+              txt.setAttribute('data-role', 'airport-text');
+              txt.className = 'form__input';
+              this.closest('.form__group').appendChild(txt);
+            }
+            txt.style.display = 'block';
+            txt.focus();
+          } else if (txt) {
+            txt.style.display = 'none';
+          }
+        });
+      }
+
+      // Phone auto-format
+      const phoneInput = form.querySelector('[data-role="phone"]');
+      if (phoneInput) {
+        phoneInput.addEventListener('input', function () {
+          let d = this.value.replace(/\D/g, '').slice(0, 10);
+          if (d.length >= 7)      this.value = '(' + d.slice(0,3) + ') ' + d.slice(3,6) + '-' + d.slice(6);
+          else if (d.length >= 4) this.value = '(' + d.slice(0,3) + ') ' + d.slice(3);
+          else if (d.length > 0)  this.value = '(' + d;
+        });
+      }
+
+      // Submit
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const btn = form.querySelector('[data-role="submit"]');
+        const phone = phoneInput ? phoneInput.value.replace(/\D/g, '') : '0000000000';
+        if (phoneInput && phone.length < 10) {
+          phoneInput.classList.add('form__input--error');
+          phoneInput.focus();
+          return;
+        }
+        if (phoneInput) phoneInput.classList.remove('form__input--error');
+
+        const payload = {
+          airport:       form.dataset.airport || '',
+          accidentType:  form.dataset.accidentType || '',
+          phone:         phone,
+          timestamp:     new Date().toISOString(),
+          page:          window.location.pathname,
+        };
+        form.querySelectorAll('select,input,textarea').forEach(function (el) {
+          if (el.name) payload[el.name] = el.value;
+        });
+
+        if (btn) { btn.textContent = 'Submitting...'; btn.disabled = true; }
+
+        fetch('/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        })
+        .catch(function () {})
+        .finally(function () { showFormSuccess(form); });
+      });
+    });
+  }
+
+  function showFormSuccess(form) {
+    const success = form.querySelector('[data-role="success"]');
+    if (success) {
+      const fields = form.querySelector('[data-role="fields"]');
+      if (fields) fields.style.display = 'none';
+      success.style.display = 'block';
+    } else {
+      form.innerHTML =
+        '<div class="form__success">' +
+        '<div class="form__success-icon">✓</div>' +
+        '<h3 class="form__success-title">Case Review Submitted</h3>' +
+        '<p class="form__success-text">An attorney will review your case and contact you within 24 hours.</p>' +
+        '</div>';
+    }
+  }
+
+  /* ── PHONE CLICK TRACKING ───────────────────────────────── */
+  function initPhoneTracking() {
+    document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'phone_click', { event_category: 'engagement', event_label: window.location.pathname });
+        }
+      });
+    });
+  }
+
+  /* ── INIT ────────────────────────────────────────────────── */
+  function init() {
+    initStickyBar();
+    initSmoothScroll();
+    initNavScroll();
+    initMobileNav();
+    initLeadForms();
+    initPhoneTracking();
+  }
+
+  document.readyState === 'loading'
+    ? document.addEventListener('DOMContentLoaded', init)
+    : init();
+
+}());

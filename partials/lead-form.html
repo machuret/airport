@@ -1,74 +1,105 @@
 <!-- ============================================================
   PARTIAL: lead-form.html
-  Reusable lead capture form. Inject context vars to pre-populate.
-  Variables required:
-    {{form_title}}       — e.g. "Free LAX Accident Review"
-    {{form_subtitle}}    — e.g. "Tell us what happened at LAX..."
-    {{form_airport}}     — pre-selected airport slug (optional)
-    {{form_accident}}    — pre-selected accident slug (optional)
-    {{submit_label}}     — e.g. "Review My LAX Case →"
+  Reusable lead capture form.
+  Inject context via data-* attributes on the .lead-form element.
+
+  Usage:
+    <div id="lead-form"
+         class="form-card"
+         data-airport="los-angeles-international"
+         data-airport-name="Los Angeles International Airport"
+         data-airport-code="LAX"
+         data-accident-type="slip-and-fall"
+         data-accident-name="Slip &amp; Fall Accidents">
+      {{> lead-form}}
+    </div>
+
+  Variables rendered at build time:
+    {{form_title}}        - e.g. "Free LAX Case Review"
+    {{form_subtitle}}     - e.g. "Tell us what happened at LAX. A lawyer reviews within 24 hours."
+    {{airport_slug}}      - pre-selected airport slug (or "" for generic form)
+    {{accident_slug}}     - pre-selected accident slug (or "" for generic form)
+    {{submit_label}}      - e.g. "Review My LAX Case →"
   ============================================================ -->
-<div class="form-card" id="get-help">
+
+<div class="form-card__bar" aria-hidden="true"></div>
+
+<div class="form-card__header">
   <h2 class="form-card__title">{{form_title}}</h2>
   <p class="form-card__sub">{{form_subtitle}}</p>
+</div>
 
-  <form data-lead-form novalidate>
+<form class="lead-form"
+      novalidate
+      data-airport="{{airport_slug}}"
+      data-accident-type="{{accident_slug}}">
 
-    <div class="form-group">
-      <label class="form-group__label" for="form-airport">Which airport?</label>
-      <div class="form-group__select-wrap">
-        <select id="form-airport" name="airport" class="form-group__select"
-          data-airport-select aria-required="true">
+  <div data-role="fields">
+
+    <!-- Airport selector — hidden if airport is pre-known -->
+    <div class="form__group {{#if airport_slug}}form__group--hidden{{/if}}" id="form-airport-group">
+      <label class="form__label" for="form-airport">Which airport?</label>
+      <div class="form__select-wrap">
+        <select class="form__select" id="form-airport" name="airport" data-role="airport-select">
           <option value="">Select airport...</option>
           <optgroup label="Major Hubs">
-            <option value="hartsfield-jackson-atlanta-international" {{#if_eq form_airport "hartsfield-jackson-atlanta-international"}}selected{{/if_eq}}>Atlanta (ATL) — Hartsfield-Jackson</option>
-            <option value="ohare-international" {{#if_eq form_airport "ohare-international"}}selected{{/if_eq}}>Chicago (ORD) — O'Hare</option>
-            <option value="los-angeles-international" {{#if_eq form_airport "los-angeles-international"}}selected{{/if_eq}}>Los Angeles (LAX)</option>
-            <option value="dallas-fort-worth-international" {{#if_eq form_airport "dallas-fort-worth-international"}}selected{{/if_eq}}>Dallas (DFW)</option>
-            <option value="denver-international" {{#if_eq form_airport "denver-international"}}selected{{/if_eq}}>Denver (DEN)</option>
-            <option value="john-f-kennedy-international" {{#if_eq form_airport "john-f-kennedy-international"}}selected{{/if_eq}}>New York (JFK)</option>
-            <option value="san-francisco-international" {{#if_eq form_airport "san-francisco-international"}}selected{{/if_eq}}>San Francisco (SFO)</option>
-            <option value="seattle-tacoma-international" {{#if_eq form_airport "seattle-tacoma-international"}}selected{{/if_eq}}>Seattle (SEA)</option>
-            <option value="harry-reid-international" {{#if_eq form_airport "harry-reid-international"}}selected{{/if_eq}}>Las Vegas (LAS)</option>
-            <option value="orlando-international" {{#if_eq form_airport "orlando-international"}}selected{{/if_eq}}>Orlando (MCO)</option>
-            <option value="miami-international" {{#if_eq form_airport "miami-international"}}selected{{/if_eq}}>Miami (MIA)</option>
-            <option value="george-bush-intercontinental" {{#if_eq form_airport "george-bush-intercontinental"}}selected{{/if_eq}}>Houston (IAH)</option>
-            <option value="phoenix-sky-harbor-international" {{#if_eq form_airport "phoenix-sky-harbor-international"}}selected{{/if_eq}}>Phoenix (PHX)</option>
-            <option value="charlotte-douglas-international" {{#if_eq form_airport "charlotte-douglas-international"}}selected{{/if_eq}}>Charlotte (CLT)</option>
-            <option value="newark-liberty-international" {{#if_eq form_airport "newark-liberty-international"}}selected{{/if_eq}}>Newark (EWR)</option>
-            <option value="logan-international" {{#if_eq form_airport "logan-international"}}selected{{/if_eq}}>Boston (BOS)</option>
+            <option value="hartsfield-jackson-atlanta-international" {{#if_eq airport_slug "hartsfield-jackson-atlanta-international"}}selected{{/if_eq}}>Atlanta (ATL) — Hartsfield-Jackson</option>
+            <option value="ohare-international"                       {{#if_eq airport_slug "ohare-international"}}selected{{/if_eq}}>Chicago (ORD) — O'Hare</option>
+            <option value="los-angeles-international"                 {{#if_eq airport_slug "los-angeles-international"}}selected{{/if_eq}}>Los Angeles (LAX)</option>
+            <option value="dallas-fort-worth-international"           {{#if_eq airport_slug "dallas-fort-worth-international"}}selected{{/if_eq}}>Dallas (DFW)</option>
+            <option value="denver-international"                      {{#if_eq airport_slug "denver-international"}}selected{{/if_eq}}>Denver (DEN)</option>
+            <option value="john-f-kennedy-international"              {{#if_eq airport_slug "john-f-kennedy-international"}}selected{{/if_eq}}>New York (JFK)</option>
+            <option value="san-francisco-international"               {{#if_eq airport_slug "san-francisco-international"}}selected{{/if_eq}}>San Francisco (SFO)</option>
+            <option value="seattle-tacoma-international"              {{#if_eq airport_slug "seattle-tacoma-international"}}selected{{/if_eq}}>Seattle (SEA)</option>
+            <option value="harry-reid-international"                  {{#if_eq airport_slug "harry-reid-international"}}selected{{/if_eq}}>Las Vegas (LAS)</option>
+            <option value="orlando-international"                     {{#if_eq airport_slug "orlando-international"}}selected{{/if_eq}}>Orlando (MCO)</option>
+            <option value="miami-international"                       {{#if_eq airport_slug "miami-international"}}selected{{/if_eq}}>Miami (MIA)</option>
+            <option value="george-bush-intercontinental"              {{#if_eq airport_slug "george-bush-intercontinental"}}selected{{/if_eq}}>Houston (IAH)</option>
+            <option value="phoenix-sky-harbor-international"          {{#if_eq airport_slug "phoenix-sky-harbor-international"}}selected{{/if_eq}}>Phoenix (PHX)</option>
+            <option value="charlotte-douglas-international"           {{#if_eq airport_slug "charlotte-douglas-international"}}selected{{/if_eq}}>Charlotte (CLT)</option>
+            <option value="newark-liberty-international"              {{#if_eq airport_slug "newark-liberty-international"}}selected{{/if_eq}}>Newark (EWR)</option>
+            <option value="logan-international"                       {{#if_eq airport_slug "logan-international"}}selected{{/if_eq}}>Boston (BOS)</option>
+            <option value="minneapolis-saint-paul-international"      {{#if_eq airport_slug "minneapolis-saint-paul-international"}}selected{{/if_eq}}>Minneapolis (MSP)</option>
+            <option value="philadelphia-international"                {{#if_eq airport_slug "philadelphia-international"}}selected{{/if_eq}}>Philadelphia (PHL)</option>
+            <option value="detroit-metropolitan-wayne-county"         {{#if_eq airport_slug "detroit-metropolitan-wayne-county"}}selected{{/if_eq}}>Detroit (DTW)</option>
+            <option value="laguardia"                                 {{#if_eq airport_slug "laguardia"}}selected{{/if_eq}}>New York (LGA) — LaGuardia</option>
           </optgroup>
           <option value="other">My airport isn't listed...</option>
         </select>
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="form-group__label" for="form-accident">Type of accident</label>
-      <div class="form-group__select-wrap">
-        <select id="form-accident" name="accident" class="form-group__select" aria-required="true">
+    <!-- Accident type selector — hidden if accident is pre-known -->
+    <div class="form__group {{#if accident_slug}}form__group--hidden{{/if}}" id="form-accident-group">
+      <label class="form__label" for="form-accident">Type of accident</label>
+      <div class="form__select-wrap">
+        <select class="form__select" id="form-accident" name="accident_type">
           <option value="">What happened to you?</option>
-          <option value="slip-and-fall" {{#if_eq form_accident "slip-and-fall"}}selected{{/if_eq}}>Slip &amp; Fall (wet floor, uneven surface)</option>
-          <option value="jet-bridge-boarding" {{#if_eq form_accident "jet-bridge-boarding"}}selected{{/if_eq}}>Jet Bridge / Boarding Ramp Fall</option>
-          <option value="baggage-claim" {{#if_eq form_accident "baggage-claim"}}selected{{/if_eq}}>Baggage Claim Injury</option>
-          <option value="vehicle-accidents" {{#if_eq form_accident "vehicle-accidents"}}selected{{/if_eq}}>Vehicle or Baggage Cart Hit Me</option>
-          <option value="security-checkpoint" {{#if_eq form_accident "security-checkpoint"}}selected{{/if_eq}}>TSA / Security Checkpoint Injury</option>
-          <option value="escalator-elevator" {{#if_eq form_accident "escalator-elevator"}}selected{{/if_eq}}>Escalator or Elevator Accident</option>
-          <option value="shuttle-bus-ground-transportation" {{#if_eq form_accident "shuttle-bus-ground-transportation"}}selected{{/if_eq}}>Shuttle Bus or Ground Transport Crash</option>
-          <option value="food-court-restaurant" {{#if_eq form_accident "food-court-restaurant"}}selected{{/if_eq}}>Food Poisoning / Restaurant Injury</option>
-          <option value="assault-security-failure" {{#if_eq form_accident "assault-security-failure"}}selected{{/if_eq}}>Assault / Security Failure</option>
-          <option value="disabled-passenger-assistance" {{#if_eq form_accident "disabled-passenger-assistance"}}selected{{/if_eq}}>Wheelchair / Disabled Passenger Injury</option>
-          <option value="parking-lot-curbside" {{#if_eq form_accident "parking-lot-curbside"}}selected{{/if_eq}}>Parking Lot or Curbside Accident</option>
-          <option value="worker-accidents" {{#if_eq form_accident "worker-accidents"}}selected{{/if_eq}}>Airport Worker Injury (on the job)</option>
+          <option value="slip-and-fall"                  {{#if_eq accident_slug "slip-and-fall"}}selected{{/if_eq}}>Slip &amp; Fall (wet floor, uneven surface)</option>
+          <option value="jet-bridge-boarding"             {{#if_eq accident_slug "jet-bridge-boarding"}}selected{{/if_eq}}>Jet Bridge / Boarding Ramp Fall</option>
+          <option value="baggage-claim"                  {{#if_eq accident_slug "baggage-claim"}}selected{{/if_eq}}>Baggage Claim Injury</option>
+          <option value="vehicle-accidents"              {{#if_eq accident_slug "vehicle-accidents"}}selected{{/if_eq}}>Vehicle or Baggage Cart Hit Me</option>
+          <option value="security-checkpoint"            {{#if_eq accident_slug "security-checkpoint"}}selected{{/if_eq}}>TSA / Security Checkpoint Injury</option>
+          <option value="escalator-elevator"             {{#if_eq accident_slug "escalator-elevator"}}selected{{/if_eq}}>Escalator or Elevator Accident</option>
+          <option value="shuttle-bus-ground-transportation" {{#if_eq accident_slug "shuttle-bus-ground-transportation"}}selected{{/if_eq}}>Shuttle Bus or Ground Transport</option>
+          <option value="food-court-restaurant"          {{#if_eq accident_slug "food-court-restaurant"}}selected{{/if_eq}}>Food Poisoning / Restaurant Injury</option>
+          <option value="assault-security-failure"       {{#if_eq accident_slug "assault-security-failure"}}selected{{/if_eq}}>Assault / Security Failure</option>
+          <option value="disabled-passenger-assistance"  {{#if_eq accident_slug "disabled-passenger-assistance"}}selected{{/if_eq}}>Wheelchair / Disabled Passenger</option>
+          <option value="parking-lot-curbside"           {{#if_eq accident_slug "parking-lot-curbside"}}selected{{/if_eq}}>Parking Lot or Curbside Accident</option>
+          <option value="worker-accidents"               {{#if_eq accident_slug "worker-accidents"}}selected{{/if_eq}}>Airport Worker Injury (on the job)</option>
+          <option value="tarmac-airside"                 {{#if_eq accident_slug "tarmac-airside"}}selected{{/if_eq}}>Tarmac / Airside Accident</option>
+          <option value="medical-emergency-negligence"   {{#if_eq accident_slug "medical-emergency-negligence"}}selected{{/if_eq}}>Medical Emergency Negligence</option>
+          <option value="toxic-exposure"                 {{#if_eq accident_slug "toxic-exposure"}}selected{{/if_eq}}>Toxic Exposure / PFAS</option>
           <option value="other">Other type of injury</option>
         </select>
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="form-group__label" for="form-timeframe">When did it happen?</label>
-      <div class="form-group__select-wrap">
-        <select id="form-timeframe" name="timeframe" class="form-group__select">
+    <!-- Timeframe -->
+    <div class="form__group">
+      <label class="form__label" for="form-timeframe">When did it happen?</label>
+      <div class="form__select-wrap">
+        <select class="form__select" id="form-timeframe" name="timeframe">
           <option value="">Approximate timeframe</option>
           <option value="0-7">Within the last week</option>
           <option value="7-30">1 to 4 weeks ago</option>
@@ -79,25 +110,42 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="form-group__label" for="form-description">Brief description</label>
-      <textarea id="form-description" name="description" class="form-group__textarea"
-        placeholder="Briefly describe what happened..." rows="3"></textarea>
+    <!-- Description — only shown on generic / homepage form -->
+    <div class="form__group form__group--description" id="form-description-group">
+      <label class="form__label" for="form-description">Brief description <span class="form__label-opt">(optional)</span></label>
+      <textarea class="form__textarea" id="form-description" name="description" rows="3"
+        placeholder="Briefly describe what happened..."></textarea>
     </div>
 
-    <div class="form-group">
-      <label class="form-group__label" for="form-phone">Your phone number</label>
-      <input id="form-phone" name="phone" type="tel" class="form-group__input"
-        placeholder="(555) 000-0000" autocomplete="tel" aria-required="true">
+    <!-- Phone -->
+    <div class="form__group">
+      <label class="form__label" for="form-phone">Your phone number</label>
+      <input class="form__input" id="form-phone" name="phone" type="tel"
+        placeholder="(555) 000-0000" autocomplete="tel"
+        data-role="phone" required
+        aria-describedby="form-phone-hint">
+      <span class="form__hint" id="form-phone-hint">We will call or text within 24 hours.</span>
     </div>
 
-    <!-- Hidden context fields for CRM routing -->
-    <input type="hidden" name="source_airport" value="{{form_airport}}">
-    <input type="hidden" name="source_accident" value="{{form_accident}}">
-    <input type="hidden" name="source_page" value="{{canonical_url}}">
+    <!-- Submit -->
+    <button class="form__submit" type="submit" data-role="submit">
+      {{submit_label}}
+    </button>
 
-    <button type="submit" class="form__submit">{{submit_label}}</button>
-    <p class="form__disclaimer">Free. Confidential. No fees unless we win.</p>
+    <p class="form__disclaimer">
+      Free consultation. No fees unless we win. 100% confidential.
+    </p>
 
-  </form>
-</div>
+  </div><!-- /[data-role="fields"] -->
+
+  <!-- Success state — hidden until JS shows it -->
+  <div data-role="success" class="form__success" style="display:none;" aria-live="polite">
+    <div class="form__success-icon" aria-hidden="true">✓</div>
+    <h3 class="form__success-title">Case Review Submitted</h3>
+    <p class="form__success-text">
+      An attorney will review your case and contact you within 24 hours.
+      Check your phone for a call or text.
+    </p>
+  </div>
+
+</form>

@@ -1,75 +1,105 @@
 <!-- ============================================================
   PARTIAL: footer.html
-  Variables required:
-    {{airport_slug}}    — for airport-specific footer links (optional)
-    {{iata_code}}       — airport IATA code (optional)
-    {{airport_name}}    — airport name (optional)
+  Single footer across all pages.
+  No variables required — fully static.
   ============================================================ -->
 <footer class="footer" role="contentinfo">
   <div class="footer__inner">
+
     <div class="footer__top">
 
-      <div>
-        <a href="/" class="footer__logo">Airport<span>Accidents</span>.com</a>
+      <!-- Brand col -->
+      <div class="footer__brand">
+        <a href="/" class="nav__logo footer__logo" aria-label="AirportAccidents.com">
+          Airport<span>Accidents</span>.com
+        </a>
         <p class="footer__tagline">
-          Expert airport accident attorneys covering 522 US commercial airports
-          across all 50 states. Free consultations. No fees unless you win.
+          The largest database of US airport accident information.
+          522 airports. 25 accident types. Free legal consultations
+          for injured passengers and workers nationwide.
         </p>
+        <a href="tel:18005550199" class="footer__phone" aria-label="Call 1-800-555-0199">
+          1-800-555-0199
+        </a>
       </div>
 
-      <div>
-        <div class="footer__col-title">Accident Types</div>
-        <a href="/slip-and-fall/" class="footer__link">Slip &amp; Fall</a>
-        <a href="/jet-bridge-boarding/" class="footer__link">Jet Bridge Accidents</a>
-        <a href="/baggage-claim/" class="footer__link">Baggage Claim</a>
-        <a href="/shuttle-bus-ground-transportation/" class="footer__link">Shuttle Bus Accidents</a>
-        <a href="/assault-security-failure/" class="footer__link">Assault &amp; Security</a>
-        <a href="/tarmac-airside/" class="footer__link">Tarmac Accidents</a>
-        <a href="/medical-emergency-negligence/" class="footer__link">Medical Emergency</a>
-      </div>
+      <!-- Accident types col -->
+      <nav class="footer__col" aria-label="Accident types">
+        <h3 class="footer__col-title">Accident Types</h3>
+        <a href="/slip-and-fall/">Slip &amp; Fall</a>
+        <a href="/jet-bridge-boarding/">Jet Bridge Accidents</a>
+        <a href="/baggage-claim/">Baggage Claim</a>
+        <a href="/shuttle-bus-ground-transportation/">Shuttle Bus</a>
+        <a href="/assault-security-failure/">Assault &amp; Security</a>
+        <a href="/tarmac-airside/">Tarmac Accidents</a>
+        <a href="/medical-emergency-negligence/">Medical Emergency</a>
+        <a href="/#accident-types">View all 25 types →</a>
+      </nav>
 
-      <div>
-        <div class="footer__col-title">Top Airports</div>
-        <a href="/hartsfield-jackson-atlanta-international/" class="footer__link">Atlanta (ATL)</a>
-        <a href="/ohare-international/" class="footer__link">Chicago (ORD)</a>
-        <a href="/los-angeles-international/" class="footer__link">Los Angeles (LAX)</a>
-        <a href="/john-f-kennedy-international/" class="footer__link">New York (JFK)</a>
-        <a href="/dallas-fort-worth-international/" class="footer__link">Dallas (DFW)</a>
-        <a href="/miami-international/" class="footer__link">Miami (MIA)</a>
-        <a href="/denver-international/" class="footer__link">Denver (DEN)</a>
-      </div>
+      <!-- Top airports col -->
+      <nav class="footer__col" aria-label="Top airports">
+        <h3 class="footer__col-title">Top Airports</h3>
+        <a href="/hartsfield-jackson-atlanta-international/">Atlanta (ATL)</a>
+        <a href="/ohare-international/">Chicago (ORD)</a>
+        <a href="/los-angeles-international/">Los Angeles (LAX)</a>
+        <a href="/john-f-kennedy-international/">New York (JFK)</a>
+        <a href="/dallas-fort-worth-international/">Dallas (DFW)</a>
+        <a href="/miami-international/">Miami (MIA)</a>
+        <a href="/denver-international/">Denver (DEN)</a>
+        <a href="/#airports">View all 522 airports →</a>
+      </nav>
 
-      <div>
-        <div class="footer__col-title">Company</div>
-        <a href="/about/" class="footer__link">About Us</a>
-        <a href="/privacy/" class="footer__link">Privacy Policy</a>
-        <a href="/terms/" class="footer__link">Terms of Use</a>
-        <a href="/disclaimer/" class="footer__link">Legal Disclaimer</a>
-        <a href="/sitemap/" class="footer__link">Sitemap</a>
-        <a href="/contact/" class="footer__link">Contact</a>
-      </div>
+      <!-- Legal col -->
+      <nav class="footer__col" aria-label="Legal pages">
+        <h3 class="footer__col-title">Legal</h3>
+        <a href="/about/">About Us</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/disclaimer/">Legal Disclaimer</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </nav>
 
-    </div>
+    </div><!-- /.footer__top -->
 
     <div class="footer__bottom">
       <p class="footer__legal">
-        © 2025 AirportAccidents.com. This website is for informational purposes only
-        and does not constitute legal advice. No attorney-client relationship is formed
-        by using this site. Results vary based on individual circumstances. Past results
-        do not guarantee future outcomes. Attorney advertising.
+        &copy; 2025 AirportAccidents.com. This website is for informational purposes only
+        and does not constitute legal advice. No attorney-client relationship is formed by
+        using this site. Results vary based on individual circumstances. Past results do not
+        guarantee future outcomes. Attorney advertising. All 50 states + DC, PR, GU, USVI.
       </p>
-      <span class="footer__coverage">All 50 states + DC, PR, GU, USVI</span>
-    </div>
-  </div>
+      <p class="footer__states">
+        <a href="/state/al/">AL</a> <a href="/state/ak/">AK</a> <a href="/state/az/">AZ</a>
+        <a href="/state/ar/">AR</a> <a href="/state/ca/">CA</a> <a href="/state/co/">CO</a>
+        <a href="/state/ct/">CT</a> <a href="/state/fl/">FL</a> <a href="/state/ga/">GA</a>
+        <a href="/state/hi/">HI</a> <a href="/state/id/">ID</a> <a href="/state/il/">IL</a>
+        <a href="/state/in/">IN</a> <a href="/state/ia/">IA</a> <a href="/state/ks/">KS</a>
+        <a href="/state/ky/">KY</a> <a href="/state/la/">LA</a> <a href="/state/me/">ME</a>
+        <a href="/state/md/">MD</a> <a href="/state/ma/">MA</a> <a href="/state/mi/">MI</a>
+        <a href="/state/mn/">MN</a> <a href="/state/ms/">MS</a> <a href="/state/mo/">MO</a>
+        <a href="/state/mt/">MT</a> <a href="/state/ne/">NE</a> <a href="/state/nv/">NV</a>
+        <a href="/state/nh/">NH</a> <a href="/state/nj/">NJ</a> <a href="/state/nm/">NM</a>
+        <a href="/state/ny/">NY</a> <a href="/state/nc/">NC</a> <a href="/state/nd/">ND</a>
+        <a href="/state/oh/">OH</a> <a href="/state/ok/">OK</a> <a href="/state/or/">OR</a>
+        <a href="/state/pa/">PA</a> <a href="/state/ri/">RI</a> <a href="/state/sc/">SC</a>
+        <a href="/state/sd/">SD</a> <a href="/state/tn/">TN</a> <a href="/state/tx/">TX</a>
+        <a href="/state/ut/">UT</a> <a href="/state/vt/">VT</a> <a href="/state/va/">VA</a>
+        <a href="/state/wa/">WA</a> <a href="/state/wv/">WV</a> <a href="/state/wi/">WI</a>
+        <a href="/state/wy/">WY</a> <a href="/state/dc/">DC</a> <a href="/state/pr/">PR</a>
+        <a href="/state/gu/">GU</a> <a href="/state/vi/">VI</a>
+      </p>
+    </div><!-- /.footer__bottom -->
+
+  </div><!-- /.footer__inner -->
 </footer>
 
 <!-- Sticky bar (mobile) -->
-<div class="sticky-bar" role="complementary" aria-label="Contact prompt">
-  <span class="sticky-bar__text">
+<div class="sticky-bar" id="sticky-bar" role="complementary" aria-label="Contact prompt">
+  <p class="sticky-bar__text">
     <strong>Injured at an airport?</strong> Free case review — no fees unless you win.
-  </span>
-  <a href="#main-content" class="sticky-bar__btn">Get Help Now</a>
+  </p>
+  <a href="#lead-form" class="sticky-bar__btn">Get Help Now</a>
 </div>
 
-<!-- Shared JS -->
+<!-- Main JS -->
 <script src="/assets/js/main.js" defer></script>
