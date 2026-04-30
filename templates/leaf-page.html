@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{page_title}}</title>
+<meta name="description" content="{{meta_description}}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{canonical_url}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AirportAccidents.com">
+<meta property="og:url" content="{{canonical_url}}">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{meta_description}}">
+<meta property="og:image" content="https://airportaccidents.com/assets/img/og-leaf.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{og_title}}">
+<meta name="twitter:description" content="{{meta_description}}">
+<meta name="twitter:image" content="https://airportaccidents.com/assets/img/og-leaf.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/css/global.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{page_title}}",
+  "url": "{{canonical_url}}",
+  "description": "{{meta_description}}",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",              "item": "https://airportaccidents.com/" },
+      { "@type": "ListItem", "position": 2, "name": "{{state}}",         "item": "https://airportaccidents.com/state/{{state_code_lower}}/" },
+      { "@type": "ListItem", "position": 3, "name": "{{airport_name}}",  "item": "https://airportaccidents.com/{{airport_slug}}/" },
+      { "@type": "ListItem", "position": 4, "name": "{{accident_name}}", "item": "{{canonical_url}}" }
+    ]
+  },
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is liable for a {{accident_name_lower}} at {{airport_name}}?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{faq_liable_answer}}"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long do I have to file a claim after a {{accident_name_lower}} at {{airport_name}}?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{faq_deadline_answer}}"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What evidence should I preserve after a {{accident_name_lower}} at {{airport_name}}?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{faq_evidence_answer}}"
+        }
+      }
+    ]
+  }
+}
+</script>
+<style>
+/* ── Leaf page specific styles ──────────────────────────────── */
+
+/* Hero — tighter than hub pages */
+.lp-hero__inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-12);
+  align-items: start;
+  padding: var(--space-8) 0 var(--space-16);
+}
+
+/* Airport + accident identity bar */
+.lp-identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.lp-airport-badge {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-black);
+  color: var(--color-gold-300);
+  background: var(--alpha-gold-light);
+  border: 1px solid var(--alpha-gold-mid);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  letter-spacing: var(--tracking-wide);
+  line-height: 1;
+}
+
+.lp-identity-sep {
+  color: var(--alpha-white-30, rgba(255,255,255,0.3));
+  font-size: var(--text-lg);
+  font-weight: var(--weight-light);
+}
+
+.lp-accident-type {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--alpha-white-65);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Key facts bar — 4 facts in a row */
+.lp-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--alpha-white-10);
+  border: 1px solid var(--alpha-white-10);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-8);
+}
+
+.lp-fact {
+  background: var(--alpha-white-6);
+  padding: var(--space-3) var(--space-4);
+}
+
+.lp-fact__label {
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--alpha-white-40);
+  margin-bottom: 3px;
+}
+
+.lp-fact__value {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  color: #fff;
+  line-height: var(--leading-snug);
+}
+
+.lp-fact__value--gold  { color: var(--color-gold-300); }
+.lp-fact__value--warn  { color: #FCD34D; }
+.lp-fact__value--alert { color: #FCA5A5; }
+
+/* Airport-specific operator callout */
+.lp-operator-bar {
+  background: var(--alpha-white-6);
+  border: 1px solid var(--alpha-white-8);
+  border-left: 3px solid var(--color-gold-400);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.lp-operator-bar__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-gold-300);
+  white-space: nowrap;
+}
+
+.lp-operator-bar__value {
+  font-size: var(--text-sm);
+  color: var(--alpha-white-75);
+}
+
+/* Content sections */
+.lp-content { max-width: var(--max-width); margin-inline: auto; }
+
+.lp-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+}
+
+.lp-three-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+/* Unique airport context box */
+.lp-airport-context {
+  background: linear-gradient(135deg, var(--color-navy-700) 0%, var(--color-navy-600) 100%);
+  border: 1px solid var(--alpha-gold-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  position: relative;
+  overflow: hidden;
+}
+
+.lp-airport-context::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold-400), var(--color-gold-200));
+}
+
+.lp-airport-context__eyebrow {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold-300);
+  margin-bottom: var(--space-3);
+}
+
+.lp-airport-context__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: #fff;
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-4);
+}
+
+.lp-airport-context__body {
+  font-size: var(--text-base);
+  color: var(--alpha-white-75);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+/* Hazard list */
+.lp-hazard-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lp-hazard-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--alpha-white-6);
+  border: 1px solid var(--alpha-white-8);
+  border-radius: var(--radius-md);
+}
+
+.lp-hazard-item__icon {
+  font-size: var(--text-lg);
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.lp-hazard-item__text {
+  font-size: var(--text-sm);
+  color: var(--alpha-white-75);
+  line-height: var(--leading-relaxed);
+}
+
+/* Liable party cards */
+.lp-liable-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.lp-liable-card {
+  background: #fff;
+  border: 1px solid var(--alpha-navy-border);
+  border-left: 3px solid var(--color-gold-400);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-4) var(--space-5);
+}
+
+.lp-liable-card--primary .lp-liable-card__rank {
+  color: var(--color-danger);
+}
+
+.lp-liable-card__rank {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-gold-400);
+  margin-bottom: var(--space-1);
+}
+
+.lp-liable-card__name {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-navy-800);
+  margin-bottom: var(--space-1);
+}
+
+.lp-liable-card__note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* Evidence urgency timeline */
+.lp-evidence-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.lp-evidence-item {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: var(--space-4);
+  align-items: start;
+  padding: var(--space-3) var(--space-4);
+  background: var(--alpha-white-6);
+  border: 1px solid var(--alpha-white-8);
+  border-radius: var(--radius-md);
+}
+
+.lp-evidence-item__time {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  line-height: var(--leading-snug);
+  padding-top: 2px;
+}
+
+.lp-evidence-item__time--critical { color: #FCA5A5; }
+.lp-evidence-item__time--high     { color: var(--color-gold-300); }
+.lp-evidence-item__time--standard { color: var(--alpha-white-50); }
+
+.lp-evidence-item__name {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.lp-evidence-item__note {
+  font-size: var(--text-sm);
+  color: var(--alpha-white-55);
+  line-height: var(--leading-relaxed);
+}
+
+/* What to do steps */
+.lp-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+  counter-reset: steps;
+}
+
+.lp-step {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--space-4);
+  align-items: start;
+  counter-increment: steps;
+}
+
+.lp-step__num {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background: var(--color-navy-800);
+  border: 2px solid var(--color-gold-400);
+  color: var(--color-gold-300);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lp-step__title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-navy-800);
+  margin-bottom: var(--space-1);
+  padding-top: var(--space-2);
+}
+
+.lp-step__body {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* Other accidents at this airport */
+.lp-other-accidents {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+
+.lp-other-accident {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-cream-100);
+  border: 1px solid var(--alpha-navy-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-navy-800);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.lp-other-accident:hover,
+.lp-other-accident:focus-visible {
+  background: var(--color-cream-200);
+  border-color: var(--color-gold-400);
+}
+
+.lp-other-accident__icon { font-size: 14px; flex-shrink: 0; }
+
+/* Conditional sections */
+.lp-construction-banner {
+  background: linear-gradient(90deg, rgba(200,150,42,0.15), rgba(200,150,42,0.05));
+  border: 1px solid var(--alpha-gold-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.lp-construction-banner__icon { font-size: var(--text-xl); flex-shrink: 0; }
+
+.lp-construction-banner__title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-gold-300);
+  margin-bottom: 3px;
+}
+
+.lp-construction-banner__text {
+  font-size: var(--text-sm);
+  color: var(--alpha-white-65);
+  line-height: var(--leading-relaxed);
+}
+
+.lp-altitude-banner {
+  background: rgba(139,92,246,0.1);
+  border: 1px solid rgba(139,92,246,0.25);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.lp-altitude-banner__icon { font-size: var(--text-xl); flex-shrink: 0; }
+.lp-altitude-banner__title { font-size: var(--text-base); font-weight: var(--weight-bold); color: #C4B5FD; margin-bottom: 3px; }
+.lp-altitude-banner__text  { font-size: var(--text-sm); color: var(--alpha-white-65); line-height: var(--leading-relaxed); }
+
+/* Notice of claim urgency box */
+.lp-notice-box {
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-left: 4px solid var(--color-danger);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-4) var(--space-5);
+  margin-top: var(--space-4);
+}
+
+.lp-notice-box__title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: #991B1B;
+  margin-bottom: var(--space-1);
+}
+
+.lp-notice-box__text {
+  font-size: var(--text-sm);
+  color: #7F1D1D;
+  line-height: var(--leading-relaxed);
+}
+
+@media (max-width: 960px) {
+  .lp-hero__inner { grid-template-columns: 1fr; gap: var(--space-8); }
+  .lp-two-col     { grid-template-columns: 1fr; gap: var(--space-8); }
+  .lp-three-col   { grid-template-columns: 1fr 1fr; }
+  .lp-facts       { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 680px) {
+  .lp-three-col   { grid-template-columns: 1fr; }
+  .lp-facts       { grid-template-columns: 1fr 1fr; }
+  .lp-evidence-item { grid-template-columns: 1fr; gap: var(--space-2); }
+  .lp-evidence-item__time { font-size: var(--text-2xs); }
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="AirportAccidents.com home">Airport<span>Accidents</span>.com</a>
+    <div class="nav__links" id="nav-menu" role="menubar">
+      <a href="/{{airport_slug}}/" class="nav__link" role="menuitem">{{iata_code}} — All Accidents</a>
+      <a href="/{{accident_slug}}/" class="nav__link" role="menuitem">{{accident_name}} Nationwide</a>
+      <a href="tel:18005550199" class="nav__link nav__link--cta" role="menuitem">Free Consultation</a>
+    </div>
+    <button class="nav__toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation">
+      <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="breadcrumb" role="navigation" aria-label="Breadcrumb">
+  <div class="breadcrumb__inner">
+    <a href="/" class="breadcrumb__link">Home</a>
+    <span class="breadcrumb__sep" aria-hidden="true">›</span>
+    <a href="/state/{{state_code_lower}}/" class="breadcrumb__link">{{state}}</a>
+    <span class="breadcrumb__sep" aria-hidden="true">›</span>
+    <a href="/{{airport_slug}}/" class="breadcrumb__link">{{airport_name}}</a>
+    <span class="breadcrumb__sep" aria-hidden="true">›</span>
+    <span class="breadcrumb__current" aria-current="page">{{accident_name}}</span>
+  </div>
+</div>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Case overview">
+    <div class="hero__bg-grid" aria-hidden="true"></div>
+    <div class="hero__bg-glow" aria-hidden="true"></div>
+
+    <div class="lp-hero__inner">
+      <div>
+        <!-- Identity -->
+        <div class="lp-identity">
+          <span class="lp-airport-badge">{{iata_code}}</span>
+          <span class="lp-identity-sep" aria-hidden="true">+</span>
+          <span class="lp-accident-type">{{accident_name}}</span>
+        </div>
+
+        <div class="hero__eyebrow">{{city}}, {{state}} — Free Legal Consultation</div>
+        <h1 class="hero__title">{{h1_title}}</h1>
+        <p class="hero__sub">{{hero_intro}}</p>
+
+        <!-- 4-fact bar -->
+        <div class="lp-facts" role="complementary" aria-label="Key case facts">
+          <div class="lp-fact">
+            <div class="lp-fact__label">Severity</div>
+            <div class="lp-fact__value lp-fact__value--gold">{{severity_score}}/10</div>
+          </div>
+          <div class="lp-fact">
+            <div class="lp-fact__label">Settlement range</div>
+            <div class="lp-fact__value">{{average_settlement_range}}</div>
+          </div>
+          <div class="lp-fact">
+            <div class="lp-fact__label">{{state}} deadline</div>
+            <div class="lp-fact__value lp-fact__value--warn">{{sol_state}}</div>
+          </div>
+          <div class="lp-fact">
+            <div class="lp-fact__label">{{notice_label}}</div>
+            <div class="lp-fact__value lp-fact__value--alert">{{notice_value}}</div>
+          </div>
+        </div>
+
+        <!-- Active construction banner (conditional) -->
+        {{construction_banner_html}}
+
+        <!-- High altitude banner (conditional) -->
+        {{altitude_banner_html}}
+
+        <!-- Airport operator bar -->
+        <div class="lp-operator-bar">
+          <span class="lp-operator-bar__label">Airport operator</span>
+          <span class="lp-operator-bar__value">{{airport_operator_name}} — {{operator_type_label}} entity</span>
+        </div>
+
+        <div class="hero__actions">
+          <a href="#lead-form" class="btn btn--primary btn--lg">Get Free Case Review →</a>
+          <a href="#what-to-do" class="btn btn--ghost">What To Do Now</a>
+        </div>
+      </div>
+
+      <!-- Lead form -->
+      <div class="form-card" id="lead-form">
+        <div class="form-card__bar" aria-hidden="true"></div>
+        <h2 class="form-card__title">{{form_title}}</h2>
+        <p class="form-card__sub">{{form_subtitle}}</p>
+        <form class="lead-form" novalidate
+              data-airport="{{airport_slug}}"
+              data-accident-type="{{accident_slug}}">
+          <div data-role="fields">
+            <div class="form__group">
+              <label class="form__label" for="lp-timeframe">When did it happen?</label>
+              <div class="form__select-wrap">
+                <select class="form__select" id="lp-timeframe" name="timeframe">
+                  <option value="">Approximate timeframe</option>
+                  <option value="0-7">Within the last week</option>
+                  <option value="7-30">1 to 4 weeks ago</option>
+                  <option value="30-90">1 to 3 months ago</option>
+                  <option value="90-365">3 to 12 months ago</option>
+                  <option value="365+">More than a year ago</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="lp-where">Where in the airport?</label>
+              <div class="form__select-wrap">
+                <select class="form__select" id="lp-where" name="location">
+                  <option value="">Select area...</option>
+                  {{location_options_html}}
+                </select>
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="lp-description">Brief description</label>
+              <textarea class="form__textarea" id="lp-description" name="description" rows="3"
+                placeholder="{{form_placeholder}}"></textarea>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="lp-phone">Your phone number</label>
+              <input class="form__input" id="lp-phone" name="phone" type="tel"
+                placeholder="(555) 000-0000" autocomplete="tel"
+                data-role="phone" required aria-describedby="lp-phone-hint">
+              <span class="form__hint" id="lp-phone-hint">An attorney will call or text within 24 hours.</span>
+            </div>
+            <button class="form__submit" type="submit" data-role="submit">{{submit_label}}</button>
+            <p class="form__disclaimer">Free. Confidential. No fees unless we win.</p>
+          </div>
+          <div data-role="success" class="form__success" style="display:none;" aria-live="polite">
+            <div class="form__success-icon" aria-hidden="true">✓</div>
+            <h3 class="form__success-title">Case Review Submitted</h3>
+            <p class="form__success-text">An attorney will review your {{iata_code}} {{accident_name_lower}} case and contact you within 24 hours.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip" role="complementary">
+    <div class="trust-strip__inner">
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>No fees unless you win</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>24-hour case review</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>Evidence preserved immediately</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>{{state}} law specialists</div>
+      <div class="trust-strip__divider" aria-hidden="true"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>{{iata_code}} airport experts</div>
+    </div>
+  </div>
+
+  <!-- AIRPORT-SPECIFIC CONTEXT -->
+  <section class="section section--navy" aria-labelledby="context-heading">
+    <div class="container">
+      <div class="lp-two-col">
+
+        <!-- Left: unique airport context -->
+        <div>
+          <div class="lp-airport-context">
+            <div class="lp-airport-context__eyebrow">{{iata_code}} — Airport-specific risk factors</div>
+            <h2 class="lp-airport-context__title" id="context-heading">{{accident_name}} at {{airport_name}}: What Makes This Airport Different</h2>
+            <p class="lp-airport-context__body">{{airport_accident_context_para}}</p>
+            <div class="lp-hazard-list" role="list">
+              {{hazard_items_html}}
+            </div>
+          </div>
+
+          {{pfas_banner_html}}
+        </div>
+
+        <!-- Right: liable parties specific to this airport -->
+        <div>
+          <div class="section__label" class="section__label" style="color:var(--color-gold-300);">Who is responsible at {{iata_code}}</div>
+          <h2 class="section__title" class="section__title" style="color:#fff;">Liable Parties at {{airport_name}}</h2>
+          <p class="section__sub" style="margin-bottom:var(--space-2);">{{liable_intro_para}}</p>
+          <div class="lp-liable-grid" role="list">
+            {{liable_cards_html}}
+          </div>
+
+          {{notice_box_html}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO DO -->
+  <section class="section section--white" id="what-to-do" aria-labelledby="steps-heading">
+    <div class="container">
+      <div class="lp-two-col">
+        <div>
+          <div class="section__label">Immediate action required</div>
+          <h2 class="section__title" id="steps-heading">What To Do Right Now After a {{accident_name}} at {{iata_code}}</h2>
+          <p class="section__sub">{{what_to_do_intro}}</p>
+          <div class="lp-steps" role="list">
+            {{steps_html}}
+          </div>
+        </div>
+
+        <!-- Evidence timeline -->
+        <div>
+          <div class="section__label" style="color:var(--color-gold-400);">Evidence disappears fast</div>
+          <h2 class="section__title" style="font-size:var(--text-display-sm);">Evidence Preservation Timeline at {{airport_name}}</h2>
+          <p class="section__sub" style="margin-bottom:var(--space-4);">{{evidence_intro}}</p>
+          <div class="lp-evidence-timeline" role="list" aria-label="Evidence urgency timeline">
+            {{evidence_timeline_html}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEGAL GUIDE -->
+  <section class="section section--cream2" aria-labelledby="legal-heading">
+    <div class="container">
+      <div class="section__label">Know your rights</div>
+      <h2 class="section__title" id="legal-heading">{{accident_name}} at {{airport_name}} — Complete Legal Guide</h2>
+      <div class="lp-two-col" style="margin-top:var(--space-10);">
+        <div>
+          <div style="margin-bottom:var(--space-8);">
+            <h3 class="lp-guide-block-heading">Common Injuries</h3>
+            <ul class="lp-guide-list">
+              {{injuries_html}}
+            </ul>
+          </div>
+          <div style="margin-bottom:var(--space-8);">
+            <h3 class="lp-guide-block-heading">What You Can Recover</h3>
+            <ul class="lp-guide-list">
+              {{damages_html}}
+            </ul>
+          </div>
+          <div>
+            <h3 class="lp-guide-block-heading">Factors That Increase Value</h3>
+            <ul class="lp-guide-list">
+              {{value_factors_html}}
+            </ul>
+          </div>
+        </div>
+        <div>
+          {{ftca_alert_html}}
+          {{montreal_alert_html}}
+          <div class="lp-legal-standard-card stat-card">
+            <div class="lp-legal-standard-card__label">Legal standard</div>
+            <div class="lp-legal-standard-card__value">{{legal_standard}}</div>
+            <div class="lp-legal-standard-card__note">{{liability_notes}}</div>
+          </div>
+          <div class="lp-filing-box">
+            <div class="lp-filing-box__label">{{state}} filing requirements</div>
+            <div class="lp-filing-box__row">
+              <div class="lp-filing-box__row-label">Statute of limitations</div>
+              <div class="lp-filing-box__row-value lp-filing-box__row-value--danger">{{sol_state}}</div>
+            </div>
+            <div class="lp-filing-box__row">
+              <div class="lp-filing-box__row-label">Notice of claim</div>
+              <div class="lp-filing-box__row-value" style="color:{{notice_color}};">{{notice_value}}</div>
+            </div>
+            <div class="lp-filing-box__row">
+              <div class="lp-filing-box__row-label">Federal court jurisdiction</div>
+              <div class="lp-filing-box__row-note">{{nearby_courthouse}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER ACCIDENTS AT THIS AIRPORT -->
+  <section class="section section--white" aria-labelledby="other-accidents-heading">
+    <div class="container">
+      <div class="section__label">Also at {{iata_code}}</div>
+      <h2 class="section__title" id="other-accidents-heading">Other Accident Types at {{airport_name}}</h2>
+      <p class="section__sub">Every type of airport accident at {{airport_name}} has a different liable party and legal path. Find the one that matches your situation.</p>
+      <div class="lp-other-accidents" role="list">
+        {{other_accidents_html}}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta cta--dark" aria-labelledby="cta-heading">
+    <div class="cta__bg-grid" aria-hidden="true"></div>
+    <div class="cta__inner">
+      <div class="section__label section__label--center">Free consultation — no fees unless you win</div>
+      <h2 class="cta__title" id="cta-heading">{{cta_title}}</h2>
+      <p class="cta__sub">{{cta_sub}}</p>
+      <a href="tel:18005550199" class="cta__phone" aria-label="Call 1-800-555-0199">1-800-555-0199</a>
+      <span class="cta__phone-label">Free consultation — available 24/7</span>
+      <div class="cta__actions">
+        <a href="#lead-form" class="btn btn--primary btn--lg">{{cta_btn_label}}</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo footer__logo">Airport<span>Accidents</span>.com</a>
+        <p class="footer__tagline">Expert airport accident attorneys for {{accident_name}} and 24 other accident types at {{airport_name}} and all 522 US airports.</p>
+        <a href="tel:18005550199" class="footer__phone" aria-label="Call 1-800-555-0199">1-800-555-0199</a>
+      </div>
+      <nav class="footer__col" aria-label="More accidents at this airport">
+        <h3 class="footer__col-title">More at {{iata_code}}</h3>
+        {{footer_airport_links_html}}
+        <a href="/{{airport_slug}}/">All 25 accident types →</a>
+      </nav>
+      <nav class="footer__col" aria-label="This accident type at other airports">
+        <h3 class="footer__col-title">{{accident_name}} Nationwide</h3>
+        {{footer_accident_links_html}}
+        <a href="/{{accident_slug}}/">All airports →</a>
+      </nav>
+      <nav class="footer__col" aria-label="Legal pages">
+        <h3 class="footer__col-title">Legal</h3>
+        <a href="/about/">About Us</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/disclaimer/">Legal Disclaimer</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__legal">&copy; 2025 AirportAccidents.com. Informational purposes only. Not legal advice. Attorney advertising. Results vary.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-bar" id="sticky-bar" role="complementary">
+  <p class="sticky-bar__text"><strong>{{accident_name}} at {{airport_name}}?</strong> Free case review — no fees unless you win.</p>
+  <a href="#lead-form" class="sticky-bar__btn">Get Help Now</a>
+</div>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
