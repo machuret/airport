@@ -216,7 +216,11 @@ def load_data():
     with open(DATA_DIR / 'metro_data.json')         as f: metro_data       = json.load(f)
     with open(DATA_DIR / 'operator_entities.json')   as f: operator_entities = json.load(f)
     with open(DATA_DIR / 'state_law_data.json')      as f: state_law_data    = json.load(f)
-    return airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content, metro_data, operator_entities, state_law_data
+    with open(DATA_DIR / 'cv_new_sections.json')    as f: new_sect_vars  = json.load(f)
+    with open(DATA_DIR / 'injury_costs.json')        as f: injury_costs   = json.load(f)
+    with open(DATA_DIR / 'state_timelines.json')     as f: state_timelines= json.load(f)
+    with open(DATA_DIR / 'case_vignettes.json')      as f: case_vignettes = json.load(f)
+    return airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content, metro_data, operator_entities, state_law_data, new_sect_vars, injury_costs, state_timelines, case_vignettes
 
 
 def write_page(path, html):
@@ -861,7 +865,9 @@ def generate_leaf_pages(airports, accidents, profiles, tmpl, dist,
 def generate_leaf_pages(airports, accidents, profiles, variations,
                         metro_clusters, related_accs, state_neighbors, top_per_state,
                         faq_templates, acc_faq_cat, comp_fault,
-                        critical_css_content, tmpl, dist,
+                        critical_css_content,
+                        new_sect_vars, injury_costs, state_timelines, case_vignettes,
+                        tmpl, dist,
                         filter_airport=None, filter_accident=None, phase=None):
     """Wrapper that runs the leaf generator with parallel file writes."""
     phase_types = {1:{'large_hub'},2:{'medium_hub'},3:{'small_hub'},4:{'non_hub'}}
@@ -1052,6 +1058,12 @@ def generate_leaf_pages(airports, accidents, profiles, variations,
                     # ── Static fields ──────────────────────────────────────────
                     "form_placeholder":f"Describe what happened at {airport['airport_name']}...",
                     "cta_btn_label":f"Start My Free {iata} Case Review \u2192",
+                    # ── New content sections (1,2,4,5,6,8,9,10) ──────────────
+                    **build_new_section_context(
+                        airport, acc, profile, state_leg, seed,
+                        new_sect_vars, injury_costs, state_timelines, case_vignettes,
+                        comp_fault
+                    ),
                     "build_date":           datetime.now().strftime("%Y-%m-%d"),
                     "critical_css":         critical_css_content,
                     # ── FAQ section ────────────────────────────────────────────
@@ -1645,6 +1657,267 @@ def generate_state_law_pages(state_law_data, accidents, airport_by_slug, profile
         print(f"  \u2713 law/{sc_lower}/airport-injury/ — {state_name}")
     return n
 
+
+# ── NEW SECTION BUILDERS (Points 1,2,4,5,6,8,9,10) ──────────────────────────
+
+def build_new_section_context(airport, acc, profile, state_leg, seed,
+                               new_sect_vars, injury_costs, state_timelines, case_vignettes,
+                               comp_fault_map):
+    """Build context dict for all 8 new content sections."""
+    import json as _json
+
+    iata     = airport['iata_code'] or airport['faa_code']
+    name     = airport['airport_name']
+    state    = airport['state']
+    city     = airport['city']
+    op       = profile.get('airport_operator_name', f"{city} Airport Authority")
+    food_op  = profile.get('food_operator', 'the food service operator')
+    park_op  = profile.get('parking_operator', 'the parking operator')
+    handler  = profile.get('ground_handler_primary', 'the ground handling company')
+    op_type  = OPERATOR_TYPE_LABELS.get(profile.get('operator_type','city'),'public entity')
+    sol      = state_leg.get('sol','2 years')
+    notice   = profile.get('notice_of_claim_days', 0)
+    passengers = profile.get('annual_passengers_M', 5)
+    tier     = profile.get('passenger_tier','regional')
+    zones    = profile.get('notable_accident_zones',[])
+    zone_str = zones[0] if zones else f"{iata} terminal"
+    annual_incidents = acc.get('average_annual_incidents_per_major_hub','50-200')
+    settlement_range = acc.get('average_settlement_range','varies')
+    acc_slug = acc['slug']
+    acc_name = acc['accident_name']
+    acc_lower = acc_name.lower()
+    faq_cat  = 'premises_liability'  # default for vignettes
+    for cat_name, cat_accs in [
+        ('federal_liability',['security-checkpoint']),
+        ('vehicle_liability',['vehicle-accidents','shuttle-bus-ground-transportation','parking-lot-curbside','rental-car-accidents']),
+        ('security_liability',['assault-security-failure']),
+        ('workers_compensation',['worker-accidents','tarmac-airside']),
+    ]:
+        if acc_slug in cat_accs:
+            faq_cat = cat_name
+            break
+
+    tier_descriptors = {'mega':'busiest','major':'largest','regional':'major regional','small':'smaller commercial'}
+    tier_desc = tier_descriptors.get(tier,'major')
+    cf = comp_fault_map.get(state,'modified comparative fault')
+    cf_short = "pure comparative" if 'pure' in cf.lower() else "modified comparative" if 'modified' in cf.lower() else "contributory negligence"
+
+    def pv(key, **fmt):
+        """Pick variation from new_sect_vars pool."""
+        pool = new_sect_vars.get(key,['(content)'])
+        text = pool[seed % len(pool)]
+        fmt_defaults = dict(airport=name,iata=iata,city=city,state=state,
+                            op=op,food_op=food_op,park_op=park_op,handler=handler,
+                            op_type=op_type,sol=sol,accident=acc_name,
+                            accident_lower=acc_lower,settlement_range=settlement_range,
+                            notice_days=str(notice)+' days' if notice else 'not required',
+                            passengers=f"{passengers:.0f}",tier_descriptor=tier_desc,
+                            zones=zone_str,annual_incidents=annual_incidents,
+                            state_code=airport['state_code'])
+        fmt_defaults.update(fmt)
+        import re as _re
+        for k,v in fmt_defaults.items():
+            text = text.replace('{'+k+'}', str(v) if v else '')
+        return _re.sub(r'\{[a-z_]+\}','',text).strip()
+
+    # ── 1. SETTLEMENT VALUE SECTION ───────────────────────────────────────
+    factors = parse_list(acc.get('factors_increasing_value',[]))
+    factors_html = '\n'.join(
+        f'<div class="new-section__factor"><span class="new-section__factor-icon">+</span><span>{f}</span></div>'
+        for f in factors[:6])
+
+    settlement_html = (
+        f'<div class="new-section" id="settlement-value">'
+        f'<div class="new-section__label">Case value</div>'
+        f'<h2 class="new-section__title">{pv("settlement_section_titles",seed=seed)}</h2>'
+        f'<p class="new-section__intro">{pv("settlement_intro_variants",seed=seed+1)}</p>'
+        f'<div class="new-section__value-bar">'
+        f'<div class="new-section__value-item"><div class="new-section__value-label">Settlement range</div>'
+        f'<div class="new-section__value-number">{settlement_range}</div></div>'
+        f'<div class="new-section__value-item"><div class="new-section__value-label">Severity score</div>'
+        f'<div class="new-section__value-number">{acc.get("severity_score",7)}/10</div></div>'
+        f'<div class="new-section__value-item"><div class="new-section__value-label">Recovery time</div>'
+        f'<div class="new-section__value-number">{acc.get("typical_recovery_time","Varies")}</div></div>'
+        f'</div>'
+        f'<div class="new-section__factors-label">{pv("settlement_factors_labels",seed=seed+2)}</div>'
+        f'<div class="new-section__factors">{factors_html}</div>'
+        f'</div>')
+
+    # ── 2. CASE VIGNETTES ─────────────────────────────────────────────────
+    vigs = case_vignettes.get(faq_cat, case_vignettes.get('premises_liability',[]))
+    # Deterministically pick 2 vignettes
+    selected = []
+    for i in range(min(2, len(vigs))):
+        v = vigs[(seed + i * 3) % len(vigs)]
+        selected.append(v)
+
+    def render_vig(v):
+        text = _json.dumps(v)
+        for k, val in [('airport',name),('iata',iata),('op',op),('food_op',food_op),
+                        ('park_op',park_op),('handler',handler),('zone',zone_str),
+                        ('settlement_range',settlement_range),('state',state),('sol',sol),('accident_lower',acc_lower)]:
+            text = text.replace('{'+k+'}', str(val))
+        import re as _re
+        text = _re.sub(r'\{[a-z_]+\}','',text)
+        return _json.loads(text)
+
+    vignettes_items = []
+    for v in selected:
+        rv = render_vig(v)
+        vignettes_items.append(
+            f'<div class="new-section__vignette">'
+            f'<div class="new-section__vignette-scenario">{rv["scenario"]}</div>'
+            f'<div class="new-section__vignette-facts"><strong>The situation:</strong> {rv["facts"]}</div>'
+            f'<div class="new-section__vignette-evidence"><strong>Evidence used:</strong> {rv["evidence"]}</div>'
+            f'<div class="new-section__vignette-outcome"><strong>Outcome:</strong> {rv["outcome"]}</div>'
+            f'<div class="new-section__vignette-lesson">\U0001f4a1 <strong>Key lesson:</strong> {rv["key_lesson"]}</div>'
+            f'</div>')
+
+    vignettes_html = (
+        f'<div class="new-section" id="case-scenarios">'
+        f'<div class="new-section__label">Representative outcomes</div>'
+        f'<h2 class="new-section__title">{pv("vignette_section_titles",seed=seed+3)}</h2>'
+        f'<p class="new-section__intro">{pv("vignette_intros",seed=seed+4)}</p>'
+        f'<div class="new-section__vignettes">{"".join(vignettes_items)}</div>'
+        f'</div>')
+
+    # ── 4. DEFENSE STRATEGIES ─────────────────────────────────────────────
+    defenses = parse_list(acc.get('liable_party_defenses',[]))
+    counters  = parse_list(acc.get('plaintiff_counter_strategies',[]))
+    defense_items = []
+    for i, (defense, counter) in enumerate(zip(defenses[:4], counters[:4])):
+        defense_items.append(
+            f'<div class="new-section__defense">'
+            f'<div class="new-section__defense-arg">\u26a0\ufe0f <strong>What {op} will argue:</strong> {defense}</div>'
+            f'<div class="new-section__defense-counter">\u2713 <strong>{pv("defense_counter_labels",seed=seed+5+i)}:</strong> {counter}</div>'
+            f'</div>')
+
+    defense_html = (
+        f'<div class="new-section" id="defense-strategy">'
+        f'<div class="new-section__label">Know what to expect</div>'
+        f'<h2 class="new-section__title">{pv("defense_section_titles",seed=seed+6)}</h2>'
+        f'<p class="new-section__intro">{pv("defense_intro_variants",seed=seed+7)}</p>'
+        f'<div class="new-section__defenses">{"".join(defense_items)}</div>'
+        f'</div>') if defense_items else ''
+
+    # ── 5. CASE TIMELINE ─────────────────────────────────────────────────
+    timeline_steps = state_timelines.get(state, state_timelines.get('California',[]))
+    timeline_items = '\n'.join(
+        f'<div class="new-section__timeline-step new-section__timeline-step--{s["urgency"]}">'
+        f'<div class="new-section__timeline-window">{s["window"]}</div>'
+        f'<div class="new-section__timeline-content">'
+        f'<div class="new-section__timeline-title">{s["title"]}</div>'
+        f'<div class="new-section__timeline-body">{s["body"]}</div>'
+        f'</div></div>'
+        for s in timeline_steps)
+
+    timeline_html = (
+        f'<div class="new-section" id="case-timeline">'
+        f'<div class="new-section__label">{state} — realistic timeline</div>'
+        f'<h2 class="new-section__title">{pv("timeline_section_titles",seed=seed+8)}</h2>'
+        f'<p class="new-section__intro">{pv("timeline_intro_variants",seed=seed+9)}</p>'
+        f'<div class="new-section__timeline">{timeline_items}</div>'
+        f'</div>')
+
+    # ── 8. MEDICAL COSTS ─────────────────────────────────────────────────
+    injuries = parse_list(acc.get('common_injuries',[]))
+    medical_items = []
+    for inj in injuries[:6]:
+        cost_data = None
+        for key, costs in injury_costs.items():
+            if key.lower() in inj.lower() or inj.lower() in key.lower():
+                cost_data = costs
+                break
+        if cost_data:
+            medical_items.append(
+                f'<div class="new-section__medical-row">'
+                f'<div class="new-section__medical-injury">{inj}</div>'
+                f'<div class="new-section__medical-range">${cost_data["low"]:,} – ${cost_data["high"]:,}</div>'
+                f'<div class="new-section__medical-note">{cost_data["note"]}</div>'
+                f'</div>')
+        else:
+            medical_items.append(
+                f'<div class="new-section__medical-row">'
+                f'<div class="new-section__medical-injury">{inj}</div>'
+                f'<div class="new-section__medical-range">Varies by severity</div>'
+                f'<div class="new-section__medical-note">Consult treating physician for cost estimate</div>'
+                f'</div>')
+
+    medical_html = (
+        f'<div class="new-section" id="medical-costs">'
+        f'<div class="new-section__label">What treatment costs in {state}</div>'
+        f'<h2 class="new-section__title">{pv("medical_section_titles",seed=seed+10)}</h2>'
+        f'<p class="new-section__intro">{pv("medical_intro_variants",seed=seed+11)}</p>'
+        f'<div class="new-section__medical-table">'
+        f'<div class="new-section__medical-header">'
+        f'<span>Injury type</span><span>Treatment cost range</span><span>What it covers</span>'
+        f'</div>{"".join(medical_items)}</div>'
+        f'</div>') if medical_items else ''
+
+    # ── 9. PRIOR INCIDENTS ───────────────────────────────────────────────
+    prior_html = (
+        f'<div class="new-section" id="prior-incidents">'
+        f'<div class="new-section__label">Documented history at {iata}</div>'
+        f'<h2 class="new-section__title">{pv("prior_incidents_titles",seed=seed+12)}</h2>'
+        f'<p class="new-section__intro">{pv("prior_incidents_intros",seed=seed+13)}</p>'
+        f'<div class="new-section__prior-facts">'
+        f'<div class="new-section__prior-stat">'
+        f'<div class="new-section__prior-number">{annual_incidents}</div>'
+        f'<div class="new-section__prior-label">{acc_name} incidents per year at airports like {iata}</div>'
+        f'</div>'
+        f'<div class="new-section__prior-text">'
+        f'<p>{acc.get("frequency_note","Incidents occur regularly at commercial airports.")}</p>'
+        f'<p style="margin-top:12px;">Prior incident records at {name} are obtained through public records requests and litigation discovery. '
+        f'These records establish that {op} had actual or constructive notice of the recurring hazard at {iata} — '
+        f'the legal standard that converts a simple negligence claim into a pattern-of-negligence case.</p>'
+        f'</div></div>'
+        f'</div>')
+
+    # ── 10. AIRPORT STATISTICS ───────────────────────────────────────────
+    high_risk_times = parse_list(acc.get('high_risk_times',[]))
+    risk_items = '\n'.join(
+        f'<div class="new-section__risk-item"><span class="new-section__risk-icon">\u23f0</span><span>{t}</span></div>'
+        for t in high_risk_times[:4])
+
+    demographics = parse_list(profile.get('victim_demographics') or acc.get('victim_demographics',[]))
+    demo_items = '\n'.join(
+        f'<div class="new-section__demo-item">\u2192 {d}</div>'
+        for d in demographics[:4]) if demographics else ''
+
+    stats_html = (
+        f'<div class="new-section" id="airport-stats">'
+        f'<div class="new-section__label">{iata} — risk profile</div>'
+        f'<h2 class="new-section__title">{pv("stats_section_titles",seed=seed+14)}</h2>'
+        f'<p class="new-section__intro">{pv("stats_intro_variants",seed=seed+15)}</p>'
+        f'<div class="new-section__stats-grid">'
+        f'<div class="new-section__stat-block">'
+        f'<div class="new-section__stat-number">{passengers:.0f}M</div>'
+        f'<div class="new-section__stat-label">Annual passengers at {iata}</div>'
+        f'</div>'
+        f'<div class="new-section__stat-block">'
+        f'<div class="new-section__stat-number">{annual_incidents}</div>'
+        f'<div class="new-section__stat-label">{acc_name} incidents per year at airports this size</div>'
+        f'</div>'
+        f'<div class="new-section__stat-block">'
+        f'<div class="new-section__stat-number">{settlement_range.split()[0]}</div>'
+        f'<div class="new-section__stat-label">Settlement range for this accident type</div>'
+        f'</div>'
+        f'</div>'
+        f'{"<div class=\'new-section__risk-times\'><div class=\'new-section__risk-label\'>High-risk times at " + iata + "</div>" + risk_items + "</div>" if risk_items else ""}'
+        f'{"<div class=\'new-section__demographics\'><div class=\'new-section__risk-label\'>Most affected passengers</div>" + demo_items + "</div>" if demo_items else ""}'
+        f'</div>')
+
+    return {
+        'settlement_html':  settlement_html,
+        'vignettes_html':   vignettes_html,
+        'defense_html':     defense_html,
+        'timeline_html':    timeline_html,
+        'medical_html':     medical_html,
+        'prior_html':       prior_html,
+        'stats_html':       stats_html,
+    }
+
+
 def copy_assets(dist):
     shutil.copy2(HOMEPAGE_SRC, dist/"index.html"); print("  \u2713 index.html")
     dest = dist/"assets"
@@ -1771,7 +2044,7 @@ def main():
     start = datetime.now()
     print(f"\n{'='*60}\nAirportAccidents.com \u2014 Page Generator\n{'='*60}")
     print("\n[1/5] Loading data...")
-    airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content, metro_data, operator_entities, state_law_data = load_data()
+    airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content, metro_data, operator_entities, state_law_data, new_sect_vars, injury_costs, state_timelines, case_vignettes = load_data()
     print(f"  \u2713 {len(airports)} airports | {len(accidents)} accidents | {len(profiles)} profiles")
 
     if args.dry_run:
@@ -1818,7 +2091,9 @@ def main():
         total += generate_leaf_pages(airports, accidents, profiles, variations,
                                      metro_clusters, related_accs, state_neighbors, top_per_state,
                                      faq_templates, acc_faq_cat, comp_fault,
-                                     critical_css_content, tl, DIST,
+                                     critical_css_content,
+                                     new_sect_vars, injury_costs, state_timelines, case_vignettes,
+                                     tl, DIST,
                                      filter_airport=args.airport,
                                      filter_accident=args.accident,
                                      phase=args.phase)

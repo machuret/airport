@@ -1,0 +1,84 @@
+{
+  "premises_liability": [
+    {
+      "scenario": "Moderate injury \u2014 single defendant",
+      "facts": "A passenger slipped on an unmarked wet floor near a caf\u00e9 concession in the terminal at {airport}. The floor had been mopped during peak morning hours without wet floor signs. The passenger sustained a fractured wrist requiring surgery and six weeks of restricted work.",
+      "evidence": "CCTV footage captured the absence of warning signs. Cleaning logs showed the floor had been mopped 20 minutes before the incident. The same location had two prior incident reports on file with {op} in the preceding 12 months.",
+      "defendants": "{food_op} as the zone operator, {op} as the supervising authority.",
+      "outcome": "The case settled within 9 months for medical expenses, lost wages, and pain and suffering \u2014 within the {settlement_range} range. The prior incident record was the critical factor in moving {food_op}'s insurance adjuster from their initial low offer.",
+      "key_lesson": "Prior incident records at the same location are often worth more than the CCTV footage. They prove {op} and {food_op} had notice of the recurring hazard."
+    },
+    {
+      "scenario": "Serious injury \u2014 multiple defendants",
+      "facts": "A 67-year-old passenger fell on a wet surface near the baggage claim area at {airport} after heavy rain had tracked in through entrance doors. The fall caused a fractured hip requiring surgery, a 5-day hospitalization, and 4 months of rehabilitation.",
+      "evidence": "CCTV showed the absence of wet floor signs and the presence of standing water for at least 45 minutes before the fall. Maintenance logs revealed no inspection of the entrance area had been conducted since the previous evening. Three prior slip reports from the same entrance on rainy days were obtained through public records.",
+      "defendants": "{op} as the airport authority, the cleaning contractor responsible for the entrance zone.",
+      "outcome": "The case settled at the upper end of the {settlement_range} range, driven by the victim's age, injury severity, the documented prior incidents, and {op}'s failure to implement weather-triggered inspection protocols despite known recurring hazards.",
+      "key_lesson": "Elderly victims with documented prior incidents at the same location represent the highest-value {accident_lower} cases at airports like {iata}."
+    },
+    {
+      "scenario": "Strong evidence \u2014 quick resolution",
+      "facts": "A passenger slipped on liquid that had spilled from a beverage cart operated by {food_op} near Gate {zone} at {airport}. The cart operator was captured on CCTV spilling the liquid and leaving the area without reporting or cleaning it. The passenger sustained a knee injury requiring arthroscopic surgery.",
+      "evidence": "CCTV footage was preserved within 24 hours of the incident. The footage clearly showed {food_op}'s employee causing the hazard and failing to report it \u2014 establishing both negligence and knowledge.",
+      "defendants": "{food_op} as the primary defendant, {op} as the secondary defendant for failure to supervise concession operations.",
+      "outcome": "The clarity of the CCTV evidence prompted {food_op}'s insurance carrier to settle within 6 months \u2014 faster than the typical airport injury case \u2014 for full medical costs and significant pain and suffering compensation.",
+      "key_lesson": "CCTV footage that directly shows a {food_op} employee creating the hazard is the strongest possible evidence in a food court {accident_lower} case. Preserve it within 24 hours."
+    },
+    {
+      "scenario": "Challenging case \u2014 weak initial evidence",
+      "facts": "A passenger slipped in a parking garage at {airport} and sustained a back injury. They did not report the incident immediately and left the scene without photographing the hazard. By the time they contacted an attorney three weeks later, the CCTV footage had been overwritten.",
+      "evidence": "Despite the lost footage, the attorney obtained 14 months of maintenance logs from {park_op} through litigation discovery. The logs revealed the specific area had not been inspected in 11 days before the incident \u2014 well below the contractually required daily inspection schedule.",
+      "defendants": "{park_op} as the primary defendant for the parking facility zone.",
+      "outcome": "The case settled below the typical range for the injury severity, but the maintenance log failure provided enough leverage to secure meaningful compensation. The outcome would have been significantly higher with preserved CCTV footage.",
+      "key_lesson": "Even without CCTV evidence, maintenance logs can establish liability. But the recovery is always higher when footage is preserved. Every week you wait reduces your case value."
+    }
+  ],
+  "federal_liability": [
+    {
+      "scenario": "TSA checkpoint injury \u2014 FTCA claim",
+      "facts": "A passenger was knocked down by a rushing TSA screening belt at {airport}, fracturing a wrist. They did not realize TSA claims require a separate administrative process before any lawsuit and waited 18 months before contacting an attorney \u2014 well within the 2-year FTCA deadline but with diminished evidence.",
+      "evidence": "Incident reports filed with TSA supervisors at {iata} were obtained through FOIA. CCTV footage from the checkpoint area had been overwritten but TSA staff shift logs remained. Medical records from the day of the incident established the injury timeline.",
+      "defendants": "DHS/TSA under the Federal Tort Claims Act.",
+      "outcome": "Administrative claim filed. TSA offered a settlement within the 6-month response window that covered medical bills and lost wages but not full pain and suffering \u2014 a limitation of the FTCA process that caps certain recovery elements.",
+      "key_lesson": "FTCA claims have hard 2-year deadlines and require administrative filing before any lawsuit. Contact an attorney within days of a TSA injury \u2014 not months."
+    }
+  ],
+  "vehicle_liability": [
+    {
+      "scenario": "Baggage cart strike \u2014 ramp vehicle",
+      "facts": "A passenger was struck by a baggage tug operated by {handler} in the curbside area at {airport}, causing leg fractures requiring surgery. The vehicle was traveling in an area designated for pedestrian use.",
+      "evidence": "Vehicle telematics data from the baggage tug was preserved within 48 hours, showing speed, location, and operator ID at the time of impact. CCTV from the curbside zone confirmed the vehicle's path and the absence of warning signals before entry.",
+      "defendants": "{handler} as the primary defendant, {op} as the secondary defendant for inadequate pedestrian separation in the curbside area.",
+      "outcome": "The telematics data, combined with CCTV, made liability clear. The case settled at the upper end of the {settlement_range} vehicle accident range within 12 months \u2014 {handler}'s commercial policy covered the full amount without requiring {op} to contribute.",
+      "key_lesson": "Vehicle telematics data from {handler} equipment is the most valuable evidence in baggage cart cases \u2014 and it has a 30-90 day retention window. Preserve it immediately."
+    },
+    {
+      "scenario": "Shuttle bus injury \u2014 ground transport",
+      "facts": "A passenger was injured when a shuttle bus at {airport} stopped abruptly, throwing the standing passenger to the floor. The bus was operated by a contractor under contract with {op}. The passenger sustained a shoulder injury requiring surgery.",
+      "evidence": "The shuttle operator's dashcam footage and route logs were preserved. GPS data showed the bus had decelerated from 25 mph to 0 in 2.1 seconds \u2014 consistent with emergency braking but without an emergency triggering it.",
+      "defendants": "The shuttle contractor as primary defendant, {op} for negligent contractor oversight.",
+      "outcome": "The case settled within the {settlement_range} range. The GPS deceleration data was the key evidence \u2014 it demonstrated sudden braking without justification, establishing negligence by the contractor.",
+      "key_lesson": "Shuttle and ground transport injuries at {airport} always involve a contractor as the primary defendant \u2014 not {op} directly. Identifying that contractor within 24 hours is the first critical step."
+    }
+  ],
+  "security_liability": [
+    {
+      "scenario": "Assault in parking garage \u2014 negligent security",
+      "facts": "A traveler was assaulted in the parking garage at {airport} while walking to their vehicle late at night. The area had documented lighting failures reported to {park_op} three times in the prior six months. No security patrol had passed through the zone in over two hours before the assault.",
+      "evidence": "Public records requests produced three prior lighting failure reports from the same zone. {park_op}'s security patrol logs showed no patrol in the two hours preceding the assault. CCTV from the area \u2014 showing the non-functional lighting \u2014 was preserved.",
+      "defendants": "{park_op} as the parking facility operator, {op} as the ultimate authority over safety at {iata}.",
+      "outcome": "The prior incident record \u2014 three documented lighting failures that {park_op} failed to address \u2014 established constructive notice. The case settled at the upper end of the assault and security failure range. The lighting failure records were obtained only because a public records request was filed within 30 days.",
+      "key_lesson": "Prior maintenance complaints about the same hazard are the foundation of negligent security cases. File the public records request for {park_op}'s incident and maintenance history on day one."
+    }
+  ],
+  "workers_compensation": [
+    {
+      "scenario": "Worker injury \u2014 third-party claim",
+      "facts": "A baggage handler employed by {handler} at {airport} was injured when defective loading equipment collapsed. {handler}'s workers comp insurer covered medical bills and 60% of lost wages. An attorney identified {op} as a third party that maintained the equipment \u2014 opening a separate personal injury claim.",
+      "evidence": "Equipment maintenance records from {op} showed the loading equipment had failed inspection twice in the prior year. {op}'s maintenance budget records showed the repair had been deferred. Both were obtained through litigation discovery.",
+      "defendants": "{op} as the third-party defendant that owned and maintained the defective equipment.",
+      "outcome": "The third-party claim against {op} settled for the remaining 40% of lost wages, full pain and suffering, and future medical costs \u2014 amounts not available through {handler}'s workers comp policy.",
+      "key_lesson": "Workers injured at {airport} have two separate claims: workers comp against {handler}, and a third-party personal injury claim against any non-employer who contributed to the injury. The second claim is often worth more."
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "Hip fractures": {
+    "low": 35000,
+    "high": 150000,
+    "note": "surgery, hospitalization, rehabilitation"
+  },
+  "Wrist fractures": {
+    "low": 8000,
+    "high": 40000,
+    "note": "casting, potential surgery, PT"
+  },
+  "Knee injuries": {
+    "low": 15000,
+    "high": 80000,
+    "note": "imaging, potential surgery, PT"
+  },
+  "Spinal injuries": {
+    "low": 50000,
+    "high": 500000,
+    "note": "imaging, surgery, long-term care"
+  },
+  "Head trauma / TBI": {
+    "low": 30000,
+    "high": 400000,
+    "note": "imaging, neurology, long-term monitoring"
+  },
+  "Shoulder injuries": {
+    "low": 12000,
+    "high": 60000,
+    "note": "imaging, potential surgery, PT"
+  },
+  "Ankle fractures": {
+    "low": 10000,
+    "high": 45000,
+    "note": "casting or surgery, boot, PT"
+  },
+  "Broken legs and ankles": {
+    "low": 15000,
+    "high": 80000,
+    "note": "surgery, casting, PT"
+  },
+  "Crush injuries to feet": {
+    "low": 20000,
+    "high": 100000,
+    "note": "surgery, reconstruction, long-term PT"
+  },
+  "Fractured pelvis": {
+    "low": 40000,
+    "high": 200000,
+    "note": "surgery, hospitalization, extended recovery"
+  },
+  "Soft tissue injuries": {
+    "low": 5000,
+    "high": 30000,
+    "note": "imaging, PT, pain management"
+  },
+  "Contusions and lacerations": {
+    "low": 2000,
+    "high": 15000,
+    "note": "ER, wound care, follow-up"
+  },
+  "Neck injuries": {
+    "low": 10000,
+    "high": 80000,
+    "note": "imaging, potential surgery, pain management"
+  },
+  "Back injuries": {
+    "low": 15000,
+    "high": 150000,
+    "note": "imaging, PT, potential surgery"
+  },
+  "Lacerations requiring surgery": {
+    "low": 8000,
+    "high": 35000,
+    "note": "surgery, wound care, scarring treatment"
+  },
+  "Psychological trauma / PTSD": {
+    "low": 10000,
+    "high": 50000,
+    "note": "therapy, medication, ongoing treatment"
+  },
+  "Burns": {
+    "low": 15000,
+    "high": 200000,
+    "note": "wound care, potential surgery, PT"
+  },
+  "Internal injuries": {
+    "low": 30000,
+    "high": 250000,
+    "note": "surgery, hospitalization, monitoring"
+  }
+}
