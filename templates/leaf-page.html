@@ -517,6 +517,105 @@
   .lp-evidence-item { grid-template-columns: 1fr; gap: var(--space-2); }
   .lp-evidence-item__time { font-size: var(--text-2xs); }
 }
+
+/* ── SEO Internal Link Sections ─────────────────────────────── */
+.seo-links-section {
+  padding: var(--space-10) 0;
+  border-top: 1px solid var(--alpha-navy-border);
+}
+
+.seo-links-section--dark {
+  background: var(--color-navy-900);
+  border-top: none;
+  padding: var(--space-10) 0;
+}
+
+.seo-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.seo-links-grid--2col {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.seo-link-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-cream-100);
+  border: 1px solid var(--alpha-navy-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+  line-height: var(--leading-snug);
+}
+
+.seo-link-item:hover, .seo-link-item:focus-visible {
+  background: var(--color-cream-200);
+  border-color: var(--color-gold-400);
+}
+
+.seo-link-item--related {
+  background: #fff;
+}
+
+.seo-link-item--metro {
+  background: var(--color-cream-100);
+  border-left: 2px solid var(--color-gold-400);
+}
+
+.seo-link-item__code {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-gold-400);
+  background: var(--alpha-gold-subtle, rgba(200,150,42,0.08));
+  padding: 1px 5px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.seo-link-item__icon {
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.seo-link-item__text {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-navy-800);
+  line-height: var(--leading-snug);
+}
+
+.seo-links-section--dark .seo-link-item {
+  background: var(--alpha-white-6);
+  border-color: var(--alpha-white-10);
+}
+
+.seo-links-section--dark .seo-link-item:hover {
+  background: var(--alpha-white-10);
+  border-color: var(--color-gold-400);
+}
+
+.seo-links-section--dark .seo-link-item__text {
+  color: var(--alpha-white-75);
+}
+
+.seo-links-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  margin-top: var(--space-8);
+}
+
+@media (max-width: 680px) {
+  .seo-links-2col { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -802,6 +901,71 @@
       </div>
     </div>
   </section>
+
+
+  <!-- RELATED ACCIDENT TYPES + NEARBY SAME ACCIDENT -->
+  <section class="section section--cream2 seo-links-section" aria-labelledby="related-heading">
+    <div class="container">
+      <div class="seo-links-2col">
+        <div>
+          <div class="section__label">Related injury types at {{iata_code}}</div>
+          <h2 class="section__title" style="font-size:var(--text-display-sm);" id="related-heading">Similar Accidents at {{airport_name}}</h2>
+          <p class="section__sub" style="margin-bottom:var(--space-4);">These accident types share defendants, evidence patterns, and legal deadlines with {{accident_name}} claims at {{iata_code}}.</p>
+          <div class="seo-links-grid seo-links-grid--2col" role="list">
+            {{related_accidents_html}}
+          </div>
+        </div>
+        <div>
+          <div class="section__label">Same injury, different airport</div>
+          <h2 class="section__title" style="font-size:var(--text-display-sm);">{{accident_name}} at Other {{state}} Airports</h2>
+          <p class="section__sub" style="margin-bottom:var(--space-4);">Every {{state}} airport has its own operators, deadlines, and liable parties. Find your specific airport.</p>
+          <div class="seo-links-grid seo-links-grid--2col" role="list">
+            {{nearby_same_accident_html}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRO + NEIGHBORING STATES -->
+  {{#if has_metro}}
+  <section class="section section--white seo-links-section" aria-labelledby="metro-heading">
+    <div class="container">
+      <div class="seo-links-2col">
+        <div>
+          <div class="section__label">{{metro_name}} airports</div>
+          <h2 class="section__title" style="font-size:var(--text-display-sm);" id="metro-heading">{{accident_name}} at Other {{metro_name}} Airports</h2>
+          <p class="section__sub" style="margin-bottom:var(--space-4);">Flew through a different airport in the {{metro_name}}? Each airport has its own liable party and filing requirements.</p>
+          <div class="seo-links-grid seo-links-grid--2col" role="list">
+            {{metro_links_html}}
+          </div>
+        </div>
+        <div>
+          <div class="section__label">Neighboring states</div>
+          <h2 class="section__title" style="font-size:var(--text-display-sm);">Airport Accidents in Nearby States</h2>
+          <p class="section__sub" style="margin-bottom:var(--space-4);">Each state has different notice of claim requirements and statutes of limitations for airport injury claims.</p>
+          <div class="seo-links-grid seo-links-grid--2col" role="list">
+            {{neighboring_states_html}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{/if}}
+
+  <!-- NON-METRO: just neighboring states -->
+  {{#if neighboring_states_html}}
+  <section class="section section--white seo-links-section" aria-labelledby="states-heading" style="{{#if has_metro}}display:none{{/if}}">
+    <div class="container">
+      <div class="section__label">Nearby states</div>
+      <h2 class="section__title" style="font-size:var(--text-display-sm);" id="states-heading">Airport Accident Claims in Neighboring States</h2>
+      <p class="section__sub" style="margin-bottom:var(--space-4);">Each state has its own airport injury laws. Find the state where your accident occurred.</p>
+      <div class="seo-links-grid" role="list">
+        {{neighboring_states_html}}
+      </div>
+    </div>
+  </section>
+  {{/if}}
 
   <!-- CTA -->
   <section class="cta cta--dark" aria-labelledby="cta-heading">

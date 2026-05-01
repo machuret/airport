@@ -1,0 +1,165 @@
+{
+  "New York Metro": [
+    "john-f-kennedy-international",
+    "laguardia",
+    "newark-liberty-international"
+  ],
+  "Los Angeles Metro": [
+    "los-angeles-international",
+    "hollywood-burbank",
+    "long-beach",
+    "ontario-international",
+    "john-wayne"
+  ],
+  "Chicago Metro": [
+    "ohare-international",
+    "midway-international"
+  ],
+  "San Francisco Metro": [
+    "san-francisco-international",
+    "oakland-metropolitan-international",
+    "san-jose-international"
+  ],
+  "Washington DC Metro": [
+    "dulles-international",
+    "ronald-reagan-washington-national",
+    "baltimore-washington-international"
+  ],
+  "Dallas Metro": [
+    "dallas-fort-worth-international",
+    "dallas-love-field"
+  ],
+  "Miami Metro": [
+    "miami-international",
+    "fort-lauderdale-international",
+    "palm-beach-international"
+  ],
+  "Houston Metro": [
+    "george-bush-intercontinental",
+    "hobby"
+  ],
+  "Atlanta Metro": [
+    "hartsfield-jackson-atlanta-international"
+  ],
+  "Boston Metro": [
+    "boston-logan-international"
+  ],
+  "Seattle Metro": [
+    "seattle-tacoma-international"
+  ],
+  "Denver Metro": [
+    "denver-international"
+  ],
+  "Phoenix Metro": [
+    "phoenix-sky-harbor-international",
+    "phoenix-mesa-gateway"
+  ],
+  "Las Vegas Metro": [
+    "harry-reid-international"
+  ],
+  "Orlando Metro": [
+    "orlando-international",
+    "orlando-sanford-international"
+  ],
+  "Minneapolis Metro": [
+    "minneapolis-saint-paul-international"
+  ],
+  "Detroit Metro": [
+    "detroit-metropolitan-wayne-county"
+  ],
+  "Philadelphia Metro": [
+    "philadelphia-international"
+  ],
+  "Charlotte Metro": [
+    "charlotte-douglas-international"
+  ],
+  "Portland Metro": [
+    "portland-international"
+  ],
+  "Salt Lake City Metro": [
+    "salt-lake-city-international"
+  ],
+  "San Diego Metro": [
+    "san-diego-international"
+  ],
+  "Tampa Metro": [
+    "tampa-international",
+    "st-pete-clearwater-international"
+  ],
+  "Memphis Metro": [
+    "memphis-international"
+  ],
+  "Nashville Metro": [
+    "john-c-tune",
+    "nashville-international"
+  ],
+  "Austin Metro": [
+    "austin-bergstrom-international"
+  ],
+  "Kansas City Metro": [
+    "kansas-city-international"
+  ],
+  "Cleveland Metro": [
+    "cleveland-hopkins-international"
+  ],
+  "Pittsburgh Metro": [
+    "pittsburgh-international"
+  ],
+  "Cincinnati Metro": [
+    "cincinnati-northern-kentucky-international"
+  ],
+  "Indianapolis Metro": [
+    "indianapolis-international"
+  ],
+  "Columbus Metro": [
+    "john-glenn-columbus-international"
+  ],
+  "Milwaukee Metro": [
+    "milwaukee-mitchell-international"
+  ],
+  "Sacramento Metro": [
+    "sacramento-international"
+  ],
+  "Raleigh Metro": [
+    "raleigh-durham-international"
+  ],
+  "Richmond Metro": [
+    "richmond-international"
+  ],
+  "Jacksonville Metro": [
+    "jacksonville-international"
+  ],
+  "New Orleans Metro": [
+    "louis-armstrong-new-orleans-international"
+  ],
+  "Louisville Metro": [
+    "louisville-muhammad-ali-international"
+  ],
+  "Buffalo Metro": [
+    "buffalo-niagara-international"
+  ],
+  "Hartford Metro": [
+    "bradley-international"
+  ],
+  "Providence Metro": [
+    "theodore-francis-green-international"
+  ],
+  "Albuquerque Metro": [
+    "albuquerque-international-sunport"
+  ],
+  "El Paso Metro": [
+    "el-paso-international"
+  ],
+  "Tucson Metro": [
+    "tucson-international"
+  ],
+  "Anchorage Metro": [
+    "ted-stevens-anchorage-international"
+  ],
+  "Honolulu Metro": [
+    "daniel-k-inouye-international"
+  ],
+  "San Juan Metro": [
+    "luis-munoz-marin-international"
+  ]
+}

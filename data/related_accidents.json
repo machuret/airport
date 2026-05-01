@@ -1,0 +1,127 @@
+{
+  "slip-and-fall": [
+    "slip-fall-wet-weather",
+    "escalator-elevator",
+    "construction-zone"
+  ],
+  "slip-fall-wet-weather": [
+    "slip-and-fall",
+    "construction-zone",
+    "parking-lot-curbside"
+  ],
+  "jet-bridge-boarding": [
+    "boarding-stairs-ramps",
+    "disabled-passenger-assistance",
+    "baggage-claim"
+  ],
+  "boarding-stairs-ramps": [
+    "jet-bridge-boarding",
+    "disabled-passenger-assistance",
+    "tarmac-airside"
+  ],
+  "baggage-claim": [
+    "luggage-cart-conveyor",
+    "lost-delayed-luggage",
+    "vehicle-accidents"
+  ],
+  "luggage-cart-conveyor": [
+    "baggage-claim",
+    "vehicle-accidents",
+    "slip-and-fall"
+  ],
+  "lost-delayed-luggage": [
+    "baggage-claim",
+    "airline-delay-cancellation-injury",
+    "international-travel-claims"
+  ],
+  "vehicle-accidents": [
+    "shuttle-bus-ground-transportation",
+    "parking-lot-curbside",
+    "rental-car-accidents"
+  ],
+  "shuttle-bus-ground-transportation": [
+    "vehicle-accidents",
+    "parking-lot-curbside",
+    "disabled-passenger-assistance"
+  ],
+  "parking-lot-curbside": [
+    "vehicle-accidents",
+    "rental-car-accidents",
+    "slip-and-fall"
+  ],
+  "rental-car-accidents": [
+    "parking-lot-curbside",
+    "vehicle-accidents",
+    "shuttle-bus-ground-transportation"
+  ],
+  "security-checkpoint": [
+    "assault-security-failure",
+    "disabled-passenger-assistance",
+    "federal-liability"
+  ],
+  "assault-security-failure": [
+    "security-checkpoint",
+    "parking-lot-curbside",
+    "worker-accidents"
+  ],
+  "disabled-passenger-assistance": [
+    "jet-bridge-boarding",
+    "boarding-stairs-ramps",
+    "shuttle-bus-ground-transportation"
+  ],
+  "construction-zone": [
+    "worker-accidents",
+    "slip-and-fall",
+    "tarmac-airside"
+  ],
+  "worker-accidents": [
+    "tarmac-airside",
+    "construction-zone",
+    "toxic-exposure"
+  ],
+  "tarmac-airside": [
+    "worker-accidents",
+    "jet-bridge-boarding",
+    "vehicle-accidents"
+  ],
+  "escalator-elevator": [
+    "slip-and-fall",
+    "disabled-passenger-assistance",
+    "construction-zone"
+  ],
+  "food-court-restaurant": [
+    "slip-and-fall",
+    "slip-fall-wet-weather",
+    "retail-shop-injuries"
+  ],
+  "retail-shop-injuries": [
+    "food-court-restaurant",
+    "slip-and-fall",
+    "escalator-elevator"
+  ],
+  "toxic-exposure": [
+    "worker-accidents",
+    "medical-emergency-negligence",
+    "tarmac-airside"
+  ],
+  "medical-emergency-negligence": [
+    "toxic-exposure",
+    "disabled-passenger-assistance",
+    "airline-delay-cancellation-injury"
+  ],
+  "international-travel-claims": [
+    "lost-delayed-luggage",
+    "airline-delay-cancellation-injury",
+    "jet-bridge-boarding"
+  ],
+  "airline-delay-cancellation-injury": [
+    "international-travel-claims",
+    "lost-delayed-luggage",
+    "medical-emergency-negligence"
+  ],
+  "child-unaccompanied-minor": [
+    "disabled-passenger-assistance",
+    "jet-bridge-boarding",
+    "security-checkpoint"
+  ]
+}

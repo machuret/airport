@@ -203,7 +203,11 @@ def load_data():
         else:
             # fallback to old monolithic file if individual not found
             variations[key] = []
-    return airports, accidents, crossref, profiles, variations
+    with open(DATA_DIR / 'metro_clusters.json')      as f: metro_clusters    = json.load(f)
+    with open(DATA_DIR / 'related_accidents.json')   as f: related_accs      = json.load(f)
+    with open(DATA_DIR / 'state_neighbors.json')     as f: state_neighbors   = json.load(f)
+    with open(DATA_DIR / 'top_airport_per_state.json')as f: top_per_state    = json.load(f)
+    return airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state
 
 
 def write_page(path, html):
@@ -588,7 +592,7 @@ def airport_link(a, acc_slug):
             f'<div class="airport-item__name">{a["airport_name"]}</div></div></a>')
 
 
-def generate_states(airports, tmpl, dist, filter_code=None):
+def generate_states(airports, tmpl, dist, filter_code=None, state_neighbors=None, top_per_state=None):
     by_state = defaultdict(list)
     for a in airports: by_state[a['state']].append(a)
     n = 0
@@ -613,6 +617,19 @@ def generate_states(airports, tmpl, dist, filter_code=None):
             "state_airport_options_html":opts,
             "footer_airports_html":"\n".join(f'<a href="/{a["slug"]}/">{a["airport_name"]} ({a["iata_code"] or a["faa_code"]})</a>' for a in foot),
         }
+        # Add neighboring state links
+        neighbor_links = ""
+        if state_neighbors and top_per_state:
+            neighbors = (state_neighbors or {}).get(state_name, [])[:8]
+            for nb in neighbors:
+                top = (top_per_state or {}).get(nb)
+                if top:
+                    neighbor_links += (
+                        f'<a href="/state/{top["state_code"].lower()}/" class="seo-link-item">'
+                        f'<span class="seo-link-item__code">{top["state_code"]}</span>'
+                        f'<span class="seo-link-item__text">Airport accidents in {nb}</span></a>\n')
+        ctx["neighboring_states_html"] = neighbor_links
+        ctx["state_name"] = state_name
         write_page(dist/"state"/sc.lower()/"index.html", render(tmpl, ctx))
         n += 1
         print(f"  \u2713 state/{sc.lower()}/ \u2014 {state_name} ({len(sa)} airports)")
@@ -645,7 +662,7 @@ def generate_airport_hubs(airports, profiles, tmpl, dist, filter_iata=None):
     return n
 
 
-def generate_accident_hubs(accidents, airports, tmpl, dist, filter_slug=None):
+def generate_accident_hubs(accidents, airports, tmpl, dist, filter_slug=None, top_per_state=None, related_accs=None):
     sorted_a = sorted(airports, key=lambda x:({"large_hub":0,"medium_hub":1,"small_hub":2,"non_hub":3}[x['type']],x['airport_name']))
     featured = [a for a in sorted_a if a['type'] in ('large_hub','medium_hub')][:40]
     n = 0
@@ -681,6 +698,28 @@ def generate_accident_hubs(accidents, airports, tmpl, dist, filter_slug=None):
             "airport_links_html":"\n".join(airport_link(a,acc['slug']) for a in featured),
             "ftca_alert":ftca_a,"montreal_alert":mont_a,
         }
+        # State breakdown: top airport per state for this accident
+        state_links = ""
+        if top_per_state:
+            for state_name_s, top in sorted((top_per_state or {}).items())[:51]:
+                state_links += (
+                    f'<a href="/{top["slug"]}/{acc["slug"]}/" class="seo-link-item">'
+                    f'<span class="seo-link-item__code">{top["iata"]}</span>'
+                    f'<span class="seo-link-item__text">{state_name_s} — {top["name"]}</span></a>\n')
+        ctx["state_breakdown_html"] = state_links
+        # Related accident types
+        related_links = ""
+        if related_accs:
+            acc_by_slug_local = {a['slug']: a for a in accidents}
+            for rel_slug in (related_accs or {}).get(acc['slug'],[]):
+                rel = acc_by_slug_local.get(rel_slug)
+                if not rel: continue
+                icon = ALL_ACCIDENT_ICONS.get(rel_slug, '\u26a0\ufe0f')
+                related_links += (
+                    f'<a href="/{rel_slug}/" class="seo-link-item seo-link-item--related">'
+                    f'<span class="seo-link-item__icon">{icon}</span>'
+                    f'<span class="seo-link-item__text">{rel["accident_name"]}</span></a>\n')
+        ctx["related_accidents_nav_html"] = related_links
         write_page(dist/acc['slug']/"index.html", render(tmpl, ctx))
         n += 1
         print(f"  \u2713 {acc['slug']}/ \u2014 {acc['accident_name']}")
@@ -693,6 +732,17 @@ def generate_leaf_pages(airports, accidents, profiles, tmpl, dist,
                         filter_airport=None, filter_accident=None, phase=None):
     phase_types = {1:{'large_hub'},2:{'medium_hub'},3:{'small_hub'},4:{'non_hub'}}
     allowed = phase_types.get(phase) if phase else None
+    # Pre-build lookups for SEO link functions
+    airport_by_slug = {a['slug']: a for a in airports}
+    accident_by_slug = {a['slug']: a for a in accidents}
+    by_state_map = defaultdict(list)
+    for a in airports: by_state_map[a['state']].append(a)
+    type_order_map = {"large_hub":0,"medium_hub":1,"small_hub":2,"non_hub":3}
+    for state in by_state_map:
+        by_state_map[state].sort(key=lambda x:(type_order_map.get(x['type'],4),x['airport_name']))
+    slug_to_metro = {}
+    for metro, slugs in metro_clusters.items():
+        for slug in slugs: slug_to_metro[slug] = metro
     type_order = {"large_hub":0,"medium_hub":1,"small_hub":2,"non_hub":3}
     sorted_airports = sorted(airports, key=lambda x:(type_order.get(x['type'],4),x['airport_name']))
     n = 0
@@ -799,11 +849,24 @@ def generate_leaf_pages(airports, accidents, profiles, tmpl, dist,
     return  # generator exhausted
 
 
-def generate_leaf_pages(airports, accidents, profiles, variations, tmpl, dist,
+def generate_leaf_pages(airports, accidents, profiles, variations,
+                        metro_clusters, related_accs, state_neighbors, top_per_state,
+                        tmpl, dist,
                         filter_airport=None, filter_accident=None, phase=None):
     """Wrapper that runs the leaf generator with parallel file writes."""
     phase_types = {1:{'large_hub'},2:{'medium_hub'},3:{'small_hub'},4:{'non_hub'}}
     allowed = phase_types.get(phase) if phase else None
+    # Pre-build lookups for SEO link functions
+    airport_by_slug = {a['slug']: a for a in airports}
+    accident_by_slug = {a['slug']: a for a in accidents}
+    by_state_map = defaultdict(list)
+    for a in airports: by_state_map[a['state']].append(a)
+    type_order_map = {"large_hub":0,"medium_hub":1,"small_hub":2,"non_hub":3}
+    for state in by_state_map:
+        by_state_map[state].sort(key=lambda x:(type_order_map.get(x['type'],4),x['airport_name']))
+    slug_to_metro = {}
+    for metro, slugs in metro_clusters.items():
+        for slug in slugs: slug_to_metro[slug] = metro
 
     n = 0
     def _write(args):
@@ -890,6 +953,18 @@ def generate_leaf_pages(airports, accidents, profiles, variations, tmpl, dist,
                     "other_accidents_html":build_other_accidents(airport['slug'],acc['slug']),
                     "footer_airport_links_html":build_footer_airport_links(airport['slug'],acc['slug']),
                     "footer_accident_links_html":build_footer_accident_links(acc['slug'],airport['slug'],airports),
+                    # ── SEO internal link sections ─────────────────────────────
+                    "nearby_same_accident_html": build_nearby_same_accident(
+                        airport, acc['slug'], acc['accident_name'], by_state_map),
+                    "related_accidents_html":    build_related_accidents_links(
+                        airport['slug'], acc['slug'], related_accs, accident_by_slug),
+                    "metro_links_html":          build_metro_links(
+                        airport, acc['slug'], acc['accident_name'],
+                        metro_clusters, airport_by_slug, slug_to_metro),
+                    "neighboring_states_html":   build_neighboring_state_links(
+                        airport, state_neighbors, top_per_state),
+                    "metro_name":               slug_to_metro.get(airport['slug'],''),
+                    "has_metro":                "true" if slug_to_metro.get(airport['slug']) else "",
                     # ── Variation picks (deterministic per airport+accident) ────
                     "hero_eyebrow":      pick(variations,"hero_eyebrow_variants",  seed,
                                               city=airport['city'], state=airport['state'],
@@ -1019,6 +1094,91 @@ def build_trust_items(variations, seed, state, iata):
     return items
 
 
+ALL_ACCIDENT_ICONS = {
+    "slip-and-fall":"\U0001f6b6","jet-bridge-boarding":"\u2708\ufe0f","baggage-claim":"\U0001f9f3",
+    "vehicle-accidents":"\U0001f697","security-checkpoint":"\U0001f6c2","escalator-elevator":"\u2b06\ufe0f",
+    "food-court-restaurant":"\u2615","shuttle-bus-ground-transportation":"\U0001f68c",
+    "parking-lot-curbside":"\U0001f17f\ufe0f","assault-security-failure":"\u26a0\ufe0f",
+    "disabled-passenger-assistance":"\u267f","construction-zone":"\U0001f6a7",
+    "boarding-stairs-ramps":"\U0001fab5","worker-accidents":"\U0001f477","tarmac-airside":"\U0001f6e9\ufe0f",
+    "luggage-cart-conveyor":"\U0001f6d2","international-travel-claims":"\U0001f310",
+    "toxic-exposure":"\u2623\ufe0f","lost-delayed-luggage":"\U0001f4e6",
+    "rental-car-accidents":"\U0001f699","medical-emergency-negligence":"\U0001f3e5",
+    "child-unaccompanied-minor":"\U0001f476","slip-fall-wet-weather":"\U0001f327\ufe0f",
+    "airline-delay-cancellation-injury":"\u23f3","retail-shop-injuries":"\U0001f3ea",
+}
+
+
+def build_nearby_same_accident(airport, acc_slug, acc_name, by_state, n=6):
+    """Links to same accident at nearby airports in same state."""
+    state_airports = [a for a in by_state.get(airport['state'],[]) if a['slug'] != airport['slug']][:n]
+    items = []
+    for a in state_airports:
+        iata = a['iata_code'] or a['faa_code']
+        items.append(
+            f'<a href="/{a["slug"]}/{acc_slug}/" class="seo-link-item">'
+            f'<span class="seo-link-item__code">{iata}</span>'
+            f'<span class="seo-link-item__text">{acc_name} at {a["airport_name"]}</span></a>')
+    return "\n".join(items)
+
+
+def build_related_accidents_links(airport_slug, acc_slug, related_accs, accident_by_slug, n=4):
+    """Links to semantically related accident types at the same airport."""
+    related = related_accs.get(acc_slug, [])[:n]
+    items = []
+    for rel_slug in related:
+        rel_acc = accident_by_slug.get(rel_slug)
+        if not rel_acc: continue
+        icon = ALL_ACCIDENT_ICONS.get(rel_slug, '\u26a0\ufe0f')
+        items.append(
+            f'<a href="/{airport_slug}/{rel_slug}/" class="seo-link-item seo-link-item--related">'
+            f'<span class="seo-link-item__icon">{icon}</span>'
+            f'<span class="seo-link-item__text">{rel_acc["accident_name"]}</span></a>')
+    return "\n".join(items)
+
+
+def build_metro_links(airport, acc_slug, acc_name, metro_clusters, airport_by_slug, slug_to_metro, n=4):
+    """Links to same accident at other airports in the same metro area."""
+    metro = slug_to_metro.get(airport['slug'])
+    if not metro: return ""
+    metro_slugs = [s for s in metro_clusters[metro] if s != airport['slug']]
+    items = []
+    for slug in metro_slugs[:n]:
+        a = airport_by_slug.get(slug)
+        if not a: continue
+        iata = a['iata_code'] or a['faa_code']
+        items.append(
+            f'<a href="/{slug}/{acc_slug}/" class="seo-link-item seo-link-item--metro">'
+            f'<span class="seo-link-item__code">{iata}</span>'
+            f'<span class="seo-link-item__text">{acc_name} at {a["airport_name"]}</span></a>')
+    return "\n".join(items)
+
+
+def build_neighboring_state_links(airport, state_neighbors, top_per_state, n=5):
+    """Links to state hubs for neighboring states."""
+    neighbors = state_neighbors.get(airport['state'],[])[:n]
+    items = []
+    for neighbor in neighbors:
+        top = top_per_state.get(neighbor)
+        if not top: continue
+        items.append(
+            f'<a href="/state/{top["state_code"].lower()}/" class="seo-link-item">'
+            f'<span class="seo-link-item__code">{top["state_code"]}</span>'
+            f'<span class="seo-link-item__text">Airport accidents in {neighbor}</span></a>')
+    return "\n".join(items)
+
+
+def build_accident_hub_state_links(acc_slug, top_per_state, n=25):
+    """For accident hub: link to top airport per state for this accident."""
+    items = []
+    for state, top in sorted(top_per_state.items(), key=lambda x: x[0])[:n]:
+        items.append(
+            f'<a href="/{top["slug"]}/{acc_slug}/" class="seo-link-item">'
+            f'<span class="seo-link-item__code">{top["iata"]}</span>'
+            f'<span class="seo-link-item__text">{state} — {top["name"]}</span></a>')
+    return "\n".join(items)
+
+
 def copy_assets(dist):
     shutil.copy2(HOMEPAGE_SRC, dist/"index.html"); print("  \u2713 index.html")
     dest = dist/"assets"
@@ -1102,7 +1262,7 @@ def main():
     start = datetime.now()
     print(f"\n{'='*60}\nAirportAccidents.com \u2014 Page Generator\n{'='*60}")
     print("\n[1/5] Loading data...")
-    airports, accidents, crossref, profiles, variations = load_data()
+    airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state = load_data()
     print(f"  \u2713 {len(airports)} airports | {len(accidents)} accidents | {len(profiles)} profiles")
 
     if args.dry_run:
@@ -1134,7 +1294,7 @@ def main():
 
     if gen_all or args.states or args.state:
         print("\n  \u2014 State hub pages \u2014")
-        total += generate_states(airports, ts, DIST, args.state)
+        total += generate_states(airports, ts, DIST, args.state, state_neighbors, top_per_state)
 
     if gen_all or args.airports or (args.airport and not args.accident):
         print("\n  \u2014 Airport hub pages \u2014")
@@ -1142,11 +1302,13 @@ def main():
 
     if gen_all or args.accidents or (args.accident and not args.airport):
         print("\n  \u2014 Accident hub pages \u2014")
-        total += generate_accident_hubs(accidents, airports, tac, DIST, args.accident)
+        total += generate_accident_hubs(accidents, airports, tac, DIST, args.accident, top_per_state, related_accs)
 
     if gen_all or args.leaves or args.phase or args.airport or args.accident:
         print("\n  \u2014 Leaf pages \u2014")
-        total += generate_leaf_pages(airports, accidents, profiles, variations, tl, DIST,
+        total += generate_leaf_pages(airports, accidents, profiles, variations,
+                                     metro_clusters, related_accs, state_neighbors, top_per_state,
+                                     tl, DIST,
                                      filter_airport=args.airport,
                                      filter_accident=args.accident,
                                      phase=args.phase)

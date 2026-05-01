@@ -1,0 +1,308 @@
+{
+  "Georgia": {
+    "slug": "hartsfield-jackson-atlanta-international",
+    "name": "Hartsfield-Jackson Atlanta International Airport",
+    "iata": "ATL",
+    "state_code": "GA"
+  },
+  "Illinois": {
+    "slug": "ohare-international",
+    "name": "O'Hare International Airport",
+    "iata": "ORD",
+    "state_code": "IL"
+  },
+  "California": {
+    "slug": "los-angeles-international",
+    "name": "Los Angeles International Airport",
+    "iata": "LAX",
+    "state_code": "CA"
+  },
+  "Texas": {
+    "slug": "dallas-fort-worth-international",
+    "name": "Dallas/Fort Worth International Airport",
+    "iata": "DFW",
+    "state_code": "TX"
+  },
+  "Colorado": {
+    "slug": "denver-international",
+    "name": "Denver International Airport",
+    "iata": "DEN",
+    "state_code": "CO"
+  },
+  "New York": {
+    "slug": "john-f-kennedy-international",
+    "name": "John F. Kennedy International Airport",
+    "iata": "JFK",
+    "state_code": "NY"
+  },
+  "Washington": {
+    "slug": "seattle-tacoma-international",
+    "name": "Seattle-Tacoma International Airport",
+    "iata": "SEA",
+    "state_code": "WA"
+  },
+  "Nevada": {
+    "slug": "harry-reid-international",
+    "name": "Harry Reid International Airport",
+    "iata": "LAS",
+    "state_code": "NV"
+  },
+  "Florida": {
+    "slug": "orlando-international",
+    "name": "Orlando International Airport",
+    "iata": "MCO",
+    "state_code": "FL"
+  },
+  "Arizona": {
+    "slug": "phoenix-sky-harbor-international",
+    "name": "Phoenix Sky Harbor International Airport",
+    "iata": "PHX",
+    "state_code": "AZ"
+  },
+  "North Carolina": {
+    "slug": "charlotte-douglas-international",
+    "name": "Charlotte Douglas International Airport",
+    "iata": "CLT",
+    "state_code": "NC"
+  },
+  "New Jersey": {
+    "slug": "newark-liberty-international",
+    "name": "Newark Liberty International Airport",
+    "iata": "EWR",
+    "state_code": "NJ"
+  },
+  "Minnesota": {
+    "slug": "minneapolis-saint-paul-international",
+    "name": "Minneapolis-Saint Paul International Airport",
+    "iata": "MSP",
+    "state_code": "MN"
+  },
+  "Michigan": {
+    "slug": "detroit-metropolitan-wayne-county",
+    "name": "Detroit Metropolitan Wayne County Airport",
+    "iata": "DTW",
+    "state_code": "MI"
+  },
+  "Pennsylvania": {
+    "slug": "philadelphia-international",
+    "name": "Philadelphia International Airport",
+    "iata": "PHL",
+    "state_code": "PA"
+  },
+  "Massachusetts": {
+    "slug": "logan-international",
+    "name": "Logan International Airport",
+    "iata": "BOS",
+    "state_code": "MA"
+  },
+  "Maryland": {
+    "slug": "baltimore-washington-international",
+    "name": "Baltimore/Washington International Thurgood Marshall Airport",
+    "iata": "BWI",
+    "state_code": "MD"
+  },
+  "Virginia": {
+    "slug": "washington-dulles-international",
+    "name": "Washington Dulles International Airport",
+    "iata": "IAD",
+    "state_code": "VA"
+  },
+  "Utah": {
+    "slug": "salt-lake-city-international",
+    "name": "Salt Lake City International Airport",
+    "iata": "SLC",
+    "state_code": "UT"
+  },
+  "Oregon": {
+    "slug": "portland-international",
+    "name": "Portland International Airport",
+    "iata": "PDX",
+    "state_code": "OR"
+  },
+  "Hawaii": {
+    "slug": "daniel-k-inouye-international",
+    "name": "Daniel K. Inouye International Airport",
+    "iata": "HNL",
+    "state_code": "HI"
+  },
+  "Tennessee": {
+    "slug": "nashville-international",
+    "name": "Nashville International Airport",
+    "iata": "BNA",
+    "state_code": "TN"
+  },
+  "Missouri": {
+    "slug": "kansas-city-international",
+    "name": "Kansas City International Airport",
+    "iata": "MCI",
+    "state_code": "MO"
+  },
+  "Ohio": {
+    "slug": "cleveland-hopkins-international",
+    "name": "Cleveland Hopkins International Airport",
+    "iata": "CLE",
+    "state_code": "OH"
+  },
+  "Indiana": {
+    "slug": "indianapolis-international",
+    "name": "Indianapolis International Airport",
+    "iata": "IND",
+    "state_code": "IN"
+  },
+  "Wisconsin": {
+    "slug": "general-mitchell-international",
+    "name": "General Mitchell International Airport",
+    "iata": "MKE",
+    "state_code": "WI"
+  },
+  "Alaska": {
+    "slug": "ted-stevens-anchorage-international",
+    "name": "Ted Stevens Anchorage International Airport",
+    "iata": "ANC",
+    "state_code": "AK"
+  },
+  "Puerto Rico": {
+    "slug": "luis-munoz-marin-international",
+    "name": "Luis Munoz Marin International Airport",
+    "iata": "SJU",
+    "state_code": "PR"
+  },
+  "Alabama": {
+    "slug": "birmingham-shuttlesworth-international",
+    "name": "Birmingham-Shuttlesworth International Airport",
+    "iata": "BHM",
+    "state_code": "AL"
+  },
+  "Louisiana": {
+    "slug": "louis-armstrong-new-orleans-international",
+    "name": "Louis Armstrong New Orleans International Airport",
+    "iata": "MSY",
+    "state_code": "LA"
+  },
+  "New Mexico": {
+    "slug": "albuquerque-international-sunport",
+    "name": "Albuquerque International Sunport",
+    "iata": "ABQ",
+    "state_code": "NM"
+  },
+  "South Carolina": {
+    "slug": "charleston-international",
+    "name": "Charleston International Airport",
+    "iata": "CHS",
+    "state_code": "SC"
+  },
+  "Rhode Island": {
+    "slug": "providence-tf-green-international",
+    "name": "Providence T.F. Green International Airport",
+    "iata": "PVD",
+    "state_code": "RI"
+  },
+  "Connecticut": {
+    "slug": "bradley-international",
+    "name": "Bradley International Airport",
+    "iata": "BDL",
+    "state_code": "CT"
+  },
+  "Idaho": {
+    "slug": "boise-airport",
+    "name": "Boise Airport",
+    "iata": "BOI",
+    "state_code": "ID"
+  },
+  "Oklahoma": {
+    "slug": "tulsa-international",
+    "name": "Tulsa International Airport",
+    "iata": "TUL",
+    "state_code": "OK"
+  },
+  "Iowa": {
+    "slug": "des-moines-international",
+    "name": "Des Moines International Airport",
+    "iata": "DSM",
+    "state_code": "IA"
+  },
+  "Nebraska": {
+    "slug": "omaha-eppley-airfield",
+    "name": "Omaha Eppley Airfield",
+    "iata": "OMA",
+    "state_code": "NE"
+  },
+  "Kentucky": {
+    "slug": "louisville-muhammad-ali-international",
+    "name": "Louisville Muhammad Ali International Airport",
+    "iata": "SDF",
+    "state_code": "KY"
+  },
+  "Guam": {
+    "slug": "antonio-b-won-pat-international",
+    "name": "Antonio B. Won Pat International Airport",
+    "iata": "GUM",
+    "state_code": "GU"
+  },
+  "Arkansas": {
+    "slug": "little-rock-clinton-national",
+    "name": "Little Rock Clinton National Airport",
+    "iata": "LIT",
+    "state_code": "AR"
+  },
+  "Vermont": {
+    "slug": "burlington-international",
+    "name": "Burlington International Airport",
+    "iata": "BTV",
+    "state_code": "VT"
+  },
+  "New Hampshire": {
+    "slug": "manchester-boston-regional",
+    "name": "Manchester-Boston Regional Airport",
+    "iata": "MHT",
+    "state_code": "NH"
+  },
+  "Maine": {
+    "slug": "portland-international-jetport",
+    "name": "Portland International Jetport",
+    "iata": "PWM",
+    "state_code": "ME"
+  },
+  "Mississippi": {
+    "slug": "jackson-medgar-wiley-evers-international",
+    "name": "Jackson-Medgar Wiley Evers International Airport",
+    "iata": "JAN",
+    "state_code": "MS"
+  },
+  "Kansas": {
+    "slug": "wichita-dwight-d-eisenhower-national",
+    "name": "Wichita Dwight D. Eisenhower National Airport",
+    "iata": "ICT",
+    "state_code": "KS"
+  },
+  "South Dakota": {
+    "slug": "sioux-falls-regional",
+    "name": "Sioux Falls Regional Airport",
+    "iata": "FSD",
+    "state_code": "SD"
+  },
+  "North Dakota": {
+    "slug": "fargo-hector-international",
+    "name": "Fargo Hector International Airport",
+    "iata": "FAR",
+    "state_code": "ND"
+  },
+  "Montana": {
+    "slug": "billings-logan-international",
+    "name": "Billings Logan International Airport",
+    "iata": "BIL",
+    "state_code": "MT"
+  },
+  "Wyoming": {
+    "slug": "jackson-hole",
+    "name": "Jackson Hole Airport",
+    "iata": "JAC",
+    "state_code": "WY"
+  },
+  "U.S. Virgin Islands": {
+    "slug": "cyril-e-king",
+    "name": "Cyril E. King Airport",
+    "iata": "STT",
+    "state_code": "VI"
+  }
+}
