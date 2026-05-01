@@ -101,7 +101,7 @@
     <div class="nav__links" id="nav-menu" role="menubar">
       <a href="/#accident-types" class="nav__link" role="menuitem">All Accidents</a>
       <a href="/#airports"       class="nav__link" role="menuitem">Find Your Airport</a>
-      <a href="tel:18005550199"  class="nav__link nav__link--cta" role="menuitem">Free Consultation</a>
+      <a href="tel:{{phone_digits}}"  class="nav__link nav__link--cta" role="menuitem">Free Consultation</a>
     </div>
     <button class="nav__toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation menu">
       <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
@@ -322,7 +322,7 @@
       <div class="section__label" class="section__label--center">Free consultation — no fees unless you win</div>
       <h2 class="cta__title" id="cta-heading">Suffered a <em>{{accident_name}}</em><br>at an Airport?</h2>
       <p class="cta__sub">Don't wait. Evidence disappears and legal deadlines are strict. Get a free case review from attorneys who specialize in this exact type of airport accident.</p>
-      <a href="tel:18005550199" class="cta__phone" aria-label="Call 1-800-555-0199">1-800-555-0199</a>
+      <a href="tel:{{phone_digits}}" class="cta__phone" aria-label="Call {{phone_display}}">{{phone_display}}</a>
       <span class="cta__phone-label">Free consultation — available 24/7</span>
       <div class="cta__actions">
         <a href="#lead-form" class="btn btn--primary btn--lg">Start My Free Case Review →</a>
@@ -339,7 +339,7 @@
       <div class="footer__brand">
         <a href="/" class="nav__logo footer__logo" aria-label="AirportAccidents.com">Airport<span>Accidents</span>.com</a>
         <p class="footer__tagline">Expert attorneys for {{accident_name}} and 24 other airport accident types across all 522 US airports.</p>
-        <a href="tel:18005550199" class="footer__phone" aria-label="Call 1-800-555-0199">1-800-555-0199</a>
+        <a href="tel:{{phone_digits}}" class="footer__phone" aria-label="Call {{phone_display}}">{{phone_display}}</a>
       </div>
       <nav class="footer__col" aria-label="Other accident types">
         <h3 class="footer__col-title">Other Accident Types</h3>

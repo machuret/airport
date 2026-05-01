@@ -31,6 +31,7 @@ import csv, json, os, re, sys, shutil, argparse
 from collections import defaultdict
 from pathlib import Path
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 ROOT          = Path(__file__).parent.parent
 DATA_DIR      = ROOT / "data"
@@ -49,6 +50,15 @@ TMPL_ACCIDENT  = TEMPLATES_DIR / "accident-hub.html"
 TMPL_LEAF      = TEMPLATES_DIR / "leaf-page.html"
 HOMEPAGE_SRC   = PUBLIC / "index.html"
 BASE_URL       = "https://airportaccidents.com"
+
+# ── Site config — edit site.config.json to change these ─────────────────────
+_cfg = json.loads((ROOT / "site.config.json").read_text()) if (ROOT / "site.config.json").exists() else {}
+PHONE_DISPLAY  = _cfg.get("phone_display", "1-800-555-0199")
+PHONE_DIGITS   = _cfg.get("phone_digits",  "18005550199")
+SITE_NAME      = _cfg.get("site_name",     "AirportAccidents.com")
+BASE_URL       = _cfg.get("base_url",      BASE_URL)
+GTM_ID         = _cfg.get("gtm_id",        "")
+FORM_WEBHOOK   = _cfg.get("form_webhook",  "")
 
 STATE_LEGAL = {
     "Alabama":        {"sol":"2 years",   "notice":"6 months",   "gov":"Birmingham Airport Authority"},
@@ -161,12 +171,20 @@ def write_page(path, html):
 
 
 def render(template, context):
+    # Always inject site-wide config so templates never have hardcoded values
+    full_ctx = {
+        "phone_display": PHONE_DISPLAY,
+        "phone_digits":  PHONE_DIGITS,
+        "site_name":     SITE_NAME,
+    }
+    full_ctx.update(context)
+
     def replace_if(m):
         k, inner = m.group(1).strip(), m.group(2)
-        v = context.get(k)
+        v = full_ctx.get(k)
         return inner if v and str(v) not in ("False","0","") else ""
     html = re.sub(r'\{\{#if\s+([\w_]+)\}\}(.*?)\{\{/if\}\}', replace_if, template, flags=re.DOTALL)
-    for k, v in context.items():
+    for k, v in full_ctx.items():
         html = html.replace("{{" + k + "}}", str(v) if v is not None else "")
     html = re.sub(r'\{\{[\w_]+\}\}', '', html)
     return html
@@ -704,9 +722,122 @@ def generate_leaf_pages(airports, accidents, profiles, tmpl, dist,
                 "cta_btn_label":f"Start My Free {iata} Case Review \u2192",
                 "faq_liable_answer":faq_liable,"faq_deadline_answer":faq_deadline,"faq_evidence_answer":faq_evidence,
             }
-            write_page(dist/airport['slug']/acc['slug']/"index.html", render(tmpl, ctx))
-            n += 1
-            if n % 500 == 0: print(f"    ... {n:,} leaf pages generated")
+            # Collect (path, html) pairs then batch-write in parallel
+            out_path = dist/airport['slug']/acc['slug']/"index.html"
+            yield out_path, render(tmpl, ctx)
+
+    return  # generator exhausted
+
+
+def generate_leaf_pages(airports, accidents, profiles, tmpl, dist,
+                        filter_airport=None, filter_accident=None, phase=None):
+    """Wrapper that runs the leaf generator with parallel file writes."""
+    phase_types = {1:{'large_hub'},2:{'medium_hub'},3:{'small_hub'},4:{'non_hub'}}
+    allowed = phase_types.get(phase) if phase else None
+
+    n = 0
+    def _write(args):
+        path, html = args
+        write_page(path, html)
+        return 1
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures = []
+        for airport in sorted(airports, key=lambda x:({"large_hub":0,"medium_hub":1,"small_hub":2,"non_hub":3}.get(x['type'],4),x['airport_name'])):
+            iata = airport['iata_code'] or airport['faa_code']
+            if filter_airport and iata.upper() != filter_airport.upper(): continue
+            if allowed and airport['type'] not in allowed: continue
+            profile   = profiles.get(airport['slug'], {})
+            state_leg = STATE_LEGAL.get(airport['state'], DEFAULT_LEGAL)
+            op        = profile.get('airport_operator_name', f"{airport['city']} Airport Authority")
+            notice_days = profile.get('notice_of_claim_days', 0)
+            for acc in accidents:
+                if filter_accident and acc['slug'] != filter_accident: continue
+                canonical = f"{BASE_URL}/{airport['slug']}/{acc['slug']}/"
+                pg_title  = f"{acc['accident_name']} at {airport['airport_name']} | {airport['city']}, {airport['state']} | Free Legal Help"
+                meta_desc = truncate(
+                    f"Injured in a {acc['accident_name'].lower()} at {airport['airport_name']} in {airport['city']}, {airport['state']}? "
+                    f"Find out who is liable, what evidence to preserve, and what your case is worth. "
+                    f"Free consultation — {state_leg['sol']} statute of limitations in {airport['state']}."
+                )
+                const_b, alt_b, pfas_b = build_banners(profile, acc)
+                if notice_days > 0:
+                    notice_label = "Notice of claim"; notice_value = f"{notice_days} days"; notice_color = "var(--color-danger)"
+                else:
+                    notice_label = "Notice required"; notice_value = "Not required"; notice_color = "var(--color-success)"
+                ftca_alert = ('<div class="alert-box"><div class="alert-box__title">\u26a0 FTCA \u2014 Mandatory Administrative Filing First</div>'
+                              '<p class="alert-box__text">TSA injuries require administrative filing with DHS/TSA before any lawsuit. Missing this step permanently bars your case.</p></div>') if acc.get('ftca_applies') else ""
+                montreal_alert = ('<div class="warning-box"><div class="warning-box__title">Montreal Convention \u2014 2-Year Hard Deadline</div>'
+                                   '<p class="warning-box__text">International flight claims: strict 2-year deadline, no exceptions, no extensions.</p></div>') if acc.get('montreal_convention') else ""
+                injuries_h = "\n".join(li(i) for i in parse_list(acc.get('common_injuries',[]))[:6])
+                damages_h  = "\n".join(li(d) for d in parse_list(acc.get('compensable_damages',[]))[:6])
+                value_h    = "\n".join(li(f) for f in parse_list(acc.get('factors_increasing_value',[]))[:5])
+                op_type_label = OPERATOR_TYPE_LABELS.get(profile.get('operator_type','city'),'public entity')
+                faq_liable   = (f"At {airport['airport_name']}, primary liable parties for {acc['accident_name'].lower()} include "
+                                f"{op} as airport operator and any contractors managing the zone where the incident occurred.")
+                faq_deadline = (f"In {airport['state']}, the statute of limitations is {state_leg['sol']}. "
+                                + (f"Claims against {op} also require Notice of Claim within {notice_days} days. " if notice_days else "")
+                                + ("TSA injuries require FTCA filing first. " if acc.get('ftca_applies') else "")
+                                + "Contact an attorney immediately.")
+                faq_evidence = (f"After a {acc['accident_name'].lower()} at {airport['airport_name']}, preserve: "
+                                f"{chr(44).join(parse_list(acc.get('key_evidence',[]))[:4])}. CCTV at {iata} overwrites in 24-72 hours.")
+                ctx = {
+                    "page_title":pg_title,"meta_description":meta_desc,"canonical_url":canonical,
+                    "og_title":f"{acc['accident_name']} at {airport['airport_name']} | Free Legal Help",
+                    "airport_name":airport['airport_name'],"airport_slug":airport['slug'],
+                    "city":airport['city'],"state":airport['state'],
+                    "state_code":airport['state_code'],"state_code_lower":airport['state_code'].lower(),
+                    "iata_code":iata,"faa_code":airport['faa_code'],
+                    "airport_type_label":TYPE_LABELS.get(airport['type'],'Airport'),
+                    "airport_operator_name":op,"operator_type_label":op_type_label,
+                    "accident_name":acc['accident_name'],"accident_name_lower":acc['accident_name'].lower(),
+                    "accident_slug":acc['slug'],"severity_score":acc.get('severity_score',7),
+                    "average_settlement_range":acc.get('average_settlement_range','Varies'),
+                    "legal_standard":acc.get('legal_standard','Negligence'),
+                    "liability_notes":acc.get('liability_notes',''),"frequency_label":acc.get('frequency_label','Common'),
+                    "sol_state":state_leg['sol'],
+                    "notice_label":notice_label,"notice_value":notice_value,"notice_color":notice_color,
+                    "nearby_courthouse":profile.get('nearby_courthouse','U.S. District Court'),
+                    "h1_title":f"{acc['accident_name']} at {airport['airport_name']}",
+                    "hero_intro":build_hero_intro(airport,acc,profile),
+                    "airport_accident_context_para":build_context_para(airport,acc,profile),
+                    "liable_intro_para":(f"At {airport['airport_name']}, responsibility for {acc['accident_name'].lower()} incidents "
+                                         f"is divided among {op}, {profile.get('food_operator','food operators')}, "
+                                         f"{profile.get('parking_operator','parking operators')}, and {profile.get('ground_handler_primary','ground handlers')}. "
+                                         f"Identifying every liable party before the statute of limitations expires is critical."),
+                    "what_to_do_intro":f"After a {acc['accident_name'].lower()} at {airport['airport_name']}, the next 72 hours are critical. Evidence disappears fast and legal deadlines begin immediately.",
+                    "evidence_intro":f"The single most important action after any accident at {airport['airport_name']} is to initiate evidence preservation before records are overwritten or sealed.",
+                    "construction_banner_html":const_b,"altitude_banner_html":alt_b,"pfas_banner_html":pfas_b,
+                    "hazard_items_html":build_hazard_items(airport,acc,profile),
+                    "liable_cards_html":build_liable_cards(airport,acc,profile),
+                    "notice_box_html":build_notice_box(profile),
+                    "evidence_timeline_html":build_evidence_timeline(acc),
+                    "steps_html":build_steps(airport,acc,profile),
+                    "location_options_html":build_location_options(acc),
+                    "injuries_html":injuries_h,"damages_html":damages_h,"value_factors_html":value_h,
+                    "ftca_alert_html":ftca_alert,"montreal_alert_html":montreal_alert,
+                    "other_accidents_html":build_other_accidents(airport['slug'],acc['slug']),
+                    "footer_airport_links_html":build_footer_airport_links(airport['slug'],acc['slug']),
+                    "footer_accident_links_html":build_footer_accident_links(acc['slug'],airport['slug'],airports),
+                    "form_title":f"Free {iata} {acc['accident_name']} Review",
+                    "form_subtitle":f"Tell us what happened at {airport['airport_name']}. An attorney reviews within 24 hours.",
+                    "form_placeholder":f"Describe what happened at {airport['airport_name']}...",
+                    "submit_label":f"Review My {iata} Case \u2192",
+                    "cta_title":f"Injured in a {acc['accident_name']} at {airport['airport_name']}?",
+                    "cta_sub":f"Evidence at {iata} disappears within 72 hours and {airport['state']}'s {state_leg['sol']} statute of limitations has already started.",
+                    "cta_btn_label":f"Start My Free {iata} Case Review \u2192",
+                    "faq_liable_answer":faq_liable,"faq_deadline_answer":faq_deadline,"faq_evidence_answer":faq_evidence,
+                    "form_webhook": FORM_WEBHOOK,
+                    "gtm_id": GTM_ID,
+                }
+                html = render(tmpl, ctx)
+                out_path = dist/airport['slug']/acc['slug']/"index.html"
+                futures.append(pool.submit(_write, (out_path, html)))
+                if len(futures) % 500 == 0:
+                    print(f"    ... {len(futures):,} leaf pages queued")
+
+        for fut in as_completed(futures):
+            n += fut.result()
 
     return n
 
@@ -716,6 +847,62 @@ def copy_assets(dist):
     dest = dist/"assets"
     if dest.exists(): shutil.rmtree(dest)
     shutil.copytree(ASSETS_SRC, dest); print("  \u2713 assets/")
+
+
+def generate_sitemap(airports, accidents, dist):
+    """Generate dist/sitemap.xml with all page URLs, priorities, and lastmod."""
+    from datetime import date
+    today = date.today().isoformat()
+    urls = []
+
+    def add(loc, priority, changefreq):
+        urls.append(f'  <url>\n    <loc>{BASE_URL}{loc}</loc>\n    <lastmod>{today}</lastmod>\n    <changefreq>{changefreq}</changefreq>\n    <priority>{priority}</priority>\n  </url>')
+
+    # Homepage
+    add("/", "1.0", "weekly")
+
+    # State hubs
+    by_state = defaultdict(list)
+    for a in airports: by_state[a['state']].append(a)
+    for state_name, sa in sorted(by_state.items()):
+        sc = sa[0]['state_code'].lower()
+        add(f"/state/{sc}/", "0.8", "monthly")
+
+    # Accident hubs
+    for acc in accidents:
+        add(f"/{acc['slug']}/", "0.8", "monthly")
+
+    # Airport hubs (large/medium hubs get higher priority)
+    priority_map = {"large_hub": "0.8", "medium_hub": "0.7", "small_hub": "0.6", "non_hub": "0.5"}
+    for airport in airports:
+        pri = priority_map.get(airport['type'], "0.5")
+        add(f"/{airport['slug']}/", pri, "monthly")
+
+    # Leaf pages — prioritized by airport size
+    leaf_priority = {"large_hub": "0.7", "medium_hub": "0.6", "small_hub": "0.5", "non_hub": "0.4"}
+    for airport in sorted(airports, key=lambda x: ({"large_hub":0,"medium_hub":1,"small_hub":2,"non_hub":3}[x['type']], x['airport_name'])):
+        pri = leaf_priority.get(airport['type'], "0.4")
+        for acc in accidents:
+            add(f"/{airport['slug']}/{acc['slug']}/", pri, "monthly")
+
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    xml += "\n".join(urls)
+    xml += '\n</urlset>'
+
+    (dist / "sitemap.xml").write_text(xml, encoding="utf-8")
+    print(f"  \u2713 sitemap.xml ({len(urls):,} URLs)")
+
+
+def generate_robots(dist):
+    """Generate dist/robots.txt."""
+    robots = f'''User-agent: *
+Allow: /
+
+Sitemap: {BASE_URL}/sitemap.xml
+'''
+    (dist / "robots.txt").write_text(robots)
+    print("  \u2713 robots.txt")
 
 
 def main():
@@ -787,8 +974,16 @@ def main():
                                      filter_accident=args.accident,
                                      phase=args.phase)
 
+    # Always generate sitemap + robots on full or leaf builds
+    if gen_all or args.leaves:
+        print("\n  \u2014 SEO files \u2014")
+        generate_sitemap(airports, accidents, DIST)
+        generate_robots(DIST)
+        total += 2
+
     elapsed = (datetime.now()-start).total_seconds()
-    print(f"\n{'='*60}\n\u2713 Generated {total:,} pages in {elapsed:.1f}s\n  Output: {DIST}\n{'='*60}\n")
+    rate = int(total / elapsed) if elapsed > 0 else 0
+    print(f"\n{'='*60}\n\u2713 Generated {total:,} pages in {elapsed:.1f}s ({rate:,}/sec)\n  Output: {DIST}\n{'='*60}\n")
 
 
 if __name__ == "__main__":

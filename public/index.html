@@ -41,7 +41,7 @@
   "name": "AirportAccidents.com",
   "url": "https://airportaccidents.com",
   "description": "Free legal consultations for airport injury victims across all 522 US commercial airports.",
-  "telephone": "+1-800-555-0199",
+  "telephone": "+{{phone_display}}",
   "areaServed": "US",
   "priceRange": "Free consultation",
   "knowsAbout": ["Airport Accidents","Personal Injury Law","Aviation Law","Premises Liability"]
@@ -258,7 +258,7 @@
       <a href="#accident-types" class="nav__link" role="menuitem">Accident Types</a>
       <a href="#airports"       class="nav__link" role="menuitem">Find Your Airport</a>
       <a href="/about/"         class="nav__link" role="menuitem">About</a>
-      <a href="tel:18005550199" class="nav__link nav__link--cta" role="menuitem" aria-label="Call for free consultation">Free Consultation</a>
+      <a href="tel:{{phone_digits}}" class="nav__link nav__link--cta" role="menuitem" aria-label="Call for free consultation">Free Consultation</a>
     </div>
     <button class="nav__toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation menu">
       <span class="nav__toggle-bar"></span>
@@ -603,7 +603,7 @@
       <div class="section__label" class="section__label--center">Don't wait — evidence disappears fast</div>
       <h2 class="cta__title" id="cta-heading">Your Case May Be Worth<br><em>More Than You Think</em></h2>
       <p class="cta__sub">Airport injury settlements regularly reach six and seven figures. But only if you act before the evidence is overwritten and the deadlines expire.</p>
-      <a href="tel:18005550199" class="cta__phone" aria-label="Call 1-800-555-0199">1-800-555-0199</a>
+      <a href="tel:{{phone_digits}}" class="cta__phone" aria-label="Call {{phone_display}}">{{phone_display}}</a>
       <span class="cta__phone-label">Free consultation — available 24/7</span>
       <div class="cta__actions">
         <a href="#lead-form" class="btn btn--primary btn--lg">Start My Free Case Review →</a>
@@ -620,7 +620,7 @@
       <div class="footer__brand">
         <a href="/" class="nav__logo footer__logo" aria-label="AirportAccidents.com">Airport<span>Accidents</span>.com</a>
         <p class="footer__tagline">The largest database of US airport accident information. 522 airports. 25 accident types. Free legal consultations for injured passengers and workers nationwide.</p>
-        <a href="tel:18005550199" class="footer__phone" aria-label="Call 1-800-555-0199">1-800-555-0199</a>
+        <a href="tel:{{phone_digits}}" class="footer__phone" aria-label="Call {{phone_display}}">{{phone_display}}</a>
       </div>
       <nav class="footer__col" aria-label="Accident types">
         <h3 class="footer__col-title">Accident Types</h3>
