@@ -188,3 +188,16 @@
     : init();
 
 }());
+
+// ── FAQ Accordion ──────────────────────────────────────────────────────────
+(function() {
+  document.querySelectorAll('.faq-item__btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      var bodyId   = btn.getAttribute('aria-controls');
+      var body     = document.getElementById(bodyId);
+      btn.setAttribute('aria-expanded', !expanded);
+      if (body) body.hidden = expanded;
+    });
+  });
+})();

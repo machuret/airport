@@ -207,7 +207,10 @@ def load_data():
     with open(DATA_DIR / 'related_accidents.json')   as f: related_accs      = json.load(f)
     with open(DATA_DIR / 'state_neighbors.json')     as f: state_neighbors   = json.load(f)
     with open(DATA_DIR / 'top_airport_per_state.json')as f: top_per_state    = json.load(f)
-    return airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state
+    with open(DATA_DIR / 'faq_templates.json')         as f: faq_templates    = json.load(f)
+    with open(DATA_DIR / 'accident_faq_category.json') as f: acc_faq_cat      = json.load(f)
+    with open(DATA_DIR / 'state_comparative_fault.json')as f: comp_fault      = json.load(f)
+    return airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault
 
 
 def write_page(path, html):
@@ -851,6 +854,7 @@ def generate_leaf_pages(airports, accidents, profiles, tmpl, dist,
 
 def generate_leaf_pages(airports, accidents, profiles, variations,
                         metro_clusters, related_accs, state_neighbors, top_per_state,
+                        faq_templates, acc_faq_cat, comp_fault,
                         tmpl, dist,
                         filter_airport=None, filter_accident=None, phase=None):
     """Wrapper that runs the leaf generator with parallel file writes."""
@@ -1042,6 +1046,12 @@ def generate_leaf_pages(airports, accidents, profiles, variations,
                     # ── Static fields ──────────────────────────────────────────
                     "form_placeholder":f"Describe what happened at {airport['airport_name']}...",
                     "cta_btn_label":f"Start My Free {iata} Case Review \u2192",
+                    # ── FAQ section ────────────────────────────────────────────
+                    **dict(zip(
+                        ["faq_section_html", "faq_jsonld"],
+                        build_faq_html(airport, acc, profile, state_leg,
+                                       faq_templates, acc_faq_cat, comp_fault)
+                    )),
                     "faq_liable_answer":faq_liable,"faq_deadline_answer":faq_deadline,"faq_evidence_answer":faq_evidence,
                     "form_webhook": FORM_WEBHOOK,
                     "gtm_id": GTM_ID,
@@ -1179,6 +1189,90 @@ def build_accident_hub_state_links(acc_slug, top_per_state, n=25):
     return "\n".join(items)
 
 
+def render_faq_text(template_str, ctx):
+    """Simple {var} replacement for FAQ text."""
+    result = template_str
+    for k, v in ctx.items():
+        result = result.replace('{' + k + '}', str(v) if v else '')
+    result = re.sub(r'\{[a-z_]+\}', '', result).strip()
+    return result
+
+
+def build_faq_html(airport, acc, profile, state_legal, faq_templates, acc_faq_cat, comp_fault):
+    """Build visible FAQ accordion + JSON-LD schema for a leaf page."""
+    acc_slug = acc['slug']
+    faq_cat  = acc_faq_cat.get(acc_slug, 'premises_liability')
+    templates = faq_templates.get(faq_cat, faq_templates.get('premises_liability', []))
+
+    iata    = airport['iata_code'] or airport['faa_code']
+    state   = airport['state']
+    notice  = profile.get('notice_of_claim_days', 0)
+    op      = profile.get('airport_operator_name', f"{airport['city']} Airport Authority")
+    op_type = {'city':'city-operated','county':'county-operated',
+               'port_authority':'port authority','state':'state-operated',
+               'joint_authority':'joint authority','federal':'federal'}.get(
+               profile.get('operator_type','city'), 'public entity')
+
+    ctx = {
+        'airport':           airport['airport_name'],
+        'iata':              iata,
+        'city':              airport['city'],
+        'state':             state,
+        'accident_lower':    acc['accident_name'].lower(),
+        'accident_name':     acc['accident_name'],
+        'sol':               state_legal.get('sol', '2 years'),
+        'notice_days':       str(notice) + ' days' if notice else 'not required',
+        'notice_label':      f"{notice} days" if notice else "not required",
+        'op':                op,
+        'op_type':           op_type,
+        'food_op':           profile.get('food_operator', 'the food service operator'),
+        'park_op':           profile.get('parking_operator', 'the parking operator'),
+        'handler':           profile.get('ground_handler_primary', 'the ground handling company'),
+        'settlement_range':  acc.get('average_settlement_range', 'varies by injury'),
+        'nearby_courthouse': profile.get('nearby_courthouse', 'the nearest U.S. District Court'),
+        'comparative_fault_rule': comp_fault.get(state, 'comparative fault'),
+    }
+
+    def rv(t): return render_faq_text(t, ctx)
+
+    faqs = []
+    for t in templates:
+        faqs.append({'q': rv(t['q']), 'a': rv(t['a'])})
+
+    # ── Visible HTML accordion ─────────────────────────────────────────────
+    items_html = []
+    for i, faq in enumerate(faqs):
+        items_html.append(
+            f'<div class="faq-item" id="faq-{i+1}">'
+            f'<button class="faq-item__btn" aria-expanded="false" aria-controls="faq-body-{i+1}">'
+            f'<span class="faq-item__q">{faq["q"]}</span>'
+            f'<span class="faq-item__icon" aria-hidden="true">+</span>'
+            f'</button>'
+            f'<div class="faq-item__body" id="faq-body-{i+1}" hidden>'
+            f'<p class="faq-item__a">{faq["a"]}</p>'
+            f'</div></div>')
+
+    faq_html = "\n".join(items_html)
+
+    # ── JSON-LD FAQPage schema ─────────────────────────────────────────────
+    import json as _json
+    schema_entities = []
+    for faq in faqs:
+        schema_entities.append({
+            "@type": "Question",
+            "name": faq["q"],
+            "acceptedAnswer": {"@type": "Answer", "text": faq["a"]}
+        })
+
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": schema_entities
+    }
+
+    return faq_html, _json.dumps(schema, indent=2)
+
+
 def copy_assets(dist):
     shutil.copy2(HOMEPAGE_SRC, dist/"index.html"); print("  \u2713 index.html")
     dest = dist/"assets"
@@ -1262,7 +1356,7 @@ def main():
     start = datetime.now()
     print(f"\n{'='*60}\nAirportAccidents.com \u2014 Page Generator\n{'='*60}")
     print("\n[1/5] Loading data...")
-    airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state = load_data()
+    airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault = load_data()
     print(f"  \u2713 {len(airports)} airports | {len(accidents)} accidents | {len(profiles)} profiles")
 
     if args.dry_run:
@@ -1308,6 +1402,7 @@ def main():
         print("\n  \u2014 Leaf pages \u2014")
         total += generate_leaf_pages(airports, accidents, profiles, variations,
                                      metro_clusters, related_accs, state_neighbors, top_per_state,
+                                     faq_templates, acc_faq_cat, comp_fault,
                                      tl, DIST,
                                      filter_airport=args.airport,
                                      filter_accident=args.accident,

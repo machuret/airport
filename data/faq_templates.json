@@ -1,0 +1,242 @@
+{
+  "premises_liability": [
+    {
+      "q": "Who is liable for a {accident_lower} at {airport}?",
+      "a": "Liability for a {accident_lower} at {airport} depends on exactly where the incident occurred. {op} as the {op_type} operator is responsible for terminal common areas. {food_op} is liable for dining and caf\u00e9 zones. {park_op} controls parking and curbside areas. Each operator carries separate insurance and can be named as an independent defendant. In most {accident_lower} cases at {iata}, multiple parties share liability."
+    },
+    {
+      "q": "How long do I have to file a {accident_lower} lawsuit against {airport}?",
+      "a": "In {state}, the standard personal injury statute of limitations is {sol}. However, because {op} is a {op_type} entity, a formal Notice of Claim must be filed within {notice_days} days of the injury \u2014 a deadline that is earlier and stricter than the standard SOL. Missing the Notice of Claim deadline permanently bars your case regardless of how strong your evidence is. Contact an attorney immediately after a {accident_lower} at {iata}."
+    },
+    {
+      "q": "What evidence should I preserve after a {accident_lower} at {airport}?",
+      "a": "The most critical evidence after a {accident_lower} at {airport} is surveillance footage, which is overwritten within 72 hours. A preservation demand letter must be sent to {op} the same day you retain an attorney. You should also preserve: the incident report number from {iata} operations, photographs of the hazard and your injuries taken at the scene, witness contact information, your medical records from the day of the incident, and the clothing and footwear you were wearing."
+    },
+    {
+      "q": "What is my {accident_lower} case at {airport} worth?",
+      "a": "The value of a {accident_lower} case at {airport} depends on injury severity, medical expenses, lost income, and pain and suffering. Cases at {iata} typically settle in the range of {settlement_range}. Cases involving serious injuries \u2014 fractures, head trauma, spinal damage \u2014 can exceed these figures substantially. The involvement of multiple defendants, such as {op} and {food_op} together, tends to increase recovery because each carries separate insurance coverage."
+    },
+    {
+      "q": "Does {airport} have to pay if I was injured in a {accident_lower} there?",
+      "a": "{op} is legally required to maintain safe conditions throughout {airport}. If a hazard existed that {op} or its contractors knew about or should have known about through reasonable inspection, and that hazard caused your {accident_lower}, then {op} bears liability. The key legal question is notice \u2014 whether {op} had actual or constructive notice of the dangerous condition before your injury. Maintenance logs, inspection schedules, and prior incident reports at {iata} help establish this."
+    },
+    {
+      "q": "What is a Notice of Claim and do I need one to sue {airport}?",
+      "a": "A Notice of Claim is a formal legal document that must be filed against {op} within {notice_days} days of your {accident_lower} at {airport}. It notifies the government entity of your intent to pursue a claim and preserves your right to sue. Failing to file within the {notice_days}-day window permanently bars your case \u2014 even if you have strong evidence and your injuries are serious. An attorney can file this notice on your behalf, typically the same day you retain them."
+    },
+    {
+      "q": "Can I sue the restaurant or store where I was hurt at {airport}?",
+      "a": "Yes. If your {accident_lower} occurred in a food court, caf\u00e9, or retail area at {airport}, the operator of that specific concession \u2014 {food_op} for dining areas \u2014 is the primary liable party, not just {op}. Concessionaires carry their own liability insurance and can be sued independently. In many {iata} {accident_lower} cases, both the concession operator and {op} are named as defendants simultaneously, which increases the total available insurance coverage."
+    },
+    {
+      "q": "What if I was partially at fault for my {accident_lower} at {airport}?",
+      "a": "{state} uses {comparative_fault_rule} comparative fault rules in personal injury cases. This means even if you were partially responsible for your {accident_lower} at {iata}, you may still recover compensation \u2014 your award is simply reduced by your percentage of fault. For example, if you were found 20% at fault, you would still recover 80% of your total damages. {airport} defendants commonly raise comparative fault arguments; an experienced attorney can counter them."
+    },
+    {
+      "q": "How do I find out if there have been previous {accident_lower} incidents at {airport}?",
+      "a": "Prior incident records at {airport} are obtainable through public records requests and litigation discovery. These records are valuable because they help establish that {op} had prior notice of a recurring hazard. If multiple people have been injured in the same area at {iata}, that pattern significantly strengthens your case and can support an argument for heightened damages. An attorney can submit preservation demands and discovery requests for {iata} incident history immediately."
+    },
+    {
+      "q": "Do I need a lawyer for a {accident_lower} claim at {airport}?",
+      "a": "Technically no, but in practice the Notice of Claim requirement, the multiple-defendant liability structure at {airport}, and {op}'s experienced claims team make self-representation extremely difficult. {op} will have lawyers handling your claim from the moment it is filed. Without representation, most victims accept initial settlement offers that are substantially lower than the full value of their case. Most airport injury attorneys work on contingency \u2014 no fees unless they recover \u2014 so there is no financial barrier to representation."
+    },
+    {
+      "q": "Where would a {accident_lower} lawsuit against {airport} be filed?",
+      "a": "A {accident_lower} lawsuit against {op} would typically be filed in {state} state court or, if federal jurisdiction applies, in the {nearby_courthouse}. Claims involving TSA or federal contractors must be filed in federal court under the Federal Tort Claims Act. Claims against {op} as a {op_type} entity are usually filed in state court in {city}. Your attorney will determine the optimal venue based on the specific defendants named in your case."
+    },
+    {
+      "q": "How long does a {accident_lower} case against {airport} take to resolve?",
+      "a": "{accident_lower} cases against {op} at {airport} typically take 12 to 36 months from filing to resolution. The Notice of Claim process adds 6 months before a lawsuit can be filed in {state}. After filing, discovery, expert depositions, and mediation take additional time. Cases that proceed to trial take longer. However, the majority of {airport} {accident_lower} cases settle before trial \u2014 often after discovery reveals the evidence of negligence."
+    }
+  ],
+  "federal_liability": [
+    {
+      "q": "Can I sue TSA for an injury at {airport}?",
+      "a": "Yes, but the process is different from a standard personal injury claim. Injuries caused by TSA at {airport} are governed by the Federal Tort Claims Act (FTCA). Before filing any lawsuit, you must submit an administrative claim directly to DHS/TSA \u2014 a mandatory step that many victims skip, permanently barring their case. The FTCA administrative claim must be filed within 2 years of the injury at {iata}. TSA then has 6 months to respond before you can file suit in federal court."
+    },
+    {
+      "q": "What is the FTCA and how does it apply to injuries at {airport}?",
+      "a": "The Federal Tort Claims Act (FTCA) is the law that allows injured persons to sue the federal government for negligence. At {airport}, FTCA applies whenever TSA agents or federal contractors caused your injury \u2014 at the security checkpoint, in screening areas, or during passenger handling. Filing under FTCA requires submitting a Standard Form 95 administrative claim to DHS before any lawsuit. Missing this step \u2014 even if you have strong evidence \u2014 permanently eliminates your right to recover."
+    },
+    {
+      "q": "How long do I have to file an FTCA claim after an injury at {airport}?",
+      "a": "The FTCA imposes a 2-year administrative claim deadline from the date of your injury at {iata}. This is the outer deadline \u2014 but you must file the administrative claim with TSA/DHS before the 2 years expire, not a lawsuit. After TSA responds (or after 6 months if they do not), you then have another 6 months to file suit in federal court. The overall timeline is tighter than standard personal injury cases in {state} \u2014 retain an attorney immediately."
+    },
+    {
+      "q": "What compensation is available under the FTCA for injuries at {airport}?",
+      "a": "Under the FTCA, you can recover economic damages \u2014 medical bills, lost wages, future medical costs \u2014 and non-economic damages such as pain and suffering. The FTCA does not allow punitive damages against the federal government. Settlement values for TSA injury claims at {airport} typically range in the {settlement_range} range, depending on injury severity. FTCA claims are paid directly by the U.S. Treasury rather than through an insurance company."
+    },
+    {
+      "q": "Is {airport} itself liable if TSA injured me there?",
+      "a": "TSA and {op} are separate legal entities with separate liability. If your injury at {iata} involved both TSA conduct and a hazardous condition in the terminal, you may have claims against both \u2014 the FTCA claim against TSA/DHS and a standard premises liability claim against {op}. These are parallel tracks with different deadlines and different courts. An attorney experienced in both FTCA and {state} premises liability law is essential for maximizing recovery in this situation."
+    },
+    {
+      "q": "What if TSA denies my administrative claim for an injury at {airport}?",
+      "a": "If TSA denies your administrative FTCA claim \u2014 or fails to respond within 6 months \u2014 you have 6 months from the denial or deemed denial to file suit in federal court. The {nearby_courthouse} would have jurisdiction over FTCA claims arising from {airport}. A denial from TSA is not the end \u2014 it is simply the trigger that allows you to proceed to court. Retaining an attorney before the denial occurs, not after, gives you the best positioning."
+    },
+    {
+      "q": "Can I still file a {accident_lower} claim if I signed a TSA screening consent form?",
+      "a": "Consent to TSA screening does not waive your right to sue for negligence or excessive force. TSA has the authority to screen passengers but does not have the authority to act negligently or with unreasonable force. If you were injured by TSA conduct at {airport} that exceeded their lawful authority or fell below the standard of care, you retain full rights to pursue an FTCA claim regardless of any consent language in the screening process."
+    },
+    {
+      "q": "What evidence do I need for an FTCA claim after an injury at {airport}?",
+      "a": "For an FTCA claim arising from {airport}, the most critical evidence includes: the incident report from {iata} TSA supervisors, CCTV footage from the checkpoint area (request preservation immediately \u2014 it deletes within 72 hours), witness statements from other passengers and TSA staff, your medical records from the date of injury, and documentation of all financial losses. The administrative claim itself must include a sum certain \u2014 a specific dollar amount \u2014 or it will be rejected. An attorney calculates this figure for you."
+    },
+    {
+      "q": "Does the FTCA limit how much I can recover for a {airport} injury?",
+      "a": "The FTCA does not impose a hard cap on most injury claims, but it does prohibit punitive damages. The amount you can recover is limited to what you actually lost \u2014 medical expenses, lost income, and a jury-assessed value of pain and suffering. However, any administrative claim under $25,000 can be settled administratively by TSA without court involvement. Claims above that threshold require federal court litigation. There is no cap on compensatory damages for serious injuries."
+    },
+    {
+      "q": "What is the difference between suing TSA and suing {airport} after an injury at {iata}?",
+      "a": "TSA is a federal agency \u2014 claims against TSA go through the FTCA, require administrative filing first, and are heard in federal court. {op} is a {op_type} entity \u2014 claims against {op} go through {state} law, require a Notice of Claim within {notice_days} days, and are typically heard in {state} state court. Both claims can be pursued simultaneously if both parties contributed to your injury. The deadlines and procedures are entirely separate and must be managed in parallel."
+    }
+  ],
+  "vehicle_liability": [
+    {
+      "q": "Who is liable if a baggage cart or vehicle hit me at {airport}?",
+      "a": "Ground vehicle accidents at {airport} typically involve {handler} as the primary liable party \u2014 they operate the baggage tugs, ground service vehicles, and ramp equipment at {iata}. If the vehicle was an airport shuttle or tram, the operating contractor carries separate liability. {op} as the airport authority can be named as a secondary defendant for failure to maintain safe vehicle corridors and passenger separation. All three entities carry separate insurance policies."
+    },
+    {
+      "q": "What evidence is most important after a vehicle accident at {airport}?",
+      "a": "In vehicle accidents at {airport}, the most valuable evidence is: telematics and GPS data from the vehicle involved (retained for 30-90 days on most modern ground vehicles), CCTV footage from the incident location (overwritten in 72 hours), the vehicle's incident log and maintenance records, the operator's training records, and any supervisor reports filed after the incident. An attorney's preservation demand should go to {handler} and {op} within 24 hours, requesting all of these records."
+    },
+    {
+      "q": "Can I sue {airport} if I was hit by a shuttle bus or courtesy vehicle?",
+      "a": "If the shuttle or courtesy vehicle is operated by {airport} or a contractor under contract with {op}, then yes \u2014 both the operator and {op} can be named as defendants. If the vehicle is operated by a rental car company, hotel, or private transportation service, the liability falls primarily on that company rather than {airport}. Determining the exact operator of the vehicle that struck you is the first step in identifying defendants. This information appears on the vehicle registration, the incident report, and {airport} contractor records."
+    },
+    {
+      "q": "How does {state} law apply to a vehicle accident at {airport}?",
+      "a": "{state} vehicle accident and premises liability laws both apply to ground vehicle incidents at {airport}. The {sol} statute of limitations applies, and the Notice of Claim requirement of {notice_days} days applies to claims against {op} as a {op_type} entity. {state}'s comparative fault rules may reduce your recovery if you contributed to the accident. The {nearby_courthouse} would have jurisdiction over any federal claims arising from the incident."
+    },
+    {
+      "q": "What compensation can I recover after being hit by a vehicle at {airport}?",
+      "a": "After a vehicle accident at {airport}, you can pursue compensation for: emergency and ongoing medical treatment, lost wages during recovery, future medical costs for long-term injuries, pain and suffering, and property damage. Vehicle accidents involving commercial ground equipment at {iata} can cause serious injuries \u2014 fractures, spinal damage, traumatic brain injury \u2014 that carry settlement values well above the standard {settlement_range} range for the accident type. The involvement of {handler} as a commercial contractor typically means substantial commercial insurance coverage is available."
+    },
+    {
+      "q": "Is {handler} responsible for injuries caused by their vehicles at {airport}?",
+      "a": "{handler} operates ground handling vehicles at {airport} under a contract with {op}. As the employer of the vehicle operators and the entity controlling the vehicles, {handler} is the primary liable party for injuries caused by those vehicles at {iata}. {op} can be named as a secondary defendant for negligent contractor selection and supervision. Both entities carry commercial liability insurance. In cases of serious injury, pursuing both defendants simultaneously maximizes available recovery."
+    },
+    {
+      "q": "What if a rental car or taxi hit me at {airport}?",
+      "a": "If you were struck by a rental car, taxi, rideshare, or private vehicle at {airport}, liability falls primarily on the driver and/or their employer. Rental car companies carry liability coverage. Taxi and rideshare operators carry commercial coverage. {op} may share liability if the incident occurred in a curbside area that {airport} failed to safely manage \u2014 for example, inadequate lane separation or pedestrian safety measures at {iata}. Both claims can be pursued in parallel."
+    }
+  ],
+  "baggage_liability": [
+    {
+      "q": "Who is responsible for baggage claim injuries at {airport}?",
+      "a": "Baggage claim injuries at {airport} typically involve multiple parties. {op} owns and maintains the carousel equipment. The airline whose flight produced the baggage is responsible for how bags were loaded onto the carousel. Baggage handling contractors \u2014 often {handler} \u2014 operate the conveyor system. If your injury resulted from a falling bag, a carousel malfunction, or a congested area that {op} failed to manage safely, all three can be named as defendants."
+    },
+    {
+      "q": "What is the difference between a baggage claim injury claim and an airline baggage damage claim?",
+      "a": "A baggage claim injury claim \u2014 where you were physically hurt at the carousel \u2014 is a personal injury case governed by {state} premises liability law and filed against {op} and the relevant operators at {airport}. An airline baggage damage claim \u2014 where your luggage was lost or damaged \u2014 is governed by the Montreal Convention for international flights and the airline's contract of carriage for domestic flights. These are entirely separate claims. Physical injuries are worth substantially more and carry different legal procedures."
+    },
+    {
+      "q": "How long do I have to report an injury at the baggage claim at {airport}?",
+      "a": "You should report a baggage claim injury to {airport} operations and the relevant airline immediately. Obtain an incident report number before leaving {iata}. Under {state} law, the {sol} statute of limitations applies to personal injury claims. The Notice of Claim deadline of {notice_days} days applies to claims against {op}. For any airline-related component of the injury, the Montreal Convention imposes a 2-year limit on international claims. All three deadlines may run concurrently."
+    },
+    {
+      "q": "Can I sue the airline for a baggage carousel injury at {airport}?",
+      "a": "Yes, if the airline's baggage loading practices contributed to the injury \u2014 for example, improperly secured heavy bags that fell from the carousel. Airlines operating at {airport} are responsible for the condition of the bags they place on carousels. In practice, baggage carousel injury cases often involve claims against both {op} (as the facility operator) and the airline (as the entity responsible for the bags). Naming both maximizes available insurance coverage."
+    },
+    {
+      "q": "What evidence do I need for a baggage claim injury case at {airport}?",
+      "a": "Critical evidence for a baggage claim injury at {airport} includes: CCTV footage of the carousel area at the time of the incident (72-hour deletion window \u2014 preserve immediately), the airline's baggage manifests showing what was loaded and how, the carousel maintenance logs, your incident report number from {iata} operations, medical records from the same day, and witness statements from other passengers at the carousel. Baggage handling at {iata} is also logged by {handler} \u2014 those operational records are part of the preservation demand."
+    }
+  ],
+  "security_liability": [
+    {
+      "q": "Who is liable if I was assaulted at {airport}?",
+      "a": "In an assault case at {airport}, liability typically falls on the security contractor responsible for the area where the assault occurred, and on {op} for failure to provide adequate security. If the assault occurred in a parking facility, {park_op} carries primary liability for that zone. If it occurred in the terminal, the security contractor and {op} share liability. The key legal theory is negligent security \u2014 {op} and its contractors knew or should have known about the security risk and failed to address it adequately."
+    },
+    {
+      "q": "What is negligent security and how does it apply to assaults at {airport}?",
+      "a": "Negligent security is the legal theory that a property owner or manager failed to take reasonable steps to protect visitors from foreseeable criminal harm. At {airport}, {op} and its security contractors have a duty to provide adequate lighting, staffing, surveillance, and access control. If prior assaults or criminal incidents at {iata} were documented and {op} failed to respond with adequate security measures, that pattern of prior incidents is the foundation of a negligent security claim. Prior incident records at {airport} are obtainable through public records and discovery."
+    },
+    {
+      "q": "Can I get compensation if I was attacked in the {airport} parking garage?",
+      "a": "Yes. {park_op} manages the parking facilities at {airport} and has an independent duty to maintain safe conditions for customers. If the assault in the parking garage at {iata} resulted from inadequate lighting, broken security cameras, insufficient patrols, or a known pattern of prior incidents that {park_op} failed to address, both {park_op} and {op} can be held liable. Parking garage assault cases frequently yield significant settlements because the foreseeability of harm in poorly secured parking facilities is well established in {state} courts."
+    },
+    {
+      "q": "What evidence do I need for a negligent security claim against {airport}?",
+      "a": "For a negligent security claim at {airport}, the most valuable evidence is: the prior incident history at {iata} (obtainable through public records requests), the security contractor's deployment logs and staffing records on the day of the assault, CCTV footage showing the assault and the conditions leading to it, {airport} police reports, your medical and psychological treatment records, and any prior complaints made to {op} or {park_op} about security conditions in the area where you were attacked."
+    },
+    {
+      "q": "Does TSA have any responsibility for assaults that happen past the security checkpoint at {airport}?",
+      "a": "TSA's jurisdiction covers the screening checkpoint and the sterile zone beyond it. If an assault occurred in the sterile zone of {airport}, TSA and DHS may share liability depending on whether the TSA's security failures contributed to the assault. Claims against TSA would proceed under the FTCA with mandatory administrative filing before any lawsuit. Claims against {op} for the terminal environment would be pursued under {state} premises liability law. Both claims can run concurrently."
+    }
+  ],
+  "workers_compensation": [
+    {
+      "q": "Can I sue {airport} if I was injured while working there?",
+      "a": "Airport workers injured at {airport} have a two-track legal strategy. Workers compensation covers lost wages and medical bills through your direct employer \u2014 typically {handler} or another contractor. Separately, a third-party tort claim against any non-employer party that contributed to your injury \u2014 including {op} if airport conditions caused the incident \u2014 can be pursued simultaneously. Workers compensation does not bar third-party claims, and those third-party claims can recover damages that workers comp does not cover, including pain and suffering."
+    },
+    {
+      "q": "What is the third-party claim strategy for airport worker injuries at {airport}?",
+      "a": "If you were injured working at {airport}, your direct employer's workers compensation insurer pays your medical bills and wage replacement. But if any other party contributed to the injury \u2014 a defective airport facility managed by {op}, a vehicle operated by another contractor, a hazardous condition in a zone controlled by {food_op} \u2014 you can sue that third party for the full value of your damages including pain and suffering. Third-party claims at {iata} often involve multiple contractors and {op} simultaneously, and they are not capped the way workers comp is."
+    },
+    {
+      "q": "How long do I have to file a workers compensation claim for an injury at {airport}?",
+      "a": "{state} requires workers compensation claims to be reported to your employer promptly \u2014 typically within 30 to 90 days of the injury. The deadline to file the formal claim varies by state but is generally 1 to 2 years. Your third-party personal injury claim against {op} or other contractors at {airport} follows the {sol} statute of limitations, with the Notice of Claim requirement of {notice_days} days applying to claims against {op} as a {op_type} entity."
+    },
+    {
+      "q": "What evidence should I preserve after a worker injury at {airport}?",
+      "a": "After a worker injury at {airport}, preserve: your employer's incident report, {op}'s incident report if the airport authority was notified, CCTV footage from the area (72-hour window), maintenance logs for any equipment or facility involved, training records showing whether safety protocols were in place, witness statements from co-workers and bystanders, and same-day medical records. Third-party claims against {op} require a Notice of Claim within {notice_days} days \u2014 your attorney handles this immediately upon engagement."
+    },
+    {
+      "q": "Can I sue {handler} for a workplace injury at {airport}?",
+      "a": "If {handler} is your direct employer at {airport}, workers compensation is your primary remedy against them. However, if {handler} is a third party \u2014 not your direct employer \u2014 you can pursue a full personal injury claim against {handler} for negligence. Additionally, if {op} or another contractor contributed to the conditions that caused your injury, they can be named as third-party defendants regardless of workers compensation status. At large hub airports like {iata}, the multi-contractor environment creates multiple third-party claim opportunities."
+    }
+  ],
+  "airline_liability": [
+    {
+      "q": "Does the Montreal Convention apply to my injury at {airport}?",
+      "a": "The Montreal Convention applies to injuries that occurred during international air travel \u2014 specifically during embarkation, disembarkation, or on the aircraft. If your injury at {airport} occurred while boarding or deplaning an international flight, the Montreal Convention may apply and impose a strict 2-year filing deadline from the date of the accident. Domestic flight injuries are governed by {state} law with the {sol} statute of limitations. The distinction between international and domestic is critical to determining which deadlines apply to your {iata} claim."
+    },
+    {
+      "q": "Can I sue the airline for an injury that happened at {airport}?",
+      "a": "Yes, if the injury occurred during boarding, deplaning, or at the gate at {airport}, the airline operating the flight can be named as a defendant. Airlines are responsible for the safety of their gate areas, jet bridges, boarding equipment, and passenger assistance procedures. {op} may be a co-defendant if the terminal conditions contributed to the injury. For injuries during international flights, the Montreal Convention governs and imposes liability limits on airlines \u2014 an attorney can assess whether those caps apply to your specific injury at {iata}."
+    },
+    {
+      "q": "What is the statute of limitations for airline injury claims at {airport}?",
+      "a": "For international flight injury claims arising at {airport}, the Montreal Convention imposes a hard 2-year deadline from the date of the accident \u2014 no exceptions, no extensions. For domestic flight injury claims, {state}'s {sol} statute of limitations applies. Claims against {op} for terminal conditions require the {notice_days}-day Notice of Claim. If multiple parties are involved in your {iata} injury, all applicable deadlines run concurrently from the date of the incident."
+    },
+    {
+      "q": "What compensation can I recover for an airline injury at {airport}?",
+      "a": "For international flight injuries at {airport} governed by the Montreal Convention, airlines are strictly liable up to approximately 128,821 Special Drawing Rights (roughly $175,000 USD) without proof of fault. Above that amount, you must prove the airline was negligent. For domestic injuries, full compensatory damages are available including medical bills, lost wages, and pain and suffering without a cap. Your attorney will assess which legal framework applies to your specific injury at {iata} and structure your claim to maximize recovery."
+    }
+  ],
+  "construction_liability": [
+    {
+      "q": "Who is liable for construction zone injuries at {airport}?",
+      "a": "Construction zone injuries at {airport} create a multi-party liability scenario. The general contractor managing the construction bears primary liability for site safety. {op} as the airport authority that approved and oversees the construction shares liability for allowing construction adjacent to active passenger areas without adequate separation. Subcontractors working in the zone can be named individually. All parties owe a duty of care to passengers who encounter the construction zone at {iata}."
+    },
+    {
+      "q": "Can I sue {airport} for an injury in an active construction area?",
+      "a": "{op} has a non-delegable duty to maintain safe conditions throughout {airport}, including areas where construction is actively occurring. Even if a subcontractor created the specific hazard, {op} cannot fully transfer liability by hiring a contractor. If the construction area at {iata} lacked adequate barriers, warning signs, lighting, or supervision, {op} shares direct liability for any resulting injuries. The active construction status at {airport} is documented in public records and can be used to establish awareness of the elevated hazard."
+    },
+    {
+      "q": "What makes construction zone injury cases at {airport} different from other airport injury cases?",
+      "a": "Construction zone injuries at {airport} are different in three ways. First, the defendant list is larger \u2014 the general contractor, subcontractors, {op}, and potentially the project owner are all potential defendants. Second, the evidence is different \u2014 construction safety regulations (OSHA), project safety plans, and inspection logs are the key documents. Third, the duty of care is more specific \u2014 construction zones have published safety standards that apply, making negligence easier to establish when those standards are violated at {iata}."
+    }
+  ],
+  "environmental_liability": [
+    {
+      "q": "Can I sue {airport} for PFAS or toxic chemical exposure?",
+      "a": "If you were exposed to PFAS (per- and polyfluoroalkyl substances) or other toxic chemicals at {airport} through firefighting foam used in training exercises or spill responses, {op} and the federal government may share liability. PFAS contamination claims are complex \u2014 they often involve the Environmental Protection Agency, the Department of Defense, and state environmental regulators in addition to {op}. {state} environmental law and federal environmental statutes both apply. These cases require specialist environmental tort attorneys with experience in the specific contamination profile at {iata}."
+    },
+    {
+      "q": "What is the statute of limitations for toxic exposure claims at {airport}?",
+      "a": "Toxic exposure claims at {airport} are governed by the discovery rule in {state} \u2014 the statute of limitations begins when you knew or reasonably should have known about the exposure and its connection to your health problems. This means the {sol} clock may start later than the date of exposure itself. Notice of Claim requirements still apply to claims against {op} as a {op_type} entity, though {state} courts sometimes toll these deadlines in latent disease cases. An attorney should be consulted immediately upon any PFAS diagnosis connected to {airport}."
+    }
+  ],
+  "medical_negligence": [
+    {
+      "q": "Can I sue {airport} if I had a medical emergency and did not receive adequate help?",
+      "a": "{op} has a duty to maintain adequate emergency response infrastructure at {airport} \u2014 including AED availability, trained first responders, and clear emergency protocols. If a medical emergency at {iata} was worsened by inadequate response, unavailable equipment, or negligent staff, {op} may be liable. Medical malpractice standards apply if the negligence was clinical in nature. For high-altitude airports like those in Denver or Albuquerque, the elevated cardiac risk creates a heightened duty to have cardiac emergency equipment available at every terminal gate."
+    },
+    {
+      "q": "What is the standard of care for medical emergencies at {airport}?",
+      "a": "The standard of care for medical emergencies at {airport} requires: AED devices within a 3-minute response radius throughout the terminal, trained first responders available during all operating hours, clear communication protocols between {op} staff and emergency medical services, and documented emergency response plans. If any of these standards were not met during your medical emergency at {iata}, {op} may be liable for the resulting harm. These standards are published by the Federal Aviation Administration and the American Heart Association."
+    }
+  ]
+}

@@ -40,35 +40,13 @@
     ]
   },
   "mainEntity": {
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Who is liable for a {{accident_name_lower}} at {{airport_name}}?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "{{faq_liable_answer}}"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long do I have to file a claim after a {{accident_name_lower}} at {{airport_name}}?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "{{faq_deadline_answer}}"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What evidence should I preserve after a {{accident_name_lower}} at {{airport_name}}?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "{{faq_evidence_answer}}"
-        }
-      }
-    ]
+    "@type": "WebSite",
+    "name": "{{site_name}}"
   }
 }
+</script>
+<script type="application/ld+json">
+{{faq_jsonld}}
 </script>
 <style>
 /* ── Leaf page specific styles ──────────────────────────────── */
@@ -616,6 +594,80 @@
 @media (max-width: 680px) {
   .seo-links-2col { grid-template-columns: 1fr; }
 }
+
+/* ── FAQ Accordion ──────────────────────────────────────────── */
+.faq-section { padding: var(--space-16) 0; background: var(--color-cream-100); }
+.faq-section .container { max-width: 860px; }
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+}
+
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--alpha-navy-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.faq-item__btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-item__btn:hover { background: var(--color-cream-100); }
+.faq-item__btn[aria-expanded="true"] { background: var(--color-cream-200); }
+
+.faq-item__q {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-navy-800);
+  line-height: var(--leading-snug);
+  flex: 1;
+}
+
+.faq-item__icon {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-light);
+  color: var(--color-gold-400);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+  line-height: 1;
+}
+
+.faq-item__btn[aria-expanded="true"] .faq-item__icon {
+  transform: rotate(45deg);
+}
+
+.faq-item__body {
+  padding: 0 var(--space-5) var(--space-5);
+  border-top: 1px solid var(--alpha-navy-border);
+}
+
+.faq-item__body[hidden] { display: none; }
+
+.faq-item__a {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  padding-top: var(--space-4);
+  margin: 0;
+}
+
+@media (max-width: 680px) {
+  .faq-item__q { font-size: var(--text-sm); }
+}
 </style>
 </head>
 <body>
@@ -902,6 +954,22 @@
     </div>
   </section>
 
+
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section__label">Common questions answered</div>
+      <h2 class="section__title" id="faq-heading">Frequently Asked Questions: {{accident_name}} at {{airport_name}}</h2>
+      <p class="section__sub">These answers are specific to {{airport_name}}, {{state}} law, and the operators who run {{iata_code}}. General airport FAQ answers do not apply here.</p>
+      <div class="faq-list" role="list">
+        {{faq_section_html}}
+      </div>
+      <p style="margin-top:var(--space-6);font-size:var(--text-sm);color:var(--color-text-muted);">
+        Have a question not answered here? <a href="#lead-form" style="color:var(--color-gold-400);font-weight:600;">Submit your case for a free attorney review →</a>
+      </p>
+    </div>
+  </section>
 
   <!-- RELATED ACCIDENT TYPES + NEARBY SAME ACCIDENT -->
   <section class="section section--cream2 seo-links-section" aria-labelledby="related-heading">
