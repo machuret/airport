@@ -201,3 +201,67 @@
     });
   });
 })();
+
+// ── User Engagement Signal ─────────────────────────────────────────────────
+(function() {
+  var btns = document.querySelectorAll('.engagement-btn');
+  if (!btns.length) return;
+
+  var pageKey = 'eng_' + (btns[0].dataset.page || window.location.pathname).replace(/[^a-z0-9]/gi, '_');
+
+  // Don't show if already voted this session
+  try {
+    if (sessionStorage.getItem(pageKey)) {
+      document.getElementById('engagement-btns').style.display = 'none';
+      document.getElementById('engagement-thanks').classList.add('engagement-bar__thanks--visible');
+    }
+  } catch(e) {}
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var value = btn.dataset.value;
+      var page  = btn.dataset.page;
+
+      // Visual feedback
+      btns.forEach(function(b) {
+        b.classList.remove('engagement-btn--selected-yes', 'engagement-btn--selected-no');
+      });
+      btn.classList.add('engagement-btn--selected-' + value);
+
+      // Show thanks after brief delay
+      setTimeout(function() {
+        var btnsEl  = document.getElementById('engagement-btns');
+        var thanksEl = document.getElementById('engagement-thanks');
+        if (btnsEl) btnsEl.style.display = 'none';
+        if (thanksEl) thanksEl.classList.add('engagement-bar__thanks--visible');
+      }, 600);
+
+      // Store in session so we don't ask again
+      try { sessionStorage.setItem(pageKey, value); } catch(e) {}
+
+      // Send to GA if available
+      if (window.gtag) {
+        gtag('event', 'page_feedback', {
+          event_category: 'engagement',
+          event_label: page,
+          value: value === 'yes' ? 1 : 0
+        });
+      }
+
+      // Send to webhook if configured
+      var webhook = document.querySelector('meta[name="feedback-webhook"]');
+      if (webhook && webhook.content) {
+        fetch(webhook.content, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            page: page,
+            value: value,
+            ts: new Date().toISOString(),
+            ua: navigator.userAgent.substring(0, 100)
+          })
+        }).catch(function() {});
+      }
+    });
+  });
+})();

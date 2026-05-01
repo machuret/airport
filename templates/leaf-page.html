@@ -413,6 +413,144 @@
   color: #fff;
   font-weight: var(--weight-bold);
 }
+
+/* ── User Engagement Signal ─────────────────────────────── */
+.engagement-bar {
+  background: var(--color-cream-200);
+  border-top: 1px solid var(--alpha-navy-border);
+  border-bottom: 1px solid var(--alpha-navy-border);
+  padding: var(--space-5) 0;
+  margin: var(--space-8) 0 0;
+}
+
+.engagement-bar__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.engagement-bar__question {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-navy-800);
+}
+
+.engagement-bar__buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.engagement-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--alpha-navy-border);
+  border-radius: var(--radius-pill);
+  background: #fff;
+  cursor: pointer;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-navy-800);
+  transition: all 0.15s;
+  font-family: var(--font-body);
+}
+
+.engagement-btn:hover {
+  border-color: var(--color-gold-400);
+  background: var(--color-cream-100);
+}
+
+.engagement-btn--yes:hover  { border-color: var(--color-success); color: var(--color-success); }
+.engagement-btn--no:hover   { border-color: var(--color-danger); color: var(--color-danger); }
+
+.engagement-btn--selected-yes { border-color: var(--color-success); background: #f0fdf4; color: var(--color-success); font-weight: var(--weight-bold); }
+.engagement-btn--selected-no  { border-color: var(--color-danger); background: #fef2f2; color: var(--color-danger); font-weight: var(--weight-bold); }
+
+.engagement-bar__thanks {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  display: none;
+}
+
+.engagement-bar__thanks--visible { display: block; }
+
+@media (max-width: 600px) {
+  .engagement-bar__inner { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+}
+
+/* ── Attorney Insight ───────────────────────────────────── */
+.attorney-insight {
+  background: linear-gradient(135deg, var(--color-navy-800) 0%, var(--color-navy-700) 100%);
+  border: 1px solid var(--alpha-gold-border);
+  border-left: 4px solid var(--color-gold-400);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  padding: var(--space-6) var(--space-7);
+  margin: var(--space-8) 0;
+}
+
+.attorney-insight__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold-300);
+  margin-bottom: var(--space-4);
+}
+
+.attorney-insight__quote {
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  border: none;
+}
+
+.attorney-insight__text {
+  font-size: var(--text-base);
+  color: var(--alpha-white-75);
+  line-height: var(--leading-relaxed);
+  font-style: italic;
+}
+
+.attorney-insight__attribution {
+  font-size: var(--text-xs);
+  color: var(--alpha-white-40);
+  margin-top: var(--space-3);
+}
+
+/* ── Seasonal Context ───────────────────────────────────── */
+.seasonal-context {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--alpha-white-6);
+  border: 1px solid var(--alpha-white-10);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+}
+
+.seasonal-context__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.seasonal-context__note {
+  font-size: var(--text-sm);
+  color: var(--alpha-white-65);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{page_title}}</title>
@@ -1367,6 +1505,7 @@
           <div class="lp-airport-context">
             <div class="lp-airport-context__eyebrow">{{context_section_label}}</div>
             <h2 class="lp-airport-context__title" id="context-heading">{{context_section_title}}</h2>
+            {{seasonal_html}}
             <p class="lp-airport-context__body">{{airport_accident_context_para}}</p>
             <div class="lp-hazard-list" role="list">
               {{hazard_items_html}}
@@ -1513,6 +1652,31 @@
 
 
 
+
+  <!-- USER ENGAGEMENT SIGNAL -->
+  <div class="engagement-bar" role="complementary" aria-label="Page feedback">
+    <div class="engagement-bar__inner">
+      <span class="engagement-bar__question">Was the information on this page helpful for your {{iata_code}} {{accident_name}} case?</span>
+      <div class="engagement-bar__buttons" id="engagement-btns">
+        <button class="engagement-btn engagement-btn--yes" 
+                data-value="yes" 
+                data-page="{{airport_slug}}/{{accident_slug}}"
+                aria-label="Yes, this was helpful">
+          👍 Yes, helpful
+        </button>
+        <button class="engagement-btn engagement-btn--no" 
+                data-value="no"
+                data-page="{{airport_slug}}/{{accident_slug}}"
+                aria-label="No, not helpful">
+          👎 Not helpful
+        </button>
+      </div>
+      <span class="engagement-bar__thanks" id="engagement-thanks" aria-live="polite">
+        Thank you — your feedback helps us improve this page.
+      </span>
+    </div>
+  </div>
+
   <!-- FAQ SECTION -->
   <section class="faq-section" id="faq" aria-labelledby="faq-heading">
     <div class="container">
@@ -1588,6 +1752,15 @@
       <div class="seo-links-grid" role="list">
         {{neighboring_states_html}}
       </div>
+    </div>
+  </section>
+  {{/if}}
+
+  <!-- ATTORNEY INSIGHT -->
+  {{#if attorney_insight_html}}
+  <section class="section section--navy" aria-label="Attorney perspective">
+    <div class="container" style="max-width:860px;">
+      {{attorney_insight_html}}
     </div>
   </section>
   {{/if}}

@@ -5700,11 +5700,12 @@
       "Rental car area"
     ],
     "airport_specific_hazards": [
-      "Palm Springs's coastal climate with 35+ rainy days annually creates persistent wet conditions at terminal entrances and outdoor areas",
-      "Palm Springs International Airport operates with reduced staffing during early morning and late-night hours \u2014 the windows when hazardous conditions are slowest to be identified and corrected."
+      "Palm Springs's extreme heat and dry conditions create thermal expansion in floor surfaces at Palm Springs International Airport \u2014 a documented cause of uneven surfaces and material degradation that contributes to trip and fall hazards throughout the terminal.",
+      "Palm Springs International Airport operates in one of the hottest climates in the US. Passengers dehydrated from heat and jet lag are at elevated risk of dizziness and falls in the terminal, particularly during summer months when exterior temperatures exceed 100\u00b0F.",
+      "Palm Springs International Airport \u2014 like all desert-climate airports \u2014 faces extreme temperature differentials between the air-conditioned terminal and outdoor boarding zones, creating condensation on floor surfaces near entry points and jet bridge connections during humid periods."
     ],
     "local_context_note": "Palm Springs International Airport is a small hub serving Palm Springs \u2014 local weather conditions affect outdoor walking surfaces seasonally",
-    "climate_zone": "coastal_rain",
+    "climate_zone": "desert_dry",
     "avg_annual_snow_inches": 0.0,
     "avg_annual_rain_days": 35,
     "elevation_ft": 500,
@@ -5763,11 +5764,12 @@
       "Rental car area"
     ],
     "airport_specific_hazards": [
-      "Fresno's coastal climate with 35+ rainy days annually creates persistent wet conditions at terminal entrances and outdoor areas",
-      "Fresno Yosemite International Airport operates with reduced staffing during early morning and late-night hours \u2014 the windows when hazardous conditions are slowest to be identified and corrected."
+      "Fresno's extreme heat and dry conditions create thermal expansion in floor surfaces at Fresno Yosemite International Airport \u2014 a documented cause of uneven surfaces and material degradation that contributes to trip and fall hazards throughout the terminal.",
+      "Fresno Yosemite International Airport operates in one of the hottest climates in the US. Passengers dehydrated from heat and jet lag are at elevated risk of dizziness and falls in the terminal, particularly during summer months when exterior temperatures exceed 100\u00b0F.",
+      "Fresno Yosemite International Airport \u2014 like all desert-climate airports \u2014 faces extreme temperature differentials between the air-conditioned terminal and outdoor boarding zones, creating condensation on floor surfaces near entry points and jet bridge connections during humid periods."
     ],
     "local_context_note": "Fresno Yosemite International Airport is a small hub serving Fresno \u2014 local weather conditions affect outdoor walking surfaces seasonally",
-    "climate_zone": "coastal_rain",
+    "climate_zone": "desert_dry",
     "avg_annual_snow_inches": 0.0,
     "avg_annual_rain_days": 35,
     "elevation_ft": 500,
@@ -5952,11 +5954,12 @@
       "Rental car area"
     ],
     "airport_specific_hazards": [
-      "Lubbock's humid climate with 90+ rainy days creates regular wet floor conditions and seasonal storm-related flooding at curbside areas",
-      "Lubbock Preston Smith International Airport operates with reduced staffing during early morning and late-night hours \u2014 the windows when hazardous conditions are slowest to be identified and corrected."
+      "Lubbock's extreme heat and dry conditions create thermal expansion in floor surfaces at Lubbock Preston Smith International Airport \u2014 a documented cause of uneven surfaces and material degradation that contributes to trip and fall hazards throughout the terminal.",
+      "Lubbock Preston Smith International Airport operates in one of the hottest climates in the US. Passengers dehydrated from heat and jet lag are at elevated risk of dizziness and falls in the terminal, particularly during summer months when exterior temperatures exceed 100\u00b0F.",
+      "Lubbock Preston Smith International Airport \u2014 like all desert-climate airports \u2014 faces extreme temperature differentials between the air-conditioned terminal and outdoor boarding zones, creating condensation on floor surfaces near entry points and jet bridge connections during humid periods."
     ],
     "local_context_note": "Lubbock Preston Smith International Airport is a small hub serving Lubbock \u2014 local weather conditions affect outdoor walking surfaces seasonally",
-    "climate_zone": "southern_humid",
+    "climate_zone": "desert_dry",
     "avg_annual_snow_inches": 0.5,
     "avg_annual_rain_days": 90,
     "elevation_ft": 500,

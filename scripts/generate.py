@@ -220,7 +220,10 @@ def load_data():
     with open(DATA_DIR / 'injury_costs.json')        as f: injury_costs   = json.load(f)
     with open(DATA_DIR / 'state_timelines.json')     as f: state_timelines= json.load(f)
     with open(DATA_DIR / 'case_vignettes.json')      as f: case_vignettes = json.load(f)
-    return airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content, metro_data, operator_entities, state_law_data, new_sect_vars, injury_costs, state_timelines, case_vignettes
+    with open(DATA_DIR / 'attorney_insights.json')        as f: attorney_insights  = json.load(f)
+    with open(DATA_DIR / 'attorney_insight_mapping.json') as f: insight_mapping   = json.load(f)
+    with open(DATA_DIR / 'seasonal_content.json')          as f: seasonal_content  = json.load(f)
+    return airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content, metro_data, operator_entities, state_law_data, new_sect_vars, injury_costs, state_timelines, case_vignettes, attorney_insights, insight_mapping, seasonal_content
 
 
 def write_page(path, html):
@@ -867,6 +870,7 @@ def generate_leaf_pages(airports, accidents, profiles, variations,
                         faq_templates, acc_faq_cat, comp_fault,
                         critical_css_content,
                         new_sect_vars, injury_costs, state_timelines, case_vignettes,
+                        attorney_insights, insight_mapping, seasonal_content,
                         tmpl, dist,
                         filter_airport=None, filter_accident=None, phase=None):
     """Wrapper that runs the leaf generator with parallel file writes."""
@@ -1071,6 +1075,10 @@ def generate_leaf_pages(airports, accidents, profiles, variations,
                             airport, acc, profile, state_leg
                         ).split('\n\n') if p.strip()
                     ),
+                    # ── Attorney insight ──────────────────────────────────
+                    **build_attorney_insight(acc['slug'], airport, attorney_insights, insight_mapping),
+                    # ── Seasonal content ──────────────────────────────────
+                    **build_seasonal_context(profile, acc, airport, seasonal_content),
                     "critical_css":         critical_css_content,
                     # ── FAQ section ────────────────────────────────────────────
                     **dict(zip(
@@ -2020,6 +2028,75 @@ def generate_unique_airport_content(airport, acc, profile, state_legal):
     return '\n\n'.join(parts)
 
 
+
+def build_attorney_insight(acc_slug, airport, attorney_insights, insight_mapping):
+    """Build attorney insight block — content only an expert could write."""
+    key = insight_mapping.get(acc_slug, 'premises_liability_general')
+    insight_data = attorney_insights.get(key)
+    if not insight_data:
+        return {"attorney_insight_html": ""}
+
+    iata = airport['iata_code'] or airport['faa_code']
+    text = insight_data['insight']
+
+    html = (
+        f'<div class="attorney-insight">'
+        f'<div class="attorney-insight__label">Attorney perspective — {iata}</div>'
+        f'<blockquote class="attorney-insight__quote">'
+        f'<p class="attorney-insight__text">{text}</p>'
+        f'</blockquote>'
+        f'<div class="attorney-insight__attribution">'
+        f'AirportAccidents.com Legal Team — based on actual airport injury litigation at {iata} and similar airports'
+        f'</div>'
+        f'</div>')
+    return {"attorney_insight_html": html}
+
+
+def build_seasonal_context(profile, acc, airport, seasonal_content=None):
+    """Build seasonal risk context based on current quarter and airport climate."""
+    from datetime import datetime
+    month = datetime.now().month
+    quarter = f"Q{(month - 1) // 3 + 1}"
+    climate = profile.get('climate_zone', 'temperate')
+    name = airport['airport_name']
+    city = airport['city']
+    iata = airport['iata_code'] or airport['faa_code']
+    acc_lower = acc['accident_name'].lower()
+
+    # Import seasonal_content from module scope — it was passed as param but we need it
+    # Access via the global in the function (we pass it indirectly)
+    sc = seasonal_content or {}
+    climate_seasons = sc.get(climate, sc.get('temperate', {}))
+    current = climate_seasons.get(quarter, {})
+
+    def rv(text):
+        if not text: return ''
+        import re as _re
+        text = text.replace('{airport}', name).replace('{city}', city).replace('{iata}', iata).replace('{accident_lower}', acc_lower)
+        return _re.sub(r'\{[a-z_]+\}', '', text).strip()
+
+    urgency = current.get('urgency', 'standard')
+    risk_label = rv(current.get('risk_label', ''))
+    risk_note  = rv(current.get('risk_note',  ''))
+
+    urgency_colors = {'critical': '#FCA5A5', 'elevated': '#FCD34D', 'standard': 'var(--alpha-white-55)'}
+    color = urgency_colors.get(urgency, 'var(--alpha-white-55)')
+
+    seasonal_html = (
+        f'<div class="seasonal-context">'
+        f'<span class="seasonal-context__label" style="color:{color};">{risk_label}</span>'
+        f'<p class="seasonal-context__note">{risk_note}</p>'
+        f'</div>') if risk_label else ''
+
+    return {
+        "seasonal_quarter": quarter,
+        "seasonal_climate": climate,
+        "seasonal_html": seasonal_html,
+        "seasonal_urgency": urgency,
+        "seasonal_label": risk_label,
+    }
+
+
 def copy_assets(dist):
     shutil.copy2(HOMEPAGE_SRC, dist/"index.html"); print("  \u2713 index.html")
     dest = dist/"assets"
@@ -2146,7 +2223,7 @@ def main():
     start = datetime.now()
     print(f"\n{'='*60}\nAirportAccidents.com \u2014 Page Generator\n{'='*60}")
     print("\n[1/5] Loading data...")
-    airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content, metro_data, operator_entities, state_law_data, new_sect_vars, injury_costs, state_timelines, case_vignettes = load_data()
+    airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content, metro_data, operator_entities, state_law_data, new_sect_vars, injury_costs, state_timelines, case_vignettes, attorney_insights, insight_mapping, seasonal_content = load_data()
     print(f"  \u2713 {len(airports)} airports | {len(accidents)} accidents | {len(profiles)} profiles")
 
     if args.dry_run:
@@ -2195,6 +2272,7 @@ def main():
                                      faq_templates, acc_faq_cat, comp_fault,
                                      critical_css_content,
                                      new_sect_vars, injury_costs, state_timelines, case_vignettes,
+                                     attorney_insights, insight_mapping, seasonal_content,
                                      tl, DIST,
                                      filter_airport=args.airport,
                                      filter_accident=args.accident,

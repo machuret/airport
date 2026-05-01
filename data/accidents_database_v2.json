@@ -91,13 +91,14 @@
       "Commercial property insurance"
     ],
     "common_injuries": [
-      "Hip fractures",
-      "Wrist fractures (from catching fall)",
-      "Knee injuries",
-      "Spinal cord injuries",
-      "Traumatic brain injury",
-      "Soft tissue tears",
-      "Shoulder dislocations"
+      "Hip fractures \u2014 especially in elderly passengers",
+      "Wrist fractures from catching the fall",
+      "Knee injuries including ACL and meniscus tears",
+      "Spinal injuries \u2014 herniated discs, compression fractures",
+      "Traumatic brain injury from head impact",
+      "Shoulder injuries \u2014 rotator cuff tears",
+      "Ankle fractures and ligament damage",
+      "Soft tissue injuries \u2014 contusions and lacerations"
     ],
     "injury_severity": "moderate_to_severe",
     "typical_recovery_time": "6 weeks to 18 months depending on injury",
@@ -108,26 +109,34 @@
       "Physical therapy requirements"
     ],
     "key_evidence": [
-      "Surveillance footage (overwritten quickly \u2014 preserve immediately)",
-      "Incident report number",
-      "Wet floor sign presence/absence",
-      "Cleaning log records",
-      "Shoe condition/tread photos",
-      "Medical records",
-      "Witness contact information"
+      "Surveillance footage \u2014 overwritten in 72 hours, preserve immediately",
+      "Cleaning and inspection logs for the zone where the fall occurred",
+      "Incident report filed at the airport \u2014 get the report number",
+      "Prior incident reports from the same location",
+      "Photographs of the hazard, scene, and footwear taken at the time",
+      "Medical records from same-day treatment",
+      "Witness statements from nearby passengers",
+      "Weather and foot traffic logs if weather-related fall"
     ],
     "evidence_preservation_urgency": "critical",
     "evidence_notes": "CCTV footage is typically overwritten within 24-72 hours. Send a preservation demand letter to airport operations immediately.",
     "liable_party_defenses": [
-      "Comparative fault (you were distracted)",
-      "Warning signs were present",
-      "Hazard was open and obvious",
-      "Inspection was recent and documented"
+      "Comparative fault \u2014 you were distracted by your phone",
+      "Warning signs were visible and adequate",
+      "The hazard was open and obvious",
+      "You were wearing inappropriate footwear",
+      "We had no notice of the hazard \u2014 it was transient",
+      "The cleaning schedule was followed correctly",
+      "You failed to watch where you were walking",
+      "The fall was caused by a pre-existing medical condition"
     ],
     "plaintiff_counter_strategies": [
-      "Show inspection logs were inadequate",
-      "Prove warning signs were insufficient or missing",
-      "Demonstrate recurring hazard history at that location"
+      "Prove inspection logs show the area was not checked in hours before the fall",
+      "Show CCTV footage demonstrates the hazard existed long before the incident",
+      "Demonstrate warning signs were absent, inadequate, or placed after the fall",
+      "Show prior incident reports from the same zone establish constructive notice",
+      "Use expert testimony that the footwear was reasonable for airport travel",
+      "Prove the hazard was not open and obvious given the lighting and foot traffic"
     ],
     "legal_standard": "Premises liability / negligence",
     "statute_of_limitations_note": "1-3 years depending on state. Government-operated airports may require Notice of Claim within 60-180 days.",
@@ -137,19 +146,23 @@
     "ftca_applies": false,
     "ada_relevant": false,
     "compensable_damages": [
-      "Medical bills",
-      "Lost wages",
-      "Future medical care",
-      "Pain and suffering",
-      "Loss of enjoyment of life",
-      "Travel rebooking costs"
+      "Emergency room and hospitalization costs",
+      "Surgical costs and anesthesia",
+      "Physical therapy and rehabilitation",
+      "Lost wages during recovery",
+      "Future lost earning capacity if disability results",
+      "Pain and suffering \u2014 physical and emotional",
+      "Home modification costs if mobility is affected",
+      "Future medical treatment for long-term complications"
     ],
     "average_settlement_range": "$50,000 - $500,000+ depending on severity",
     "factors_increasing_value": [
-      "Prior slip incidents at same location",
-      "Elderly victim",
-      "Permanent injury",
-      "Clear negligence by operator"
+      "Prior slip incidents documented at the same location",
+      "Elderly victim with more severe injury outcome",
+      "CCTV showing the hazard existed before arrival of victim",
+      "No wet floor sign present despite known wet condition",
+      "Multiple defendants \u2014 operator and concessionaire both liable",
+      "Permanent disability or ongoing medical treatment required"
     ],
     "priority": 1,
     "airport_size_relevance": "all_sizes",
@@ -291,12 +304,14 @@
       "Umbrella policies"
     ],
     "common_injuries": [
-      "Broken legs and ankles",
-      "Crush injuries to feet",
-      "Fractured pelvis",
-      "Internal bleeding",
-      "Spinal injuries",
-      "Traumatic brain injury"
+      "Leg and ankle fractures from direct vehicle impact",
+      "Pelvic fractures \u2014 high severity, long recovery",
+      "Crush injuries to feet and lower extremities",
+      "Spinal injuries from the force of impact",
+      "Traumatic brain injury if victim fell after impact",
+      "Internal injuries requiring surgery",
+      "Soft tissue damage \u2014 bruising, lacerations, torn muscles",
+      "Shoulder and arm fractures from defensive fall"
     ],
     "injury_severity": "moderate_to_severe",
     "typical_recovery_time": "3 months to 2+ years",
@@ -307,25 +322,34 @@
       "PTSD"
     ],
     "key_evidence": [
-      "Vehicle GPS/telematics logs",
-      "Surveillance footage",
-      "Skid marks or debris photos",
-      "Driver employment and training records",
-      "Vehicle maintenance logs",
-      "Witness statements",
-      "Incident supervisor report"
+      "Vehicle telematics and GPS data \u2014 30-90 day retention window",
+      "Dashcam footage from the vehicle if equipped",
+      "CCTV from the incident area \u2014 72-hour deletion window",
+      "Vehicle maintenance records and inspection logs",
+      "Operator training and certification records",
+      "Incident report from ground handler and airport authority",
+      "Witness statements from other passengers and airport staff",
+      "Medical records from same-day treatment"
     ],
     "evidence_preservation_urgency": "critical",
     "evidence_notes": "GPS telematics data from ground vehicles is often overwritten within days. Demand preservation of all vehicle data immediately.",
     "liable_party_defenses": [
-      "You stepped into a restricted area",
-      "Adequate warnings were posted",
-      "Weather conditions reduced visibility"
+      "The passenger stepped into a restricted vehicle area",
+      "The vehicle was operating within posted speed limits",
+      "The driver had right of way in the vehicle corridor",
+      "Contributory negligence \u2014 victim was not paying attention",
+      "The vehicle had all required safety signals active",
+      "Incident occurred in an area clearly marked for vehicle use",
+      "The ground handler followed all standard operating procedures",
+      "Weather conditions were a contributing factor beyond our control"
     ],
     "plaintiff_counter_strategies": [
-      "Prove operator was unlicensed or untrained",
-      "Show history of similar incidents",
-      "Demonstrate inadequate supervision"
+      "Vehicle telematics data shows speed or path was unsafe",
+      "CCTV demonstrates inadequate pedestrian separation in the area",
+      "Operator training records reveal insufficient safety certification",
+      "Prior incidents in the same zone establish pattern of negligence",
+      "Show vehicle was not equipped with required warning signals",
+      "Prove the area was de facto pedestrian space despite vehicle markings"
     ],
     "legal_standard": "Negligence / respondeat superior",
     "statute_of_limitations_note": "2-3 years in most states. Government airport authority claims may require 60-180 day notice.",
@@ -335,19 +359,23 @@
     "ftca_applies": false,
     "ada_relevant": false,
     "compensable_damages": [
-      "Medical bills",
-      "Lost wages",
-      "Future surgeries",
+      "Emergency and trauma care costs",
+      "Surgical intervention and recovery",
+      "Extended rehabilitation and physical therapy",
+      "Lost wages \u2014 including long-term if disability results",
       "Pain and suffering",
-      "Disability accommodations",
-      "Vehicle damage if applicable"
+      "Vehicle damage if personal property was involved",
+      "Home care costs during recovery",
+      "Future medical costs for permanent injuries"
     ],
     "average_settlement_range": "$75,000 - $750,000+",
     "factors_increasing_value": [
-      "Operator under influence",
-      "No training records",
-      "Prior similar accidents",
-      "Severe permanent disability"
+      "Telematics data showing excessive speed",
+      "Prior incidents involving the same operator or vehicle type",
+      "Pedestrian area that was inadequately separated from vehicle corridor",
+      "Multiple defendants \u2014 ground handler and airport authority",
+      "Serious or permanent injury to lower extremities",
+      "CCTV showing no warning given before vehicle entered area"
     ],
     "priority": 2,
     "airport_size_relevance": "large_and_medium_hubs",
@@ -492,19 +520,26 @@
       "Bridge inspection certificates",
       "Surveillance footage of boarding process",
       "Incident report filed with airline",
-      "FAA safety reporting records"
+      "FAA safety reporting records",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "critical",
     "evidence_notes": "Airlines have strong legal teams and will investigate quickly. Preserve your own records and file an incident report immediately.",
     "liable_party_defenses": [
       "Passenger was not paying attention",
       "Bridge was within acceptable tolerances",
-      "Adequate lighting and markings were present"
+      "Adequate lighting and markings were present",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "Obtain maintenance history showing deferred repairs",
       "Show prior similar incidents at same gate",
-      "Expert testimony on industry standards for bridge gaps"
+      "Expert testimony on industry standards for bridge gaps",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Premises liability / negligence / product liability",
     "statute_of_limitations_note": "2-3 years for premises claims. Airline-related claims may be subject to federal aviation law.",
@@ -652,11 +687,14 @@
       "Aviation liability"
     ],
     "common_injuries": [
-      "Foot and ankle fractures from falling bags",
-      "Back injuries from lifting heavy luggage",
-      "Head injuries from ejected bags",
-      "Wrist injuries",
-      "Knee injuries from crowd bumping"
+      "Back injuries from heavy bag impact or awkward lifting",
+      "Shoulder injuries \u2014 rotator cuff damage from falling bags",
+      "Head injuries if struck by falling luggage",
+      "Wrist and arm fractures from defensive reactions",
+      "Knee injuries from crowd pressure and falls",
+      "Foot crush injuries from bags falling from carousels",
+      "Lacerations from broken baggage or metal components",
+      "Neck injuries from impact trauma"
     ],
     "injury_severity": "mild_to_moderate",
     "typical_recovery_time": "2 weeks to 6 months",
@@ -666,23 +704,34 @@
       "Nerve damage in foot"
     ],
     "key_evidence": [
-      "Carousel maintenance logs",
-      "Surveillance footage",
-      "Baggage weight records",
-      "Witness statements",
-      "Incident report filed at baggage services desk"
+      "CCTV of the carousel area \u2014 72-hour deletion window",
+      "Baggage loading manifests and weight records",
+      "Carousel maintenance and inspection logs",
+      "Incident report from airport operations and the airline",
+      "Photographs of the scene and any visible hazards",
+      "Medical records from same-day treatment",
+      "Witness statements from other passengers at the carousel",
+      "Airline baggage handling procedures documentation"
     ],
     "evidence_preservation_urgency": "high",
     "evidence_notes": "Report immediately to the baggage services desk to create a paper trail. Request incident report number before leaving.",
     "liable_party_defenses": [
-      "Bag weight was within limits",
-      "Carousel was operating normally",
-      "No prior incidents at that carousel"
+      "The bag weight was within airline-permitted limits",
+      "The carousel was operating within normal parameters",
+      "The passenger reached for a bag in an unsafe manner",
+      "Adequate space was available around the carousel",
+      "The overcrowding was caused by passenger behavior not airport management",
+      "The injury resulted from the passenger's own negligence",
+      "Warning signs about carousel hazards were posted",
+      "The ground handler followed all baggage loading protocols"
     ],
     "plaintiff_counter_strategies": [
-      "Show overloading evidence from weight records",
-      "Demonstrate inadequate staffing at carousels",
-      "Prove maintenance was deferred"
+      "Demonstrate carousel area was inadequately managed during peak volume",
+      "Show prior baggage claim incidents at the same carousel",
+      "Prove the bag was loaded improperly creating a foreseeable hazard",
+      "CCTV shows overcrowding that airport operations failed to address",
+      "Expert testimony on proper baggage carousel safety standards",
+      "Show the airline failed to apply required weight distribution protocols"
     ],
     "legal_standard": "Premises liability / negligence",
     "statute_of_limitations_note": "2-3 years in most states. Airline-related baggage claims may have shorter federal deadlines.",
@@ -692,16 +741,23 @@
     "ftca_applies": false,
     "ada_relevant": false,
     "compensable_damages": [
-      "Medical bills",
-      "Lost wages",
+      "Emergency medical treatment costs",
+      "Specialist consultations and imaging",
+      "Physical therapy and rehabilitation",
+      "Lost wages during recovery",
       "Pain and suffering",
-      "Future care"
+      "Future medical costs for chronic injuries",
+      "Personal property damage if additional luggage was damaged",
+      "Future lost earning capacity"
     ],
     "average_settlement_range": "$25,000 - $200,000",
     "factors_increasing_value": [
-      "Elderly victim",
-      "Permanent foot/ankle injury",
-      "Prior carousel complaints ignored"
+      "CCTV showing the carousel was overcrowded before the incident",
+      "Prior baggage claim incidents at the same carousel on record",
+      "Improperly loaded bags with documented weight violations",
+      "Serious injury requiring surgery",
+      "Multiple defendants \u2014 airline and airport operator both liable",
+      "Evidence of inadequate baggage area staffing during peak hours"
     ],
     "priority": 4,
     "airport_size_relevance": "all_sizes",
@@ -827,11 +883,14 @@
       "Premises liability for airport authority portions"
     ],
     "common_injuries": [
-      "Hip and shoulder fractures from falls",
-      "Back injuries from bin lifting",
-      "Wrist injuries",
-      "Blunt trauma",
-      "Anxiety attacks and psychological injury"
+      "Shoulder injuries from aggressive arm manipulation",
+      "Wrist and hand injuries from forced screening positions",
+      "Back injuries from physical pressure applied during screening",
+      "Head injuries from falls caused by TSA actions",
+      "Knee injuries from forced positioning or falls",
+      "Bruising and soft tissue injuries from excessive pat-downs",
+      "Psychological trauma \u2014 PTSD from aggressive screening",
+      "Hip injuries in elderly passengers from physical instability during screening"
     ],
     "injury_severity": "mild_to_moderate",
     "typical_recovery_time": "3 weeks to 4 months",
@@ -841,23 +900,34 @@
       "PTSD from rough handling"
     ],
     "key_evidence": [
-      "TSA incident report",
-      "Boarding pass timestamp",
-      "Surveillance footage (multiple cameras present)",
-      "Witness statements from nearby passengers",
-      "Medical treatment records same day"
+      "TSA incident report \u2014 request immediately after the incident",
+      "CCTV from the checkpoint area \u2014 overwritten within 72 hours",
+      "TSA agent shift logs and deployment records",
+      "TSA Standard Operating Procedures violated during the incident",
+      "Prior DHS complaints filed against the same TSA officer",
+      "Medical records from same-day treatment establishing causation",
+      "Witness statements from other passengers in the screening line",
+      "Your SF-95 administrative claim \u2014 must be filed within 2 years"
     ],
     "evidence_preservation_urgency": "critical",
     "evidence_notes": "FTCA claims require filing an administrative claim with TSA/DHS within 2 years BEFORE you can file a lawsuit. Missing this step bars your claim permanently.",
     "liable_party_defenses": [
-      "Passenger moved too quickly",
-      "Standard screening procedures were followed",
-      "Signage was adequate"
+      "TSA agent followed standard screening procedures",
+      "The passenger failed to comply with screening instructions",
+      "The force used was reasonable under the circumstances",
+      "Injury was caused by the passenger's own movement",
+      "TSA has discretionary function immunity for screening decisions",
+      "The passenger was warned before the screening action was taken",
+      "Pre-existing condition caused or contributed to the injury",
+      "TSA acted within its statutory authority and training guidelines"
     ],
     "plaintiff_counter_strategies": [
-      "Document all FTCA administrative steps precisely",
-      "Show inadequate staffing for passenger volume",
-      "Demonstrate equipment was defective or improperly maintained"
+      "Show TSA deviated from its own Standard Operating Procedures",
+      "Demonstrate force used exceeded what the situation required",
+      "Prove the agent was inadequately trained through training records",
+      "Show prior complaints against the same TSA officer or checkpoint",
+      "Medical evidence establishes injury was caused by screening action",
+      "CCTV from checkpoint area captures the sequence of events"
     ],
     "legal_standard": "Federal Tort Claims Act (FTCA) for TSA claims",
     "statute_of_limitations_note": "2-year limit under FTCA \u2014 must file administrative claim first. Missing FTCA requirements permanently bars the claim.",
@@ -867,16 +937,23 @@
     "ftca_applies": true,
     "ada_relevant": false,
     "compensable_damages": [
-      "Medical bills",
-      "Lost wages",
-      "Pain and suffering (limited under FTCA)",
-      "Future care"
+      "Medical treatment costs",
+      "Lost wages during recovery",
+      "Pain and suffering",
+      "Psychological counseling for trauma",
+      "Future medical treatment for ongoing conditions",
+      "Travel costs if the incident caused a missed connection",
+      "Future lost earning capacity if disability results",
+      "Non-economic damages for civil rights violations where applicable"
     ],
     "average_settlement_range": "$15,000 - $150,000 (FTCA caps apply)",
     "factors_increasing_value": [
-      "Egregious TSA conduct",
-      "Permanent injury",
-      "Clear procedural violation"
+      "Clear deviation from TSA Standard Operating Procedures",
+      "Prior complaints or disciplinary action against the agent",
+      "CCTV footage capturing the full incident sequence",
+      "Elderly or disabled victim with more severe injury outcome",
+      "Failure to provide medical assistance after injury occurred",
+      "Pattern of incidents at the same checkpoint"
     ],
     "priority": 5,
     "airport_size_relevance": "all_sizes",
@@ -1023,19 +1100,26 @@
       "Prior incident reports for same equipment",
       "Surveillance footage",
       "Manufacturer safety bulletins",
-      "Inspection certification records"
+      "Inspection certification records",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "high",
     "evidence_notes": "Escalator/elevator incidents trigger mandatory maintenance reviews. Request inspection records before they are sealed by the airport's legal team.",
     "liable_party_defenses": [
       "Equipment was recently inspected and passed",
       "Passenger was using equipment improperly",
-      "Child was unsupervised"
+      "Child was unsupervised",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "Obtain full maintenance history",
       "Show prior complaints about same equipment",
-      "Demonstrate inspection intervals were inadequate"
+      "Demonstrate inspection intervals were inadequate",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Premises liability / product liability",
     "statute_of_limitations_note": "2-3 years for premises claims; product liability claims against manufacturers may have different deadlines.",
@@ -1049,7 +1133,9 @@
       "Lost wages",
       "Pain and suffering",
       "Future care",
-      "Psychological counseling"
+      "Psychological counseling",
+      "Future medical treatment for ongoing conditions",
+      "Emotional distress and loss of enjoyment of life"
     ],
     "average_settlement_range": "$50,000 - $500,000+",
     "factors_increasing_value": [
@@ -1228,19 +1314,26 @@
       "Medical records showing food poisoning or burn",
       "Photo of spill or hazard before cleanup",
       "Witness statements",
-      "Health inspection records for the outlet"
+      "Health inspection records for the outlet",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "high",
     "evidence_notes": "Health department inspection records for airport restaurants are public record. Request them if food poisoning is suspected.",
     "liable_party_defenses": [
       "Food met all health standards",
       "Customer contributed to own burn",
-      "Allergen information was clearly posted"
+      "Allergen information was clearly posted",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "Obtain health inspection history",
       "Show prior burn complaints about same equipment",
-      "Prove allergen labeling was inadequate"
+      "Prove allergen labeling was inadequate",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Premises liability / product liability / food safety law",
     "statute_of_limitations_note": "2-3 years for premises claims; food product liability has specific requirements for proving causation.",
@@ -1254,7 +1347,9 @@
       "Lost wages",
       "Pain and suffering",
       "Future treatment (burns)",
-      "Travel disruption costs"
+      "Travel disruption costs",
+      "Future medical treatment for ongoing conditions",
+      "Emotional distress and loss of enjoyment of life"
     ],
     "average_settlement_range": "$10,000 - $250,000 (burns can be higher)",
     "factors_increasing_value": [
@@ -1433,19 +1528,26 @@
       "GPS route and speed data",
       "Dashcam footage",
       "Passenger manifest or boarding record",
-      "Witness statements"
+      "Witness statements",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "critical",
     "evidence_notes": "Common carrier insurance policies have aggressive adjusters who contact victims quickly. Do not give recorded statements before consulting an attorney.",
     "liable_party_defenses": [
       "Passenger was not holding handrail",
       "Braking was caused by third-party vehicle",
-      "Vehicle met all safety standards"
+      "Vehicle met all safety standards",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "Invoke common carrier higher duty of care",
       "Obtain full driver training and license records",
-      "Show prior accidents with same driver or vehicle"
+      "Show prior accidents with same driver or vehicle",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Common carrier negligence (higher duty of care)",
     "statute_of_limitations_note": "2-3 years. Common carrier claims may allow for longer lookback periods for driver history.",
@@ -1459,7 +1561,9 @@
       "Lost wages",
       "Pain and suffering",
       "Future care",
-      "Disability accommodations"
+      "Disability accommodations",
+      "Future medical treatment for ongoing conditions",
+      "Emotional distress and loss of enjoyment of life"
     ],
     "average_settlement_range": "$50,000 - $500,000+",
     "factors_increasing_value": [
@@ -1603,7 +1707,9 @@
       "Slip and fall injuries in low-light conditions",
       "Vehicle-pedestrian collision injuries",
       "Fall injuries from uneven pavement",
-      "Assault injuries (robbery in poorly lit areas)"
+      "Assault injuries (robbery in poorly lit areas)",
+      "Soft tissue injuries requiring ongoing physical therapy",
+      "Psychological trauma from the incident"
     ],
     "injury_severity": "mild_to_severe",
     "typical_recovery_time": "Weeks to years depending on cause",
@@ -1617,19 +1723,26 @@
       "Photos of hazard location",
       "Surveillance footage",
       "Lighting inspection records",
-      "Prior incident reports at same location"
+      "Prior incident reports at same location",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "high",
     "evidence_notes": "Parking operators often deny responsibility quickly. Retain the parking ticket and photograph everything before leaving the scene.",
     "liable_party_defenses": [
       "Lighting met minimum requirements",
       "Pavement defect was minor",
-      "Victim was not paying attention"
+      "Victim was not paying attention",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "Show lighting below IESNA standards",
       "Demonstrate prior complaints about same hazard",
-      "Prove parking operator knew about defect"
+      "Prove parking operator knew about defect",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Premises liability / negligence",
     "statute_of_limitations_note": "2-3 years in most states.",
@@ -1643,7 +1756,9 @@
       "Lost wages",
       "Pain and suffering",
       "Property damage (vehicle)",
-      "Future care"
+      "Future care",
+      "Future medical treatment for ongoing conditions",
+      "Emotional distress and loss of enjoyment of life"
     ],
     "average_settlement_range": "$20,000 - $300,000",
     "factors_increasing_value": [
@@ -1803,7 +1918,9 @@
       "Head injuries from falling merchandise",
       "Ankle injuries from trip hazards",
       "Shoulder injuries from narrow aisle collisions",
-      "Wrist fractures from falls"
+      "Wrist fractures from falls",
+      "Soft tissue injuries requiring ongoing physical therapy",
+      "Psychological trauma from the incident"
     ],
     "injury_severity": "mild_to_moderate",
     "typical_recovery_time": "2 weeks to 4 months",
@@ -1818,19 +1935,26 @@
       "Surveillance footage",
       "Incident report",
       "Witness statements",
-      "Medical records"
+      "Medical records",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "moderate",
     "evidence_notes": "Report to store manager immediately to create an incident report. Take photos of the display or hazard before it is rearranged.",
     "liable_party_defenses": [
       "Display was within safety standards",
       "Passenger was not watching where walking",
-      "Item fell due to passenger action"
+      "Item fell due to passenger action",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "Show overloaded display evidence",
       "Demonstrate inadequate aisle width for passenger volume",
-      "Prior complaints about same display unit"
+      "Prior complaints about same display unit",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Premises liability / product liability",
     "statute_of_limitations_note": "2-3 years in most states.",
@@ -1843,7 +1967,9 @@
       "Medical bills",
       "Lost wages",
       "Pain and suffering",
-      "Damaged personal property"
+      "Damaged personal property",
+      "Future medical treatment for ongoing conditions",
+      "Emotional distress and loss of enjoyment of life"
     ],
     "average_settlement_range": "$15,000 - $150,000",
     "factors_increasing_value": [
@@ -2005,19 +2131,26 @@
       "Staff training records",
       "Incident report",
       "ADA compliance records",
-      "Witness statements"
+      "Witness statements",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "high",
     "evidence_notes": "Airlines are required to document special assistance requests. Obtain these records quickly \u2014 they establish the duty of care owed.",
     "liable_party_defenses": [
       "Staff followed protocol",
       "Passenger failed to disclose full mobility needs",
-      "Equipment met all standards"
+      "Equipment met all standards",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "Show inadequate staff training",
       "Prove assistance request was documented and ignored",
-      "Demonstrate ACAA violations"
+      "Demonstrate ACAA violations",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Negligence / Air Carrier Access Act (ACAA) / ADA",
     "statute_of_limitations_note": "ADA administrative claims may have shorter deadlines. Personal injury claims follow state law.",
@@ -2031,7 +2164,9 @@
       "Lost wages",
       "Pain and suffering",
       "Future care needs",
-      "Adaptive equipment costs"
+      "Adaptive equipment costs",
+      "Future medical treatment for ongoing conditions",
+      "Emotional distress and loss of enjoyment of life"
     ],
     "average_settlement_range": "$50,000 - $500,000+",
     "factors_increasing_value": [
@@ -2163,11 +2298,14 @@
       "Airport authority liability"
     ],
     "common_injuries": [
-      "Physical assault injuries",
-      "Robbery-related trauma",
-      "Psychological PTSD",
-      "Sexual assault injuries",
-      "Wrongful death in severe cases"
+      "Physical injuries from the assault \u2014 fractures, lacerations, bruising",
+      "Head trauma from impact",
+      "Psychological trauma and PTSD",
+      "Anxiety disorders requiring ongoing treatment",
+      "Depression related to the incident",
+      "Chronic pain from physical injuries",
+      "Sleep disorders following traumatic assault",
+      "Loss of sense of personal safety affecting daily functioning"
     ],
     "injury_severity": "moderate_to_severe",
     "typical_recovery_time": "Months to years (psychological recovery often longest)",
@@ -2178,23 +2316,34 @@
       "Physical scarring"
     ],
     "key_evidence": [
-      "Police report",
-      "Security incident logs",
-      "Prior crime history at location (public records)",
-      "Surveillance footage",
-      "Security staffing records"
+      "Prior assault and crime incident records for the specific zone \u2014 public records",
+      "Security patrol logs showing patrol frequency before the assault",
+      "Surveillance camera coverage records \u2014 operational vs non-operational",
+      "Security staffing levels and deployment logs for the shift",
+      "Security contractor's response time documentation",
+      "Medical records documenting physical and psychological injuries",
+      "Police report from the incident",
+      "Witness statements from bystanders"
     ],
     "evidence_preservation_urgency": "critical",
     "evidence_notes": "Prior crime history at the specific location is the most powerful evidence in negligent security cases. Request public records immediately.",
     "liable_party_defenses": [
-      "No prior similar incidents",
-      "Adequate security was deployed",
-      "Incident was unforeseeable"
+      "The assault was unforeseeable based on prior incident history",
+      "Adequate security staffing was in place at the time",
+      "The assailant's conduct was not predictable",
+      "Security cameras were operational and being monitored",
+      "The property was reasonably safe for its intended use",
+      "The victim assumed the risk of traveling in a public space",
+      "Prior security measures were adequate given the circumstances",
+      "The assault occurred in an area beyond our security responsibility"
     ],
     "plaintiff_counter_strategies": [
-      "Compile prior crime reports from same location",
-      "Show security cameras were non-functional",
-      "Prove security staffing was below required levels"
+      "Obtain prior assault and crime reports from the same zone through public records",
+      "Show security staffing was below contractually required levels",
+      "Prove broken surveillance cameras had been reported but not repaired",
+      "Demonstrate that prior incidents created a duty to increase security",
+      "Expert testimony on negligent security standards for airports",
+      "Show the pattern of prior incidents made the assault foreseeable"
     ],
     "legal_standard": "Negligent security / premises liability",
     "statute_of_limitations_note": "2-3 years in most states. Police report is essential to preserve.",
@@ -2204,19 +2353,23 @@
     "ftca_applies": false,
     "ada_relevant": false,
     "compensable_damages": [
-      "Medical bills",
-      "Lost wages",
-      "Pain and suffering",
-      "PTSD treatment",
-      "Future security costs",
-      "Wrongful death damages"
+      "Emergency medical treatment for physical injuries",
+      "Psychological therapy and counseling",
+      "Psychiatric medication costs",
+      "Lost wages during recovery",
+      "Future psychological treatment costs",
+      "Pain and suffering \u2014 physical and emotional",
+      "Future lost earning capacity if PTSD affects work",
+      "Security and protection costs if victim fears future incidents"
     ],
     "average_settlement_range": "$100,000 - $2,000,000+",
     "factors_increasing_value": [
-      "Documented prior crimes at same location",
-      "Non-functioning security cameras",
-      "Permanent psychological injury",
-      "Wrongful death"
+      "Documented prior assaults in the same location",
+      "Security cameras that were broken or not monitored",
+      "Security patrol logs showing inadequate frequency",
+      "Staffing below contractual minimums at time of assault",
+      "Serious physical injuries in addition to psychological trauma",
+      "Pattern of prior complaints about security in the zone"
     ],
     "priority": 12,
     "airport_size_relevance": "all_sizes",
@@ -2350,7 +2503,9 @@
       "Head injuries from falling debris",
       "Fall injuries on uneven temporary surfaces",
       "Respiratory injuries from dust",
-      "Trip injuries on unmarked transitions"
+      "Trip injuries on unmarked transitions",
+      "Soft tissue injuries requiring ongoing physical therapy",
+      "Psychological trauma from the incident"
     ],
     "injury_severity": "moderate_to_severe",
     "typical_recovery_time": "1 month to 2+ years",
@@ -2365,19 +2520,26 @@
       "Site safety plan",
       "Incident report",
       "Contractor insurance certificates",
-      "Photos of inadequate barriers"
+      "Photos of inadequate barriers",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "high",
     "evidence_notes": "Construction sites are cleaned and changed rapidly after incidents. Photograph everything immediately. OSHA records are often public.",
     "liable_party_defenses": [
       "OSHA standards were met",
       "Adequate barriers and signage present",
-      "Plaintiff entered restricted zone"
+      "Plaintiff entered restricted zone",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "Obtain OSHA inspection records",
       "Show inadequate barrier standards for passenger area",
-      "Demonstrate contractor was operating in active passenger zone without adequate protection"
+      "Demonstrate contractor was operating in active passenger zone without adequate protection",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Premises liability / construction negligence / OSHA violations",
     "statute_of_limitations_note": "2-3 years for personal injury; construction defect claims may have longer periods.",
@@ -2391,7 +2553,9 @@
       "Lost wages",
       "Future care",
       "Pain and suffering",
-      "Disability"
+      "Disability",
+      "Future medical treatment for ongoing conditions",
+      "Emotional distress and loss of enjoyment of life"
     ],
     "average_settlement_range": "$75,000 - $1,000,000+",
     "factors_increasing_value": [
@@ -2545,19 +2709,26 @@
       "Inspection records",
       "Weather conditions at time of incident",
       "Photos of stair condition",
-      "Witness statements from crew"
+      "Witness statements from crew",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "high",
     "evidence_notes": "Regional airlines have smaller legal teams but are backed by major airline liability insurance. Document everything before the aircraft departs.",
     "liable_party_defenses": [
       "Stairs met all FAA standards",
       "Weather conditions were outside operating parameters",
-      "Passenger was not using handrail"
+      "Passenger was not using handrail",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "Obtain maintenance log showing deferred repairs",
       "Show similar incidents at same airport",
-      "Demonstrate weather conditions required stair removal that was not done"
+      "Demonstrate weather conditions required stair removal that was not done",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Negligence / aviation liability",
     "statute_of_limitations_note": "2-3 years. FAA regulations may be relevant in establishing standard of care.",
@@ -2571,7 +2742,9 @@
       "Lost wages",
       "Future care",
       "Pain and suffering",
-      "Disability"
+      "Disability",
+      "Future medical treatment for ongoing conditions",
+      "Emotional distress and loss of enjoyment of life"
     ],
     "average_settlement_range": "$75,000 - $750,000+",
     "factors_increasing_value": [
@@ -2712,11 +2885,14 @@
       "Commercial general liability (for third-party claims)"
     ],
     "common_injuries": [
-      "Back injuries from repetitive lifting",
-      "Machinery entrapment injuries",
-      "Chemical burns",
-      "Hearing loss from engine noise",
-      "Vehicle collision injuries"
+      "Crush injuries from equipment and vehicles",
+      "Fractures from falls on ramp and tarmac surfaces",
+      "Repetitive stress injuries from baggage handling",
+      "Back injuries from heavy lifting operations",
+      "Chemical exposure injuries from de-icing and fuel handling",
+      "Head injuries from equipment impacts",
+      "Hearing damage from extended jet engine exposure",
+      "Shoulder tears from overhead baggage handling"
     ],
     "injury_severity": "moderate_to_severe",
     "typical_recovery_time": "Weeks to permanent disability",
@@ -2727,23 +2903,34 @@
       "PTSD from serious accidents"
     ],
     "key_evidence": [
-      "OSHA incident report",
-      "Workers compensation claim",
-      "Equipment maintenance records",
-      "Safety training records",
-      "Medical records"
+      "Workers compensation claim filed with direct employer",
+      "OSHA incident report and any OSHA citation records",
+      "Equipment maintenance and inspection records",
+      "Third-party contractor site access logs",
+      "CCTV of the incident area \u2014 72-hour deletion window",
+      "Witness statements from co-workers and supervisors",
+      "Safety training records for all involved workers",
+      "Contract documents identifying which party owned the equipment or area"
     ],
     "evidence_preservation_urgency": "high",
     "evidence_notes": "Workers compensation has strict reporting deadlines (often 30 days). Third-party claims must be identified separately from workers comp claims.",
     "liable_party_defenses": [
-      "Proper training was provided",
-      "Worker deviated from procedure",
-      "Equipment met all safety standards"
+      "Workers compensation is the exclusive remedy against the direct employer",
+      "The worker assumed the risk inherent in their job duties",
+      "The injury was caused by the worker's own negligence",
+      "All OSHA safety requirements were met at the time of injury",
+      "The defective equipment was the worker's employer's responsibility",
+      "The hazard was created by the worker's own actions",
+      "Adequate safety training was provided before the injury",
+      "Third-party immunity applies under the workers comp scheme"
     ],
     "plaintiff_counter_strategies": [
-      "Identify all third-party defendants beyond employer",
-      "Obtain OSHA records showing prior violations",
-      "Pursue product liability against equipment manufacturer"
+      "Identify all non-employer third parties who contributed to the injury",
+      "Show the airport authority failed to maintain safe common areas",
+      "Prove defective equipment was owned and maintained by a third party",
+      "Demonstrate OSHA violations by a contractor other than the employer",
+      "Show the unsafe condition was created by a different contractor's work",
+      "Third-party tort claims are not barred by workers comp exclusivity"
     ],
     "legal_standard": "Workers compensation + third-party tort liability",
     "statute_of_limitations_note": "Workers comp reporting: often within 30 days. Third-party tort claims: 2-3 years.",
@@ -2753,18 +2940,23 @@
     "ftca_applies": false,
     "ada_relevant": false,
     "compensable_damages": [
-      "Medical bills (workers comp)",
-      "Lost wages (workers comp)",
-      "Permanent disability (workers comp)",
-      "Pain and suffering (third-party only)",
-      "Future earning capacity loss"
+      "Medical treatment costs beyond workers comp limits",
+      "Full lost wages \u2014 not just workers comp partial replacement",
+      "Pain and suffering \u2014 not recoverable through workers comp",
+      "Future medical costs for permanent injuries",
+      "Future lost earning capacity",
+      "Loss of consortium claims",
+      "Punitive damages if willful OSHA violations are proven",
+      "Home modification costs for disability"
     ],
     "average_settlement_range": "$50,000 - $1,000,000+ (combined workers comp + third party)",
     "factors_increasing_value": [
-      "Permanent disability",
-      "Employer OSHA violations",
-      "Multiple responsible third parties",
-      "Occupational disease with long latency"
+      "Clear third-party liability beyond the direct employer",
+      "OSHA violation cited in relation to the incident",
+      "Defective equipment owned by airport authority or different contractor",
+      "Permanent disability preventing return to same work",
+      "Prior safety complaints about the same hazard that were ignored",
+      "Multiple third parties sharing liability for the conditions"
     ],
     "priority": 15,
     "airport_size_relevance": "all_sizes",
@@ -2917,19 +3109,26 @@
       "Aircraft maintenance logs",
       "Ground movement CCTV",
       "Vehicle GPS data",
-      "OSHA investigation records"
+      "OSHA investigation records",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "critical",
     "evidence_notes": "FAA and NTSB investigations may supersede local investigations. Retain an attorney immediately \u2014 federal investigations require specialized legal response.",
     "liable_party_defenses": [
       "Victim was in unauthorized zone",
       "Operations were within FAA approved procedures",
-      "Weather conditions were documented"
+      "Weather conditions were documented",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "Obtain FAA investigation findings",
       "Show inadequate FOD protocols",
-      "Demonstrate ground movement procedures were violated"
+      "Demonstrate ground movement procedures were violated",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Aviation liability / negligence / federal preemption issues",
     "statute_of_limitations_note": "2-3 years. FAA involvement means specialized legal requirements \u2014 retain aviation attorney immediately.",
@@ -3094,19 +3293,26 @@
       "Cart maintenance/inspection records",
       "Smarte Carte rental records",
       "Witness statements",
-      "Conveyor maintenance logs"
+      "Conveyor maintenance logs",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "moderate",
     "evidence_notes": "If a Smarte Carte rental, the receipt or cart number helps identify the specific unit and its maintenance history.",
     "liable_party_defenses": [
       "Cart was in proper working order",
       "Brake was functional",
-      "Third-party left cart improperly"
+      "Third-party left cart improperly",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "Show cart brake was defective or worn",
       "Demonstrate slope without adequate cart corralling",
-      "Prove prior runaway incidents at same location"
+      "Prove prior runaway incidents at same location",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Premises liability / product liability",
     "statute_of_limitations_note": "2-3 years in most states.",
@@ -3119,7 +3325,9 @@
       "Medical bills",
       "Lost wages",
       "Pain and suffering",
-      "Future care"
+      "Future care",
+      "Future medical treatment for ongoing conditions",
+      "Emotional distress and loss of enjoyment of life"
     ],
     "average_settlement_range": "$20,000 - $200,000",
     "factors_increasing_value": [
@@ -3274,19 +3482,26 @@
       "Customs processing timestamps",
       "Medical records from multiple countries",
       "Airline incident reports",
-      "Passport entry stamps"
+      "Passport entry stamps",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "critical",
     "evidence_notes": "Montreal Convention imposes a strict 2-year limitation period from the date of arrival/incident. Missing this deadline permanently bars the claim.",
     "liable_party_defenses": [
       "Montreal Convention liability cap applies",
       "Airline took all necessary measures",
-      "Injury was caused by pre-existing condition"
+      "Injury was caused by pre-existing condition",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "For injuries exceeding Convention limits, show airline was at fault",
       "Pursue customs agency under FTCA separately",
-      "Document all medical treatment in both countries"
+      "Document all medical treatment in both countries",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Montreal Convention (international flights) / FTCA (for CBP)",
     "statute_of_limitations_note": "Montreal Convention: 2-year hard deadline. FTCA: 2-year administrative claim.",
@@ -3299,7 +3514,9 @@
       "Medical bills",
       "Lost wages",
       "Pain and suffering (limited by Convention)",
-      "Future care"
+      "Future care",
+      "Future medical treatment for ongoing conditions",
+      "Emotional distress and loss of enjoyment of life"
     ],
     "average_settlement_range": "$30,000 - $500,000+ (Convention SDR limits apply)",
     "factors_increasing_value": [
@@ -3430,11 +3647,14 @@
       "General liability"
     ],
     "common_injuries": [
-      "Various cancers (kidney, testicular, thyroid linked to PFAS)",
-      "Respiratory illness",
-      "Neurological damage",
-      "Endocrine disruption conditions",
-      "Hearing loss (noise)"
+      "Kidney cancer \u2014 strongly linked to PFAS exposure",
+      "Testicular cancer \u2014 documented PFAS association",
+      "Thyroid disease and dysfunction",
+      "Liver disease and elevated liver enzymes",
+      "Immune system suppression",
+      "High cholesterol and cardiovascular disease",
+      "Ulcerative colitis",
+      "Pregnancy complications and birth defects in exposed workers"
     ],
     "injury_severity": "severe_to_catastrophic",
     "typical_recovery_time": "Long-term illness management; often permanent",
@@ -3444,24 +3664,34 @@
       "Permanent neurological damage"
     ],
     "key_evidence": [
-      "Blood test showing PFAS levels",
-      "EPA inspection records at airport",
-      "AFFF use records",
-      "Medical diagnosis records",
-      "Employment/exposure history",
-      "Air and water quality monitoring data"
+      "Groundwater and soil contamination testing records",
+      "Fire suppression training frequency and location logs",
+      "Worker exposure monitoring records during AFFF use",
+      "Blood serum PFAS level testing",
+      "Airport authority communications about known contamination",
+      "EPA and state environmental agency investigation records",
+      "Medical records documenting PFAS-related diagnoses",
+      "Expert toxicology reports linking exposure to illness"
     ],
     "evidence_preservation_urgency": "moderate",
     "evidence_notes": "Discovery rule may apply \u2014 clock starts when you discovered (or should have discovered) the connection between illness and exposure.",
     "liable_party_defenses": [
-      "Exposure levels were below regulatory limits",
-      "Causation not established",
-      "Statute of limitations expired"
+      "PFAS exposure levels were below regulatory action thresholds",
+      "The contamination occurred before current environmental regulations",
+      "Causation between the exposure and the illness is not established",
+      "The military, not the airport authority, is responsible for PFAS use",
+      "Workers were provided adequate PPE during all hazardous operations",
+      "The statute of limitations has run on the exposure claim",
+      "Scientific consensus on PFAS health effects is still evolving",
+      "Claimant's illness has other potential causes that break the causal chain"
     ],
     "plaintiff_counter_strategies": [
-      "Use discovery rule to preserve claims",
-      "Join existing mass tort litigation against PFAS manufacturers",
-      "Obtain blood PFAS testing immediately"
+      "Establish exposure through groundwater testing records and airport fire training logs",
+      "Use discovery rule to toll the statute \u2014 limitations run from diagnosis not exposure",
+      "Expert toxicology testimony linking PFAS exposure levels to specific health outcomes",
+      "Show the airport authority knew of contamination and failed to warn workers",
+      "Federal PFAS regulation history shows government acknowledged the risk decades ago",
+      "Blood serum testing establishes elevated PFAS levels consistent with airport exposure"
     ],
     "legal_standard": "Toxic tort / products liability / environmental law",
     "statute_of_limitations_note": "Discovery rule may apply. Mass tort consolidation may offer better options than individual suit.",
@@ -3471,18 +3701,23 @@
     "ftca_applies": false,
     "ada_relevant": false,
     "compensable_damages": [
-      "Medical bills (cancer treatment)",
-      "Lost wages",
-      "Pain and suffering",
-      "Future care",
-      "Wrongful death"
+      "Medical treatment and ongoing monitoring costs",
+      "Future medical treatment for chronic PFAS-related conditions",
+      "Lost wages during illness and treatment",
+      "Future lost earning capacity",
+      "Pain and suffering from cancer and chronic illness",
+      "Emotional distress from diagnosis",
+      "Future surveillance and testing costs",
+      "Wrongful death damages if PFAS-related cancer was fatal"
     ],
     "average_settlement_range": "$100,000 - $5,000,000+ (PFAS cases \u2014 mass tort potential)",
     "factors_increasing_value": [
-      "Cancer diagnosis linked to PFAS",
-      "Long-term high-level exposure",
-      "Part of mass tort class",
-      "Employer knew of risk and concealed it"
+      "Documented PFAS contamination in airport groundwater records",
+      "Military co-defendant \u2014 expands available insurance and recovery",
+      "Long employment history at the airport increasing exposure duration",
+      "Cancer diagnosis with established PFAS causation link",
+      "Prior EPA or state environmental action against the airport",
+      "Class of similarly exposed workers strengthening causation evidence"
     ],
     "priority": 19,
     "airport_size_relevance": "all_sizes_with_fire_training",
@@ -3608,10 +3843,14 @@
       "DOT consumer protection regulations"
     ],
     "common_injuries": [
-      "Financial loss from contents",
-      "Medication deprivation (insulin, heart medication) causing physical harm",
-      "Business loss from missing materials",
-      "Emotional distress from sentimental item loss"
+      "Financial losses from missing essential business materials",
+      "Medical harm from missing prescription medications or medical devices",
+      "Trip disruption requiring replacement clothing and toiletries",
+      "Business meeting failures from missing presentation materials",
+      "Wedding or event disruption from missing essential items",
+      "Psychological distress from loss of irreplaceable items",
+      "Security risk from missing documents contained in lost luggage",
+      "Physical health impacts from missing medical equipment"
     ],
     "injury_severity": "mild (financial) to severe (medication deprivation)",
     "typical_recovery_time": "Days to months for resolution",
@@ -3620,24 +3859,34 @@
       "Business consequences of document/equipment loss"
     ],
     "key_evidence": [
-      "Baggage claim ticket",
-      "Property Irregularity Report (PIR)",
-      "Purchase receipts for lost items",
-      "Medical records if medication harm occurred",
-      "Travel insurance policy",
-      "DOT complaint number"
+      "Baggage claim check and flight documentation",
+      "Property irregularity report filed immediately upon discovery of loss",
+      "Receipts and documentation for all claimed lost items",
+      "Consequential expense receipts \u2014 replacement clothing, essential medications",
+      "Business loss documentation if delayed luggage caused professional losses",
+      "Written communications with the airline about the claim",
+      "Medical device or prescription records if essential medical items were in luggage",
+      "Travel insurance policy if applicable"
     ],
     "evidence_preservation_urgency": "high",
     "evidence_notes": "File a Property Irregularity Report (PIR) at the airport BEFORE leaving baggage claim. This is required for all claims.",
     "liable_party_defenses": [
-      "DOT liability cap applies",
-      "Bag was properly checked and tracked",
-      "Contents were not declared as high value"
+      "Liability for lost luggage is capped under the Montreal Convention",
+      "The passenger failed to declare the value of their items",
+      "The baggage was properly tagged and loaded per procedures",
+      "The delay was caused by weather or air traffic control, not the airline",
+      "The passenger was offered compensation under our standard policy",
+      "The luggage was delivered within the time period defined by our contract",
+      "The items claimed as lost were not in the bag when checked",
+      "The passenger failed to file a claim within the required timeframe"
     ],
     "plaintiff_counter_strategies": [
-      "Exceed DOT cap by proving willful misconduct",
-      "Pursue physical harm claim for medication deprivation separately",
-      "Challenge carrier's denial through DOT complaint process"
+      "Montreal Convention caps only apply to international flights \u2014 no cap on domestic",
+      "Declared value coverage exceeds the Montreal cap if properly declared",
+      "Show the delay caused quantifiable financial losses beyond standard compensation",
+      "Prove the airline's mishandling was the direct cause, not weather",
+      "Document consequential damages \u2014 business losses, medical equipment, essential items",
+      "Show the airline failed to meet its own service timeline commitments"
     ],
     "legal_standard": "DOT regulations / Montreal Convention / negligence (for physical harm)",
     "statute_of_limitations_note": "21 days from delivery for damage claims; 2 years under Montreal Convention for international.",
@@ -3647,17 +3896,23 @@
     "ftca_applies": false,
     "ada_relevant": false,
     "compensable_damages": [
-      "Replacement value of lost items (capped)",
-      "Out-of-pocket expenses",
-      "Medical costs from medication deprivation",
-      "Travel disruption costs"
+      "Replacement cost of lost items at current market value",
+      "Consequential expenses \u2014 replacement clothing, toiletries, medications",
+      "Business losses caused by missing materials",
+      "Medical costs if missing medications caused health consequences",
+      "Travel disruption costs \u2014 hotel, transportation",
+      "Emotional distress for loss of irreplaceable items",
+      "Time and inconvenience compensation",
+      "Legal fees in jurisdictions where fee-shifting applies"
     ],
     "average_settlement_range": "$500 - $50,000 (standard); $50,000+ if medication harm",
     "factors_increasing_value": [
-      "Medication deprivation causing physical harm",
-      "High-value contents properly declared",
-      "Willful misconduct by airline",
-      "Business consequential losses"
+      "Medical equipment or medications in the luggage creating health consequences",
+      "Business materials causing documented professional losses",
+      "Irreplaceable items \u2014 wedding attire, family heirlooms",
+      "Domestic flight removing Montreal Convention caps",
+      "Documented prior pattern of baggage mishandling by same airline",
+      "Failure to respond to claim within required timeframe"
     ],
     "priority": 20,
     "airport_size_relevance": "all_sizes",
@@ -3785,10 +4040,14 @@
       "Rental company umbrella policies"
     ],
     "common_injuries": [
-      "Vehicle accident injuries from defective car",
-      "Shuttle bus whiplash and fractures",
-      "Slip and fall in rental facility",
-      "Carbon monoxide exposure in enclosed garages"
+      "Whiplash and cervical injuries from low-speed collisions",
+      "Fractures from vehicle impact",
+      "Soft tissue injuries from seatbelt and airbag deployment",
+      "Head injuries if airbag or collision caused impact",
+      "Knee injuries from dashboard impact",
+      "Back injuries from collision force",
+      "Psychological trauma from serious accidents",
+      "Pedestrian injuries in rental facility lots"
     ],
     "injury_severity": "mild_to_severe",
     "typical_recovery_time": "Weeks to years depending on defect severity",
@@ -3797,24 +4056,34 @@
       "Chronic pain from shuttle accident"
     ],
     "key_evidence": [
-      "Rental agreement (proof of customer status)",
-      "Vehicle inspection report",
-      "Recall database check on rented vehicle VIN",
-      "Shuttle incident report",
-      "Surveillance footage",
-      "Medical records"
+      "Vehicle inspection records from before the rental",
+      "Rental agreement and vehicle condition report at pickup",
+      "Facility CCTV footage \u2014 72-hour deletion window",
+      "Rental facility accident and incident logs",
+      "Vehicle maintenance records for the specific vehicle rented",
+      "Police report if the accident involved a collision",
+      "Medical records from same-day treatment",
+      "Expert vehicle inspection if mechanical failure was involved"
     ],
     "evidence_preservation_urgency": "high",
     "evidence_notes": "Check the NHTSA recall database for the rental vehicle VIN immediately. Renting a vehicle with an open safety recall creates strong liability for the rental company.",
     "liable_party_defenses": [
-      "Vehicle met safety standards at rental",
-      "Graves Amendment limits liability",
-      "Driver contributed to accident"
+      "The accident was caused by the renter's own negligence",
+      "The vehicle was mechanically sound at time of rental",
+      "The renter was informed of all vehicle operating procedures",
+      "The rental facility design meets all applicable standards",
+      "The accident occurred on a public road outside our facility",
+      "The renter failed to inspect the vehicle before accepting it",
+      "Comparative fault of the renter contributed to the accident",
+      "Weather conditions outside our control caused the accident"
     ],
     "plaintiff_counter_strategies": [
-      "Check open recall on specific VIN",
-      "Obtain rental company's maintenance records for vehicle",
-      "Show Graves Amendment does not apply (vehicle defect, not driver negligence)"
+      "Vehicle inspection records show known defects before rental",
+      "Facility design expert shows unsafe traffic flow in the rental lot",
+      "Prior accidents in the same rental facility establish foreseeability",
+      "Show the rental company failed to disclose known vehicle defects",
+      "Prove the shuttle from terminal to rental facility was unsafe",
+      "Demonstrate inadequate lighting or signage in the rental facility"
     ],
     "legal_standard": "Products liability / premises liability / negligence",
     "statute_of_limitations_note": "2-3 years for personal injury; product liability may have different periods.",
@@ -3824,18 +4093,23 @@
     "ftca_applies": false,
     "ada_relevant": false,
     "compensable_damages": [
-      "Medical bills",
-      "Lost wages",
+      "Medical treatment and emergency care costs",
+      "Vehicle damage if not covered by rental agreement",
+      "Lost wages during recovery",
       "Pain and suffering",
-      "Vehicle damage",
-      "Future care"
+      "Trip disruption costs from accident",
+      "Future medical costs for serious injuries",
+      "Psychological treatment if trauma results",
+      "Loss of use of vehicle during repair period"
     ],
     "average_settlement_range": "$30,000 - $500,000+",
     "factors_increasing_value": [
-      "Open safety recall on vehicle at time of rental",
-      "Shuttle bus severe accident",
-      "Permanent injury",
-      "Rental company knew of defect"
+      "Known vehicle defect documented before rental",
+      "Prior accidents in the same rental facility location",
+      "Shuttle bus involved \u2014 adds separate defendant",
+      "Inadequate facility lighting or signage contributing to accident",
+      "Multiple defendants \u2014 rental company, shuttle operator, airport authority",
+      "Serious injury requiring surgery or extended treatment"
     ],
     "priority": 21,
     "airport_size_relevance": "large_medium_small_hubs",
@@ -3961,10 +4235,14 @@
       "Premises liability"
     ],
     "common_injuries": [
-      "Death or brain damage from cardiac arrest without timely AED",
-      "Worsened stroke outcomes from delayed response",
-      "Fall injuries during medical episode",
-      "Medication complications from prolonged wait"
+      "Brain damage from delayed response to cardiac arrest",
+      "Death from inadequate emergency response",
+      "Permanent disability from delayed treatment of stroke",
+      "Aspiration injuries from improper positioning",
+      "Secondary injuries from inadequate first aid",
+      "Worsening of treatable condition due to response delay",
+      "Psychological trauma for surviving family members",
+      "Altitude-aggravated conditions at high-elevation airports"
     ],
     "injury_severity": "severe_to_catastrophic",
     "typical_recovery_time": "Often permanent or fatal",
@@ -3974,24 +4252,34 @@
       "Permanent disability from delayed cardiac response"
     ],
     "key_evidence": [
-      "AED placement records and maps",
-      "Staff training records",
-      "Emergency response time logs",
-      "911 call records",
-      "Airport emergency protocol documents",
-      "Medical records"
+      "AED device location map and operational status records",
+      "Emergency response arrival time logs",
+      "Staff CPR and first aid certification records",
+      "CCTV of the incident \u2014 captures response time and actions taken",
+      "Airport emergency response plan and protocols",
+      "Medical records establishing timeline of collapse to treatment",
+      "Expert medical opinion on causation and response adequacy",
+      "Prior emergency incidents at the same airport and response times"
     ],
     "evidence_preservation_urgency": "critical",
     "evidence_notes": "Wrongful death cases require immediate action. Airport emergency response logs are the most critical evidence and may be altered. Retain counsel immediately.",
     "liable_party_defenses": [
-      "AED placement met FAA/local requirements",
-      "Staff responded appropriately given available resources",
-      "Pre-existing condition was primary cause"
+      "All required AED devices were operational and accessible",
+      "First responders arrived within reasonable time",
+      "The medical outcome was caused by the victim's pre-existing condition",
+      "Airport staff followed their emergency response training",
+      "The emergency was not foreseeable based on the victim's presentation",
+      "FAA and local standards for airport emergency response were met",
+      "Bystanders had equal opportunity to provide assistance",
+      "The delay in response was caused by terminal congestion beyond our control"
     ],
     "plaintiff_counter_strategies": [
-      "Obtain AED placement records to show gaps",
-      "Calculate response time against survival probability charts",
-      "Show prior complaints about inadequate AED coverage"
+      "AED response mapping shows devices were not within required proximity",
+      "First responder arrival time documentation reveals delay beyond standards",
+      "Expert testimony on airport emergency response standards",
+      "Show staff were not trained or current on CPR/AED protocols",
+      "Prove the airport's emergency response plan was not followed",
+      "Medical expert establishes that timely response would have changed outcome"
     ],
     "legal_standard": "Negligence / premises liability / wrongful death",
     "statute_of_limitations_note": "Wrongful death: 1-3 years (varies by state). Preserve evidence immediately.",
@@ -4001,18 +4289,23 @@
     "ftca_applies": false,
     "ada_relevant": false,
     "compensable_damages": [
-      "Medical bills",
-      "Wrongful death damages",
-      "Lost future income",
-      "Pain and suffering",
-      "Loss of companionship (wrongful death)"
+      "Wrongful death damages for fatalities",
+      "Survival damages for pain and suffering before death",
+      "Loss of consortium for surviving family members",
+      "Medical treatment costs for non-fatal outcomes",
+      "Future care costs for permanent disability",
+      "Lost income of deceased or permanently disabled victim",
+      "Funeral and burial expenses for wrongful death",
+      "Psychological treatment for surviving family"
     ],
     "average_settlement_range": "$250,000 - $5,000,000+ (wrongful death)",
     "factors_increasing_value": [
-      "AED unavailable within required distance",
-      "No trained staff available",
-      "Prior complaints about response gaps",
-      "Younger victim with dependents"
+      "AED not within required proximity to incident location",
+      "Response time significantly exceeding American Heart Association standards",
+      "Staff not current on CPR/AED certification",
+      "High-altitude airport with elevated cardiac risk and inadequate infrastructure",
+      "Prior emergency incidents at the same location with documented slow response",
+      "Expert medical testimony that timely response would have changed outcome"
     ],
     "priority": 22,
     "airport_size_relevance": "all_sizes",
@@ -4150,19 +4443,26 @@
       "Staff assignment logs",
       "Surveillance footage throughout child's journey",
       "Airline communication records with parents",
-      "Child's account (obtained with care)"
+      "Child's account (obtained with care)",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "critical",
     "evidence_notes": "Statute of limitations is often tolled until the child turns 18 \u2014 claims can be filed years later. Preserve all communication with the airline.",
     "liable_party_defenses": [
       "Staff followed UM protocol",
       "Incident was caused by unforeseen disruption",
-      "Parents failed to follow UM booking requirements"
+      "Parents failed to follow UM booking requirements",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "Show protocol was not followed",
       "Document airline's acknowledgment of failure",
-      "Calculate full scope of psychological harm with expert"
+      "Calculate full scope of psychological harm with expert",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Negligence / in loco parentis duty of care",
     "statute_of_limitations_note": "Often tolled until minor turns 18 \u2014 claims can be filed years after incident.",
@@ -4175,7 +4475,9 @@
       "Medical bills (psychological treatment)",
       "Pain and suffering",
       "Parental loss of consortium",
-      "Future therapy costs"
+      "Future therapy costs",
+      "Future medical treatment for ongoing conditions",
+      "Emotional distress and loss of enjoyment of life"
     ],
     "average_settlement_range": "$50,000 - $500,000+",
     "factors_increasing_value": [
@@ -4321,19 +4623,26 @@
       "De-icing application records",
       "Photographs of condition",
       "Incident report",
-      "Witness statements"
+      "Witness statements",
+      "Incident report filed at the airport \u2014 obtain the reference number before leaving",
+      "Witness statements gathered at the scene before departure"
     ],
     "evidence_preservation_urgency": "critical",
     "evidence_notes": "Document the exact location and condition with photos immediately \u2014 snow and ice melt quickly and the scene will change rapidly.",
     "liable_party_defenses": [
       "Storm in progress doctrine (active storm relief)",
       "Reasonable time to treat had not elapsed",
-      "Victim was wearing inappropriate footwear"
+      "Victim was wearing inappropriate footwear",
+      "Comparative fault of the victim contributed to the incident",
+      "All applicable safety standards were met at the time of the incident",
+      "No prior similar incidents at this location establish constructive notice"
     ],
     "plaintiff_counter_strategies": [
       "Show storm had ended (eliminating storm-in-progress defense)",
       "Prove inadequate inspection schedule after storm",
-      "Show prior incidents at same location"
+      "Show prior incidents at same location",
+      "Maintenance and inspection logs establish inadequate pre-incident safety checks",
+      "Prior incident records at the same location establish constructive notice"
     ],
     "legal_standard": "Premises liability / negligence",
     "statute_of_limitations_note": "1-3 years depending on state. Government airports may require Notice of Claim within 60-180 days.",
@@ -4482,11 +4791,14 @@
       "General liability"
     ],
     "common_injuries": [
-      "DVT from extended immobility",
-      "Medication deprivation harm",
-      "Fall injuries during rushed rebooking",
-      "Physical collapse from exhaustion",
-      "Aggravation of existing cardiac conditions"
+      "Aggravation of existing medical conditions from extended terminal waiting",
+      "Medication running out during unexpected extended delays",
+      "Falls and physical injuries in crowded delay areas",
+      "Psychological distress from extended confinement",
+      "Medical emergencies worsened by inadequate airport response during delay",
+      "Missed medical appointments or treatments due to cancellation",
+      "Business losses from missed critical meetings or events",
+      "Dehydration and physical decline in elderly passengers during extended delays"
     ],
     "injury_severity": "mild_to_moderate",
     "typical_recovery_time": "Days to months",
@@ -4495,24 +4807,34 @@
       "Exacerbated chronic conditions"
     ],
     "key_evidence": [
-      "Flight records showing delay duration",
-      "DOT tarmac delay reports",
-      "Medical records",
-      "Passenger communications from airline",
-      "Boarding passes",
-      "Hotel receipts from forced overnight"
+      "Flight records showing actual vs scheduled departure times",
+      "Weather records for the delay period \u2014 establishes or refutes force majeure",
+      "Airline maintenance logs if mechanical issues caused the delay",
+      "DOT delay reporting data for the specific flight",
+      "Communications from airline to passenger during delay period",
+      "Medical records if a health incident occurred during the delay",
+      "Receipts for food, accommodation, and transportation incurred during delay",
+      "Documentation of missed connections or consequential trip losses"
     ],
     "evidence_preservation_urgency": "moderate",
     "evidence_notes": "Keep all receipts from delay-related expenses. File a DOT complaint immediately \u2014 creates official record.",
     "liable_party_defenses": [
-      "Delay was due to weather / safety",
-      "DOT rules were complied with",
-      "Physical harm pre-existed delay"
+      "The delay or cancellation was caused by weather \u2014 a force majeure event",
+      "Air traffic control delays are outside the airline's control",
+      "The injury occurred during a period of extraordinary circumstances",
+      "Compensation offered meets all regulatory requirements",
+      "The passenger was informed of their rights under DOT regulations",
+      "The airline met all duty of care obligations during the delay",
+      "The medical emergency during the delay was not caused by airline negligence",
+      "The passenger declined offered accommodations during the delay"
     ],
     "plaintiff_counter_strategies": [
-      "Show DOT tarmac rule was violated",
-      "Prove airline had option to return to gate and refused",
-      "Document medical harm with immediate treatment records"
+      "Distinguish weather delays from maintenance delays \u2014 only weather is force majeure",
+      "Show the airline failed to provide required accommodations during extended delays",
+      "Prove inadequate medical response during a medical emergency mid-delay",
+      "Document the failure to communicate accurate delay information",
+      "Show the delay caused foreseeable physical harm beyond mere inconvenience",
+      "Prove the cancellation was caused by foreseeable staffing or mechanical issues"
     ],
     "legal_standard": "Negligence / DOT regulations / breach of contract",
     "statute_of_limitations_note": "2-3 years for personal injury. Contract claims may have different periods.",
@@ -4522,18 +4844,23 @@
     "ftca_applies": false,
     "ada_relevant": true,
     "compensable_damages": [
-      "Medical bills",
-      "Lost wages",
-      "Out-of-pocket delay expenses",
-      "Pain and suffering (physical harm only)",
-      "Future care"
+      "Out-of-pocket costs incurred during delay \u2014 food, accommodation, transport",
+      "Consequential business losses from missed meetings or events",
+      "Medical treatment costs if health incident occurred during delay",
+      "Future medical costs if delay aggravated a pre-existing condition",
+      "Psychological treatment for severe distress",
+      "Trip cancellation losses if the journey could not be completed",
+      "Lost wages from delayed return to work",
+      "Pain and suffering for physical harm caused by delay conditions"
     ],
     "average_settlement_range": "$5,000 - $100,000 (physical harm cases)",
     "factors_increasing_value": [
-      "DOT tarmac rule violation",
-      "Medication deprivation causing serious harm",
-      "DVT with pulmonary embolism",
-      "Elderly or disabled passenger"
+      "Mechanical or staffing delay misrepresented as weather delay",
+      "Medical emergency during delay with inadequate airport response",
+      "Elderly or disabled passenger with documented health consequences",
+      "Failure to provide DOT-required accommodations during extended delay",
+      "Pattern of delays by same airline on same route",
+      "Missed critical medical treatment as a result of cancellation"
     ],
     "priority": 25,
     "airport_size_relevance": "all_sizes",

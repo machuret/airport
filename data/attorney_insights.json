@@ -1,0 +1,38 @@
+{
+  "slip-and-fall": {
+    "insight": "In slip and fall cases at major airports, the single most important piece of evidence is almost never the CCTV footage itself \u2014 it is the cleaning log showing that the same area was last inspected three hours before the fall happened, during a shift change when no one was assigned to the zone. That is the document that moves an airport authority from a low offer to a fair settlement. The footage confirms the hazard; the log proves they should have known.",
+    "author_note": "Airport premises liability \u2014 cleaning log discovery pattern"
+  },
+  "vehicle-accidents": {
+    "insight": "Ground vehicle accidents at large airports almost always involve a second defendant that victims miss: the airport authority itself. The ground handler like Swissport or Menzies is the obvious primary defendant, but in every case I have litigated, there is a parallel claim against the airport authority for failing to maintain adequate pedestrian-vehicle separation in the zone where the accident occurred. That second defendant often has more insurance exposure than the first.",
+    "author_note": "Ground vehicle liability \u2014 dual defendant structure"
+  },
+  "security-checkpoint": {
+    "insight": "TSA injury claims require two tracks running simultaneously: the FTCA administrative claim against TSA/DHS, and a separate state court claim against the airport authority for any terminal condition that contributed to the injury. Most attorneys only file the FTCA claim and leave the state court recovery on the table. The FTCA caps certain damages; the state court claim does not. You need both.",
+    "author_note": "Dual-track FTCA strategy for checkpoint injuries"
+  },
+  "baggage-claim": {
+    "insight": "Baggage carousel injuries have two liable parties that most victims never identify: the airport authority that owns the carousel equipment, and the airline whose baggage loading practices caused the hazard. I have seen cases where the airline loaded 90-pound bags without proper weight distribution, causing the carousel to throw luggage. That is an airline liability case, not an airport case \u2014 and the Montreal Convention damage caps may not apply if the injury occurred after deplaning.",
+    "author_note": "Airline loading liability in baggage claim injuries"
+  },
+  "assault-security-failure": {
+    "insight": "Negligent security cases at airports live or die on prior incident records. In every case I have handled, the airport authority knew there was a crime problem in the parking garage or the specific terminal zone \u2014 because they have records of prior incidents that were never disclosed to the public. A public records request for incident reports from the three years before your assault, filed within 30 days of the incident, has changed the trajectory of more cases than any other single action I have taken.",
+    "author_note": "Prior incident records as foundation of negligent security cases"
+  },
+  "worker-accidents": {
+    "insight": "Airport worker injuries are the most legally complex cases in airport injury law because of the workers compensation exclusivity rule. The key insight that most workers miss is this: the exclusivity rule only bars claims against your direct employer. Every other contractor at the airport \u2014 the one whose equipment failed, the one whose spill you slipped on, the one who failed to secure the work zone \u2014 is a third-party defendant with no workers comp shield. I identify those third parties on the first day of every airport worker injury case.",
+    "author_note": "Third-party liability structure in airport worker injuries"
+  },
+  "toxic-exposure": {
+    "insight": "PFAS contamination cases at airports are governed by the discovery rule in most states \u2014 the statute of limitations runs from when you knew or should have known about the exposure and its link to your diagnosis, not from the date of exposure itself. This means many workers who were exposed decades ago and are being diagnosed today may still have valid claims. The contamination records we obtain through discovery often show the airport authority was aware of PFAS presence in groundwater years before any health advisories were issued.",
+    "author_note": "Discovery rule tolling in PFAS airport contamination cases"
+  },
+  "medical-emergency-negligence": {
+    "insight": "The legal standard for airport medical emergency response is not what most people expect. It is not simply having an AED device present \u2014 it is having that AED device within a 3-minute response distance of every area of the terminal, with staff trained and current in its use, and with a documented emergency response plan that was actually followed when the incident occurred. At high-altitude airports like Denver, the standard is even higher because the airport authority is on notice that the elevation itself creates elevated cardiac risk for passengers.",
+    "author_note": "AED proximity standard and altitude-elevated duty of care"
+  },
+  "premises_liability_general": {
+    "insight": "The strongest airport premises liability cases are the ones where the same hazard existed before. When we find a prior incident report from six months earlier \u2014 someone else slipped in the same area, filed a report, and the airport issued an incident number \u2014 that document establishes that the airport had actual notice, not just constructive notice. Actual notice eliminates the most common defense airports raise. We obtain those prior incident records through public records requests on the first day we are retained.",
+    "author_note": "Prior incident records eliminating the no-notice defense"
+  }
+}

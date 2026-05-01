@@ -1,0 +1,156 @@
+{
+  "northern_winter": {
+    "Q1": {
+      "risk_label": "Peak winter hazard period",
+      "risk_note": "January through March is the highest-risk period for {accident_lower} at {airport}. Ice and snow accumulation at outdoor surfaces, tracked moisture into terminals, and reduced visibility at curbside areas all peak during this quarter.",
+      "urgency": "critical"
+    },
+    "Q2": {
+      "risk_label": "Spring thaw hazard period",
+      "risk_note": "Spring thaw at {airport} creates freeze-thaw cycling that damages outdoor surfaces \u2014 uneven pavement, heaved walkways, and drainage issues create a secondary {accident_lower} risk as winter infrastructure damage becomes visible.",
+      "urgency": "elevated"
+    },
+    "Q3": {
+      "risk_label": "Summer operations",
+      "risk_note": "Summer at {airport} brings the highest passenger volumes of the year. Peak crowds reduce cleaning frequency in high-traffic areas \u2014 a documented pattern that correlates with increased {accident_lower} incidents during July and August.",
+      "urgency": "standard"
+    },
+    "Q4": {
+      "risk_label": "Winter onset \u2014 hazard season begins",
+      "risk_note": "October through December marks the onset of winter conditions at {airport}. The first major snow and ice events each season \u2014 before maintenance protocols are fully operational \u2014 historically produce the highest concentration of {accident_lower} incidents.",
+      "urgency": "elevated"
+    }
+  },
+  "coastal_rain": {
+    "Q1": {
+      "risk_label": "Winter rain season",
+      "risk_note": "January through March is peak rain season in {city}. Constant moisture tracking at {airport} entrances means {accident_lower} risk is at its seasonal high \u2014 particularly at terminal entries and curbside zones.",
+      "urgency": "elevated"
+    },
+    "Q2": {
+      "risk_label": "Spring transition",
+      "risk_note": "Spring at {airport} brings variable weather \u2014 dry days interrupted by rain events that wet surfaces quickly. The uneven moisture pattern means wet floor management is more reactive and less systematic during this quarter.",
+      "urgency": "standard"
+    },
+    "Q3": {
+      "risk_label": "Peak summer travel",
+      "risk_note": "Summer brings the highest passenger volume to {airport}, which strains cleaning crew capacity. The combination of peak crowds and maintenance resources spread thin creates a documented increase in unaddressed floor hazards.",
+      "urgency": "elevated"
+    },
+    "Q4": {
+      "risk_label": "Fall rain season return",
+      "risk_note": "Autumn rains return to {city} from October onward, reactivating the moisture-tracking hazard at {airport} after the relatively dry summer. The first major rain events each fall season historically coincide with spikes in {accident_lower} reports.",
+      "urgency": "elevated"
+    }
+  },
+  "desert_dry": {
+    "Q1": {
+      "risk_label": "Winter operations",
+      "risk_note": "Winter at {airport} brings cooler temperatures and occasional precipitation \u2014 rare but significant because desert airports are not equipped for wet conditions the way northern airports are. Even minor rain creates disproportionate hazards.",
+      "urgency": "standard"
+    },
+    "Q2": {
+      "risk_label": "Spring dust and heat onset",
+      "risk_note": "Spring in {city} brings wind-borne dust that accumulates on terminal floors at {airport} \u2014 creating a less visible but documented slip hazard when dust mixes with foot traffic moisture.",
+      "urgency": "standard"
+    },
+    "Q3": {
+      "risk_label": "Peak summer heat \u2014 highest risk quarter",
+      "risk_note": "Summer is the highest-risk quarter at {airport}. Extreme heat causes passenger dehydration and disorientation. Condensation from air conditioning creates moisture near entry points. Combined with peak passenger volume, summer produces the highest {accident_lower} incident rates.",
+      "urgency": "critical"
+    },
+    "Q4": {
+      "risk_label": "Fall monsoon tail / cooling season",
+      "risk_note": "Late-season monsoon weather in {city} creates brief but intense rain events at {airport} that maintenance protocols are not designed to handle. The October-November transition period combines residual heat with unexpected moisture events.",
+      "urgency": "elevated"
+    }
+  },
+  "southern_humid": {
+    "Q1": {
+      "risk_label": "Winter operations",
+      "risk_note": "Winter in the South brings occasional ice storms that are particularly hazardous at airports like {airport} because southern facilities are equipped for minimal winter weather. A single ice event can overwhelm maintenance capacity entirely.",
+      "urgency": "elevated"
+    },
+    "Q2": {
+      "risk_label": "Spring storm season",
+      "risk_note": "Spring thunderstorm season in {city} creates frequent sudden wet conditions at {airport}. Rapid-onset storms produce tracked moisture before maintenance crews can respond, creating a concentrated {accident_lower} risk during each storm event.",
+      "urgency": "elevated"
+    },
+    "Q3": {
+      "risk_label": "Peak summer heat and humidity \u2014 highest risk quarter",
+      "risk_note": "Summer is the highest-risk quarter at {airport}. High humidity means floor surfaces never fully dry between cleaning cycles. Peak passenger volume during summer travel season combines with the highest annual moisture levels to produce the most {accident_lower} claims per quarter.",
+      "urgency": "critical"
+    },
+    "Q4": {
+      "risk_label": "Hurricane season tail and fall transition",
+      "risk_note": "October through December sees the tail end of hurricane season and the transition to winter in {city}. Post-tropical weather events at {airport} can create extended periods of wet conditions that persist long after the storm passes.",
+      "urgency": "elevated"
+    }
+  },
+  "mountain": {
+    "Q1": {
+      "risk_label": "Deep winter \u2014 extreme conditions",
+      "risk_note": "January through March represents peak winter hazard at {airport}. Deep snowpack, extreme cold, and frozen surfaces at all outdoor zones create severe {accident_lower} conditions that are among the most hazardous of any US airport during this quarter.",
+      "urgency": "critical"
+    },
+    "Q2": {
+      "risk_label": "Spring melt and mud season",
+      "risk_note": "Spring in {city} brings freeze-thaw cycling and melt conditions that create saturated outdoor surfaces and tracked mud into terminals at {airport}. The spring melt period is historically one of the higher-incident quarters for {accident_lower} claims.",
+      "urgency": "elevated"
+    },
+    "Q3": {
+      "risk_label": "Summer peak travel and afternoon storms",
+      "risk_note": "Summer brings peak tourist traffic to {airport} along with afternoon thunderstorms common to mountain climates. The combination of maximum passenger volume and daily afternoon storm events produces a sustained elevated {accident_lower} risk throughout July and August.",
+      "urgency": "elevated"
+    },
+    "Q4": {
+      "risk_label": "First snow events \u2014 transition hazard period",
+      "risk_note": "October through December marks the first snow events of the season at {airport}. The transition from summer maintenance protocols to winter operations creates a gap period when the first ice and snow events arrive before the facility is fully prepared.",
+      "urgency": "elevated"
+    }
+  },
+  "temperate": {
+    "Q1": {
+      "risk_label": "Winter and early spring",
+      "risk_note": "Winter and early spring bring ice, rain, and tracked moisture to {airport}. The risk is moderate but consistent \u2014 particularly at terminal entries, curbside, and parking zones during precipitation events.",
+      "urgency": "standard"
+    },
+    "Q2": {
+      "risk_label": "Spring transition",
+      "risk_note": "Spring weather variation at {airport} creates alternating wet and dry surface conditions that challenge maintenance protocols. Uneven response to changing weather is a documented pattern that creates {accident_lower} hazard windows.",
+      "urgency": "standard"
+    },
+    "Q3": {
+      "risk_label": "Peak summer travel season",
+      "risk_note": "Summer brings maximum passenger volume to {airport}, straining cleaning crew capacity in high-traffic zones. July and August historically show the highest absolute number of {accident_lower} incidents at airports of this size.",
+      "urgency": "elevated"
+    },
+    "Q4": {
+      "risk_label": "Fall and early winter hazard onset",
+      "risk_note": "Autumn at {airport} marks the return of precipitation and the onset of winter conditions. The first frost events and early rain season create a concentrated {accident_lower} hazard period before winter maintenance protocols are fully activated.",
+      "urgency": "elevated"
+    }
+  },
+  "tropical": {
+    "Q1": {
+      "risk_label": "Dry season \u2014 lower risk period",
+      "risk_note": "The dry season in {city} reduces but does not eliminate {accident_lower} risk at {airport}. Year-round humidity means floors never reach truly dry conditions, and the lower rain frequency does not significantly reduce the maintenance obligation.",
+      "urgency": "standard"
+    },
+    "Q2": {
+      "risk_label": "Pre-hurricane season \u2014 increasing risk",
+      "risk_note": "Late spring in {city} brings increasing humidity and the onset of the rainy season at {airport}. May and June historically see rising {accident_lower} incident rates as moisture management at the facility becomes more demanding.",
+      "urgency": "elevated"
+    },
+    "Q3": {
+      "risk_label": "Peak hurricane season \u2014 highest risk quarter",
+      "risk_note": "Summer is the highest-risk quarter at {airport}. Peak hurricane season combines extreme precipitation events with the year's highest passenger volume. Post-tropical weather events create extended wet conditions that overwhelm standard floor maintenance protocols.",
+      "urgency": "critical"
+    },
+    "Q4": {
+      "risk_label": "Late hurricane season and transition",
+      "risk_note": "October through November remains in the tail of hurricane season in {city}. Late-season tropical weather events can create surprise high-moisture periods at {airport} that maintenance crews are not expecting given the apparent transition to drier conditions.",
+      "urgency": "elevated"
+    }
+  }
+}
