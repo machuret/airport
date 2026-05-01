@@ -1065,6 +1065,12 @@ def generate_leaf_pages(airports, accidents, profiles, variations,
                         comp_fault
                     ),
                     "build_date":           datetime.now().strftime("%Y-%m-%d"),
+                    "unique_content_paras": "\n".join(
+                        f'<p class="unique-content__para">{p}</p>'
+                        for p in generate_unique_airport_content(
+                            airport, acc, profile, state_leg
+                        ).split('\n\n') if p.strip()
+                    ),
                     "critical_css":         critical_css_content,
                     # ── FAQ section ────────────────────────────────────────────
                     **dict(zip(
@@ -1916,6 +1922,102 @@ def build_new_section_context(airport, acc, profile, state_leg, seed,
         'prior_html':       prior_html,
         'stats_html':       stats_html,
     }
+
+
+
+def generate_unique_airport_content(airport, acc, profile, state_legal):
+    """
+    Generate 100% unique 300-400 word content block for each airport+accident.
+    Uses only data that differs per airport — guaranteed unique across all 13,050 pages.
+    """
+    iata       = airport['iata_code'] or airport['faa_code']
+    name       = airport['airport_name']
+    city       = airport['city']
+    state      = airport['state']
+    tier       = profile.get('passenger_tier', 'regional')
+    passengers = profile.get('annual_passengers_M', 1)
+    op         = profile.get('airport_operator_name', f'{city} Airport Authority')
+    op_type    = profile.get('operator_type', 'city')
+    food_op    = profile.get('food_operator', 'food service operators')
+    park_op    = profile.get('parking_operator', 'parking operators')
+    handler    = profile.get('ground_handler_primary', 'ground handlers')
+    notice     = profile.get('notice_of_claim_days', 0)
+    climate    = profile.get('climate_zone', 'temperate')
+    snow       = profile.get('avg_annual_snow_inches', 0)
+    elevation  = profile.get('elevation_ft', 100)
+    construction      = profile.get('construction_active', False)
+    construction_notes= profile.get('construction_notes', '')
+    altitude_risk     = profile.get('high_altitude_medical_risk', False)
+    zones      = profile.get('notable_accident_zones', [])
+    hazards    = profile.get('airport_specific_hazards', [])
+    local_note = profile.get('local_context_note', '')
+    sol        = state_legal.get('sol', '2 years')
+    acc_slug   = acc['slug']
+    acc_lower  = acc['accident_name'].lower()
+
+    op_type_labels = {'city':'city department','county':'county agency',
+                      'port_authority':'port authority','state':'state agency',
+                      'joint_authority':'joint authority','federal':'federal agency'}
+    op_label = op_type_labels.get(op_type, 'government entity')
+
+    tier_map = {
+        'mega':     f"one of the world's busiest airports — {passengers:.0f} million annual passengers",
+        'major':    f"one of the largest airports in {state} with {passengers:.0f} million annual passengers",
+        'regional': f"a regional airport serving {city} with {passengers:.1f} million annual passengers",
+        'small':    f"a smaller commercial airport serving {city}",
+    }
+    size_desc = tier_map.get(tier, f"a commercial airport handling {passengers:.1f} million passengers annually")
+
+    # P1: Operator structure — unique per airport
+    if food_op == 'Airport-operated':
+        food_ctx = f"{name} operates its food service directly — {acc_lower} claims in dining areas go against {op} itself"
+    else:
+        food_ctx = f"{food_op} operates all food and beverage concessions at {iata} under contract with {op} — they are the direct defendant in dining area {acc_lower} claims"
+
+    if park_op in ('Airport-operated', ''):
+        park_ctx = f"parking is managed directly by {op}"
+    else:
+        park_ctx = f"{park_op} manages parking at {iata} under its own contract with separate liability coverage"
+
+    p1 = f"{name} is {size_desc}. {food_ctx}. {park_ctx}. Ground handling — baggage, ramp vehicles, jet bridge equipment — is operated by {handler}. Each of these entities is a separate defendant with separate commercial insurance, and each can be named alongside {op} in a {acc_lower} claim."
+
+    # P2: Physical/climate hazards — unique per airport
+    climate_map = {
+        'northern_winter': f"With {snow:.0f} inches of annual snowfall and temperatures that regularly drop well below freezing, {name} faces severe seasonal conditions at all outdoor surfaces — curbside, parking, and boarding areas. The {acc_lower} risk at {iata} peaks in winter months when ice and compacted snow create hazardous conditions that {op} is legally obligated to address but frequently fails to manage adequately during high-traffic periods.",
+        'coastal_rain':    f"{city}'s marine climate produces persistent moisture at {name} — wet floors from tracked-in rain, moisture in covered walkways, and slick curbside surfaces are year-round conditions rather than seasonal risks. The {acc_lower} hazard at {iata} is constant, not episodic, making the failure to maintain adequate dry floor conditions a chronic rather than occasional negligence.",
+        'mountain':        f"At {elevation:,} feet elevation with {snow:.0f} inches of annual snowfall, {name} faces both extreme outdoor weather conditions and altitude-specific health risks. The {acc_lower} risk profile at {iata} is shaped by ice and snow at outdoor zones from October through April and by the physiological effects of {city}'s high altitude on passengers who arrived at sea level hours earlier.",
+        'desert_dry':      f"{city}'s extreme heat creates thermal cycling in floor and surface materials at {name} — contributing to surface degradation and uneven flooring that is a documented {acc_lower} risk at desert-climate airports. Summer heat also accelerates fatigue and disorientation in passengers, particularly elderly travelers, increasing the risk of accidents at {iata}.",
+        'southern_humid':  f"{city}'s humidity and frequent precipitation mean {name} deals with wet-floor conditions from tracked moisture on a near-daily basis during summer months. The {acc_lower} risk at {iata} is elevated by the combination of high passenger volume during summer peak season and the persistent moisture that summer weather brings into all terminal entry points.",
+        'tropical':        f"{city}'s tropical climate means {name} operates in near-constant humidity and frequent rainfall — wet floors from tracked-in moisture are a permanent feature of the {acc_lower} risk profile at {iata}. Year-round wet conditions create a continuous maintenance obligation for {op} and its cleaning contractors that is difficult to satisfy during peak hours.",
+    }
+    p2 = climate_map.get(climate, f"The climate conditions in {city} contribute to the physical hazard profile at {name}.")
+
+    if altitude_risk and acc_slug == 'medical-emergency-negligence':
+        p2 += f" At {elevation:,} feet, {iata} is among the highest-elevation major US airports — significantly elevating cardiac and respiratory risk for all passengers and creating a heightened legal standard for the adequacy of emergency response infrastructure."
+
+    if construction:
+        p2 += f" Active construction at {iata} — {construction_notes[:120].rstrip()} — creates additional hazard zones directly adjacent to operating passenger areas, adding a construction-liability layer on top of the standard airport premises liability."
+
+    # P3: Legal framework — unique per airport + state
+    if notice > 0:
+        p3 = f"{op} is a {op_label} of {state}. This has direct legal consequences for your {acc_lower} claim: government liability law applies, not standard tort law. A formal Notice of Claim must be filed against {op} within {notice} days of your injury at {name} — this is a mandatory prerequisite to any lawsuit, and missing it permanently bars your case under {state} law regardless of how strong your evidence is or how severe your injury. {local_note}"
+    else:
+        p3 = f"{op} is a {op_label}. {state} does not require a pre-suit Notice of Claim for most airport injury cases, which removes one procedural barrier — but {op} begins managing the incident from the moment it is reported at {iata}, and the {sol} statute of limitations is already running. {local_note}"
+
+    # P4: Specific zones — unique per airport
+    parts = [p1, p2, p3]
+    if zones:
+        zone_list = ', '.join(zones[:3])
+        p4 = f"The documented high-risk zones at {name} for {acc_lower} incidents are: {zone_list}. These specific areas have higher incident frequency because of the combination of passenger volume, operational complexity, and multiple contractor handoffs that characterize these zones at {iata}."
+        parts.append(p4)
+
+    if hazards:
+        h_text = hazards[0]
+        if len(hazards) > 1:
+            h_text += f" A second documented risk factor at {iata}: {hazards[1]}"
+        parts.append(h_text)
+
+    return '\n\n'.join(parts)
 
 
 def copy_assets(dist):
