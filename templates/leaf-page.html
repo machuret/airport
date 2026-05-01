@@ -564,7 +564,7 @@
           <span class="lp-accident-type">{{accident_name}}</span>
         </div>
 
-        <div class="hero__eyebrow">{{city}}, {{state}} — Free Legal Consultation</div>
+        <div class="hero__eyebrow">{{hero_eyebrow}}</div>
         <h1 class="hero__title">{{h1_title}}</h1>
         <p class="hero__sub">{{hero_intro}}</p>
 
@@ -686,7 +686,7 @@
         <div>
           <div class="lp-airport-context">
             <div class="lp-airport-context__eyebrow">{{iata_code}} — Airport-specific risk factors</div>
-            <h2 class="lp-airport-context__title" id="context-heading">{{accident_name}} at {{airport_name}}: What Makes This Airport Different</h2>
+            <h2 class="lp-airport-context__title" id="context-heading">{{context_section_title}}</h2>
             <p class="lp-airport-context__body">{{airport_accident_context_para}}</p>
             <div class="lp-hazard-list" role="list">
               {{hazard_items_html}}
@@ -698,8 +698,8 @@
 
         <!-- Right: liable parties specific to this airport -->
         <div>
-          <div class="section__label" class="section__label" style="color:var(--color-gold-300);">Who is responsible at {{iata_code}}</div>
-          <h2 class="section__title" class="section__title" style="color:#fff;">Liable Parties at {{airport_name}}</h2>
+          <div class="section__label" style="color:var(--color-gold-300);">{{liable_section_label}}</div>
+          <h2 class="section__title" style="color:#fff;">{{liable_section_title}}</h2>
           <p class="section__sub" style="margin-bottom:var(--space-2);">{{liable_intro_para}}</p>
           <div class="lp-liable-grid" role="list">
             {{liable_cards_html}}
@@ -717,7 +717,7 @@
       <div class="lp-two-col">
         <div>
           <div class="section__label">Immediate action required</div>
-          <h2 class="section__title" id="steps-heading">What To Do Right Now After a {{accident_name}} at {{iata_code}}</h2>
+          <h2 class="section__title" id="steps-heading">{{steps_section_title}}</h2>
           <p class="section__sub">{{what_to_do_intro}}</p>
           <div class="lp-steps" role="list">
             {{steps_html}}
@@ -727,7 +727,7 @@
         <!-- Evidence timeline -->
         <div>
           <div class="section__label" style="color:var(--color-gold-400);">Evidence disappears fast</div>
-          <h2 class="section__title" style="font-size:var(--text-display-sm);">Evidence Preservation Timeline at {{airport_name}}</h2>
+          <h2 class="section__title" style="font-size:var(--text-display-sm);">{{evidence_section_title}}</h2>
           <p class="section__sub" style="margin-bottom:var(--space-4);">{{evidence_intro}}</p>
           <div class="lp-evidence-timeline" role="list" aria-label="Evidence urgency timeline">
             {{evidence_timeline_html}}
@@ -741,7 +741,7 @@
   <section class="section section--cream2" aria-labelledby="legal-heading">
     <div class="container">
       <div class="section__label">Know your rights</div>
-      <h2 class="section__title" id="legal-heading">{{accident_name}} at {{airport_name}} — Complete Legal Guide</h2>
+      <h2 class="section__title" id="legal-heading">{{legal_section_title}}</h2>
       <div class="lp-two-col" style="margin-top:var(--space-10);">
         <div>
           <div style="margin-bottom:var(--space-8);">
@@ -795,7 +795,7 @@
   <section class="section section--white" aria-labelledby="other-accidents-heading">
     <div class="container">
       <div class="section__label">Also at {{iata_code}}</div>
-      <h2 class="section__title" id="other-accidents-heading">Other Accident Types at {{airport_name}}</h2>
+      <h2 class="section__title" id="other-accidents-heading">{{other_accidents_title}}</h2>
       <p class="section__sub">Every type of airport accident at {{airport_name}} has a different liable party and legal path. Find the one that matches your situation.</p>
       <div class="lp-other-accidents" role="list">
         {{other_accidents_html}}

@@ -44,6 +44,7 @@ AIRPORTS_CSV   = DATA_DIR / "us_airports_full.csv"
 ACCIDENTS_JSON = DATA_DIR / "accidents_database_v2.json"
 CROSSREF_CSV   = DATA_DIR / "airports_accidents_crossref.csv"
 PROFILES_JSON  = DATA_DIR / "airport_profiles.json"
+VARIATIONS_JSON= DATA_DIR / "content_variations.json"
 TMPL_STATE     = TEMPLATES_DIR / "state-hub.html"
 TMPL_AIRPORT   = TEMPLATES_DIR / "airport-hub.html"
 TMPL_ACCIDENT  = TEMPLATES_DIR / "accident-hub.html"
@@ -158,16 +159,39 @@ ALL_ACCIDENTS = [
 
 
 def load_data():
-    with open(AIRPORTS_CSV)   as f: airports  = list(csv.DictReader(f))
-    with open(ACCIDENTS_JSON) as f: accidents = json.load(f)
-    with open(CROSSREF_CSV)   as f: crossref  = list(csv.DictReader(f))
-    with open(PROFILES_JSON)  as f: profiles  = json.load(f)
-    return airports, accidents, crossref, profiles
+    with open(AIRPORTS_CSV)    as f: airports   = list(csv.DictReader(f))
+    with open(ACCIDENTS_JSON)  as f: accidents  = json.load(f)
+    with open(CROSSREF_CSV)    as f: crossref   = list(csv.DictReader(f))
+    with open(PROFILES_JSON)   as f: profiles   = json.load(f)
+    with open(VARIATIONS_JSON) as f: variations = json.load(f)
+    return airports, accidents, crossref, profiles, variations
 
 
 def write_page(path, html):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(html, encoding="utf-8")
+
+
+def pick(variations, key, seed, **fmt):
+    """Pick a variant deterministically by seed, then format with airport/accident vars.
+    Same airport+accident always gets the same variant — different airports get different ones.
+    """
+    pool = variations.get(key, ["{" + key + "}"])
+    idx  = seed % len(pool)
+    text = pool[idx]
+    # Replace {placeholders} in the variant text
+    for k, v in fmt.items():
+        text = text.replace("{" + k + "}", str(v))
+    # Clean up any unreplaced placeholders
+    text = re.sub(r'\{[a-z_]+\}', '', text).strip()
+    return text
+
+
+def make_seed(airport_slug, accident_slug=""):
+    """Deterministic seed from airport+accident slug — stable across rebuilds."""
+    import hashlib
+    h = hashlib.md5(f"{airport_slug}:{accident_slug}".encode()).digest()
+    return int.from_bytes(h[:4], "big")
 
 
 def render(template, context):
@@ -729,7 +753,7 @@ def generate_leaf_pages(airports, accidents, profiles, tmpl, dist,
     return  # generator exhausted
 
 
-def generate_leaf_pages(airports, accidents, profiles, tmpl, dist,
+def generate_leaf_pages(airports, accidents, profiles, variations, tmpl, dist,
                         filter_airport=None, filter_accident=None, phase=None):
     """Wrapper that runs the leaf generator with parallel file writes."""
     phase_types = {1:{'large_hub'},2:{'medium_hub'},3:{'small_hub'},4:{'non_hub'}}
@@ -760,6 +784,7 @@ def generate_leaf_pages(airports, accidents, profiles, tmpl, dist,
                     f"Find out who is liable, what evidence to preserve, and what your case is worth. "
                     f"Free consultation — {state_leg['sol']} statute of limitations in {airport['state']}."
                 )
+                seed = make_seed(airport['slug'], acc['slug'])
                 const_b, alt_b, pfas_b = build_banners(profile, acc)
                 if notice_days > 0:
                     notice_label = "Notice of claim"; notice_value = f"{notice_days} days"; notice_color = "var(--color-danger)"
@@ -819,11 +844,45 @@ def generate_leaf_pages(airports, accidents, profiles, tmpl, dist,
                     "other_accidents_html":build_other_accidents(airport['slug'],acc['slug']),
                     "footer_airport_links_html":build_footer_airport_links(airport['slug'],acc['slug']),
                     "footer_accident_links_html":build_footer_accident_links(acc['slug'],airport['slug'],airports),
-                    "form_title":f"Free {iata} {acc['accident_name']} Review",
+                    # ── Variation picks (deterministic per airport+accident) ────
+                    "hero_eyebrow":      pick(variations,"hero_eyebrow_variants",  seed,
+                                              city=airport['city'], state=airport['state'],
+                                              iata=iata, airport=airport['airport_name']),
+                    "liable_section_label": pick(variations,"liable_section_labels", seed,
+                                              iata=iata, airport=airport['airport_name']),
+                    "liable_section_title": pick(variations,"liable_section_titles", seed,
+                                              iata=iata, airport=airport['airport_name'],
+                                              accident=acc['accident_name']),
+                    "liable_intro_para": pick(variations,"liable_intro_variants",   seed,
+                                              airport=airport['airport_name'], iata=iata,
+                                              accident_lower=acc['accident_name'].lower(),
+                                              op=op, food_op=profile.get('food_operator','food operators'),
+                                              park_op=profile.get('parking_operator','parking operators'),
+                                              handler=profile.get('ground_handler_primary','ground handlers'),
+                                              op_type=op_type_label),
+                    "context_section_title": pick(variations,"context_section_titles", seed+1,
+                                              airport=airport['airport_name'], iata=iata,
+                                              accident=acc['accident_name']),
+                    "steps_section_title":   pick(variations,"steps_section_titles",  seed+2,
+                                              airport=airport['airport_name'], iata=iata,
+                                              accident=acc['accident_name']),
+                    "evidence_section_title":pick(variations,"evidence_section_titles",seed+3,
+                                              airport=airport['airport_name'], iata=iata),
+                    "legal_section_title":   pick(variations,"legal_section_titles",  seed+4,
+                                              airport=airport['airport_name'], iata=iata,
+                                              accident=acc['accident_name']),
+                    "other_accidents_title": pick(variations,"other_accidents_titles", seed+5,
+                                              airport=airport['airport_name'], iata=iata),
+                    "cta_title":            pick(variations,"cta_titles",              seed+6,
+                                              airport=airport['airport_name'], iata=iata,
+                                              accident=acc['accident_name']),
+                    "form_title":           pick(variations,"form_titles",             seed+7,
+                                              airport=airport['airport_name'], iata=iata,
+                                              accident=acc['accident_name']),
+                    # ── Static fields ──────────────────────────────────────────
                     "form_subtitle":f"Tell us what happened at {airport['airport_name']}. An attorney reviews within 24 hours.",
                     "form_placeholder":f"Describe what happened at {airport['airport_name']}...",
                     "submit_label":f"Review My {iata} Case \u2192",
-                    "cta_title":f"Injured in a {acc['accident_name']} at {airport['airport_name']}?",
                     "cta_sub":f"Evidence at {iata} disappears within 72 hours and {airport['state']}'s {state_leg['sol']} statute of limitations has already started.",
                     "cta_btn_label":f"Start My Free {iata} Case Review \u2192",
                     "faq_liable_answer":faq_liable,"faq_deadline_answer":faq_deadline,"faq_evidence_answer":faq_evidence,
@@ -925,7 +984,7 @@ def main():
     start = datetime.now()
     print(f"\n{'='*60}\nAirportAccidents.com \u2014 Page Generator\n{'='*60}")
     print("\n[1/5] Loading data...")
-    airports, accidents, crossref, profiles = load_data()
+    airports, accidents, crossref, profiles, variations = load_data()
     print(f"  \u2713 {len(airports)} airports | {len(accidents)} accidents | {len(profiles)} profiles")
 
     if args.dry_run:
@@ -969,7 +1028,7 @@ def main():
 
     if gen_all or args.leaves or args.phase or args.airport or args.accident:
         print("\n  \u2014 Leaf pages \u2014")
-        total += generate_leaf_pages(airports, accidents, profiles, tl, DIST,
+        total += generate_leaf_pages(airports, accidents, profiles, variations, tl, DIST,
                                      filter_airport=args.airport,
                                      filter_accident=args.accident,
                                      phase=args.phase)
