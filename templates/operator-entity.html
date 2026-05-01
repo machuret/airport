@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{page_title}}</title>
+<meta name="description" content="{{meta_description}}">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="{{canonical_url}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{canonical_url}}">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{meta_description}}">
+<meta property="og:image" content="https://airportaccidents.com/assets/img/og-operator.jpg">
+<meta property="og:site_name" content="AirportAccidents.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/css/global.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/assets/css/global.css"></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{operator_name}}",
+  "description": "{{operator_description}}",
+  "url": "{{canonical_url}}",
+  "sameAs": [],
+  "knowsAbout": "Airport {{type_label}} Services"
+}
+</script>
+<style>
+.op-hero__inner { max-width:var(--max-width); margin:0 auto; padding:var(--space-12) var(--space-5) var(--space-16); }
+.op-stat-bar { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--alpha-white-10); border:1px solid var(--alpha-white-10); border-radius:var(--radius-md); overflow:hidden; margin-top:var(--space-8); }
+.op-stat { background:var(--alpha-white-6); padding:var(--space-4) var(--space-5); }
+.op-stat__label { font-size:var(--text-xs); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--alpha-white-40); margin-bottom:3px; }
+.op-stat__value { font-size:var(--text-display-sm); font-weight:900; color:var(--color-gold-300); font-family:var(--font-display); }
+.op-airport-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:var(--space-2); margin-top:var(--space-6); }
+.op-airport-link { display:flex; align-items:center; gap:var(--space-2); padding:var(--space-2) var(--space-3); background:var(--color-cream-100); border:1px solid var(--alpha-navy-border); border-radius:var(--radius-md); text-decoration:none; font-size:var(--text-sm); font-weight:500; color:var(--color-navy-800); transition:background .15s,border-color .15s; }
+.op-airport-link:hover { background:var(--color-cream-200); border-color:var(--color-gold-400); }
+.op-airport-link__code { font-size:var(--text-xs); font-weight:700; color:var(--color-gold-400); background:rgba(200,150,42,.08); padding:1px 5px; border-radius:3px; flex-shrink:0; }
+.op-accident-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:var(--space-2); margin-top:var(--space-6); }
+.op-accident-link { display:flex; align-items:center; gap:var(--space-2); padding:var(--space-3) var(--space-4); background:#fff; border:1px solid var(--alpha-navy-border); border-left:3px solid var(--color-gold-400); border-radius:0 var(--radius-md) var(--radius-md) 0; text-decoration:none; font-size:var(--text-sm); font-weight:500; color:var(--color-navy-800); transition:background .15s; }
+.op-accident-link:hover { background:var(--color-cream-100); }
+@media (max-width:680px) { .op-stat-bar { grid-template-columns:1fr 1fr; } .op-airport-grid { grid-template-columns:1fr 1fr; } }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">Airport<span>Accidents</span>.com</a>
+    <div class="nav__links" id="nav-menu">
+      <a href="tel:{{phone_digits}}" class="nav__link nav__link--cta">Free Consultation</a>
+    </div>
+    <button class="nav__toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation">
+      <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb__inner">
+    <a href="/" class="breadcrumb__link">Home</a>
+    <span class="breadcrumb__sep">›</span>
+    <span class="breadcrumb__current">{{operator_name}} Airport Injury Claims</span>
+  </div>
+</div>
+
+<main id="main-content">
+
+  <section class="hero" aria-label="Operator overview">
+    <div class="hero__bg-grid" aria-hidden="true"></div>
+    <div class="hero__bg-glow" aria-hidden="true"></div>
+    <div class="op-hero__inner">
+      <div class="hero__eyebrow">{{type_label}} — Airport Liability</div>
+      <h1 class="hero__title">{{h1_title}}</h1>
+      <p class="hero__sub">{{hero_intro}}</p>
+      <div class="op-stat-bar">
+        <div class="op-stat">
+          <div class="op-stat__label">US Airports</div>
+          <div class="op-stat__value">{{airport_count}}</div>
+        </div>
+        <div class="op-stat">
+          <div class="op-stat__label">Accident types</div>
+          <div class="op-stat__value">{{accident_type_count}}</div>
+        </div>
+        <div class="op-stat">
+          <div class="op-stat__label">Liability zones</div>
+          <div class="op-stat__value">{{liability_zone_count}}</div>
+        </div>
+      </div>
+      <div class="hero__actions" style="margin-top:var(--space-8);">
+        <a href="tel:{{phone_digits}}" class="btn btn--primary btn--lg">Free Case Review →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="trust-strip__inner">
+      <div class="trust-strip__item"><span class="trust-strip__icon">✓</span>No fees unless you win</div>
+      <div class="trust-strip__divider"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon">✓</span>We know {{operator_name}}'s liability structure</div>
+      <div class="trust-strip__divider"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon">✓</span>Free 24-hour case review</div>
+    </div>
+  </div>
+
+  <!-- WHO IS THIS OPERATOR -->
+  <section class="section section--white" aria-labelledby="who-heading">
+    <div class="container">
+      <div class="lp-two-col">
+        <div>
+          <div class="section__label">Who is {{operator_name}}</div>
+          <h2 class="section__title" id="who-heading">{{operator_name}}: The Company Behind Your Airport Injury</h2>
+          <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:var(--leading-relaxed);margin-bottom:var(--space-4);">{{who_para_1}}</p>
+          <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:var(--leading-relaxed);margin-bottom:var(--space-4);">{{who_para_2}}</p>
+          <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:var(--leading-relaxed);">{{who_para_3}}</p>
+        </div>
+        <div>
+          <div class="lp-airport-context">
+            <div class="lp-airport-context__eyebrow">{{operator_name}} — liability profile</div>
+            <h3 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:#fff;margin-bottom:var(--space-4);">What {{operator_name}} Is Liable For</h3>
+            <div class="lp-hazard-list">
+              {{liability_items_html}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCIDENT TYPES WHERE OPERATOR IS DEFENDANT -->
+  <section class="section section--navy" aria-labelledby="accidents-heading">
+    <div class="container">
+      <div class="section__label" style="color:var(--color-gold-300);">Claims we handle against {{operator_name}}</div>
+      <h2 class="section__title" style="color:#fff;" id="accidents-heading">Accident Types Where {{operator_name}} Is the Defendant</h2>
+      <p class="section__sub" style="color:var(--alpha-white-55);">{{accidents_intro}}</p>
+      <div class="op-accident-grid" role="list">
+        {{operator_accident_links_html}}
+      </div>
+    </div>
+  </section>
+
+  <!-- AIRPORTS WHERE OPERATOR WORKS -->
+  <section class="section section--cream2" aria-labelledby="airports-heading">
+    <div class="container">
+      <div class="section__label">Where {{operator_name}} operates</div>
+      <h2 class="section__title" id="airports-heading">{{operator_name}} Airport Locations — Claim at Your Specific Airport</h2>
+      <p class="section__sub">{{airports_para}}</p>
+      <div class="op-airport-grid" role="list">
+        {{operator_airport_links_html}}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta cta--dark" aria-labelledby="cta-heading">
+    <div class="cta__bg-grid" aria-hidden="true"></div>
+    <div class="cta__inner">
+      <div class="section__label section__label--center">Free case review</div>
+      <h2 class="cta__title" id="cta-heading">Hurt at an Airport Where {{operator_name}} Operates?</h2>
+      <p class="cta__sub">{{operator_name}} carries commercial liability insurance at every airport it operates. We know their coverage structure, their legal team, and how to build a winning case against them.</p>
+      <a href="tel:{{phone_digits}}" class="cta__phone">{{phone_display}}</a>
+      <span class="cta__phone-label">Free consultation — available 24/7</span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo footer__logo">Airport<span>Accidents</span>.com</a>
+        <p class="footer__tagline">Airport accident attorneys handling claims against {{operator_name}} and all major airport operators.</p>
+        <a href="tel:{{phone_digits}}" class="footer__phone">{{phone_display}}</a>
+      </div>
+      <nav class="footer__col">
+        <h3 class="footer__col-title">{{operator_name}} Airports</h3>
+        {{footer_airport_links_html}}
+      </nav>
+      <nav class="footer__col">
+        <h3 class="footer__col-title">Accident Types</h3>
+        {{footer_accident_links_html}}
+      </nav>
+      <nav class="footer__col">
+        <h3 class="footer__col-title">Legal</h3>
+        <a href="/about/">About Us</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/disclaimer/">Legal Disclaimer</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__legal">&copy; 2025 AirportAccidents.com. Informational purposes only. Not legal advice.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-bar" id="sticky-bar">
+  <p class="sticky-bar__text"><strong>Injured where {{operator_name}} operates?</strong> Free case review — no fees unless we win.</p>
+  <a href="tel:{{phone_digits}}" class="sticky-bar__btn">Call Free</a>
+</div>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

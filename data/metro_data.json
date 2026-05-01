@@ -1,0 +1,1401 @@
+{
+  "New York Metro": {
+    "metro_name": "New York Metro",
+    "city_slug": "new-york-metro",
+    "airports": [
+      {
+        "slug": "john-f-kennedy-international",
+        "name": "John F. Kennedy International Airport",
+        "iata": "JFK",
+        "city": "New York",
+        "state": "New York",
+        "state_code": "NY",
+        "type": "large_hub",
+        "op": "Port Authority of New York and New Jersey",
+        "notice_days": 90
+      },
+      {
+        "slug": "laguardia",
+        "name": "LaGuardia Airport",
+        "iata": "LGA",
+        "city": "New York",
+        "state": "New York",
+        "state_code": "NY",
+        "type": "large_hub",
+        "op": "Port Authority of New York and New Jersey",
+        "notice_days": 90
+      },
+      {
+        "slug": "newark-liberty-international",
+        "name": "Newark Liberty International Airport",
+        "iata": "EWR",
+        "city": "Newark",
+        "state": "New Jersey",
+        "state_code": "NJ",
+        "type": "large_hub",
+        "op": "Port Authority of New York and New Jersey",
+        "notice_days": 90
+      }
+    ],
+    "airport_count": 3,
+    "primary_state": "New York",
+    "primary_state_code": "NY",
+    "states": [
+      "New York",
+      "New Jersey"
+    ],
+    "sol": "1.5 years",
+    "notice": "90 days",
+    "primary_airport_name": "John F. Kennedy International Airport",
+    "primary_airport_iata": "JFK",
+    "primary_airport_slug": "john-f-kennedy-international",
+    "primary_op": "Port Authority of New York and New Jersey"
+  },
+  "Los Angeles Metro": {
+    "metro_name": "Los Angeles Metro",
+    "city_slug": "los-angeles-metro",
+    "airports": [
+      {
+        "slug": "los-angeles-international",
+        "name": "Los Angeles International Airport",
+        "iata": "LAX",
+        "city": "Los Angeles",
+        "state": "California",
+        "state_code": "CA",
+        "type": "large_hub",
+        "op": "Los Angeles World Airports (LAWA) \u2014 City of Los Angeles",
+        "notice_days": 180
+      },
+      {
+        "slug": "hollywood-burbank",
+        "name": "Hollywood Burbank Airport",
+        "iata": "BUR",
+        "city": "Burbank",
+        "state": "California",
+        "state_code": "CA",
+        "type": "medium_hub",
+        "op": "Burbank Airport Authority",
+        "notice_days": 180
+      },
+      {
+        "slug": "long-beach",
+        "name": "Long Beach Airport",
+        "iata": "LGB",
+        "city": "Long Beach",
+        "state": "California",
+        "state_code": "CA",
+        "type": "medium_hub",
+        "op": "Long Beach Airport Authority",
+        "notice_days": 180
+      },
+      {
+        "slug": "ontario-international",
+        "name": "Ontario International Airport",
+        "iata": "ONT",
+        "city": "Ontario",
+        "state": "California",
+        "state_code": "CA",
+        "type": "medium_hub",
+        "op": "Ontario Airport Authority",
+        "notice_days": 180
+      },
+      {
+        "slug": "john-wayne",
+        "name": "John Wayne Airport",
+        "iata": "SNA",
+        "city": "Santa Ana",
+        "state": "California",
+        "state_code": "CA",
+        "type": "medium_hub",
+        "op": "Santa Ana Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 5,
+    "primary_state": "California",
+    "primary_state_code": "CA",
+    "states": [
+      "California"
+    ],
+    "sol": "2 years",
+    "notice": "6 months",
+    "primary_airport_name": "Los Angeles International Airport",
+    "primary_airport_iata": "LAX",
+    "primary_airport_slug": "los-angeles-international",
+    "primary_op": "Los Angeles World Airports (LAWA) \u2014 City of Los Angeles"
+  },
+  "Chicago Metro": {
+    "metro_name": "Chicago Metro",
+    "city_slug": "chicago-metro",
+    "airports": [
+      {
+        "slug": "ohare-international",
+        "name": "O'Hare International Airport",
+        "iata": "ORD",
+        "city": "Chicago",
+        "state": "Illinois",
+        "state_code": "IL",
+        "type": "large_hub",
+        "op": "City of Chicago \u2014 Chicago Department of Aviation",
+        "notice_days": 365
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Illinois",
+    "primary_state_code": "IL",
+    "states": [
+      "Illinois"
+    ],
+    "sol": "2 years",
+    "notice": "1 year",
+    "primary_airport_name": "O'Hare International Airport",
+    "primary_airport_iata": "ORD",
+    "primary_airport_slug": "ohare-international",
+    "primary_op": "City of Chicago \u2014 Chicago Department of Aviation"
+  },
+  "San Francisco Metro": {
+    "metro_name": "San Francisco Metro",
+    "city_slug": "san-francisco-metro",
+    "airports": [
+      {
+        "slug": "san-francisco-international",
+        "name": "San Francisco International Airport",
+        "iata": "SFO",
+        "city": "San Francisco",
+        "state": "California",
+        "state_code": "CA",
+        "type": "large_hub",
+        "op": "San Francisco Airport Commission \u2014 City and County of San Francisco",
+        "notice_days": 180
+      },
+      {
+        "slug": "san-jose-international",
+        "name": "San Jose International Airport",
+        "iata": "SJC",
+        "city": "San Jose",
+        "state": "California",
+        "state_code": "CA",
+        "type": "large_hub",
+        "op": "City of San Jos\u00e9 \u2014 Norman Y. Mineta San Jos\u00e9 International Airport",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 2,
+    "primary_state": "California",
+    "primary_state_code": "CA",
+    "states": [
+      "California"
+    ],
+    "sol": "2 years",
+    "notice": "6 months",
+    "primary_airport_name": "San Francisco International Airport",
+    "primary_airport_iata": "SFO",
+    "primary_airport_slug": "san-francisco-international",
+    "primary_op": "San Francisco Airport Commission \u2014 City and County of San Francisco"
+  },
+  "Washington DC Metro": {
+    "metro_name": "Washington DC Metro",
+    "city_slug": "washington-dc-metro",
+    "airports": [
+      {
+        "slug": "ronald-reagan-washington-national",
+        "name": "Ronald Reagan Washington National Airport",
+        "iata": "DCA",
+        "city": "Arlington",
+        "state": "Virginia",
+        "state_code": "VA",
+        "type": "large_hub",
+        "op": "Metropolitan Washington Airports Authority (MWAA)",
+        "notice_days": 0
+      },
+      {
+        "slug": "baltimore-washington-international",
+        "name": "Baltimore/Washington International Thurgood Marshall Airport",
+        "iata": "BWI",
+        "city": "Baltimore",
+        "state": "Maryland",
+        "state_code": "MD",
+        "type": "large_hub",
+        "op": "Maryland Aviation Administration (MAA)",
+        "notice_days": 365
+      }
+    ],
+    "airport_count": 2,
+    "primary_state": "Virginia",
+    "primary_state_code": "VA",
+    "states": [
+      "Virginia",
+      "Maryland"
+    ],
+    "sol": "2 years",
+    "notice": "None required",
+    "primary_airport_name": "Ronald Reagan Washington National Airport",
+    "primary_airport_iata": "DCA",
+    "primary_airport_slug": "ronald-reagan-washington-national",
+    "primary_op": "Metropolitan Washington Airports Authority (MWAA)"
+  },
+  "Dallas Metro": {
+    "metro_name": "Dallas Metro",
+    "city_slug": "dallas-metro",
+    "airports": [
+      {
+        "slug": "dallas-fort-worth-international",
+        "name": "Dallas/Fort Worth International Airport",
+        "iata": "DFW",
+        "city": "Dallas",
+        "state": "Texas",
+        "state_code": "TX",
+        "type": "large_hub",
+        "op": "Dallas/Fort Worth International Airport Board",
+        "notice_days": 0
+      },
+      {
+        "slug": "dallas-love-field",
+        "name": "Dallas Love Field",
+        "iata": "DAL",
+        "city": "Dallas",
+        "state": "Texas",
+        "state_code": "TX",
+        "type": "large_hub",
+        "op": "Dallas Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 2,
+    "primary_state": "Texas",
+    "primary_state_code": "TX",
+    "states": [
+      "Texas"
+    ],
+    "sol": "2 years",
+    "notice": "None (most)",
+    "primary_airport_name": "Dallas/Fort Worth International Airport",
+    "primary_airport_iata": "DFW",
+    "primary_airport_slug": "dallas-fort-worth-international",
+    "primary_op": "Dallas/Fort Worth International Airport Board"
+  },
+  "Miami Metro": {
+    "metro_name": "Miami Metro",
+    "city_slug": "miami-metro",
+    "airports": [
+      {
+        "slug": "miami-international",
+        "name": "Miami International Airport",
+        "iata": "MIA",
+        "city": "Miami",
+        "state": "Florida",
+        "state_code": "FL",
+        "type": "large_hub",
+        "op": "Miami-Dade Aviation Department",
+        "notice_days": 0
+      },
+      {
+        "slug": "palm-beach-international",
+        "name": "Palm Beach International Airport",
+        "iata": "PBI",
+        "city": "West Palm Beach",
+        "state": "Florida",
+        "state_code": "FL",
+        "type": "medium_hub",
+        "op": "West Palm Beach Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 2,
+    "primary_state": "Florida",
+    "primary_state_code": "FL",
+    "states": [
+      "Florida"
+    ],
+    "sol": "2 years",
+    "notice": "3 years (sovereign immunity)",
+    "primary_airport_name": "Miami International Airport",
+    "primary_airport_iata": "MIA",
+    "primary_airport_slug": "miami-international",
+    "primary_op": "Miami-Dade Aviation Department"
+  },
+  "Houston Metro": {
+    "metro_name": "Houston Metro",
+    "city_slug": "houston-metro",
+    "airports": [
+      {
+        "slug": "george-bush-intercontinental",
+        "name": "George Bush Intercontinental Airport",
+        "iata": "IAH",
+        "city": "Houston",
+        "state": "Texas",
+        "state_code": "TX",
+        "type": "large_hub",
+        "op": "Houston Airport System \u2014 City of Houston",
+        "notice_days": 0
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Texas",
+    "primary_state_code": "TX",
+    "states": [
+      "Texas"
+    ],
+    "sol": "2 years",
+    "notice": "None (most)",
+    "primary_airport_name": "George Bush Intercontinental Airport",
+    "primary_airport_iata": "IAH",
+    "primary_airport_slug": "george-bush-intercontinental",
+    "primary_op": "Houston Airport System \u2014 City of Houston"
+  },
+  "Atlanta Metro": {
+    "metro_name": "Atlanta Metro",
+    "city_slug": "atlanta-metro",
+    "airports": [
+      {
+        "slug": "hartsfield-jackson-atlanta-international",
+        "name": "Hartsfield-Jackson Atlanta International Airport",
+        "iata": "ATL",
+        "city": "Atlanta",
+        "state": "Georgia",
+        "state_code": "GA",
+        "type": "large_hub",
+        "op": "City of Atlanta \u2014 Hartsfield-Jackson Atlanta International Airport",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Georgia",
+    "primary_state_code": "GA",
+    "states": [
+      "Georgia"
+    ],
+    "sol": "2 years",
+    "notice": "6 months",
+    "primary_airport_name": "Hartsfield-Jackson Atlanta International Airport",
+    "primary_airport_iata": "ATL",
+    "primary_airport_slug": "hartsfield-jackson-atlanta-international",
+    "primary_op": "City of Atlanta \u2014 Hartsfield-Jackson Atlanta International Airport"
+  },
+  "Seattle Metro": {
+    "metro_name": "Seattle Metro",
+    "city_slug": "seattle-metro",
+    "airports": [
+      {
+        "slug": "seattle-tacoma-international",
+        "name": "Seattle-Tacoma International Airport",
+        "iata": "SEA",
+        "city": "Seattle",
+        "state": "Washington",
+        "state_code": "WA",
+        "type": "large_hub",
+        "op": "Port of Seattle",
+        "notice_days": 0
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Washington",
+    "primary_state_code": "WA",
+    "states": [
+      "Washington"
+    ],
+    "sol": "3 years",
+    "notice": "None required",
+    "primary_airport_name": "Seattle-Tacoma International Airport",
+    "primary_airport_iata": "SEA",
+    "primary_airport_slug": "seattle-tacoma-international",
+    "primary_op": "Port of Seattle"
+  },
+  "Denver Metro": {
+    "metro_name": "Denver Metro",
+    "city_slug": "denver-metro",
+    "airports": [
+      {
+        "slug": "denver-international",
+        "name": "Denver International Airport",
+        "iata": "DEN",
+        "city": "Denver",
+        "state": "Colorado",
+        "state_code": "CO",
+        "type": "large_hub",
+        "op": "Denver International Airport \u2014 City and County of Denver",
+        "notice_days": 182
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Colorado",
+    "primary_state_code": "CO",
+    "states": [
+      "Colorado"
+    ],
+    "sol": "2 years",
+    "notice": "182 days",
+    "primary_airport_name": "Denver International Airport",
+    "primary_airport_iata": "DEN",
+    "primary_airport_slug": "denver-international",
+    "primary_op": "Denver International Airport \u2014 City and County of Denver"
+  },
+  "Phoenix Metro": {
+    "metro_name": "Phoenix Metro",
+    "city_slug": "phoenix-metro",
+    "airports": [
+      {
+        "slug": "phoenix-sky-harbor-international",
+        "name": "Phoenix Sky Harbor International Airport",
+        "iata": "PHX",
+        "city": "Phoenix",
+        "state": "Arizona",
+        "state_code": "AZ",
+        "type": "large_hub",
+        "op": "City of Phoenix Aviation Department",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Arizona",
+    "primary_state_code": "AZ",
+    "states": [
+      "Arizona"
+    ],
+    "sol": "2 years",
+    "notice": "180 days",
+    "primary_airport_name": "Phoenix Sky Harbor International Airport",
+    "primary_airport_iata": "PHX",
+    "primary_airport_slug": "phoenix-sky-harbor-international",
+    "primary_op": "City of Phoenix Aviation Department"
+  },
+  "Las Vegas Metro": {
+    "metro_name": "Las Vegas Metro",
+    "city_slug": "las-vegas-metro",
+    "airports": [
+      {
+        "slug": "harry-reid-international",
+        "name": "Harry Reid International Airport",
+        "iata": "LAS",
+        "city": "Las Vegas",
+        "state": "Nevada",
+        "state_code": "NV",
+        "type": "large_hub",
+        "op": "Clark County Department of Aviation",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Nevada",
+    "primary_state_code": "NV",
+    "states": [
+      "Nevada"
+    ],
+    "sol": "2 years",
+    "notice": "6 months",
+    "primary_airport_name": "Harry Reid International Airport",
+    "primary_airport_iata": "LAS",
+    "primary_airport_slug": "harry-reid-international",
+    "primary_op": "Clark County Department of Aviation"
+  },
+  "Orlando Metro": {
+    "metro_name": "Orlando Metro",
+    "city_slug": "orlando-metro",
+    "airports": [
+      {
+        "slug": "orlando-international",
+        "name": "Orlando International Airport",
+        "iata": "MCO",
+        "city": "Orlando",
+        "state": "Florida",
+        "state_code": "FL",
+        "type": "large_hub",
+        "op": "Greater Orlando Aviation Authority (GOAA)",
+        "notice_days": 0
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Florida",
+    "primary_state_code": "FL",
+    "states": [
+      "Florida"
+    ],
+    "sol": "2 years",
+    "notice": "3 years (sovereign immunity)",
+    "primary_airport_name": "Orlando International Airport",
+    "primary_airport_iata": "MCO",
+    "primary_airport_slug": "orlando-international",
+    "primary_op": "Greater Orlando Aviation Authority (GOAA)"
+  },
+  "Minneapolis Metro": {
+    "metro_name": "Minneapolis Metro",
+    "city_slug": "minneapolis-metro",
+    "airports": [
+      {
+        "slug": "minneapolis-saint-paul-international",
+        "name": "Minneapolis-Saint Paul International Airport",
+        "iata": "MSP",
+        "city": "Minneapolis",
+        "state": "Minnesota",
+        "state_code": "MN",
+        "type": "large_hub",
+        "op": "Metropolitan Airports Commission (MAC)",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Minnesota",
+    "primary_state_code": "MN",
+    "states": [
+      "Minnesota"
+    ],
+    "sol": "3 years",
+    "notice": "180 days",
+    "primary_airport_name": "Minneapolis-Saint Paul International Airport",
+    "primary_airport_iata": "MSP",
+    "primary_airport_slug": "minneapolis-saint-paul-international",
+    "primary_op": "Metropolitan Airports Commission (MAC)"
+  },
+  "Detroit Metro": {
+    "metro_name": "Detroit Metro",
+    "city_slug": "detroit-metro",
+    "airports": [
+      {
+        "slug": "detroit-metropolitan-wayne-county",
+        "name": "Detroit Metropolitan Wayne County Airport",
+        "iata": "DTW",
+        "city": "Detroit",
+        "state": "Michigan",
+        "state_code": "MI",
+        "type": "large_hub",
+        "op": "Wayne County Airport Authority",
+        "notice_days": 0
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Michigan",
+    "primary_state_code": "MI",
+    "states": [
+      "Michigan"
+    ],
+    "sol": "3 years",
+    "notice": "None required",
+    "primary_airport_name": "Detroit Metropolitan Wayne County Airport",
+    "primary_airport_iata": "DTW",
+    "primary_airport_slug": "detroit-metropolitan-wayne-county",
+    "primary_op": "Wayne County Airport Authority"
+  },
+  "Philadelphia Metro": {
+    "metro_name": "Philadelphia Metro",
+    "city_slug": "philadelphia-metro",
+    "airports": [
+      {
+        "slug": "philadelphia-international",
+        "name": "Philadelphia International Airport",
+        "iata": "PHL",
+        "city": "Philadelphia",
+        "state": "Pennsylvania",
+        "state_code": "PA",
+        "type": "large_hub",
+        "op": "Philadelphia International Airport \u2014 City of Philadelphia",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Pennsylvania",
+    "primary_state_code": "PA",
+    "states": [
+      "Pennsylvania"
+    ],
+    "sol": "2 years",
+    "notice": "6 months",
+    "primary_airport_name": "Philadelphia International Airport",
+    "primary_airport_iata": "PHL",
+    "primary_airport_slug": "philadelphia-international",
+    "primary_op": "Philadelphia International Airport \u2014 City of Philadelphia"
+  },
+  "Charlotte Metro": {
+    "metro_name": "Charlotte Metro",
+    "city_slug": "charlotte-metro",
+    "airports": [
+      {
+        "slug": "charlotte-douglas-international",
+        "name": "Charlotte Douglas International Airport",
+        "iata": "CLT",
+        "city": "Charlotte",
+        "state": "North Carolina",
+        "state_code": "NC",
+        "type": "large_hub",
+        "op": "Charlotte Douglas International Airport \u2014 City of Charlotte",
+        "notice_days": 0
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "North Carolina",
+    "primary_state_code": "NC",
+    "states": [
+      "North Carolina"
+    ],
+    "sol": "3 years",
+    "notice": "None required",
+    "primary_airport_name": "Charlotte Douglas International Airport",
+    "primary_airport_iata": "CLT",
+    "primary_airport_slug": "charlotte-douglas-international",
+    "primary_op": "Charlotte Douglas International Airport \u2014 City of Charlotte"
+  },
+  "Portland Metro": {
+    "metro_name": "Portland Metro",
+    "city_slug": "portland-metro",
+    "airports": [
+      {
+        "slug": "portland-international",
+        "name": "Portland International Airport",
+        "iata": "PDX",
+        "city": "Portland",
+        "state": "Oregon",
+        "state_code": "OR",
+        "type": "large_hub",
+        "op": "Port of Portland",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Oregon",
+    "primary_state_code": "OR",
+    "states": [
+      "Oregon"
+    ],
+    "sol": "2 years",
+    "notice": "180 days",
+    "primary_airport_name": "Portland International Airport",
+    "primary_airport_iata": "PDX",
+    "primary_airport_slug": "portland-international",
+    "primary_op": "Port of Portland"
+  },
+  "Salt Lake City Metro": {
+    "metro_name": "Salt Lake City Metro",
+    "city_slug": "salt-lake-city-metro",
+    "airports": [
+      {
+        "slug": "salt-lake-city-international",
+        "name": "Salt Lake City International Airport",
+        "iata": "SLC",
+        "city": "Salt Lake City",
+        "state": "Utah",
+        "state_code": "UT",
+        "type": "large_hub",
+        "op": "Salt Lake City Department of Airports",
+        "notice_days": 365
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Utah",
+    "primary_state_code": "UT",
+    "states": [
+      "Utah"
+    ],
+    "sol": "4 years",
+    "notice": "1 year",
+    "primary_airport_name": "Salt Lake City International Airport",
+    "primary_airport_iata": "SLC",
+    "primary_airport_slug": "salt-lake-city-international",
+    "primary_op": "Salt Lake City Department of Airports"
+  },
+  "San Diego Metro": {
+    "metro_name": "San Diego Metro",
+    "city_slug": "san-diego-metro",
+    "airports": [
+      {
+        "slug": "san-diego-international",
+        "name": "San Diego International Airport",
+        "iata": "SAN",
+        "city": "San Diego",
+        "state": "California",
+        "state_code": "CA",
+        "type": "large_hub",
+        "op": "San Diego County Regional Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "California",
+    "primary_state_code": "CA",
+    "states": [
+      "California"
+    ],
+    "sol": "2 years",
+    "notice": "6 months",
+    "primary_airport_name": "San Diego International Airport",
+    "primary_airport_iata": "SAN",
+    "primary_airport_slug": "san-diego-international",
+    "primary_op": "San Diego County Regional Airport Authority"
+  },
+  "Tampa Metro": {
+    "metro_name": "Tampa Metro",
+    "city_slug": "tampa-metro",
+    "airports": [
+      {
+        "slug": "tampa-international",
+        "name": "Tampa International Airport",
+        "iata": "TPA",
+        "city": "Tampa",
+        "state": "Florida",
+        "state_code": "FL",
+        "type": "large_hub",
+        "op": "Tampa Airport Authority",
+        "notice_days": 180
+      },
+      {
+        "slug": "st-pete-clearwater-international",
+        "name": "St. Pete-Clearwater International Airport",
+        "iata": "PIE",
+        "city": "St. Petersburg",
+        "state": "Florida",
+        "state_code": "FL",
+        "type": "non_hub",
+        "op": "St. Petersburg Municipal Airport",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 2,
+    "primary_state": "Florida",
+    "primary_state_code": "FL",
+    "states": [
+      "Florida"
+    ],
+    "sol": "2 years",
+    "notice": "3 years (sovereign immunity)",
+    "primary_airport_name": "Tampa International Airport",
+    "primary_airport_iata": "TPA",
+    "primary_airport_slug": "tampa-international",
+    "primary_op": "Tampa Airport Authority"
+  },
+  "Memphis Metro": {
+    "metro_name": "Memphis Metro",
+    "city_slug": "memphis-metro",
+    "airports": [
+      {
+        "slug": "memphis-international",
+        "name": "Memphis International Airport",
+        "iata": "MEM",
+        "city": "Memphis",
+        "state": "Tennessee",
+        "state_code": "TN",
+        "type": "large_hub",
+        "op": "Memphis Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Tennessee",
+    "primary_state_code": "TN",
+    "states": [
+      "Tennessee"
+    ],
+    "sol": "1 year",
+    "notice": "1 year",
+    "primary_airport_name": "Memphis International Airport",
+    "primary_airport_iata": "MEM",
+    "primary_airport_slug": "memphis-international",
+    "primary_op": "Memphis Airport Authority"
+  },
+  "Nashville Metro": {
+    "metro_name": "Nashville Metro",
+    "city_slug": "nashville-metro",
+    "airports": [
+      {
+        "slug": "nashville-international",
+        "name": "Nashville International Airport",
+        "iata": "BNA",
+        "city": "Nashville",
+        "state": "Tennessee",
+        "state_code": "TN",
+        "type": "large_hub",
+        "op": "Nashville Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Tennessee",
+    "primary_state_code": "TN",
+    "states": [
+      "Tennessee"
+    ],
+    "sol": "1 year",
+    "notice": "1 year",
+    "primary_airport_name": "Nashville International Airport",
+    "primary_airport_iata": "BNA",
+    "primary_airport_slug": "nashville-international",
+    "primary_op": "Nashville Airport Authority"
+  },
+  "Austin Metro": {
+    "metro_name": "Austin Metro",
+    "city_slug": "austin-metro",
+    "airports": [
+      {
+        "slug": "austin-bergstrom-international",
+        "name": "Austin-Bergstrom International Airport",
+        "iata": "AUS",
+        "city": "Austin",
+        "state": "Texas",
+        "state_code": "TX",
+        "type": "large_hub",
+        "op": "Austin Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Texas",
+    "primary_state_code": "TX",
+    "states": [
+      "Texas"
+    ],
+    "sol": "2 years",
+    "notice": "None (most)",
+    "primary_airport_name": "Austin-Bergstrom International Airport",
+    "primary_airport_iata": "AUS",
+    "primary_airport_slug": "austin-bergstrom-international",
+    "primary_op": "Austin Airport Authority"
+  },
+  "Kansas City Metro": {
+    "metro_name": "Kansas City Metro",
+    "city_slug": "kansas-city-metro",
+    "airports": [
+      {
+        "slug": "kansas-city-international",
+        "name": "Kansas City International Airport",
+        "iata": "MCI",
+        "city": "Kansas City",
+        "state": "Missouri",
+        "state_code": "MO",
+        "type": "large_hub",
+        "op": "Kansas City Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Missouri",
+    "primary_state_code": "MO",
+    "states": [
+      "Missouri"
+    ],
+    "sol": "5 years",
+    "notice": "90 days",
+    "primary_airport_name": "Kansas City International Airport",
+    "primary_airport_iata": "MCI",
+    "primary_airport_slug": "kansas-city-international",
+    "primary_op": "Kansas City Airport Authority"
+  },
+  "Cleveland Metro": {
+    "metro_name": "Cleveland Metro",
+    "city_slug": "cleveland-metro",
+    "airports": [
+      {
+        "slug": "cleveland-hopkins-international",
+        "name": "Cleveland Hopkins International Airport",
+        "iata": "CLE",
+        "city": "Cleveland",
+        "state": "Ohio",
+        "state_code": "OH",
+        "type": "large_hub",
+        "op": "Cleveland Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Ohio",
+    "primary_state_code": "OH",
+    "states": [
+      "Ohio"
+    ],
+    "sol": "2 years",
+    "notice": "None required",
+    "primary_airport_name": "Cleveland Hopkins International Airport",
+    "primary_airport_iata": "CLE",
+    "primary_airport_slug": "cleveland-hopkins-international",
+    "primary_op": "Cleveland Airport Authority"
+  },
+  "Pittsburgh Metro": {
+    "metro_name": "Pittsburgh Metro",
+    "city_slug": "pittsburgh-metro",
+    "airports": [
+      {
+        "slug": "pittsburgh-international",
+        "name": "Pittsburgh International Airport",
+        "iata": "PIT",
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "state_code": "PA",
+        "type": "large_hub",
+        "op": "Pittsburgh Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Pennsylvania",
+    "primary_state_code": "PA",
+    "states": [
+      "Pennsylvania"
+    ],
+    "sol": "2 years",
+    "notice": "6 months",
+    "primary_airport_name": "Pittsburgh International Airport",
+    "primary_airport_iata": "PIT",
+    "primary_airport_slug": "pittsburgh-international",
+    "primary_op": "Pittsburgh Airport Authority"
+  },
+  "Cincinnati Metro": {
+    "metro_name": "Cincinnati Metro",
+    "city_slug": "cincinnati-metro",
+    "airports": [
+      {
+        "slug": "cincinnati-northern-kentucky-international",
+        "name": "Cincinnati/Northern Kentucky International Airport",
+        "iata": "CVG",
+        "city": "Cincinnati",
+        "state": "Ohio",
+        "state_code": "OH",
+        "type": "large_hub",
+        "op": "Cincinnati Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Ohio",
+    "primary_state_code": "OH",
+    "states": [
+      "Ohio"
+    ],
+    "sol": "2 years",
+    "notice": "None required",
+    "primary_airport_name": "Cincinnati/Northern Kentucky International Airport",
+    "primary_airport_iata": "CVG",
+    "primary_airport_slug": "cincinnati-northern-kentucky-international",
+    "primary_op": "Cincinnati Airport Authority"
+  },
+  "Indianapolis Metro": {
+    "metro_name": "Indianapolis Metro",
+    "city_slug": "indianapolis-metro",
+    "airports": [
+      {
+        "slug": "indianapolis-international",
+        "name": "Indianapolis International Airport",
+        "iata": "IND",
+        "city": "Indianapolis",
+        "state": "Indiana",
+        "state_code": "IN",
+        "type": "large_hub",
+        "op": "Indianapolis Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Indiana",
+    "primary_state_code": "IN",
+    "states": [
+      "Indiana"
+    ],
+    "sol": "2 years",
+    "notice": "180 days",
+    "primary_airport_name": "Indianapolis International Airport",
+    "primary_airport_iata": "IND",
+    "primary_airport_slug": "indianapolis-international",
+    "primary_op": "Indianapolis Airport Authority"
+  },
+  "Sacramento Metro": {
+    "metro_name": "Sacramento Metro",
+    "city_slug": "sacramento-metro",
+    "airports": [
+      {
+        "slug": "sacramento-international",
+        "name": "Sacramento International Airport",
+        "iata": "SMF",
+        "city": "Sacramento",
+        "state": "California",
+        "state_code": "CA",
+        "type": "medium_hub",
+        "op": "Sacramento Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "California",
+    "primary_state_code": "CA",
+    "states": [
+      "California"
+    ],
+    "sol": "2 years",
+    "notice": "6 months",
+    "primary_airport_name": "Sacramento International Airport",
+    "primary_airport_iata": "SMF",
+    "primary_airport_slug": "sacramento-international",
+    "primary_op": "Sacramento Airport Authority"
+  },
+  "Raleigh Metro": {
+    "metro_name": "Raleigh Metro",
+    "city_slug": "raleigh-metro",
+    "airports": [
+      {
+        "slug": "raleigh-durham-international",
+        "name": "Raleigh-Durham International Airport",
+        "iata": "RDU",
+        "city": "Raleigh",
+        "state": "North Carolina",
+        "state_code": "NC",
+        "type": "large_hub",
+        "op": "Raleigh Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "North Carolina",
+    "primary_state_code": "NC",
+    "states": [
+      "North Carolina"
+    ],
+    "sol": "3 years",
+    "notice": "None required",
+    "primary_airport_name": "Raleigh-Durham International Airport",
+    "primary_airport_iata": "RDU",
+    "primary_airport_slug": "raleigh-durham-international",
+    "primary_op": "Raleigh Airport Authority"
+  },
+  "Richmond Metro": {
+    "metro_name": "Richmond Metro",
+    "city_slug": "richmond-metro",
+    "airports": [
+      {
+        "slug": "richmond-international",
+        "name": "Richmond International Airport",
+        "iata": "RIC",
+        "city": "Richmond",
+        "state": "Virginia",
+        "state_code": "VA",
+        "type": "medium_hub",
+        "op": "Richmond Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Virginia",
+    "primary_state_code": "VA",
+    "states": [
+      "Virginia"
+    ],
+    "sol": "2 years",
+    "notice": "None required",
+    "primary_airport_name": "Richmond International Airport",
+    "primary_airport_iata": "RIC",
+    "primary_airport_slug": "richmond-international",
+    "primary_op": "Richmond Airport Authority"
+  },
+  "Jacksonville Metro": {
+    "metro_name": "Jacksonville Metro",
+    "city_slug": "jacksonville-metro",
+    "airports": [
+      {
+        "slug": "jacksonville-international",
+        "name": "Jacksonville International Airport",
+        "iata": "JAX",
+        "city": "Jacksonville",
+        "state": "Florida",
+        "state_code": "FL",
+        "type": "large_hub",
+        "op": "Jacksonville Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Florida",
+    "primary_state_code": "FL",
+    "states": [
+      "Florida"
+    ],
+    "sol": "2 years",
+    "notice": "3 years (sovereign immunity)",
+    "primary_airport_name": "Jacksonville International Airport",
+    "primary_airport_iata": "JAX",
+    "primary_airport_slug": "jacksonville-international",
+    "primary_op": "Jacksonville Airport Authority"
+  },
+  "New Orleans Metro": {
+    "metro_name": "New Orleans Metro",
+    "city_slug": "new-orleans-metro",
+    "airports": [
+      {
+        "slug": "louis-armstrong-new-orleans-international",
+        "name": "Louis Armstrong New Orleans International Airport",
+        "iata": "MSY",
+        "city": "New Orleans",
+        "state": "Louisiana",
+        "state_code": "LA",
+        "type": "large_hub",
+        "op": "New Orleans Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Louisiana",
+    "primary_state_code": "LA",
+    "states": [
+      "Louisiana"
+    ],
+    "sol": "1 year",
+    "notice": "None required",
+    "primary_airport_name": "Louis Armstrong New Orleans International Airport",
+    "primary_airport_iata": "MSY",
+    "primary_airport_slug": "louis-armstrong-new-orleans-international",
+    "primary_op": "New Orleans Airport Authority"
+  },
+  "Louisville Metro": {
+    "metro_name": "Louisville Metro",
+    "city_slug": "louisville-metro",
+    "airports": [
+      {
+        "slug": "louisville-muhammad-ali-international",
+        "name": "Louisville Muhammad Ali International Airport",
+        "iata": "SDF",
+        "city": "Louisville",
+        "state": "Kentucky",
+        "state_code": "KY",
+        "type": "medium_hub",
+        "op": "Louisville Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Kentucky",
+    "primary_state_code": "KY",
+    "states": [
+      "Kentucky"
+    ],
+    "sol": "1 year",
+    "notice": "90 days",
+    "primary_airport_name": "Louisville Muhammad Ali International Airport",
+    "primary_airport_iata": "SDF",
+    "primary_airport_slug": "louisville-muhammad-ali-international",
+    "primary_op": "Louisville Airport Authority"
+  },
+  "Buffalo Metro": {
+    "metro_name": "Buffalo Metro",
+    "city_slug": "buffalo-metro",
+    "airports": [
+      {
+        "slug": "buffalo-niagara-international",
+        "name": "Buffalo Niagara International Airport",
+        "iata": "BUF",
+        "city": "Buffalo",
+        "state": "New York",
+        "state_code": "NY",
+        "type": "medium_hub",
+        "op": "Buffalo Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "New York",
+    "primary_state_code": "NY",
+    "states": [
+      "New York"
+    ],
+    "sol": "1.5 years",
+    "notice": "90 days",
+    "primary_airport_name": "Buffalo Niagara International Airport",
+    "primary_airport_iata": "BUF",
+    "primary_airport_slug": "buffalo-niagara-international",
+    "primary_op": "Buffalo Airport Authority"
+  },
+  "Hartford Metro": {
+    "metro_name": "Hartford Metro",
+    "city_slug": "hartford-metro",
+    "airports": [
+      {
+        "slug": "bradley-international",
+        "name": "Bradley International Airport",
+        "iata": "BDL",
+        "city": "Windsor Locks",
+        "state": "Connecticut",
+        "state_code": "CT",
+        "type": "medium_hub",
+        "op": "Windsor Locks Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Connecticut",
+    "primary_state_code": "CT",
+    "states": [
+      "Connecticut"
+    ],
+    "sol": "2 years",
+    "notice": "6 months",
+    "primary_airport_name": "Bradley International Airport",
+    "primary_airport_iata": "BDL",
+    "primary_airport_slug": "bradley-international",
+    "primary_op": "Windsor Locks Airport Authority"
+  },
+  "Albuquerque Metro": {
+    "metro_name": "Albuquerque Metro",
+    "city_slug": "albuquerque-metro",
+    "airports": [
+      {
+        "slug": "albuquerque-international-sunport",
+        "name": "Albuquerque International Sunport",
+        "iata": "ABQ",
+        "city": "Albuquerque",
+        "state": "New Mexico",
+        "state_code": "NM",
+        "type": "medium_hub",
+        "op": "Albuquerque Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "New Mexico",
+    "primary_state_code": "NM",
+    "states": [
+      "New Mexico"
+    ],
+    "sol": "3 years",
+    "notice": "90 days",
+    "primary_airport_name": "Albuquerque International Sunport",
+    "primary_airport_iata": "ABQ",
+    "primary_airport_slug": "albuquerque-international-sunport",
+    "primary_op": "Albuquerque Airport Authority"
+  },
+  "El Paso Metro": {
+    "metro_name": "El Paso Metro",
+    "city_slug": "el-paso-metro",
+    "airports": [
+      {
+        "slug": "el-paso-international",
+        "name": "El Paso International Airport",
+        "iata": "ELP",
+        "city": "El Paso",
+        "state": "Texas",
+        "state_code": "TX",
+        "type": "medium_hub",
+        "op": "El Paso Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Texas",
+    "primary_state_code": "TX",
+    "states": [
+      "Texas"
+    ],
+    "sol": "2 years",
+    "notice": "None (most)",
+    "primary_airport_name": "El Paso International Airport",
+    "primary_airport_iata": "ELP",
+    "primary_airport_slug": "el-paso-international",
+    "primary_op": "El Paso Airport Authority"
+  },
+  "Tucson Metro": {
+    "metro_name": "Tucson Metro",
+    "city_slug": "tucson-metro",
+    "airports": [
+      {
+        "slug": "tucson-international",
+        "name": "Tucson International Airport",
+        "iata": "TUS",
+        "city": "Tucson",
+        "state": "Arizona",
+        "state_code": "AZ",
+        "type": "medium_hub",
+        "op": "Tucson Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Arizona",
+    "primary_state_code": "AZ",
+    "states": [
+      "Arizona"
+    ],
+    "sol": "2 years",
+    "notice": "180 days",
+    "primary_airport_name": "Tucson International Airport",
+    "primary_airport_iata": "TUS",
+    "primary_airport_slug": "tucson-international",
+    "primary_op": "Tucson Airport Authority"
+  },
+  "Anchorage Metro": {
+    "metro_name": "Anchorage Metro",
+    "city_slug": "anchorage-metro",
+    "airports": [
+      {
+        "slug": "ted-stevens-anchorage-international",
+        "name": "Ted Stevens Anchorage International Airport",
+        "iata": "ANC",
+        "city": "Anchorage",
+        "state": "Alaska",
+        "state_code": "AK",
+        "type": "large_hub",
+        "op": "Ted Stevens Anchorage International Airport \u2014 Municipality of Anchorage",
+        "notice_days": 120
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Alaska",
+    "primary_state_code": "AK",
+    "states": [
+      "Alaska"
+    ],
+    "sol": "2 years",
+    "notice": "120 days",
+    "primary_airport_name": "Ted Stevens Anchorage International Airport",
+    "primary_airport_iata": "ANC",
+    "primary_airport_slug": "ted-stevens-anchorage-international",
+    "primary_op": "Ted Stevens Anchorage International Airport \u2014 Municipality of Anchorage"
+  },
+  "Honolulu Metro": {
+    "metro_name": "Honolulu Metro",
+    "city_slug": "honolulu-metro",
+    "airports": [
+      {
+        "slug": "daniel-k-inouye-international",
+        "name": "Daniel K. Inouye International Airport",
+        "iata": "HNL",
+        "city": "Honolulu",
+        "state": "Hawaii",
+        "state_code": "HI",
+        "type": "large_hub",
+        "op": "Hawaii Department of Transportation \u2014 Airports Division",
+        "notice_days": 0
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Hawaii",
+    "primary_state_code": "HI",
+    "states": [
+      "Hawaii"
+    ],
+    "sol": "2 years",
+    "notice": "None required",
+    "primary_airport_name": "Daniel K. Inouye International Airport",
+    "primary_airport_iata": "HNL",
+    "primary_airport_slug": "daniel-k-inouye-international",
+    "primary_op": "Hawaii Department of Transportation \u2014 Airports Division"
+  },
+  "San Juan Metro": {
+    "metro_name": "San Juan Metro",
+    "city_slug": "san-juan-metro",
+    "airports": [
+      {
+        "slug": "luis-munoz-marin-international",
+        "name": "Luis Munoz Marin International Airport",
+        "iata": "SJU",
+        "city": "San Juan",
+        "state": "Puerto Rico",
+        "state_code": "PR",
+        "type": "large_hub",
+        "op": "San Juan Airport Authority",
+        "notice_days": 180
+      }
+    ],
+    "airport_count": 1,
+    "primary_state": "Puerto Rico",
+    "primary_state_code": "PR",
+    "states": [
+      "Puerto Rico"
+    ],
+    "sol": "1 year",
+    "notice": "None required",
+    "primary_airport_name": "Luis Munoz Marin International Airport",
+    "primary_airport_iata": "SJU",
+    "primary_airport_slug": "luis-munoz-marin-international",
+    "primary_op": "San Juan Airport Authority"
+  }
+}

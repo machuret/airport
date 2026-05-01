@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{page_title}}</title>
+<meta name="description" content="{{meta_description}}">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="{{canonical_url}}">
+<meta name="geo.region" content="US-{{primary_state_code}}">
+<meta name="geo.placename" content="{{metro_name}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{canonical_url}}">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{meta_description}}">
+<meta property="og:image" content="https://airportaccidents.com/assets/img/og-city.jpg">
+<meta property="og:site_name" content="AirportAccidents.com">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/css/global.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/assets/css/global.css"></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{page_title}}",
+  "url": "{{canonical_url}}",
+  "description": "{{meta_description}}",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://airportaccidents.com/" },
+      { "@type": "ListItem", "position": 2, "name": "{{metro_name}} Airports", "item": "{{canonical_url}}" }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Airport Accident Attorneys — {{metro_name}}",
+  "url": "{{canonical_url}}",
+  "description": "Airport injury law for all {{airport_count}} airports serving the {{metro_name}}. Free case review.",
+  "areaServed": { "@type": "City", "name": "{{metro_name}}" },
+  "telephone": "{{phone_display}}",
+  "priceRange": "Contingency — No fee unless we win"
+}
+</script>
+<style>
+.city-hero__inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-12) var(--space-5) var(--space-16);
+}
+.city-airport-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+.city-airport-card {
+  background: var(--alpha-white-6);
+  border: 1px solid var(--alpha-white-10);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  text-decoration: none;
+  transition: background .2s, border-color .2s;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.city-airport-card:hover { background: var(--alpha-white-10); border-color: var(--color-gold-400); }
+.city-airport-card__iata {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: var(--weight-black);
+  color: var(--color-gold-300);
+  line-height: 1;
+}
+.city-airport-card__name {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: #fff;
+  line-height: var(--leading-snug);
+}
+.city-airport-card__meta {
+  font-size: var(--text-sm);
+  color: var(--alpha-white-55);
+}
+.city-airport-card__notice {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  color: #FCA5A5;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+.city-accident-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+.city-accident-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-cream-100);
+  border: 1px solid var(--alpha-navy-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-navy-800);
+  transition: background .15s, border-color .15s;
+  line-height: var(--leading-snug);
+}
+.city-accident-link:hover { background: var(--color-cream-200); border-color: var(--color-gold-400); }
+.city-accident-link__icon { font-size: 14px; flex-shrink: 0; }
+.city-legal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+.city-legal-card {
+  background: var(--color-cream-100);
+  border: 1px solid var(--alpha-navy-border);
+  border-top: 3px solid var(--color-gold-400);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+}
+.city-legal-card__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+.city-legal-card__value {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-navy-800);
+}
+.city-legal-card__value--danger { color: var(--color-danger); }
+.city-legal-card__note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+  line-height: var(--leading-relaxed);
+}
+@media (max-width: 680px) {
+  .city-airport-grid { grid-template-columns: 1fr; }
+  .city-accident-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">Airport<span>Accidents</span>.com</a>
+    <div class="nav__links" id="nav-menu">
+      <a href="/state/{{primary_state_code_lower}}/" class="nav__link">{{primary_state}} Airports</a>
+      <a href="tel:{{phone_digits}}" class="nav__link nav__link--cta">Free Consultation</a>
+    </div>
+    <button class="nav__toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation">
+      <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb__inner">
+    <a href="/" class="breadcrumb__link">Home</a>
+    <span class="breadcrumb__sep">›</span>
+    <a href="/state/{{primary_state_code_lower}}/" class="breadcrumb__link">{{primary_state}}</a>
+    <span class="breadcrumb__sep">›</span>
+    <span class="breadcrumb__current">{{metro_name}} Airport Accidents</span>
+  </div>
+</div>
+
+<main id="main-content">
+
+  <section class="hero" aria-label="City overview">
+    <div class="hero__bg-grid" aria-hidden="true"></div>
+    <div class="hero__bg-glow" aria-hidden="true"></div>
+    <div class="city-hero__inner">
+      <div class="hero__eyebrow">{{primary_state}} — Free Legal Consultation</div>
+      <h1 class="hero__title">{{h1_title}}</h1>
+      <p class="hero__sub">{{hero_intro}}</p>
+      <div class="hero__actions">
+        <a href="#airports" class="btn btn--primary btn--lg">Choose Your Airport →</a>
+        <a href="tel:{{phone_digits}}" class="btn btn--ghost">{{phone_display}}</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="trust-strip__inner">
+      <div class="trust-strip__item"><span class="trust-strip__icon">✓</span>No fees unless you win</div>
+      <div class="trust-strip__divider"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon">✓</span>All {{airport_count}} {{metro_name}} airports covered</div>
+      <div class="trust-strip__divider"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon">✓</span>24-hour case review</div>
+      <div class="trust-strip__divider"></div>
+      <div class="trust-strip__item"><span class="trust-strip__icon">✓</span>{{sol}} statute of limitations in {{primary_state}}</div>
+    </div>
+  </div>
+
+  <!-- AIRPORTS IN THIS METRO -->
+  <section class="section section--white" id="airports" aria-labelledby="airports-heading">
+    <div class="container">
+      <div class="section__label">Choose your airport</div>
+      <h2 class="section__title" id="airports-heading">All Airports Serving the {{metro_name}}</h2>
+      <p class="section__sub">Each airport has different operators, different notice of claim requirements, and different liable parties. Select the airport where your injury occurred for the specific legal path that applies.</p>
+      <div class="city-airport-grid" role="list">
+        {{airport_cards_html}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL ACCIDENT TYPES IN THIS METRO -->
+  <section class="section section--navy" aria-labelledby="accidents-heading">
+    <div class="container">
+      <div class="section__label" style="color:var(--color-gold-300);">25 accident types — all airports in {{metro_name}}</div>
+      <h2 class="section__title" style="color:#fff;" id="accidents-heading">Every Type of Airport Accident in the {{metro_name}}</h2>
+      <p class="section__sub" style="color:var(--alpha-white-55);">Each accident type has its own liable party, its own evidence requirements, and its own legal deadline. Find the one that matches your situation.</p>
+      <div class="city-accident-grid" role="list">
+        {{accident_links_html}}
+      </div>
+    </div>
+  </section>
+
+  <!-- LEGAL DEADLINES -->
+  <section class="section section--cream2" aria-labelledby="legal-heading">
+    <div class="container">
+      <div class="section__label">Know your deadlines</div>
+      <h2 class="section__title" id="legal-heading">Airport Injury Deadlines in {{primary_state}}</h2>
+      <p class="section__sub">{{legal_intro}}</p>
+      <div class="city-legal-grid" role="list">
+        <div class="city-legal-card">
+          <div class="city-legal-card__label">Statute of limitations</div>
+          <div class="city-legal-card__value city-legal-card__value--danger">{{sol}}</div>
+          <div class="city-legal-card__note">From the date of your injury at any {{metro_name}} airport. Missing this deadline permanently ends your case.</div>
+        </div>
+        {{#if notice_days_gt_zero}}
+        <div class="city-legal-card">
+          <div class="city-legal-card__label">Notice of claim deadline</div>
+          <div class="city-legal-card__value city-legal-card__value--danger">{{notice}}</div>
+          <div class="city-legal-card__note">Required before suing government-operated airports in {{primary_state}}. This deadline runs before the SOL and is strictly enforced.</div>
+        </div>
+        {{/if}}
+        <div class="city-legal-card">
+          <div class="city-legal-card__label">Comparative fault rule</div>
+          <div class="city-legal-card__value">{{comp_fault_short}}</div>
+          <div class="city-legal-card__note">{{comp_fault_note}}</div>
+        </div>
+        <div class="city-legal-card">
+          <div class="city-legal-card__label">Evidence window</div>
+          <div class="city-legal-card__value city-legal-card__value--danger">72 hours</div>
+          <div class="city-legal-card__note">CCTV footage at all {{metro_name}} airports is overwritten within 72 hours. A preservation demand must be sent the same day you retain an attorney.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY EACH AIRPORT IS DIFFERENT -->
+  <section class="section section--white" aria-labelledby="differences-heading">
+    <div class="container">
+      <div class="section__label">Each airport is different</div>
+      <h2 class="section__title" id="differences-heading">Why the Airport Where You Were Hurt Matters</h2>
+      <p class="section__sub">{{differences_intro}}</p>
+      <div class="lp-two-col" style="margin-top:var(--space-10);">
+        <div>
+          <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:var(--leading-relaxed);margin-bottom:var(--space-4);">The liability structure at every airport in the {{metro_name}} is different. Each airport authority is a separate legal entity with its own insurance, its own legal team, and its own procedures. Filing a claim against {{primary_airport_name}} involves {{primary_op}} — a {{gov_type}} entity with specific Notice of Claim requirements. Filing against a different airport in the {{metro_name}} involves a different authority with different deadlines.</p>
+          <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:var(--leading-relaxed);margin-bottom:var(--space-4);">Beyond the airport authority, the contractors operating within each airport — food operators, parking managers, ground handlers — differ from airport to airport. The party liable for your injury in the food court at one {{metro_name}} airport may be a completely different company from the one liable for the same type of injury at another airport twenty miles away.</p>
+          <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:var(--leading-relaxed);">This is why airport injury cases in the {{metro_name}} require a specialist — not just a personal injury generalist, but an attorney who knows the specific operators, contracts, and procedures at the specific airport where you were hurt.</p>
+        </div>
+        <div>
+          <div class="lp-airport-context" style="background:linear-gradient(135deg,var(--color-navy-700),var(--color-navy-600));">
+            <div class="lp-airport-context__eyebrow">{{metro_name}} — airport comparison</div>
+            <h3 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:#fff;margin-bottom:var(--space-4);line-height:var(--leading-snug);">How {{metro_name}} Airports Differ</h3>
+            <div class="lp-hazard-list">
+              {{airport_diff_items_html}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta cta--dark" aria-labelledby="cta-heading">
+    <div class="cta__bg-grid" aria-hidden="true"></div>
+    <div class="cta__inner">
+      <div class="section__label section__label--center">Free consultation — no fees unless you win</div>
+      <h2 class="cta__title" id="cta-heading">Injured at a {{metro_name}} Airport?</h2>
+      <p class="cta__sub">Evidence disappears within 72 hours at every {{metro_name}} airport. {{primary_state}}'s deadlines are already running. Free case review — available now.</p>
+      <a href="tel:{{phone_digits}}" class="cta__phone">{{phone_display}}</a>
+      <span class="cta__phone-label">Free consultation — available 24/7</span>
+      <div class="cta__actions">
+        <a href="#airports" class="btn btn--primary btn--lg">Choose Your Airport →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo footer__logo">Airport<span>Accidents</span>.com</a>
+        <p class="footer__tagline">Airport accident attorneys for the {{metro_name}} and all 522 US airports.</p>
+        <a href="tel:{{phone_digits}}" class="footer__phone">{{phone_display}}</a>
+      </div>
+      <nav class="footer__col" aria-label="Airports in metro">
+        <h3 class="footer__col-title">{{metro_name}} Airports</h3>
+        {{footer_airport_links_html}}
+      </nav>
+      <nav class="footer__col" aria-label="Accident types">
+        <h3 class="footer__col-title">Accident Types</h3>
+        {{footer_accident_links_html}}
+      </nav>
+      <nav class="footer__col" aria-label="Legal">
+        <h3 class="footer__col-title">Legal</h3>
+        <a href="/about/">About Us</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/disclaimer/">Legal Disclaimer</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__legal">&copy; 2025 AirportAccidents.com. Informational purposes only. Not legal advice. Attorney advertising. Results vary.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-bar" id="sticky-bar">
+  <p class="sticky-bar__text"><strong>{{metro_name}} airport injury?</strong> Free case review — no fees unless we win.</p>
+  <a href="tel:{{phone_digits}}" class="sticky-bar__btn">Call Free</a>
+</div>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1439 @@
+{
+  "Alabama": {
+    "state": "Alabama",
+    "state_code": "AL",
+    "state_code_lower": "al",
+    "sol": "2 years",
+    "notice": "6 months",
+    "notice_days": 180,
+    "gov_entity": "Birmingham Airport Authority",
+    "gov_type": "city",
+    "comp_fault": "contributory negligence (pure \u2014 any fault bars recovery)",
+    "airport_count": 11,
+    "large_hub_count": 1,
+    "top_airport_slug": "birmingham-shuttlesworth-international",
+    "top_airport_name": "Birmingham-Shuttlesworth International Airport",
+    "top_airport_iata": "BHM",
+    "large_hubs": [
+      {
+        "slug": "birmingham-shuttlesworth-international",
+        "name": "Birmingham-Shuttlesworth International Airport",
+        "iata": "BHM"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "Alaska": {
+    "state": "Alaska",
+    "state_code": "AK",
+    "state_code_lower": "ak",
+    "sol": "2 years",
+    "notice": "120 days",
+    "notice_days": 120,
+    "gov_entity": "Municipality of Anchorage",
+    "gov_type": "city",
+    "comp_fault": "pure comparative fault",
+    "airport_count": 21,
+    "large_hub_count": 1,
+    "top_airport_slug": "ted-stevens-anchorage-international",
+    "top_airport_name": "Ted Stevens Anchorage International Airport",
+    "top_airport_iata": "ANC",
+    "large_hubs": [
+      {
+        "slug": "ted-stevens-anchorage-international",
+        "name": "Ted Stevens Anchorage International Airport",
+        "iata": "ANC"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "fairbanks-international",
+        "name": "Fairbanks International Airport",
+        "iata": "FAI"
+      }
+    ]
+  },
+  "Arizona": {
+    "state": "Arizona",
+    "state_code": "AZ",
+    "state_code_lower": "az",
+    "sol": "2 years",
+    "notice": "180 days",
+    "notice_days": 180,
+    "gov_entity": "City of Phoenix Aviation Dept",
+    "gov_type": "city",
+    "comp_fault": "pure comparative fault",
+    "airport_count": 10,
+    "large_hub_count": 1,
+    "top_airport_slug": "phoenix-sky-harbor-international",
+    "top_airport_name": "Phoenix Sky Harbor International Airport",
+    "top_airport_iata": "PHX",
+    "large_hubs": [
+      {
+        "slug": "phoenix-sky-harbor-international",
+        "name": "Phoenix Sky Harbor International Airport",
+        "iata": "PHX"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "tucson-international",
+        "name": "Tucson International Airport",
+        "iata": "TUS"
+      }
+    ]
+  },
+  "Arkansas": {
+    "state": "Arkansas",
+    "state_code": "AR",
+    "state_code_lower": "ar",
+    "sol": "3 years",
+    "notice": "1 year",
+    "notice_days": 365,
+    "gov_entity": "Little Rock National Airport Auth",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 9,
+    "large_hub_count": 0,
+    "top_airport_slug": "little-rock-clinton-national",
+    "top_airport_name": "Little Rock Clinton National Airport",
+    "top_airport_iata": "LIT",
+    "large_hubs": [],
+    "medium_hubs": [
+      {
+        "slug": "little-rock-clinton-national",
+        "name": "Little Rock Clinton National Airport",
+        "iata": "LIT"
+      }
+    ]
+  },
+  "California": {
+    "state": "California",
+    "state_code": "CA",
+    "state_code_lower": "ca",
+    "sol": "2 years",
+    "notice": "6 months",
+    "notice_days": 180,
+    "gov_entity": "Los Angeles World Airports (LAWA)",
+    "gov_type": "city",
+    "comp_fault": "pure comparative fault",
+    "airport_count": 30,
+    "large_hub_count": 4,
+    "top_airport_slug": "los-angeles-international",
+    "top_airport_name": "Los Angeles International Airport",
+    "top_airport_iata": "LAX",
+    "large_hubs": [
+      {
+        "slug": "los-angeles-international",
+        "name": "Los Angeles International Airport",
+        "iata": "LAX"
+      },
+      {
+        "slug": "san-francisco-international",
+        "name": "San Francisco International Airport",
+        "iata": "SFO"
+      },
+      {
+        "slug": "san-diego-international",
+        "name": "San Diego International Airport",
+        "iata": "SAN"
+      },
+      {
+        "slug": "san-jose-international",
+        "name": "San Jose International Airport",
+        "iata": "SJC"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "john-wayne",
+        "name": "John Wayne Airport",
+        "iata": "SNA"
+      },
+      {
+        "slug": "ontario-international",
+        "name": "Ontario International Airport",
+        "iata": "ONT"
+      },
+      {
+        "slug": "long-beach",
+        "name": "Long Beach Airport",
+        "iata": "LGB"
+      },
+      {
+        "slug": "hollywood-burbank",
+        "name": "Hollywood Burbank Airport",
+        "iata": "BUR"
+      },
+      {
+        "slug": "sacramento-international",
+        "name": "Sacramento International Airport",
+        "iata": "SMF"
+      }
+    ]
+  },
+  "Colorado": {
+    "state": "Colorado",
+    "state_code": "CO",
+    "state_code_lower": "co",
+    "sol": "2 years",
+    "notice": "182 days",
+    "notice_days": 182,
+    "gov_entity": "Denver International Airport",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 10,
+    "large_hub_count": 1,
+    "top_airport_slug": "denver-international",
+    "top_airport_name": "Denver International Airport",
+    "top_airport_iata": "DEN",
+    "large_hubs": [
+      {
+        "slug": "denver-international",
+        "name": "Denver International Airport",
+        "iata": "DEN"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "colorado-springs",
+        "name": "Colorado Springs Airport",
+        "iata": "COS"
+      },
+      {
+        "slug": "grand-junction-regional",
+        "name": "Grand Junction Regional Airport",
+        "iata": "GJT"
+      }
+    ]
+  },
+  "Connecticut": {
+    "state": "Connecticut",
+    "state_code": "CT",
+    "state_code_lower": "ct",
+    "sol": "2 years",
+    "notice": "6 months",
+    "notice_days": 180,
+    "gov_entity": "CT Airport Authority",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 4,
+    "large_hub_count": 0,
+    "top_airport_slug": "bradley-international",
+    "top_airport_name": "Bradley International Airport",
+    "top_airport_iata": "BDL",
+    "large_hubs": [],
+    "medium_hubs": [
+      {
+        "slug": "bradley-international",
+        "name": "Bradley International Airport",
+        "iata": "BDL"
+      }
+    ]
+  },
+  "Florida": {
+    "state": "Florida",
+    "state_code": "FL",
+    "state_code_lower": "fl",
+    "sol": "2 years",
+    "notice": "3 years (sovereign immunity)",
+    "notice_days": 0,
+    "gov_entity": "Miami-Dade Aviation Dept",
+    "gov_type": "county",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 46,
+    "large_hub_count": 5,
+    "top_airport_slug": "orlando-international",
+    "top_airport_name": "Orlando International Airport",
+    "top_airport_iata": "MCO",
+    "large_hubs": [
+      {
+        "slug": "orlando-international",
+        "name": "Orlando International Airport",
+        "iata": "MCO"
+      },
+      {
+        "slug": "miami-international",
+        "name": "Miami International Airport",
+        "iata": "MIA"
+      },
+      {
+        "slug": "tampa-international",
+        "name": "Tampa International Airport",
+        "iata": "TPA"
+      },
+      {
+        "slug": "fort-lauderdale-hollywood-international",
+        "name": "Fort Lauderdale-Hollywood International Airport",
+        "iata": "FLL"
+      },
+      {
+        "slug": "jacksonville-international",
+        "name": "Jacksonville International Airport",
+        "iata": "JAX"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "southwest-florida-international",
+        "name": "Southwest Florida International Airport",
+        "iata": "RSW"
+      },
+      {
+        "slug": "palm-beach-international",
+        "name": "Palm Beach International Airport",
+        "iata": "PBI"
+      }
+    ]
+  },
+  "Georgia": {
+    "state": "Georgia",
+    "state_code": "GA",
+    "state_code_lower": "ga",
+    "sol": "2 years",
+    "notice": "6 months",
+    "notice_days": 180,
+    "gov_entity": "City of Atlanta Dept of Aviation",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (50% bar)",
+    "airport_count": 17,
+    "large_hub_count": 1,
+    "top_airport_slug": "hartsfield-jackson-atlanta-international",
+    "top_airport_name": "Hartsfield-Jackson Atlanta International Airport",
+    "top_airport_iata": "ATL",
+    "large_hubs": [
+      {
+        "slug": "hartsfield-jackson-atlanta-international",
+        "name": "Hartsfield-Jackson Atlanta International Airport",
+        "iata": "ATL"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "savannah-hilton-head-international",
+        "name": "Savannah/Hilton Head International Airport",
+        "iata": "SAV"
+      }
+    ]
+  },
+  "Hawaii": {
+    "state": "Hawaii",
+    "state_code": "HI",
+    "state_code_lower": "hi",
+    "sol": "2 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Hawaii Dept of Transportation",
+    "gov_type": "state",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 10,
+    "large_hub_count": 2,
+    "top_airport_slug": "daniel-k-inouye-international",
+    "top_airport_name": "Daniel K. Inouye International Airport",
+    "top_airport_iata": "HNL",
+    "large_hubs": [
+      {
+        "slug": "daniel-k-inouye-international",
+        "name": "Daniel K. Inouye International Airport",
+        "iata": "HNL"
+      },
+      {
+        "slug": "kahului-maui",
+        "name": "Kahului Airport Maui",
+        "iata": "OGG"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "kahului",
+        "name": "Kahului Airport",
+        "iata": "OGG"
+      },
+      {
+        "slug": "ellison-onizuka-kona-international",
+        "name": "Ellison Onizuka Kona International Airport",
+        "iata": "KOA"
+      },
+      {
+        "slug": "lihue",
+        "name": "Lihue Airport",
+        "iata": "LIH"
+      }
+    ]
+  },
+  "Idaho": {
+    "state": "Idaho",
+    "state_code": "ID",
+    "state_code_lower": "id",
+    "sol": "2 years",
+    "notice": "180 days",
+    "notice_days": 180,
+    "gov_entity": "Boise Airport Authority",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (50% bar)",
+    "airport_count": 6,
+    "large_hub_count": 0,
+    "top_airport_slug": "boise-airport",
+    "top_airport_name": "Boise Airport",
+    "top_airport_iata": "BOI",
+    "large_hubs": [],
+    "medium_hubs": [
+      {
+        "slug": "boise-airport",
+        "name": "Boise Airport",
+        "iata": "BOI"
+      }
+    ]
+  },
+  "Illinois": {
+    "state": "Illinois",
+    "state_code": "IL",
+    "state_code_lower": "il",
+    "sol": "2 years",
+    "notice": "1 year",
+    "notice_days": 365,
+    "gov_entity": "Chicago Dept of Aviation",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 14,
+    "large_hub_count": 2,
+    "top_airport_slug": "ohare-international",
+    "top_airport_name": "O'Hare International Airport",
+    "top_airport_iata": "ORD",
+    "large_hubs": [
+      {
+        "slug": "ohare-international",
+        "name": "O'Hare International Airport",
+        "iata": "ORD"
+      },
+      {
+        "slug": "chicago-midway-international",
+        "name": "Chicago Midway International Airport",
+        "iata": "MDW"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "Indiana": {
+    "state": "Indiana",
+    "state_code": "IN",
+    "state_code_lower": "in",
+    "sol": "2 years",
+    "notice": "180 days",
+    "notice_days": 180,
+    "gov_entity": "Indianapolis Airport Authority",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 7,
+    "large_hub_count": 1,
+    "top_airport_slug": "indianapolis-international",
+    "top_airport_name": "Indianapolis International Airport",
+    "top_airport_iata": "IND",
+    "large_hubs": [
+      {
+        "slug": "indianapolis-international",
+        "name": "Indianapolis International Airport",
+        "iata": "IND"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "Iowa": {
+    "state": "Iowa",
+    "state_code": "IA",
+    "state_code_lower": "ia",
+    "sol": "2 years",
+    "notice": "60 days",
+    "notice_days": 60,
+    "gov_entity": "Des Moines Airport Authority",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 7,
+    "large_hub_count": 0,
+    "top_airport_slug": "des-moines-international",
+    "top_airport_name": "Des Moines International Airport",
+    "top_airport_iata": "DSM",
+    "large_hubs": [],
+    "medium_hubs": [
+      {
+        "slug": "des-moines-international",
+        "name": "Des Moines International Airport",
+        "iata": "DSM"
+      }
+    ]
+  },
+  "Kansas": {
+    "state": "Kansas",
+    "state_code": "KS",
+    "state_code_lower": "ks",
+    "sol": "2 years",
+    "notice": "120 days",
+    "notice_days": 120,
+    "gov_entity": "Wichita Airport Authority",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (50% bar)",
+    "airport_count": 7,
+    "large_hub_count": 0,
+    "top_airport_slug": "wichita-dwight-d-eisenhower-national",
+    "top_airport_name": "Wichita Dwight D. Eisenhower National Airport",
+    "top_airport_iata": "ICT",
+    "large_hubs": [],
+    "medium_hubs": []
+  },
+  "Kentucky": {
+    "state": "Kentucky",
+    "state_code": "KY",
+    "state_code_lower": "ky",
+    "sol": "1 year",
+    "notice": "90 days",
+    "notice_days": 90,
+    "gov_entity": "Louisville Regional Airport Auth",
+    "gov_type": "authority",
+    "comp_fault": "pure comparative fault",
+    "airport_count": 5,
+    "large_hub_count": 0,
+    "top_airport_slug": "louisville-muhammad-ali-international",
+    "top_airport_name": "Louisville Muhammad Ali International Airport",
+    "top_airport_iata": "SDF",
+    "large_hubs": [],
+    "medium_hubs": [
+      {
+        "slug": "louisville-muhammad-ali-international",
+        "name": "Louisville Muhammad Ali International Airport",
+        "iata": "SDF"
+      }
+    ]
+  },
+  "Louisiana": {
+    "state": "Louisiana",
+    "state_code": "LA",
+    "state_code_lower": "la",
+    "sol": "1 year",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Louis Armstrong Int'l Airport",
+    "gov_type": "authority",
+    "comp_fault": "pure comparative fault",
+    "airport_count": 7,
+    "large_hub_count": 1,
+    "top_airport_slug": "louis-armstrong-new-orleans-international",
+    "top_airport_name": "Louis Armstrong New Orleans International Airport",
+    "top_airport_iata": "MSY",
+    "large_hubs": [
+      {
+        "slug": "louis-armstrong-new-orleans-international",
+        "name": "Louis Armstrong New Orleans International Airport",
+        "iata": "MSY"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "Maine": {
+    "state": "Maine",
+    "state_code": "ME",
+    "state_code_lower": "me",
+    "sol": "6 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Portland Int'l Jetport",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (50% bar)",
+    "airport_count": 9,
+    "large_hub_count": 0,
+    "top_airport_slug": "portland-international-jetport",
+    "top_airport_name": "Portland International Jetport",
+    "top_airport_iata": "PWM",
+    "large_hubs": [],
+    "medium_hubs": []
+  },
+  "Maryland": {
+    "state": "Maryland",
+    "state_code": "MD",
+    "state_code_lower": "md",
+    "sol": "3 years",
+    "notice": "1 year",
+    "notice_days": 365,
+    "gov_entity": "Maryland Aviation Administration",
+    "gov_type": "state",
+    "comp_fault": "contributory negligence (pure \u2014 any fault bars recovery)",
+    "airport_count": 3,
+    "large_hub_count": 1,
+    "top_airport_slug": "baltimore-washington-international",
+    "top_airport_name": "Baltimore/Washington International Thurgood Marshall Airport",
+    "top_airport_iata": "BWI",
+    "large_hubs": [
+      {
+        "slug": "baltimore-washington-international",
+        "name": "Baltimore/Washington International Thurgood Marshall Airport",
+        "iata": "BWI"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "Massachusetts": {
+    "state": "Massachusetts",
+    "state_code": "MA",
+    "state_code_lower": "ma",
+    "sol": "3 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Massport (Logan Airport)",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 11,
+    "large_hub_count": 1,
+    "top_airport_slug": "logan-international",
+    "top_airport_name": "Logan International Airport",
+    "top_airport_iata": "BOS",
+    "large_hubs": [
+      {
+        "slug": "logan-international",
+        "name": "Logan International Airport",
+        "iata": "BOS"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "Michigan": {
+    "state": "Michigan",
+    "state_code": "MI",
+    "state_code_lower": "mi",
+    "sol": "3 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Wayne County Airport Authority",
+    "gov_type": "county",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 11,
+    "large_hub_count": 1,
+    "top_airport_slug": "detroit-metropolitan-wayne-county",
+    "top_airport_name": "Detroit Metropolitan Wayne County Airport",
+    "top_airport_iata": "DTW",
+    "large_hubs": [
+      {
+        "slug": "detroit-metropolitan-wayne-county",
+        "name": "Detroit Metropolitan Wayne County Airport",
+        "iata": "DTW"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "gerald-r-ford-international",
+        "name": "Gerald R. Ford International Airport",
+        "iata": "GRR"
+      }
+    ]
+  },
+  "Minnesota": {
+    "state": "Minnesota",
+    "state_code": "MN",
+    "state_code_lower": "mn",
+    "sol": "3 years",
+    "notice": "180 days",
+    "notice_days": 180,
+    "gov_entity": "Metropolitan Airports Commission",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 8,
+    "large_hub_count": 1,
+    "top_airport_slug": "minneapolis-saint-paul-international",
+    "top_airport_name": "Minneapolis-Saint Paul International Airport",
+    "top_airport_iata": "MSP",
+    "large_hubs": [
+      {
+        "slug": "minneapolis-saint-paul-international",
+        "name": "Minneapolis-Saint Paul International Airport",
+        "iata": "MSP"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "Mississippi": {
+    "state": "Mississippi",
+    "state_code": "MS",
+    "state_code_lower": "ms",
+    "sol": "3 years",
+    "notice": "90 days",
+    "notice_days": 90,
+    "gov_entity": "Jackson Municipal Airport Auth",
+    "gov_type": "authority",
+    "comp_fault": "pure comparative fault",
+    "airport_count": 8,
+    "large_hub_count": 0,
+    "top_airport_slug": "jackson-medgar-wiley-evers-international",
+    "top_airport_name": "Jackson-Medgar Wiley Evers International Airport",
+    "top_airport_iata": "JAN",
+    "large_hubs": [],
+    "medium_hubs": []
+  },
+  "Missouri": {
+    "state": "Missouri",
+    "state_code": "MO",
+    "state_code_lower": "mo",
+    "sol": "5 years",
+    "notice": "90 days",
+    "notice_days": 90,
+    "gov_entity": "Kansas City Aviation Dept",
+    "gov_type": "city",
+    "comp_fault": "pure comparative fault",
+    "airport_count": 7,
+    "large_hub_count": 2,
+    "top_airport_slug": "kansas-city-international",
+    "top_airport_name": "Kansas City International Airport",
+    "top_airport_iata": "MCI",
+    "large_hubs": [
+      {
+        "slug": "kansas-city-international",
+        "name": "Kansas City International Airport",
+        "iata": "MCI"
+      },
+      {
+        "slug": "st-louis-lambert-international",
+        "name": "St. Louis Lambert International Airport",
+        "iata": "STL"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "Montana": {
+    "state": "Montana",
+    "state_code": "MT",
+    "state_code_lower": "mt",
+    "sol": "3 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Billings Logan Int'l Airport",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 8,
+    "large_hub_count": 0,
+    "top_airport_slug": "billings-logan-international",
+    "top_airport_name": "Billings Logan International Airport",
+    "top_airport_iata": "BIL",
+    "large_hubs": [],
+    "medium_hubs": []
+  },
+  "Nebraska": {
+    "state": "Nebraska",
+    "state_code": "NE",
+    "state_code_lower": "ne",
+    "sol": "4 years",
+    "notice": "1 year",
+    "notice_days": 365,
+    "gov_entity": "Omaha Airport Authority",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (50% bar)",
+    "airport_count": 8,
+    "large_hub_count": 0,
+    "top_airport_slug": "omaha-eppley-airfield",
+    "top_airport_name": "Omaha Eppley Airfield",
+    "top_airport_iata": "OMA",
+    "large_hubs": [],
+    "medium_hubs": [
+      {
+        "slug": "omaha-eppley-airfield",
+        "name": "Omaha Eppley Airfield",
+        "iata": "OMA"
+      }
+    ]
+  },
+  "Nevada": {
+    "state": "Nevada",
+    "state_code": "NV",
+    "state_code_lower": "nv",
+    "sol": "2 years",
+    "notice": "6 months",
+    "notice_days": 180,
+    "gov_entity": "Clark County Dept of Aviation",
+    "gov_type": "county",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 3,
+    "large_hub_count": 1,
+    "top_airport_slug": "harry-reid-international",
+    "top_airport_name": "Harry Reid International Airport",
+    "top_airport_iata": "LAS",
+    "large_hubs": [
+      {
+        "slug": "harry-reid-international",
+        "name": "Harry Reid International Airport",
+        "iata": "LAS"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "reno-tahoe-international",
+        "name": "Reno-Tahoe International Airport",
+        "iata": "RNO"
+      }
+    ]
+  },
+  "New Hampshire": {
+    "state": "New Hampshire",
+    "state_code": "NH",
+    "state_code_lower": "nh",
+    "sol": "3 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Manchester-Boston Regional Airport",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 6,
+    "large_hub_count": 0,
+    "top_airport_slug": "manchester-boston-regional",
+    "top_airport_name": "Manchester-Boston Regional Airport",
+    "top_airport_iata": "MHT",
+    "large_hubs": [],
+    "medium_hubs": []
+  },
+  "New Jersey": {
+    "state": "New Jersey",
+    "state_code": "NJ",
+    "state_code_lower": "nj",
+    "sol": "2 years",
+    "notice": "90 days",
+    "notice_days": 90,
+    "gov_entity": "Port Authority of NY & NJ",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 7,
+    "large_hub_count": 1,
+    "top_airport_slug": "newark-liberty-international",
+    "top_airport_name": "Newark Liberty International Airport",
+    "top_airport_iata": "EWR",
+    "large_hubs": [
+      {
+        "slug": "newark-liberty-international",
+        "name": "Newark Liberty International Airport",
+        "iata": "EWR"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "New Mexico": {
+    "state": "New Mexico",
+    "state_code": "NM",
+    "state_code_lower": "nm",
+    "sol": "3 years",
+    "notice": "90 days",
+    "notice_days": 90,
+    "gov_entity": "Albuquerque Int'l Sunport",
+    "gov_type": "city",
+    "comp_fault": "pure comparative fault",
+    "airport_count": 9,
+    "large_hub_count": 0,
+    "top_airport_slug": "albuquerque-international-sunport",
+    "top_airport_name": "Albuquerque International Sunport",
+    "top_airport_iata": "ABQ",
+    "large_hubs": [],
+    "medium_hubs": [
+      {
+        "slug": "albuquerque-international-sunport",
+        "name": "Albuquerque International Sunport",
+        "iata": "ABQ"
+      }
+    ]
+  },
+  "New York": {
+    "state": "New York",
+    "state_code": "NY",
+    "state_code_lower": "ny",
+    "sol": "1.5 years",
+    "notice": "90 days",
+    "notice_days": 90,
+    "gov_entity": "Port Authority of NY & NJ",
+    "gov_type": "authority",
+    "comp_fault": "pure comparative fault",
+    "airport_count": 24,
+    "large_hub_count": 2,
+    "top_airport_slug": "john-f-kennedy-international",
+    "top_airport_name": "John F. Kennedy International Airport",
+    "top_airport_iata": "JFK",
+    "large_hubs": [
+      {
+        "slug": "john-f-kennedy-international",
+        "name": "John F. Kennedy International Airport",
+        "iata": "JFK"
+      },
+      {
+        "slug": "laguardia",
+        "name": "LaGuardia Airport",
+        "iata": "LGA"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "buffalo-niagara-international",
+        "name": "Buffalo Niagara International Airport",
+        "iata": "BUF"
+      }
+    ]
+  },
+  "North Carolina": {
+    "state": "North Carolina",
+    "state_code": "NC",
+    "state_code_lower": "nc",
+    "sol": "3 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Charlotte Douglas Int'l Airport",
+    "gov_type": "city",
+    "comp_fault": "contributory negligence (pure \u2014 any fault bars recovery)",
+    "airport_count": 11,
+    "large_hub_count": 2,
+    "top_airport_slug": "charlotte-douglas-international",
+    "top_airport_name": "Charlotte Douglas International Airport",
+    "top_airport_iata": "CLT",
+    "large_hubs": [
+      {
+        "slug": "charlotte-douglas-international",
+        "name": "Charlotte Douglas International Airport",
+        "iata": "CLT"
+      },
+      {
+        "slug": "raleigh-durham-international",
+        "name": "Raleigh-Durham International Airport",
+        "iata": "RDU"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "North Dakota": {
+    "state": "North Dakota",
+    "state_code": "ND",
+    "state_code_lower": "nd",
+    "sol": "6 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Hector Int'l Airport",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (50% bar)",
+    "airport_count": 8,
+    "large_hub_count": 0,
+    "top_airport_slug": "fargo-hector-international",
+    "top_airport_name": "Fargo Hector International Airport",
+    "top_airport_iata": "FAR",
+    "large_hubs": [],
+    "medium_hubs": []
+  },
+  "Ohio": {
+    "state": "Ohio",
+    "state_code": "OH",
+    "state_code_lower": "oh",
+    "sol": "2 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Columbus Regional Airport Auth",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 10,
+    "large_hub_count": 3,
+    "top_airport_slug": "cleveland-hopkins-international",
+    "top_airport_name": "Cleveland Hopkins International Airport",
+    "top_airport_iata": "CLE",
+    "large_hubs": [
+      {
+        "slug": "cleveland-hopkins-international",
+        "name": "Cleveland Hopkins International Airport",
+        "iata": "CLE"
+      },
+      {
+        "slug": "cincinnati-northern-kentucky-international",
+        "name": "Cincinnati/Northern Kentucky International Airport",
+        "iata": "CVG"
+      },
+      {
+        "slug": "columbus-john-glenn-international",
+        "name": "Columbus John Glenn International Airport",
+        "iata": "CMH"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "Oklahoma": {
+    "state": "Oklahoma",
+    "state_code": "OK",
+    "state_code_lower": "ok",
+    "sol": "2 years",
+    "notice": "1 year",
+    "notice_days": 365,
+    "gov_entity": "Will Rogers World Airport",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 7,
+    "large_hub_count": 0,
+    "top_airport_slug": "tulsa-international",
+    "top_airport_name": "Tulsa International Airport",
+    "top_airport_iata": "TUL",
+    "large_hubs": [],
+    "medium_hubs": [
+      {
+        "slug": "tulsa-international",
+        "name": "Tulsa International Airport",
+        "iata": "TUL"
+      },
+      {
+        "slug": "will-rogers-world",
+        "name": "Will Rogers World Airport",
+        "iata": "OKC"
+      }
+    ]
+  },
+  "Oregon": {
+    "state": "Oregon",
+    "state_code": "OR",
+    "state_code_lower": "or",
+    "sol": "2 years",
+    "notice": "180 days",
+    "notice_days": 180,
+    "gov_entity": "Port of Portland",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 17,
+    "large_hub_count": 1,
+    "top_airport_slug": "portland-international",
+    "top_airport_name": "Portland International Airport",
+    "top_airport_iata": "PDX",
+    "large_hubs": [
+      {
+        "slug": "portland-international",
+        "name": "Portland International Airport",
+        "iata": "PDX"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "Pennsylvania": {
+    "state": "Pennsylvania",
+    "state_code": "PA",
+    "state_code_lower": "pa",
+    "sol": "2 years",
+    "notice": "6 months",
+    "notice_days": 180,
+    "gov_entity": "Philadelphia Airport (city-owned)",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 18,
+    "large_hub_count": 2,
+    "top_airport_slug": "philadelphia-international",
+    "top_airport_name": "Philadelphia International Airport",
+    "top_airport_iata": "PHL",
+    "large_hubs": [
+      {
+        "slug": "philadelphia-international",
+        "name": "Philadelphia International Airport",
+        "iata": "PHL"
+      },
+      {
+        "slug": "pittsburgh-international",
+        "name": "Pittsburgh International Airport",
+        "iata": "PIT"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "Puerto Rico": {
+    "state": "Puerto Rico",
+    "state_code": "PR",
+    "state_code_lower": "pr",
+    "sol": "1 year",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Luis Munoz Marin Int'l Airport",
+    "gov_type": "authority",
+    "comp_fault": "pure comparative fault",
+    "airport_count": 3,
+    "large_hub_count": 1,
+    "top_airport_slug": "luis-munoz-marin-international",
+    "top_airport_name": "Luis Munoz Marin International Airport",
+    "top_airport_iata": "SJU",
+    "large_hubs": [
+      {
+        "slug": "luis-munoz-marin-international",
+        "name": "Luis Munoz Marin International Airport",
+        "iata": "SJU"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "Rhode Island": {
+    "state": "Rhode Island",
+    "state_code": "RI",
+    "state_code_lower": "ri",
+    "sol": "3 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Rhode Island Airport Corp",
+    "gov_type": "authority",
+    "comp_fault": "pure comparative fault",
+    "airport_count": 5,
+    "large_hub_count": 0,
+    "top_airport_slug": "providence-tf-green-international",
+    "top_airport_name": "Providence T.F. Green International Airport",
+    "top_airport_iata": "PVD",
+    "large_hubs": [],
+    "medium_hubs": [
+      {
+        "slug": "providence-tf-green-international",
+        "name": "Providence T.F. Green International Airport",
+        "iata": "PVD"
+      }
+    ]
+  },
+  "South Carolina": {
+    "state": "South Carolina",
+    "state_code": "SC",
+    "state_code_lower": "sc",
+    "sol": "3 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Charleston Int'l Airport",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 6,
+    "large_hub_count": 0,
+    "top_airport_slug": "charleston-international",
+    "top_airport_name": "Charleston International Airport",
+    "top_airport_iata": "CHS",
+    "large_hubs": [],
+    "medium_hubs": [
+      {
+        "slug": "charleston-international",
+        "name": "Charleston International Airport",
+        "iata": "CHS"
+      }
+    ]
+  },
+  "South Dakota": {
+    "state": "South Dakota",
+    "state_code": "SD",
+    "state_code_lower": "sd",
+    "sol": "3 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Rapid City Regional Airport",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 6,
+    "large_hub_count": 0,
+    "top_airport_slug": "sioux-falls-regional",
+    "top_airport_name": "Sioux Falls Regional Airport",
+    "top_airport_iata": "FSD",
+    "large_hubs": [],
+    "medium_hubs": []
+  },
+  "Tennessee": {
+    "state": "Tennessee",
+    "state_code": "TN",
+    "state_code_lower": "tn",
+    "sol": "1 year",
+    "notice": "1 year",
+    "notice_days": 365,
+    "gov_entity": "Metro Nashville Airport Auth",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (50% bar)",
+    "airport_count": 8,
+    "large_hub_count": 3,
+    "top_airport_slug": "nashville-international",
+    "top_airport_name": "Nashville International Airport",
+    "top_airport_iata": "BNA",
+    "large_hubs": [
+      {
+        "slug": "nashville-international",
+        "name": "Nashville International Airport",
+        "iata": "BNA"
+      },
+      {
+        "slug": "memphis-international",
+        "name": "Memphis International Airport",
+        "iata": "MEM"
+      },
+      {
+        "slug": "nashville-berry-field",
+        "name": "Nashville Berry Field Airport",
+        "iata": "BNA"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "mcghee-tyson",
+        "name": "McGhee Tyson Airport",
+        "iata": "TYS"
+      }
+    ]
+  },
+  "Texas": {
+    "state": "Texas",
+    "state_code": "TX",
+    "state_code_lower": "tx",
+    "sol": "2 years",
+    "notice": "None (most)",
+    "notice_days": 0,
+    "gov_entity": "DFW Airport Board",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 26,
+    "large_hub_count": 6,
+    "top_airport_slug": "dallas-fort-worth-international",
+    "top_airport_name": "Dallas/Fort Worth International Airport",
+    "top_airport_iata": "DFW",
+    "large_hubs": [
+      {
+        "slug": "dallas-fort-worth-international",
+        "name": "Dallas/Fort Worth International Airport",
+        "iata": "DFW"
+      },
+      {
+        "slug": "george-bush-intercontinental",
+        "name": "George Bush Intercontinental Airport",
+        "iata": "IAH"
+      },
+      {
+        "slug": "austin-bergstrom-international",
+        "name": "Austin-Bergstrom International Airport",
+        "iata": "AUS"
+      },
+      {
+        "slug": "san-antonio-international",
+        "name": "San Antonio International Airport",
+        "iata": "SAT"
+      },
+      {
+        "slug": "william-p-hobby",
+        "name": "William P. Hobby Airport",
+        "iata": "HOU"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "el-paso-international",
+        "name": "El Paso International Airport",
+        "iata": "ELP"
+      }
+    ]
+  },
+  "US Virgin Islands": {
+    "state": "US Virgin Islands",
+    "state_code": "US",
+    "state_code_lower": "us",
+    "sol": "2 years",
+    "notice": "6 months",
+    "notice_days": 180,
+    "gov_entity": "Virgin Islands Port Authority",
+    "gov_type": "authority",
+    "comp_fault": "pure comparative fault",
+    "airport_count": 0,
+    "large_hub_count": 0,
+    "top_airport_slug": "",
+    "top_airport_name": "",
+    "top_airport_iata": "",
+    "large_hubs": [],
+    "medium_hubs": []
+  },
+  "Utah": {
+    "state": "Utah",
+    "state_code": "UT",
+    "state_code_lower": "ut",
+    "sol": "4 years",
+    "notice": "1 year",
+    "notice_days": 365,
+    "gov_entity": "Salt Lake City Corp",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (50% bar)",
+    "airport_count": 7,
+    "large_hub_count": 1,
+    "top_airport_slug": "salt-lake-city-international",
+    "top_airport_name": "Salt Lake City International Airport",
+    "top_airport_iata": "SLC",
+    "large_hubs": [
+      {
+        "slug": "salt-lake-city-international",
+        "name": "Salt Lake City International Airport",
+        "iata": "SLC"
+      }
+    ],
+    "medium_hubs": []
+  },
+  "Vermont": {
+    "state": "Vermont",
+    "state_code": "VT",
+    "state_code_lower": "vt",
+    "sol": "3 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Burlington Int'l Airport",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 4,
+    "large_hub_count": 0,
+    "top_airport_slug": "burlington-international",
+    "top_airport_name": "Burlington International Airport",
+    "top_airport_iata": "BTV",
+    "large_hubs": [],
+    "medium_hubs": []
+  },
+  "Virginia": {
+    "state": "Virginia",
+    "state_code": "VA",
+    "state_code_lower": "va",
+    "sol": "2 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Metropolitan Washington Airports Auth",
+    "gov_type": "authority",
+    "comp_fault": "contributory negligence (pure \u2014 any fault bars recovery)",
+    "airport_count": 8,
+    "large_hub_count": 2,
+    "top_airport_slug": "washington-dulles-international",
+    "top_airport_name": "Washington Dulles International Airport",
+    "top_airport_iata": "IAD",
+    "large_hubs": [
+      {
+        "slug": "washington-dulles-international",
+        "name": "Washington Dulles International Airport",
+        "iata": "IAD"
+      },
+      {
+        "slug": "ronald-reagan-washington-national",
+        "name": "Ronald Reagan Washington National Airport",
+        "iata": "DCA"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "richmond-international",
+        "name": "Richmond International Airport",
+        "iata": "RIC"
+      },
+      {
+        "slug": "norfolk-international",
+        "name": "Norfolk International Airport",
+        "iata": "ORF"
+      }
+    ]
+  },
+  "Washington": {
+    "state": "Washington",
+    "state_code": "WA",
+    "state_code_lower": "wa",
+    "sol": "3 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Port of Seattle",
+    "gov_type": "authority",
+    "comp_fault": "pure comparative fault",
+    "airport_count": 18,
+    "large_hub_count": 1,
+    "top_airport_slug": "seattle-tacoma-international",
+    "top_airport_name": "Seattle-Tacoma International Airport",
+    "top_airport_iata": "SEA",
+    "large_hubs": [
+      {
+        "slug": "seattle-tacoma-international",
+        "name": "Seattle-Tacoma International Airport",
+        "iata": "SEA"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "spokane-international",
+        "name": "Spokane International Airport",
+        "iata": "GEG"
+      },
+      {
+        "slug": "spokane",
+        "name": "Spokane International",
+        "iata": "GEG"
+      }
+    ]
+  },
+  "West Virginia": {
+    "state": "West Virginia",
+    "state_code": "WE",
+    "state_code_lower": "we",
+    "sol": "2 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Yeager Airport",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 0,
+    "large_hub_count": 0,
+    "top_airport_slug": "",
+    "top_airport_name": "",
+    "top_airport_iata": "",
+    "large_hubs": [],
+    "medium_hubs": []
+  },
+  "Wisconsin": {
+    "state": "Wisconsin",
+    "state_code": "WI",
+    "state_code_lower": "wi",
+    "sol": "3 years",
+    "notice": "120 days",
+    "notice_days": 120,
+    "gov_entity": "Milwaukee County Airport",
+    "gov_type": "county",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 7,
+    "large_hub_count": 1,
+    "top_airport_slug": "general-mitchell-international",
+    "top_airport_name": "General Mitchell International Airport",
+    "top_airport_iata": "MKE",
+    "large_hubs": [
+      {
+        "slug": "general-mitchell-international",
+        "name": "General Mitchell International Airport",
+        "iata": "MKE"
+      }
+    ],
+    "medium_hubs": [
+      {
+        "slug": "madison-dane-county-regional",
+        "name": "Madison Dane County Regional Airport",
+        "iata": "MSN"
+      }
+    ]
+  },
+  "Wyoming": {
+    "state": "Wyoming",
+    "state_code": "WY",
+    "state_code_lower": "wy",
+    "sol": "4 years",
+    "notice": "None required",
+    "notice_days": 0,
+    "gov_entity": "Jackson Hole Airport",
+    "gov_type": "city",
+    "comp_fault": "modified comparative fault (51% bar)",
+    "airport_count": 7,
+    "large_hub_count": 0,
+    "top_airport_slug": "jackson-hole",
+    "top_airport_name": "Jackson Hole Airport",
+    "top_airport_iata": "JAC",
+    "large_hubs": [],
+    "medium_hubs": []
+  },
+  "Guam": {
+    "state": "Guam",
+    "state_code": "GU",
+    "state_code_lower": "gu",
+    "sol": "2 years",
+    "notice": "6 months",
+    "notice_days": 180,
+    "gov_entity": "Antonio B. Won Pat Int'l Airport",
+    "gov_type": "authority",
+    "comp_fault": "modified comparative fault",
+    "airport_count": 1,
+    "large_hub_count": 0,
+    "top_airport_slug": "antonio-b-won-pat-international",
+    "top_airport_name": "Antonio B. Won Pat International Airport",
+    "top_airport_iata": "GUM",
+    "large_hubs": [],
+    "medium_hubs": [
+      {
+        "slug": "antonio-b-won-pat-international",
+        "name": "Antonio B. Won Pat International Airport",
+        "iata": "GUM"
+      }
+    ]
+  }
+}

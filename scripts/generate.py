@@ -213,7 +213,10 @@ def load_data():
     with open(DATA_DIR / 'faq_templates.json')         as f: faq_templates    = json.load(f)
     with open(DATA_DIR / 'accident_faq_category.json') as f: acc_faq_cat      = json.load(f)
     with open(DATA_DIR / 'state_comparative_fault.json')as f: comp_fault      = json.load(f)
-    return airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content
+    with open(DATA_DIR / 'metro_data.json')         as f: metro_data       = json.load(f)
+    with open(DATA_DIR / 'operator_entities.json')   as f: operator_entities = json.load(f)
+    with open(DATA_DIR / 'state_law_data.json')      as f: state_law_data    = json.load(f)
+    return airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content, metro_data, operator_entities, state_law_data
 
 
 def write_page(path, html):
@@ -1322,6 +1325,326 @@ def build_howto_steps_json(airport, acc, profile, variations, seed):
     return _json.dumps(schema_steps, indent=2)
 
 
+ALL_ACCIDENT_LIST = [
+    ("slip-and-fall","\U0001f6b6","Slip & Fall Accidents"),
+    ("jet-bridge-boarding","\u2708\ufe0f","Jet Bridge & Boarding Accidents"),
+    ("baggage-claim","\U0001f9f3","Baggage Claim Accidents"),
+    ("vehicle-accidents","\U0001f697","Vehicle & Baggage Cart Accidents"),
+    ("security-checkpoint","\U0001f6c2","Security Checkpoint Injuries"),
+    ("escalator-elevator","\u2b06\ufe0f","Escalator & Elevator Accidents"),
+    ("food-court-restaurant","\u2615","Restaurant & Food Court Injuries"),
+    ("shuttle-bus-ground-transportation","\U0001f68c","Shuttle Bus & Ground Transport"),
+    ("parking-lot-curbside","\U0001f17f\ufe0f","Parking Lot & Curbside Injuries"),
+    ("assault-security-failure","\u26a0\ufe0f","Assault & Security Failure"),
+    ("disabled-passenger-assistance","\u267f","Disabled Passenger Assistance"),
+    ("construction-zone","\U0001f6a7","Construction Zone Accidents"),
+    ("boarding-stairs-ramps","\U0001fab5","Boarding Stairs & Ramp Injuries"),
+    ("worker-accidents","\U0001f477","Airport Worker Injuries"),
+    ("tarmac-airside","\U0001f6e9\ufe0f","Tarmac & Airside Accidents"),
+    ("luggage-cart-conveyor","\U0001f6d2","Luggage Cart & Conveyor Injuries"),
+    ("international-travel-claims","\U0001f310","International Travel Claims"),
+    ("toxic-exposure","\u2623\ufe0f","Toxic Exposure & PFAS Claims"),
+    ("lost-delayed-luggage","\U0001f4e6","Lost & Delayed Luggage"),
+    ("rental-car-accidents","\U0001f699","Rental Car Facility Accidents"),
+    ("medical-emergency-negligence","\U0001f3e5","Medical Emergency Negligence"),
+    ("child-unaccompanied-minor","\U0001f476","Unaccompanied Minor Claims"),
+    ("slip-fall-wet-weather","\U0001f327\ufe0f","Wet Weather Slip & Fall"),
+    ("airline-delay-cancellation-injury","\u23f3","Delay & Cancellation Injuries"),
+    ("retail-shop-injuries","\U0001f3ea","Retail Shop Injuries"),
+]
+
+
+def generate_city_pages(metro_data, accidents, profiles, airport_by_slug, tmpl, dist, comp_fault):
+    """Generate /city/{metro-slug}/ pages for each metro area."""
+    n = 0
+    for metro_name, md in metro_data.items():
+        city_slug = md['city_slug']
+
+        # Airport cards HTML
+        airport_cards = []
+        for ap in md['airports']:
+            a = airport_by_slug.get(ap['slug'])
+            if not a: continue
+            p = profiles.get(ap['slug'], {})
+            notice = p.get('notice_of_claim_days', 0)
+            notice_html = f'<div class="city-airport-card__notice">\u26a0 Notice of Claim: {notice} days</div>' if notice else ""
+            airport_cards.append(
+                f'<a href="/{ap["slug"]}/" class="city-airport-card" role="listitem">'
+                f'<div class="city-airport-card__iata">{ap["iata"]}</div>'
+                f'<div class="city-airport-card__name">{ap["name"]}</div>'
+                f'<div class="city-airport-card__meta">{a["city"]}, {a["state_code"]} — {TYPE_LABELS.get(a["type"],"Airport")}</div>'
+                f'{notice_html}'
+                f'</a>')
+
+        # Accident links (link to primary airport × each accident)
+        primary_slug = md['primary_airport_slug']
+        accident_links = []
+        for slug, icon, name in ALL_ACCIDENT_LIST:
+            accident_links.append(
+                f'<a href="/{primary_slug}/{slug}/" class="city-accident-link" role="listitem">'
+                f'<span class="city-accident-link__icon">{icon}</span>'
+                f'<span>{name}</span></a>')
+
+        # Airport diff items
+        diff_items = []
+        for ap in md['airports'][:4]:
+            p = profiles.get(ap['slug'], {})
+            notice = p.get('notice_of_claim_days', 0)
+            op = ap.get('op', 'Airport authority')
+            notice_str = f' — Notice of Claim {notice} days' if notice else ''
+            diff_items.append(
+                f'<div class="lp-hazard-item" role="listitem">'
+                f'<span class="lp-hazard-item__icon">\u2708\ufe0f</span>'
+                f'<span class="lp-hazard-item__text"><strong>{ap["iata"]}</strong>: {op}'
+                f'{notice_str}</span></div>')
+
+        # Footer links
+        footer_airports = "\n".join(f'<a href="/{ap["slug"]}/">{ap["iata"]} — {ap["name"]}</a>' for ap in md['airports'])
+        footer_accidents = "\n".join(f'<a href="/{primary_slug}/{s}/">{n}</a>' for s,_,n in ALL_ACCIDENT_LIST[:8])
+
+        # Comp fault
+        cf = comp_fault.get(md['primary_state'], 'modified comparative fault')
+        cf_short = "Pure comparative" if 'pure' in cf.lower() else "Modified comparative" if 'modified' in cf.lower() else "Contributory negligence"
+        cf_note = cf
+
+        ctx = {
+            'page_title':          f"Airport Accident Lawyers — {metro_name} | All {md['airport_count']} Airports",
+            'meta_description':    f"Injured at a {metro_name} airport? We cover all {md['airport_count']} airports — {', '.join(ap['iata'] for ap in md['airports'][:4])}. Free case review. {md['sol']} statute of limitations.",
+            'canonical_url':       f"{BASE_URL}/city/{city_slug}/",
+            'og_title':            f"Airport Accident Lawyers — {metro_name}",
+            'metro_name':          metro_name,
+            'city_slug':           city_slug,
+            'airport_count':       md['airport_count'],
+            'primary_state':       md['primary_state'],
+            'primary_state_code':  md['primary_state_code'],
+            'primary_state_code_lower': md['primary_state_code'].lower(),
+            'primary_airport_name': md['primary_airport_name'],
+            'primary_airport_iata': md['primary_airport_iata'],
+            'primary_op':          md['primary_op'],
+            'gov_type':            'government',
+            'sol':                 md['sol'],
+            'notice':              md['notice'],
+            'notice_days_gt_zero': "true" if md.get('notice','') not in ('None required','None (most)','') else "",
+            'comp_fault_short':    cf_short,
+            'comp_fault_note':     cf_note,
+            'h1_title':            f"Airport Accident Attorneys for the {metro_name}: All {md['airport_count']} Airports Covered",
+            'hero_intro':          f"The {metro_name} is served by {md['airport_count']} commercial airports — each with different operators, different notice of claim requirements, and different liable parties. Whether your injury occurred at {md['primary_airport_iata']}, a smaller regional airport, or any airport in between, your case depends on which specific airport and which specific zone you were hurt in.",
+            'legal_intro':         f"Airport injury claims in {md['primary_state']} involve deadlines that run from the moment of your injury — not when you decide to pursue a claim. The {md['sol']} statute of limitations and notice of claim requirements apply to all {md['airport_count']} airports in the {metro_name} served by {md['primary_state']} law.",
+            'differences_intro':   f"Every airport in the {metro_name} looks similar from the outside — terminals, gates, baggage claim. But legally they are completely separate entities with different operators, different insurance carriers, and different procedures for filing claims.",
+            'airport_cards_html':  "\n".join(airport_cards),
+            'accident_links_html': "\n".join(accident_links),
+            'airport_diff_items_html': "\n".join(diff_items),
+            'footer_airport_links_html': footer_airports,
+            'footer_accident_links_html': footer_accidents,
+        }
+        write_page(dist / "city" / city_slug / "index.html", render(tmpl, ctx))
+        n += 1
+        print(f"  \u2713 city/{city_slug}/ — {metro_name}")
+    return n
+
+
+def generate_operator_pages(operator_entities, accidents, airport_by_slug, profiles, tmpl, dist):
+    """Generate /operator/{slug}/ pages for each major operator."""
+    n = 0
+    acc_by_slug = {a['slug']: a for a in accidents}
+
+    for op in operator_entities:
+        if op['airport_count'] < 2: continue  # skip operators with only 1 airport
+
+        # Airport links — link each airport to its hub
+        airport_links = []
+        for slug in op['airports'][:60]:
+            a = airport_by_slug.get(slug)
+            if not a: continue
+            iata = a['iata_code'] or a['faa_code']
+            airport_links.append(
+                f'<a href="/{slug}/" class="op-airport-link" role="listitem">'
+                f'<span class="op-airport-link__code">{iata}</span>'
+                f'<span>{a["airport_name"]}, {a["state_code"]}</span></a>')
+
+        # Accident links — link accident types at the primary airport
+        primary = op['airports'][0] if op['airports'] else None
+        accident_links = []
+        for acc_slug in op['accident_types']:
+            acc = acc_by_slug.get(acc_slug)
+            if not acc or not primary: continue
+            icon = ALL_ACCIDENT_ICONS.get(acc_slug, '\u26a0\ufe0f')
+            accident_links.append(
+                f'<a href="/{primary}/{acc_slug}/" class="op-accident-link" role="listitem">'
+                f'<span>{icon}</span>'
+                f'<span>{acc["accident_name"]}</span></a>')
+
+        # Liability items
+        liability_items = [
+            f'<div class="lp-hazard-item" role="listitem"><span class="lp-hazard-item__icon">\u26a0\ufe0f</span><span class="lp-hazard-item__text"><strong>Zone liability</strong>: {op["liability_zone"]}</span></div>',
+            f'<div class="lp-hazard-item" role="listitem"><span class="lp-hazard-item__icon">\U0001f4bc</span><span class="lp-hazard-item__text"><strong>Operates at</strong>: {op["airport_count"]} US commercial airports</span></div>',
+            f'<div class="lp-hazard-item" role="listitem"><span class="lp-hazard-item__icon">\U0001f4cb</span><span class="lp-hazard-item__text"><strong>Claim type</strong>: Independent defendant with separate commercial liability insurance</span></div>',
+        ]
+
+        # Who paras
+        type_descriptions = {
+            'food_beverage': f"{op['name']} is one of the largest airport food and beverage concessionaires in the United States, operating restaurants, cafes, bars, and retail food outlets across {op['airport_count']} commercial airports.",
+            'parking': f"{op['name']} is a major airport parking management company, operating garages, surface lots, and curbside areas at {op['airport_count']} US airports.",
+            'ground_handling': f"{op['name']} is a global ground handling company providing baggage handling, ramp operations, and ground vehicle services at {op['airport_count']} US airports.",
+        }
+        who1 = type_descriptions.get(op['type'], op['description'])
+        who2 = f"As a contractor operating within airport facilities, {op['name']} carries its own commercial general liability insurance policy independent of the airport authority. This means {op['name']} can be named as a separate defendant in personal injury claims — and should be named alongside the airport authority in every case where their zone was involved."
+        who3 = f"Victims who file claims only against the airport authority and miss {op['name']} as a defendant often recover substantially less than the full value of their case. {op['name']}'s commercial liability coverage is a separate pool of insurance that is only accessible when {op['name']} is properly named as a defendant."
+
+        acc_intro = f"In every case where your injury occurred in a zone operated by {op['name']}, we name {op['name']} as a primary or secondary defendant alongside the airport authority. These are the accident types where {op['name']} is most frequently a defendant:"
+        airports_para = f"We have handled claims involving {op['name']} at airports across the US. Each location has its own liability structure and its own insurance adjuster. Find your airport below to see the specific defendants and legal path that applies to your case."
+
+        footer_airports = "\n".join(f'<a href="/{s}/">{airport_by_slug[s]["iata_code"] or airport_by_slug[s]["faa_code"]} — {airport_by_slug[s]["airport_name"]}</a>' for s in op['airports'][:6] if s in airport_by_slug)
+        footer_accidents = "\n".join(f'<a href="/{op['airports'][0]}/{s}/">{n}</a>' for s,_,n in ALL_ACCIDENT_LIST[:8]) if op['airports'] else ""
+
+        ctx = {
+            'page_title':      f"{op['name']} Airport Injury Claims | {op['airport_count']} US Airports",
+            'meta_description':f"Injured at an airport where {op['name']} operates? We handle {op['name']} liability claims at all {op['airport_count']} US airports. Free case review — {op['type_label']} liability specialist.",
+            'canonical_url':   f"{BASE_URL}/operator/{op['slug']}/",
+            'og_title':        f"{op['name']} Airport Injury Claims | Free Legal Help",
+            'operator_name':   op['name'],
+            'operator_description': op['description'],
+            'type_label':      op['type_label'],
+            'airport_count':   op['airport_count'],
+            'accident_type_count': len(op['accident_types']),
+            'liability_zone_count': len(op['liability_zone'].split(',')),
+            'h1_title':        f"{op['name']} Airport Injury Claims: Who to Sue and How to Recover",
+            'hero_intro':      f"{op['name']} operates as a {op['type_label'].lower()} at {op['airport_count']} US airports. When you are injured in a zone managed by {op['name']}, they are not just a brand name on a sign — they are a legally liable party with their own commercial insurance that you can pursue independently of the airport authority.",
+            'who_para_1':      who1,
+            'who_para_2':      who2,
+            'who_para_3':      who3,
+            'accidents_intro': acc_intro,
+            'airports_para':   airports_para,
+            'liability_items_html': "\n".join(liability_items),
+            'operator_accident_links_html': "\n".join(accident_links),
+            'operator_airport_links_html': "\n".join(airport_links),
+            'footer_airport_links_html': footer_airports,
+            'footer_accident_links_html': footer_accidents,
+        }
+        write_page(dist / "operator" / op['slug'] / "index.html", render(tmpl, ctx))
+        n += 1
+        print(f"  \u2713 operator/{op['slug']}/ — {op['name']} ({op['airport_count']} airports)")
+    return n
+
+
+def generate_state_law_pages(state_law_data, accidents, airport_by_slug, profiles, faq_templates, acc_faq_cat, comp_fault_map, tmpl, dist):
+    """Generate /law/{state-code}/airport-injury/ pages."""
+    import json as _json
+    n = 0
+    # Use a generic slip-and-fall as the FAQ base for state law pages (premises liability)
+    acc_by_slug = {a['slug']: a for a in accidents}
+    slip = acc_by_slug.get('slip-and-fall', accidents[0])
+
+    for state_name, d in state_law_data.items():
+        sc_lower = d['state_code_lower']
+
+        # Build FAQ for state law page using generic slip-and-fall + state context
+        top_airport = airport_by_slug.get(d['top_airport_slug'], {})
+        top_profile = profiles.get(d['top_airport_slug'], {})
+
+        state_legal_dict = {'sol': d['sol'], 'notice': d['notice'], 'notice_days': d['notice_days']}
+        faq_html, faq_ld = build_faq_html(
+            top_airport if top_airport else {'airport_name': f"{state_name} airports", 'iata_code': d['state_code'], 'faa_code': d['state_code'], 'city': state_name, 'state': state_name},
+            slip, top_profile if top_profile else {'airport_operator_name': d['gov_entity'], 'operator_type': d['gov_type'], 'notice_of_claim_days': d['notice_days'], 'food_operator': 'food service operators', 'parking_operator': 'parking operators', 'ground_handler_primary': 'ground handlers', 'nearby_courthouse': f'U.S. District Court, {state_name}'},
+            state_legal_dict, faq_templates, acc_faq_cat, comp_fault_map
+        ) if top_airport else ("", "{}")
+
+        # Airport cards
+        all_airports = [airport_by_slug[slug] for slug in
+                        [a['slug'] for a in sorted(
+                            [airport_by_slug[s] for s in airport_by_slug if airport_by_slug[s]['state'] == state_name],
+                            key=lambda x: ({"large_hub":0,"medium_hub":1,"small_hub":2,"non_hub":3}.get(x['type'],4), x['airport_name'])
+                        )]
+                        if slug in airport_by_slug]
+        airport_cards = []
+        for a in all_airports[:30]:
+            p = profiles.get(a['slug'], {})
+            notice = p.get('notice_of_claim_days', 0)
+            op = p.get('airport_operator_name', d['gov_entity'])
+            iata = a['iata_code'] or a['faa_code']
+            notice_html = f'<div class="sl-airport-card__notice">Notice: {notice} days</div>' if notice else ""
+            airport_cards.append(
+                f'<a href="/{a["slug"]}/" class="sl-airport-card" role="listitem">'
+                f'<div class="sl-airport-card__iata">{iata}</div>'
+                f'<div class="sl-airport-card__name">{a["airport_name"]}</div>'
+                f'<div class="sl-airport-card__op">{op}</div>'
+                f'{notice_html}</a>')
+
+        # Accident type links (top airport × each accident)
+        primary_slug = d['top_airport_slug']
+        accident_links = []
+        for slug, icon, name in ALL_ACCIDENT_LIST:
+            accident_links.append(
+                f'<a href="/{primary_slug}/{slug}/" class="sl-accident-link" role="listitem">'
+                f'<span>{icon}</span><span>{name}</span></a>')
+
+        # Comp fault
+        cf = comp_fault_map.get(state_name, 'modified comparative fault')
+        cf_short = "Pure comparative" if 'pure' in cf.lower() else "Modified comparative" if 'modified' in cf.lower() else "Contributory negligence"
+        is_contributory = 'contributory' in cf.lower()
+        cf_exp = (f"{state_name} uses contributory negligence — if you are found even 1% at fault, you may be barred from recovery. This makes liability arguments critically important in {state_name} airport cases."
+                  if is_contributory else
+                  f"{cf}. {'Your award is reduced by your percentage of fault, but you can still recover if you are less than 50% (or 51%) at fault.' if 'modified' in cf.lower() else 'Your award is reduced by your percentage of fault — even if you are mostly at fault you can still recover something.'}")
+
+        # Notice explanation
+        notice_days = d['notice_days']
+        if notice_days > 0:
+            notice_exp = f"A formal Notice of Claim must be filed against {d['gov_entity']} within {notice_days} days of the injury. This is mandatory before any lawsuit against a government-operated airport in {state_name}. Missing this deadline permanently bars your case — no exceptions."
+            notice_danger = "sl-deadline-card__value--danger"
+        else:
+            notice_exp = f"{state_name} does not require a pre-suit Notice of Claim for most airport injury cases. However, specific airports may have their own procedures. Always consult an attorney before assuming no notice is required."
+            notice_danger = ""
+
+        # Law paragraphs
+        law1 = f"Airport injury law in {state_name} is governed by a combination of {state_name} state tort law, the Federal Tort Claims Act for TSA-related claims, and the Montreal Convention for international flight injuries. The {d['sol']} statute of limitations is the outer deadline — but {notice_exp[:150]}."
+        law2 = f"{state_name}'s comparative fault rule — {cf} — directly affects how much you can recover. In claims against government-operated airports like {d['gov_entity']}, the airport's legal team will frequently raise comparative fault arguments. Your attorney's ability to counter those arguments determines your final recovery."
+        law3 = f"All {d['airport_count']} {state_name} airports operate under some form of government authority — city-owned, county-owned, port authority, or state-operated. Each has slightly different procedures for filing claims. The {d['gov_entity']} model is the most common in {state_name}, but airports in {state_name} vary. Your attorney must know the specific authority structure at the airport where you were hurt."
+
+        notice_box = f"Every government-operated airport in {state_name} has a Notice of Claim requirement. For most {state_name} airports, this means filing a formal notice with {d['gov_entity']} within {notice_days if notice_days else 'the applicable'} days of the injury. Failing to file this notice before suing permanently bars your case — even if you have strong evidence and a documented injury."
+        fed_court = f"Federal claims (TSA injuries, FTCA claims) arising from {state_name} airports are handled by the U.S. District Court with jurisdiction over the airport's location. {state_name} state claims are filed in {state_name} state court."
+
+        footer_airports = "\n".join(f'<a href="/{a["slug"]}/">{a["iata_code"] or a["faa_code"]} — {a["airport_name"]}</a>' for a in all_airports[:6])
+        footer_accidents = "\n".join(f'<a href="/{primary_slug}/{s}/">{nm}</a>' for s,_,nm in ALL_ACCIDENT_LIST[:8])
+
+        ctx = {
+            'page_title':      f"{state_name} Airport Injury Law — Deadlines, Notice of Claim & Legal Guide",
+            'meta_description':f"Complete guide to {state_name} airport injury law: {d['sol']} SOL, {d['notice']} notice of claim, {cf_short} fault rule. All {d['airport_count']} {state_name} airports covered. Free case review.",
+            'canonical_url':   f"{BASE_URL}/law/{sc_lower}/airport-injury/",
+            'og_title':        f"{state_name} Airport Injury Law | Deadlines & Legal Guide",
+            'state':           state_name,
+            'state_code':      d['state_code'],
+            'state_code_lower':sc_lower,
+            'airport_count':   d['airport_count'],
+            'sol':             d['sol'],
+            'notice':          d['notice'],
+            'notice_days':     str(notice_days) if notice_days else "None",
+            'gov_entity':      d['gov_entity'],
+            'gov_type':        d['gov_type'],
+            'comp_fault_short':cf_short,
+            'comp_fault_explanation': cf_exp,
+            'notice_danger_class': notice_danger,
+            'sol_explanation': f"{d['sol']} from the date of your injury at any {state_name} airport. Government-operated airports do not extend this deadline — it runs regardless of whether you have completed medical treatment.",
+            'notice_explanation': notice_exp,
+            'h1_title':        f"{state_name} Airport Injury Law: Deadlines, Notice of Claim, and Your Rights",
+            'hero_intro':      f"{state_name} has {d['airport_count']} commercial airports operating under government authority. Airport injury claims in {state_name} involve a {d['sol']} statute of limitations, a {d['notice']} Notice of Claim requirement for most airports, and {cf_short.lower()} comparative fault rules. Every deadline runs from the moment of your injury — not when you decide to pursue a claim.",
+            'deadlines_intro': f"These are the hard deadlines that govern airport injury claims in {state_name}. Missing any one of them can permanently end your case regardless of how strong your evidence is.",
+            'law_para_1':      law1,
+            'law_para_2':      law2,
+            'law_para_3':      law3,
+            'notice_box_text': notice_box,
+            'federal_court_note': fed_court,
+            'faq_section_html':   faq_html,
+            'faq_jsonld':          faq_ld,
+            'state_airport_cards_html': "\n".join(airport_cards),
+            'state_accident_links_html': "\n".join(accident_links),
+            'footer_airport_links_html': footer_airports,
+            'footer_accident_links_html': footer_accidents,
+        }
+        write_page(dist / "law" / sc_lower / "airport-injury" / "index.html", render(tmpl, ctx))
+        n += 1
+        print(f"  \u2713 law/{sc_lower}/airport-injury/ — {state_name}")
+    return n
+
 def copy_assets(dist):
     shutil.copy2(HOMEPAGE_SRC, dist/"index.html"); print("  \u2713 index.html")
     dest = dist/"assets"
@@ -1448,7 +1771,7 @@ def main():
     start = datetime.now()
     print(f"\n{'='*60}\nAirportAccidents.com \u2014 Page Generator\n{'='*60}")
     print("\n[1/5] Loading data...")
-    airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content = load_data()
+    airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content, metro_data, operator_entities, state_law_data = load_data()
     print(f"  \u2713 {len(airports)} airports | {len(accidents)} accidents | {len(profiles)} profiles")
 
     if args.dry_run:
@@ -1499,6 +1822,23 @@ def main():
                                      filter_airport=args.airport,
                                      filter_accident=args.accident,
                                      phase=args.phase)
+
+    # City, Operator, State Law pages
+    if gen_all:
+        # Load templates
+        tmpl_city     = (TEMPLATES_DIR / "city-hub.html").read_text()
+        tmpl_operator = (TEMPLATES_DIR / "operator-entity.html").read_text()
+        tmpl_state_law= (TEMPLATES_DIR / "state-law.html").read_text()
+        airport_by_slug_map = {a['slug']: a for a in airports}
+
+        print("\n  \u2014 City pages \u2014")
+        total += generate_city_pages(metro_data, accidents, profiles, airport_by_slug_map, tmpl_city, DIST, comp_fault)
+
+        print("\n  \u2014 Operator entity pages \u2014")
+        total += generate_operator_pages(operator_entities, accidents, airport_by_slug_map, profiles, tmpl_operator, DIST)
+
+        print("\n  \u2014 State law pages \u2014")
+        total += generate_state_law_pages(state_law_data, accidents, airport_by_slug_map, profiles, faq_templates, acc_faq_cat, comp_fault, tmpl_state_law, DIST)
 
     # Always generate sitemap + robots on full or leaf builds
     if gen_all or args.leaves:
