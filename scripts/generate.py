@@ -169,13 +169,31 @@ def load_data():
         "liable_section_titles":  "cv_liable_section_titles.json",
         "liable_intro_variants":  "cv_liable_intro_variants.json",
         "context_section_titles": "cv_context_section_titles.json",
+        "context_section_labels": "cv_context_section_labels.json",
         "steps_section_titles":   "cv_steps_section_titles.json",
+        "steps_section_labels":   "cv_steps_section_labels.json",
         "evidence_section_titles":"cv_evidence_section_titles.json",
         "legal_section_titles":   "cv_legal_section_titles.json",
+        "legal_section_labels":   "cv_legal_section_labels.json",
         "other_accidents_titles": "cv_other_accidents_titles.json",
+        "other_accidents_sub":    "cv_other_accidents_sub.json",
         "cta_titles":             "cv_cta_titles.json",
+        "cta_sub":                "cv_cta_sub.json",
         "hero_eyebrow_variants":  "cv_hero_eyebrow.json",
         "form_titles":            "cv_form_titles.json",
+        "what_to_do_intro":       "cv_what_to_do_intro.json",
+        "evidence_intro":         "cv_evidence_intro.json",
+        "trust_items":            "cv_trust_items.json",
+        "sticky_bar_text":        "cv_sticky_bar_text.json",
+        "form_submit_labels":     "cv_form_submit_labels.json",
+        "nav_cta_labels":         "cv_nav_cta_labels.json",
+        "phone_labels":           "cv_phone_labels.json",
+        "step_titles":            "cv_step_titles.json",
+        "step_bodies":            "cv_step_bodies.json",
+        "evidence_item_notes":    "cv_evidence_item_notes.json",
+        "form_hint":              "cv_form_hint.json",
+        "form_card_titles":       "cv_form_card_titles.json",
+        "form_card_subs":         "cv_form_card_subs.json",
     }
     for key, fname in cv_map.items():
         fpath = DATA_DIR / fname
@@ -414,13 +432,14 @@ def build_hazard_items(airport, acc, profile):
     return "\n".join(items)
 
 
-def build_evidence_timeline(acc):
+def build_evidence_timeline(acc, variations=None, seed=0):
+    v = variations or {}
     ev = parse_list(acc.get('key_evidence', []))
     items_data = [
-        ("CRITICAL\n24-72h",   "lp-evidence-item__time--critical", ev[0] if ev else "CCTV footage",       acc.get('evidence_notes','Overwrite window is 24-72 hours.')),
-        ("HIGH\n1 week",       "lp-evidence-item__time--high",     ev[1] if len(ev)>1 else "Maintenance logs", "Request before airport legal team seals records."),
-        ("HIGH\n1-2 weeks",    "lp-evidence-item__time--high",     ev[2] if len(ev)>2 else "Incident report",  "Obtain the incident report number if you filed one."),
-        ("STANDARD\nPreserve", "lp-evidence-item__time--standard", ev[3] if len(ev)>3 else "Medical records",  "Seek immediate treatment — document everything same day."),
+        ("CRITICAL\n24-72h",   "lp-evidence-item__time--critical", ev[0] if ev else "CCTV footage",       pick_pool(v,"evidence_item_notes","slot_1_cctv", seed)),
+        ("HIGH\n1 week",       "lp-evidence-item__time--high",     ev[1] if len(ev)>1 else "Maintenance logs", pick_pool(v,"evidence_item_notes","slot_2_logs", seed+1)),
+        ("HIGH\n1-2 weeks",    "lp-evidence-item__time--high",     ev[2] if len(ev)>2 else "Incident report",  pick_pool(v,"evidence_item_notes","slot_3_incident", seed+2)),
+        ("STANDARD\nPreserve", "lp-evidence-item__time--standard", ev[3] if len(ev)>3 else "Medical records",  pick_pool(v,"evidence_item_notes","slot_4_medical", seed+3)),
     ]
     return "\n".join(
         f'<div class="lp-evidence-item" role="listitem">'
@@ -431,20 +450,26 @@ def build_evidence_timeline(acc):
     )
 
 
-def build_steps(airport, acc, profile):
+def build_steps(airport, acc, profile, variations=None, seed=0):
+    v = variations or {}
     iata   = airport['iata_code'] or airport['faa_code']
     name   = airport['airport_name']
     notice = profile.get('notice_of_claim_days', 0)
     op     = profile.get('airport_operator_name', f"{airport['city']} Airport Authority")
+    fmt = dict(airport=name, iata=iata, op=op,
+               food_op=profile.get('food_operator','food operators'),
+               park_op=profile.get('parking_operator','parking operators'),
+               handler=profile.get('ground_handler_primary','ground handlers'),
+               accident_lower=acc['accident_name'].lower())
     steps = [
-        ("Get medical attention immediately",
-         f"Seek treatment now — even if you feel okay. A same-day medical record is essential evidence. Tell the doctor the injury occurred at {name} ({iata})."),
-        ("Report the incident before leaving the airport",
-         f"Report to airport operations, the airline, or the specific concession. Request a written incident report number. Do not leave {iata} without this."),
-        ("Photograph everything at the scene",
-         f"Document the exact location, the hazard, your injuries, and your footwear. CCTV at {name} is overwritten within 24-72 hours — your photos may be the only visual record."),
-        ("Demand evidence preservation",
-         f"A formal letter to {op} demanding preservation of CCTV footage, maintenance logs, and cleaning records must be sent within 24 hours. Our attorneys send this immediately on engagement."),
+        (pick_pool(v,"step_titles","medical",    seed,    **fmt),
+         pick_pool(v,"step_bodies","medical",    seed+1,  **fmt)),
+        (pick_pool(v,"step_titles","report",     seed+2,  **fmt),
+         pick_pool(v,"step_bodies","report",     seed+3,  **fmt)),
+        (pick_pool(v,"step_titles","photograph", seed+4,  **fmt),
+         pick_pool(v,"step_bodies","photograph", seed+5,  **fmt)),
+        (pick_pool(v,"step_titles","preservation",seed+6, **fmt),
+         pick_pool(v,"step_bodies","preservation",seed+7, **fmt)),
     ]
     if notice > 0:
         steps.append((f"File Notice of Claim within {notice} days",
@@ -857,8 +882,8 @@ def generate_leaf_pages(airports, accidents, profiles, variations, tmpl, dist,
                     "hazard_items_html":build_hazard_items(airport,acc,profile),
                     "liable_cards_html":build_liable_cards(airport,acc,profile),
                     "notice_box_html":build_notice_box(profile),
-                    "evidence_timeline_html":build_evidence_timeline(acc),
-                    "steps_html":build_steps(airport,acc,profile),
+                    "steps_html":build_steps(airport,acc,profile,variations,seed+20),
+                    "evidence_timeline_html":build_evidence_timeline(acc,variations,seed+30),
                     "location_options_html":build_location_options(acc),
                     "injuries_html":injuries_h,"damages_html":damages_h,"value_factors_html":value_h,
                     "ftca_alert_html":ftca_alert,"montreal_alert_html":montreal_alert,
@@ -900,11 +925,47 @@ def generate_leaf_pages(airports, accidents, profiles, variations, tmpl, dist,
                     "form_title":           pick(variations,"form_titles",             seed+7,
                                               airport=airport['airport_name'], iata=iata,
                                               accident=acc['accident_name']),
+                    "context_section_label":pick(variations,"context_section_labels",  seed+8,
+                                              iata=iata),
+                    "steps_section_label":   pick(variations,"steps_section_labels",   seed+9),
+                    "legal_section_label":   pick(variations,"legal_section_labels",   seed+10,
+                                              state=airport['state']),
+                    "other_accidents_sub":   pick(variations,"other_accidents_sub",    seed+11,
+                                              airport=airport['airport_name'], iata=iata),
+                    "cta_sub":              pick(variations,"cta_sub",                 seed+12,
+                                              airport=airport['airport_name'], iata=iata,
+                                              accident_lower=acc['accident_name'].lower(),
+                                              state=airport['state'], sol=state_leg['sol']),
+                    "what_to_do_intro":     pick(variations,"what_to_do_intro",        seed+13,
+                                              airport=airport['airport_name'], iata=iata,
+                                              accident_lower=acc['accident_name'].lower()),
+                    "evidence_intro":       pick(variations,"evidence_intro",          seed+14,
+                                              airport=airport['airport_name'], iata=iata,
+                                              accident_lower=acc['accident_name'].lower()),
+                    "sticky_bar_text":      pick(variations,"sticky_bar_text",         seed+15,
+                                              airport=airport['airport_name'], iata=iata,
+                                              accident_lower=acc['accident_name'].lower(),
+                                              accident=acc['accident_name']),
+                    "submit_label":         pick(variations,"form_submit_labels",      seed+16,
+                                              airport=airport['airport_name'], iata=iata,
+                                              accident=acc['accident_name']),
+                    "nav_cta_label":        pick(variations,"nav_cta_labels",          seed+17),
+                    "phone_label":          pick(variations,"phone_labels",            seed+18),
+                    # ── Trust strip (5 items from pools) ───────────────────────
+                    **dict(zip(
+                        ["trust_item_1","trust_item_2","trust_item_3","trust_item_4","trust_item_5"],
+                        build_trust_items(variations,seed,airport['state'],iata)
+                    )),
+                    "form_card_title":      pick(variations,"form_card_titles",       seed+19,
+                                              airport=airport['airport_name'], iata=iata,
+                                              accident=acc['accident_name']),
+                    "form_card_sub":        pick(variations,"form_card_subs",         seed+19,
+                                              airport=airport['airport_name'], iata=iata,
+                                              accident_lower=acc['accident_name'].lower()),
+                    "form_hint":            pick(variations,"form_hint",               seed+20,
+                                              airport=airport['airport_name'], iata=iata),
                     # ── Static fields ──────────────────────────────────────────
-                    "form_subtitle":f"Tell us what happened at {airport['airport_name']}. An attorney reviews within 24 hours.",
                     "form_placeholder":f"Describe what happened at {airport['airport_name']}...",
-                    "submit_label":f"Review My {iata} Case \u2192",
-                    "cta_sub":f"Evidence at {iata} disappears within 72 hours and {airport['state']}'s {state_leg['sol']} statute of limitations has already started.",
                     "cta_btn_label":f"Start My Free {iata} Case Review \u2192",
                     "faq_liable_answer":faq_liable,"faq_deadline_answer":faq_deadline,"faq_evidence_answer":faq_evidence,
                     "form_webhook": FORM_WEBHOOK,
@@ -920,6 +981,42 @@ def generate_leaf_pages(airports, accidents, profiles, variations, tmpl, dist,
             n += fut.result()
 
     return n
+
+
+def pick_pool(variations, key, pool_key, seed, **fmt):
+    """Pick from a nested pool (variations[key][pool_key])."""
+    outer = variations.get(key, {})
+    if isinstance(outer, dict):
+        pool = outer.get(pool_key, [""])
+    else:
+        pool = outer
+    idx  = seed % len(pool) if pool else 0
+    text = pool[idx] if pool else ""
+    for k, v in fmt.items():
+        text = text.replace("{" + k + "}", str(v))
+    text = re.sub(r'\{[a-z_]+\}', '', text).strip()
+    return text
+
+
+def build_trust_items(variations, seed, state, iata):
+    """Build 5 trust strip items from variation pools."""
+    pools = variations.get("trust_items", {})
+    slots = [
+        ("slot_1_fees",       {}),
+        ("slot_2_review",     {}),
+        ("slot_3_evidence",   {}),
+        ("slot_4_jurisdiction",{"state": state}),
+        ("slot_5_airport",    {"iata": iata}),
+    ]
+    items = []
+    for i, (slot_key, fmt) in enumerate(slots):
+        pool = pools.get(slot_key, ["No fees unless you win"])
+        idx  = (seed + i * 7) % len(pool)
+        text = pool[idx]
+        for k, v in fmt.items():
+            text = text.replace("{" + k + "}", str(v))
+        items.append(text)
+    return items
 
 
 def copy_assets(dist):

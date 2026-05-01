@@ -528,7 +528,7 @@
     <div class="nav__links" id="nav-menu" role="menubar">
       <a href="/{{airport_slug}}/" class="nav__link" role="menuitem">{{iata_code}} — All Accidents</a>
       <a href="/{{accident_slug}}/" class="nav__link" role="menuitem">{{accident_name}} Nationwide</a>
-      <a href="tel:{{phone_digits}}" class="nav__link nav__link--cta" role="menuitem">Free Consultation</a>
+      <a href="tel:{{phone_digits}}" class="nav__link nav__link--cta" role="menuitem">{{nav_cta_label}}</a>
     </div>
     <button class="nav__toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation">
       <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
@@ -609,8 +609,8 @@
       <!-- Lead form -->
       <div class="form-card" id="lead-form">
         <div class="form-card__bar" aria-hidden="true"></div>
-        <h2 class="form-card__title">{{form_title}}</h2>
-        <p class="form-card__sub">{{form_subtitle}}</p>
+        <h2 class="form-card__title">{{form_card_title}}</h2>
+        <p class="form-card__sub">{{form_card_sub}}</p>
         <form class="lead-form" novalidate
               data-airport="{{airport_slug}}"
               data-accident-type="{{accident_slug}}">
@@ -647,7 +647,7 @@
               <input class="form__input" id="lp-phone" name="phone" type="tel"
                 placeholder="(555) 000-0000" autocomplete="tel"
                 data-role="phone" required aria-describedby="lp-phone-hint">
-              <span class="form__hint" id="lp-phone-hint">An attorney will call or text within 24 hours.</span>
+              <span class="form__hint" id="lp-phone-hint">{{form_hint}}</span>
             </div>
             <button class="form__submit" type="submit" data-role="submit">{{submit_label}}</button>
             <p class="form__disclaimer">Free. Confidential. No fees unless we win.</p>
@@ -665,15 +665,15 @@
   <!-- TRUST STRIP -->
   <div class="trust-strip" role="complementary">
     <div class="trust-strip__inner">
-      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>No fees unless you win</div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>{{trust_item_1}}</div>
       <div class="trust-strip__divider" aria-hidden="true"></div>
-      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>24-hour case review</div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>{{trust_item_2}}</div>
       <div class="trust-strip__divider" aria-hidden="true"></div>
-      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>Evidence preserved immediately</div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>{{trust_item_3}}</div>
       <div class="trust-strip__divider" aria-hidden="true"></div>
-      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>{{state}} law specialists</div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>{{trust_item_4}}</div>
       <div class="trust-strip__divider" aria-hidden="true"></div>
-      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>{{iata_code}} airport experts</div>
+      <div class="trust-strip__item"><span class="trust-strip__icon" aria-hidden="true">✓</span>{{trust_item_5}}</div>
     </div>
   </div>
 
@@ -685,7 +685,7 @@
         <!-- Left: unique airport context -->
         <div>
           <div class="lp-airport-context">
-            <div class="lp-airport-context__eyebrow">{{iata_code}} — Airport-specific risk factors</div>
+            <div class="lp-airport-context__eyebrow">{{context_section_label}}</div>
             <h2 class="lp-airport-context__title" id="context-heading">{{context_section_title}}</h2>
             <p class="lp-airport-context__body">{{airport_accident_context_para}}</p>
             <div class="lp-hazard-list" role="list">
@@ -716,7 +716,7 @@
     <div class="container">
       <div class="lp-two-col">
         <div>
-          <div class="section__label">Immediate action required</div>
+          <div class="section__label">{{steps_section_label}}</div>
           <h2 class="section__title" id="steps-heading">{{steps_section_title}}</h2>
           <p class="section__sub">{{what_to_do_intro}}</p>
           <div class="lp-steps" role="list">
@@ -740,7 +740,7 @@
   <!-- LEGAL GUIDE -->
   <section class="section section--cream2" aria-labelledby="legal-heading">
     <div class="container">
-      <div class="section__label">Know your rights</div>
+      <div class="section__label">{{legal_section_label}}</div>
       <h2 class="section__title" id="legal-heading">{{legal_section_title}}</h2>
       <div class="lp-two-col" style="margin-top:var(--space-10);">
         <div>
@@ -796,7 +796,7 @@
     <div class="container">
       <div class="section__label">Also at {{iata_code}}</div>
       <h2 class="section__title" id="other-accidents-heading">{{other_accidents_title}}</h2>
-      <p class="section__sub">Every type of airport accident at {{airport_name}} has a different liable party and legal path. Find the one that matches your situation.</p>
+      <p class="section__sub">{{other_accidents_sub}}</p>
       <div class="lp-other-accidents" role="list">
         {{other_accidents_html}}
       </div>
@@ -811,7 +811,7 @@
       <h2 class="cta__title" id="cta-heading">{{cta_title}}</h2>
       <p class="cta__sub">{{cta_sub}}</p>
       <a href="tel:{{phone_digits}}" class="cta__phone" aria-label="Call {{phone_display}}">{{phone_display}}</a>
-      <span class="cta__phone-label">Free consultation — available 24/7</span>
+      <span class="cta__phone-label">{{phone_label}}</span>
       <div class="cta__actions">
         <a href="#lead-form" class="btn btn--primary btn--lg">{{cta_btn_label}}</a>
       </div>
@@ -854,7 +854,7 @@
 </footer>
 
 <div class="sticky-bar" id="sticky-bar" role="complementary">
-  <p class="sticky-bar__text"><strong>{{accident_name}} at {{airport_name}}?</strong> Free case review — no fees unless you win.</p>
+  <p class="sticky-bar__text">{{sticky_bar_text}}</p>
   <a href="#lead-form" class="sticky-bar__btn">Get Help Now</a>
 </div>
 
