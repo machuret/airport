@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<style>{{critical_css}}</style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{page_title}}</title>
 <meta name="description" content="{{meta_description}}">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="{{canonical_url}}">
+<meta name="geo.region" content="US-{{state_code}}">
+<meta name="geo.placename" content="{{city}}, {{state}}">
+<meta name="DC.title" content="{{h1_title}}">
+<meta name="DC.subject" content="{{accident_name}}, Airport Injury, {{state}} Personal Injury Law">
+<meta name="DC.description" content="{{meta_description}}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AirportAccidents.com">
 <meta property="og:url" content="{{canonical_url}}">
@@ -18,11 +24,16 @@
 <meta name="twitter:description" content="{{meta_description}}">
 <meta name="twitter:image" content="https://airportaccidents.com/assets/img/og-leaf.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preload" href="/assets/css/global.css" as="style">
+<link rel="preload" href="/assets/js/main.js" as="script">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
-<link rel="stylesheet" href="/assets/css/global.css">
+<link rel="stylesheet" href="/assets/css/global.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/assets/css/global.css"></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -669,6 +680,113 @@
   .faq-item__q { font-size: var(--text-sm); }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "{{site_name}} — {{accident_name}} at {{airport_name}}",
+  "url": "{{canonical_url}}",
+  "description": "{{meta_description}}",
+  "serviceType": "{{accident_name}} Personal Injury Law",
+  "areaServed": {
+    "@type": "State",
+    "name": "{{state}}"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Airport Injury Legal Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "{{accident_name}} Case Review",
+          "description": "Free case evaluation for {{accident_name}} injuries at {{airport_name}}"
+        },
+        "price": "0",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "0",
+          "priceCurrency": "USD",
+          "name": "Contingency Fee — No fee unless we win"
+        }
+      }
+    ]
+  },
+  "telephone": "{{phone_display}}",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "{{canonical_url}}",
+    "availableLanguage": "English",
+    "servicePhone": {
+      "@type": "ContactPoint",
+      "telephone": "{{phone_digits}}",
+      "contactType": "customer service",
+      "availableLanguage": "English",
+      "contactOption": "TollFree"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{h1_title}}",
+  "description": "{{meta_description}}",
+  "url": "{{canonical_url}}",
+  "datePublished": "2024-01-01",
+  "dateModified": "{{build_date}}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{site_name}}",
+    "url": "https://airportaccidents.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{site_name}}",
+    "url": "https://airportaccidents.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://airportaccidents.com/assets/img/logo.png"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "{{accident_name}}",
+    "description": "{{accident_name}} at {{airport_name}} — legal rights, liable parties, and evidence preservation"
+  },
+  "mentions": [
+    {
+      "@type": "Airport",
+      "name": "{{airport_name}}",
+      "iataCode": "{{iata_code}}",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "{{city}}",
+        "addressRegion": "{{state}}",
+        "addressCountry": "US"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "What To Do After a {{accident_name}} at {{airport_name}}",
+  "description": "Step-by-step guide to protecting your legal rights after a {{accident_name}} at {{airport_name}} in {{city}}, {{state}}.",
+  "totalTime": "PT30M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0"
+  },
+  "step": {{howto_steps_json}}
+}
+</script>
 </head>
 <body>
 

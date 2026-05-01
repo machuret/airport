@@ -207,10 +207,13 @@ def load_data():
     with open(DATA_DIR / 'related_accidents.json')   as f: related_accs      = json.load(f)
     with open(DATA_DIR / 'state_neighbors.json')     as f: state_neighbors   = json.load(f)
     with open(DATA_DIR / 'top_airport_per_state.json')as f: top_per_state    = json.load(f)
+    # Load critical CSS for inlining
+    critical_css_path = ROOT / "assets" / "css" / "critical.css"
+    critical_css_content = critical_css_path.read_text() if critical_css_path.exists() else ""
     with open(DATA_DIR / 'faq_templates.json')         as f: faq_templates    = json.load(f)
     with open(DATA_DIR / 'accident_faq_category.json') as f: acc_faq_cat      = json.load(f)
     with open(DATA_DIR / 'state_comparative_fault.json')as f: comp_fault      = json.load(f)
-    return airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault
+    return airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content
 
 
 def write_page(path, html):
@@ -855,7 +858,7 @@ def generate_leaf_pages(airports, accidents, profiles, tmpl, dist,
 def generate_leaf_pages(airports, accidents, profiles, variations,
                         metro_clusters, related_accs, state_neighbors, top_per_state,
                         faq_templates, acc_faq_cat, comp_fault,
-                        tmpl, dist,
+                        critical_css_content, tmpl, dist,
                         filter_airport=None, filter_accident=None, phase=None):
     """Wrapper that runs the leaf generator with parallel file writes."""
     phase_types = {1:{'large_hub'},2:{'medium_hub'},3:{'small_hub'},4:{'non_hub'}}
@@ -1046,12 +1049,16 @@ def generate_leaf_pages(airports, accidents, profiles, variations,
                     # ── Static fields ──────────────────────────────────────────
                     "form_placeholder":f"Describe what happened at {airport['airport_name']}...",
                     "cta_btn_label":f"Start My Free {iata} Case Review \u2192",
+                    "build_date":           datetime.now().strftime("%Y-%m-%d"),
+                    "critical_css":         critical_css_content,
                     # ── FAQ section ────────────────────────────────────────────
                     **dict(zip(
                         ["faq_section_html", "faq_jsonld"],
                         build_faq_html(airport, acc, profile, state_leg,
                                        faq_templates, acc_faq_cat, comp_fault)
                     )),
+                    # ── HowTo schema steps ─────────────────────────────────────
+                    "howto_steps_json": build_howto_steps_json(airport, acc, profile, variations, seed+20),
                     "faq_liable_answer":faq_liable,"faq_deadline_answer":faq_deadline,"faq_evidence_answer":faq_evidence,
                     "form_webhook": FORM_WEBHOOK,
                     "gtm_id": GTM_ID,
@@ -1273,6 +1280,48 @@ def build_faq_html(airport, acc, profile, state_legal, faq_templates, acc_faq_ca
     return faq_html, _json.dumps(schema, indent=2)
 
 
+def build_howto_steps_json(airport, acc, profile, variations, seed):
+    """Build HowTo schema steps JSON from the same step content as the visible steps."""
+    import json as _json
+    iata   = airport['iata_code'] or airport['faa_code']
+    name   = airport['airport_name']
+    notice = profile.get('notice_of_claim_days', 0)
+    op     = profile.get('airport_operator_name', f"{airport['city']} Airport Authority")
+    v      = variations or {}
+    fmt    = dict(airport=name, iata=iata, op=op,
+                  food_op=profile.get('food_operator','food operators'),
+                  park_op=profile.get('parking_operator','parking operators'),
+                  handler=profile.get('ground_handler_primary','ground handlers'),
+                  accident_lower=acc['accident_name'].lower())
+
+    raw_steps = [
+        (pick_pool(v,"step_titles","medical",    seed,    **fmt),
+         pick_pool(v,"step_bodies","medical",    seed+1,  **fmt)),
+        (pick_pool(v,"step_titles","report",     seed+2,  **fmt),
+         pick_pool(v,"step_bodies","report",     seed+3,  **fmt)),
+        (pick_pool(v,"step_titles","photograph", seed+4,  **fmt),
+         pick_pool(v,"step_bodies","photograph", seed+5,  **fmt)),
+        (pick_pool(v,"step_titles","preservation",seed+6, **fmt),
+         pick_pool(v,"step_bodies","preservation",seed+7, **fmt)),
+    ]
+    if notice > 0:
+        raw_steps.append((
+            f"File Notice of Claim within {notice} days",
+            f"Claims against {op} require a formal Notice of Claim within {notice} days."
+        ))
+
+    schema_steps = []
+    for i, (title, text) in enumerate(raw_steps[:6], 1):
+        schema_steps.append({
+            "@type": "HowToStep",
+            "position": i,
+            "name": title,
+            "text": text,
+            "url": f"#step-{i}"
+        })
+    return _json.dumps(schema_steps, indent=2)
+
+
 def copy_assets(dist):
     shutil.copy2(HOMEPAGE_SRC, dist/"index.html"); print("  \u2713 index.html")
     dest = dist/"assets"
@@ -1281,59 +1330,102 @@ def copy_assets(dist):
 
 
 def generate_sitemap(airports, accidents, dist):
-    """Generate dist/sitemap.xml with all page URLs, priorities, and lastmod."""
+    """Generate split sitemaps by priority tier + sitemap index."""
     from datetime import date
     today = date.today().isoformat()
-    urls = []
 
-    def add(loc, priority, changefreq):
-        urls.append(f'  <url>\n    <loc>{BASE_URL}{loc}</loc>\n    <lastmod>{today}</lastmod>\n    <changefreq>{changefreq}</changefreq>\n    <priority>{priority}</priority>\n  </url>')
+    def url_entry(loc, priority, changefreq="monthly"):
+        return (f'  <url>\n    <loc>{BASE_URL}{loc}</loc>\n'
+                f'    <lastmod>{today}</lastmod>\n'
+                f'    <changefreq>{changefreq}</changefreq>\n'
+                f'    <priority>{priority}</priority>\n  </url>')
 
-    # Homepage
-    add("/", "1.0", "weekly")
+    def write_sm(name, entries):
+        xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+               '        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\n'
+               '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 '
+               'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">\n')
+        xml += "\n".join(entries) + '\n</urlset>'
+        (dist / name).write_text(xml, encoding="utf-8")
+        return len(entries)
 
-    # State hubs
     by_state = defaultdict(list)
     for a in airports: by_state[a['state']].append(a)
+
+    core = [url_entry("/", "1.0", "weekly")]
     for state_name, sa in sorted(by_state.items()):
-        sc = sa[0]['state_code'].lower()
-        add(f"/state/{sc}/", "0.8", "monthly")
-
-    # Accident hubs
+        core.append(url_entry(f"/state/{sa[0]['state_code'].lower()}/", "0.9", "monthly"))
     for acc in accidents:
-        add(f"/{acc['slug']}/", "0.8", "monthly")
+        core.append(url_entry(f"/{acc['slug']}/", "0.9", "monthly"))
+    n_core = write_sm("sitemap-core.xml", core)
 
-    # Airport hubs (large/medium hubs get higher priority)
-    priority_map = {"large_hub": "0.8", "medium_hub": "0.7", "small_hub": "0.6", "non_hub": "0.5"}
-    for airport in airports:
-        pri = priority_map.get(airport['type'], "0.5")
-        add(f"/{airport['slug']}/", pri, "monthly")
+    hub_pri = {"large_hub":"0.8","medium_hub":"0.7","small_hub":"0.6","non_hub":"0.5"}
+    hubs = [url_entry(f"/{a['slug']}/", hub_pri.get(a['type'],"0.5"))
+            for a in sorted(airports, key=lambda x: x['airport_name'])]
+    n_hubs = write_sm("sitemap-airports.xml", hubs)
 
-    # Leaf pages — prioritized by airport size
-    leaf_priority = {"large_hub": "0.7", "medium_hub": "0.6", "small_hub": "0.5", "non_hub": "0.4"}
-    for airport in sorted(airports, key=lambda x: ({"large_hub":0,"medium_hub":1,"small_hub":2,"non_hub":3}[x['type']], x['airport_name'])):
-        pri = leaf_priority.get(airport['type'], "0.4")
+    type_order = {"large_hub":0,"medium_hub":1,"small_hub":2,"non_hub":3}
+    sorted_airports = sorted(airports, key=lambda x:(type_order.get(x['type'],4),x['airport_name']))
+    leaf_pri = {"large_hub":"0.7","medium_hub":"0.6","small_hub":"0.5","non_hub":"0.4"}
+    tiers = {"large_hub":[],"medium_hub":[],"small_hub":[],"non_hub":[]}
+    for airport in sorted_airports:
+        pri = leaf_pri.get(airport['type'],"0.4")
         for acc in accidents:
-            add(f"/{airport['slug']}/{acc['slug']}/", pri, "monthly")
+            tiers[airport['type']].append(url_entry(f"/{airport['slug']}/{acc['slug']}/", pri))
 
-    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
-    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    xml += "\n".join(urls)
-    xml += '\n</urlset>'
+    tier_names = {"large_hub":"sitemap-leaves-large.xml","medium_hub":"sitemap-leaves-medium.xml",
+                  "small_hub":"sitemap-leaves-small.xml","non_hub":"sitemap-leaves-regional.xml"}
+    n_leaves = 0
+    for tier_key, tier_entries in tiers.items():
+        if tier_entries:
+            n_leaves += write_sm(tier_names[tier_key], tier_entries)
 
-    (dist / "sitemap.xml").write_text(xml, encoding="utf-8")
-    print(f"  \u2713 sitemap.xml ({len(urls):,} URLs)")
+    all_sms = ["sitemap-core.xml","sitemap-airports.xml"] + list(tier_names.values())
+    idx = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+    for sm_name in all_sms:
+        idx += f'  <sitemap>\n    <loc>{BASE_URL}/{sm_name}</loc>\n    <lastmod>{today}</lastmod>\n  </sitemap>\n'
+    idx += '</sitemapindex>'
+    (dist / "sitemap.xml").write_text(idx, encoding="utf-8")
+
+    total = n_core + n_hubs + n_leaves
+    print(f"  \u2713 sitemap index + 6 split sitemaps ({total:,} URLs total)")
+    print(f"      core={n_core} | airports={n_hubs} | leaves={n_leaves}")
 
 
 def generate_robots(dist):
-    """Generate dist/robots.txt."""
-    robots = f'''User-agent: *
+    """Generate hardened robots.txt with crawl budget management."""
+    robots = f"""User-agent: *
 Allow: /
+Disallow: /assets/
+Disallow: /*?*
+Crawl-delay: 1
 
+# Block low-value bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemaps
 Sitemap: {BASE_URL}/sitemap.xml
-'''
+Sitemap: {BASE_URL}/sitemap-core.xml
+Sitemap: {BASE_URL}/sitemap-airports.xml
+Sitemap: {BASE_URL}/sitemap-leaves-large.xml
+Sitemap: {BASE_URL}/sitemap-leaves-medium.xml
+Sitemap: {BASE_URL}/sitemap-leaves-small.xml
+Sitemap: {BASE_URL}/sitemap-leaves-regional.xml
+"""
     (dist / "robots.txt").write_text(robots)
-    print("  \u2713 robots.txt")
+    print("  \u2713 robots.txt (hardened)")
 
 
 def main():
@@ -1356,7 +1448,7 @@ def main():
     start = datetime.now()
     print(f"\n{'='*60}\nAirportAccidents.com \u2014 Page Generator\n{'='*60}")
     print("\n[1/5] Loading data...")
-    airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault = load_data()
+    airports, accidents, crossref, profiles, variations, metro_clusters, related_accs, state_neighbors, top_per_state, faq_templates, acc_faq_cat, comp_fault, critical_css_content = load_data()
     print(f"  \u2713 {len(airports)} airports | {len(accidents)} accidents | {len(profiles)} profiles")
 
     if args.dry_run:
@@ -1403,7 +1495,7 @@ def main():
         total += generate_leaf_pages(airports, accidents, profiles, variations,
                                      metro_clusters, related_accs, state_neighbors, top_per_state,
                                      faq_templates, acc_faq_cat, comp_fault,
-                                     tl, DIST,
+                                     critical_css_content, tl, DIST,
                                      filter_airport=args.airport,
                                      filter_accident=args.accident,
                                      phase=args.phase)
