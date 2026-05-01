@@ -44,7 +44,6 @@ AIRPORTS_CSV   = DATA_DIR / "us_airports_full.csv"
 ACCIDENTS_JSON = DATA_DIR / "accidents_database_v2.json"
 CROSSREF_CSV   = DATA_DIR / "airports_accidents_crossref.csv"
 PROFILES_JSON  = DATA_DIR / "airport_profiles.json"
-VARIATIONS_JSON= DATA_DIR / "content_variations.json"
 TMPL_STATE     = TEMPLATES_DIR / "state-hub.html"
 TMPL_AIRPORT   = TEMPLATES_DIR / "airport-hub.html"
 TMPL_ACCIDENT  = TEMPLATES_DIR / "accident-hub.html"
@@ -159,11 +158,33 @@ ALL_ACCIDENTS = [
 
 
 def load_data():
-    with open(AIRPORTS_CSV)    as f: airports   = list(csv.DictReader(f))
-    with open(ACCIDENTS_JSON)  as f: accidents  = json.load(f)
-    with open(CROSSREF_CSV)    as f: crossref   = list(csv.DictReader(f))
-    with open(PROFILES_JSON)   as f: profiles   = json.load(f)
-    with open(VARIATIONS_JSON) as f: variations = json.load(f)
+    with open(AIRPORTS_CSV)   as f: airports  = list(csv.DictReader(f))
+    with open(ACCIDENTS_JSON) as f: accidents = json.load(f)
+    with open(CROSSREF_CSV)   as f: crossref  = list(csv.DictReader(f))
+    with open(PROFILES_JSON)  as f: profiles  = json.load(f)
+    # Load all cv_*.json variation files and merge into one dict
+    variations = {}
+    cv_map = {
+        "liable_section_labels":  "cv_liable_section_labels.json",
+        "liable_section_titles":  "cv_liable_section_titles.json",
+        "liable_intro_variants":  "cv_liable_intro_variants.json",
+        "context_section_titles": "cv_context_section_titles.json",
+        "steps_section_titles":   "cv_steps_section_titles.json",
+        "evidence_section_titles":"cv_evidence_section_titles.json",
+        "legal_section_titles":   "cv_legal_section_titles.json",
+        "other_accidents_titles": "cv_other_accidents_titles.json",
+        "cta_titles":             "cv_cta_titles.json",
+        "hero_eyebrow_variants":  "cv_hero_eyebrow.json",
+        "form_titles":            "cv_form_titles.json",
+    }
+    for key, fname in cv_map.items():
+        fpath = DATA_DIR / fname
+        if fpath.exists():
+            with open(fpath) as f:
+                variations[key] = json.load(f)
+        else:
+            # fallback to old monolithic file if individual not found
+            variations[key] = []
     return airports, accidents, crossref, profiles, variations
 
 
