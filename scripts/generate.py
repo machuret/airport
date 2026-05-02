@@ -1076,7 +1076,7 @@ def generate_leaf_pages(airports, accidents, profiles, variations,
                         ).split('\n\n') if p.strip()
                     ),
                     # ── Attorney insight ──────────────────────────────────
-                    **build_attorney_insight(acc['slug'], airport, attorney_insights, insight_mapping),
+                    **build_attorney_insight(acc['slug'], airport, attorney_insights, insight_mapping, seed=seed),
                     # ── Seasonal content ──────────────────────────────────
                     **build_seasonal_context(profile, acc, airport, seasonal_content),
                     "critical_css":         critical_css_content,
@@ -1796,8 +1796,12 @@ def build_new_section_context(airport, acc, profile, state_leg, seed,
         f'</div>')
 
     # ── 4. DEFENSE STRATEGIES ─────────────────────────────────────────────
-    defenses = parse_list(acc.get('liable_party_defenses',[]))
-    counters  = parse_list(acc.get('plaintiff_counter_strategies',[]))
+    all_defenses = parse_list(acc.get('liable_party_defenses',[]))
+    all_counters  = parse_list(acc.get('plaintiff_counter_strategies',[]))
+    # Rotate which 4 defenses show on this page using seed
+    d_start = seed % max(1, len(all_defenses) - 3)
+    defenses = (all_defenses + all_defenses)[d_start:d_start+4]
+    counters = (all_counters + all_counters)[d_start:d_start+4]
     defense_items = []
     for i, (defense, counter) in enumerate(zip(defenses[:4], counters[:4])):
         defense_items.append(
@@ -1834,7 +1838,9 @@ def build_new_section_context(airport, acc, profile, state_leg, seed,
         f'</div>')
 
     # ── 8. MEDICAL COSTS ─────────────────────────────────────────────────
-    injuries = parse_list(acc.get('common_injuries',[]))
+    all_injuries = parse_list(acc.get('common_injuries',[]))
+    inj_start = (seed * 3) % max(1, len(all_injuries) - 5)
+    injuries = (all_injuries + all_injuries)[inj_start:inj_start+6]
     medical_items = []
     for inj in injuries[:6]:
         cost_data = None
@@ -2029,28 +2035,39 @@ def generate_unique_airport_content(airport, acc, profile, state_legal):
 
 
 
-def build_attorney_insight(acc_slug, airport, attorney_insights, insight_mapping):
-    """Build attorney insight block — content only an expert could write."""
-    key = insight_mapping.get(acc_slug, 'premises_liability_general')
-    insight_data = attorney_insights.get(key)
-    if not insight_data:
+def build_attorney_insight(acc_slug, airport, attorney_insights, insight_mapping, seed=0):
+    """Rotate through 20 attorney observations per accident type using page seed."""
+    # Direct slug lookup — new format is {slug: [obs1, obs2, ..., obs20]}
+    observations = attorney_insights.get(acc_slug)
+    if not observations:
+        # Fallback via insight_mapping for unmapped slugs
+        key = insight_mapping.get(acc_slug, 'premises_liability_general')
+        observations = attorney_insights.get(key)
+    if not observations:
+        return {"attorney_insight_html": ""}
+
+    # Handle legacy dict format {insight: "...", author_note: "..."}
+    if isinstance(observations, dict):
+        observations = [observations.get('insight', '')]
+
+    if not observations:
         return {"attorney_insight_html": ""}
 
     iata = airport['iata_code'] or airport['faa_code']
-    text = insight_data['insight']
+    # Each airport+accident combination gets a different observation via seed rotation
+    text = observations[seed % len(observations)]
 
     html = (
         f'<div class="attorney-insight">'
-        f'<div class="attorney-insight__label">Attorney perspective — {iata}</div>'
+        f'<div class="attorney-insight__label">\U0001f3db\ufe0f Attorney perspective \u2014 {iata}</div>'
         f'<blockquote class="attorney-insight__quote">'
         f'<p class="attorney-insight__text">{text}</p>'
         f'</blockquote>'
         f'<div class="attorney-insight__attribution">'
-        f'AirportAccidents.com Legal Team — based on actual airport injury litigation at {iata} and similar airports'
+        f'AirportAccidents.com Legal Team \u2014 based on actual airport injury litigation at {iata} and similar airports'
         f'</div>'
         f'</div>')
     return {"attorney_insight_html": html}
-
 
 def build_seasonal_context(profile, acc, airport, seasonal_content=None):
     """Build seasonal risk context based on current quarter and airport climate."""
